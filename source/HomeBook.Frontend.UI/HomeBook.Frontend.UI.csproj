@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.JSInterop" Version="9.0.13" />
       <EmbeddedResource Update="Resources\LocalizationStrings.resx">
         <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>LocalizationStrings.Designer.cs</LastGenOutput>
