@@ -13,10 +13,12 @@ permissions:
 env:
     # docker image name for backend image (backend only)
 #    DOCKER_IMAGE: "docker.io/homebookio/server"
+
     # docker image name for ui app image (frontend only)
 #    DOCKER_IMAGE: "docker.io/homebookio/ui-blazor-wasm"
+
     # docker image name for combined image (backend + frontend)
-    DOCKER_IMAGE: "docker.io/homebookio/app"
+    DOCKER_IMAGE: "docker.io/homebookapp/app"
 
     DOCKER_PLATFORMS: "linux/amd64,linux/arm64"
     VERSION: "1.0.${{ github.run_number }}"
