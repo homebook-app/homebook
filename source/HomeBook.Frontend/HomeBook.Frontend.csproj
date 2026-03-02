@@ -6,6 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <NeutralLanguage>en-EN</NeutralLanguage>
         <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+        <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
     </PropertyGroup>
 
     <ItemGroup>
