@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddFrontendServices(this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddSingleton<IContentProvider, ContentProvider>();
+        services.AddScoped<IContentProvider, ContentProvider>();
 
         services.AddSingleton<ISystemManagementProvider, SystemManagementProvider>();
         services.AddSingleton<IUserManagementProvider, UserManagementProvider>();
