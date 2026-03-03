@@ -35,7 +35,8 @@
                     <MudStack Class="align-center"
                               Spacing="3">
 
-                        <MudImage Src="/logo.svg"
+                        <MudImage Src="/logo-512.png"
+                                  Class="about-logo"
                                   Alt="@Loc[nameof(LocalizationStrings.AppTitle)]"
                                   Height="160"/>
 
@@ -186,12 +187,20 @@
                 <!-- External Links -->
                 <MudStack Row="true"
                           Class="align-center mt-5 mb-1"
-                          Spacing="2">
-                    <MudFab Class="ui-color-bg-brand-github me-3"
+                          Spacing="3">
+
+                    <MudFab Class="ui-color-bg-brand-homebook"
+                            StartIcon="@HomeBookIcons.OwnLogos.HomeBook"
+                            Size="Size.Large"
+                            Href="@Loc[nameof(LocalizationStrings.Settings_About_ExternalLink_ProjectWebsite_Href)]"
+                            Target="_blank"/>
+
+                    <MudFab Class="ui-color-bg-brand-github"
                             StartIcon="@HomeBookIcons.Icons8.Windows11.Filled.GitHub"
                             Size="Size.Large"
                             Href="@Loc[nameof(LocalizationStrings.Settings_About_ExternalLink_GitHubProject_Href)]"
                             Target="_blank"/>
+
                 </MudStack>
 
             </MudStack>

@@ -126,7 +126,7 @@
         <value>&amp;copy;{0} HomeBook. All rights reserved.</value>
     </data>
     <data name="Settings_About_ExternalLink_GitHubProject_Href" xml:space="preserve">
-        <value>https://github.com/homebook-io</value>
+        <value>https://github.com/homebook-app</value>
     </data>
     <data name="Settings_About_Error_MessageTemplate" xml:space="preserve">
         <value>Loading system information failed: {0}</value>
@@ -724,5 +724,8 @@
     </data>
     <data name="MainLayout_SearchTextField_Placeholder" xml:space="preserve">
         <value>Search for...</value>
+    </data>
+    <data name="Settings_About_ExternalLink_ProjectWebsite_Href" xml:space="preserve">
+        <value>https://homebook-app.github.io/</value>
     </data>
 </root>
