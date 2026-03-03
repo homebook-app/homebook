@@ -644,6 +644,13 @@
       192.9632653061,
       64.0326530612,
       19.0367346939;
+  --hb-color-brand-homebook: rgb(136, 205, 205);
+  --hb-color-brand-homebook-rgb: 136, 205, 205;
+  --hb-color-brand-homebook-dark: rgb(87.9775147929, 184.8224852071, 184.8224852071);
+  --hb-color-brand-homebook-dark-rgb:
+      87.9775147929,
+      184.8224852071,
+      184.8224852071;
   --hb-color-aqua: rgb(0, 180, 216);
   --hb-color-aqua-rgb: 0, 180, 216;
   --hb-color-aqua-dark: rgb(0, 144, 172.8);
@@ -973,6 +980,20 @@
 .ui-color-bg-gradient-brand-ubuntu {
   background: linear-gradient(to right, var(--hb-color-brand-ubuntu), var(--hb-color-brand-ubuntu-dark));
   color: #ffffff;
+}
+
+.ui-color-brand-homebook {
+  color: var(--hb-color-brand-homebook);
+}
+
+.ui-color-bg-brand-homebook {
+  background-color: var(--hb-color-brand-homebook);
+  color: #000000;
+}
+
+.ui-color-bg-gradient-brand-homebook {
+  background: linear-gradient(to right, var(--hb-color-brand-homebook), var(--hb-color-brand-homebook-dark));
+  color: #000000;
 }
 
 .ui-color-aqua {
@@ -2135,6 +2156,11 @@
 }
 .account-login-background.is-finished {
   opacity: 0;
+}
+
+.about-logo {
+  border: 3px solid white;
+  border-radius: 30%;
 }
 
 /*# sourceMappingURL=app.css.map */

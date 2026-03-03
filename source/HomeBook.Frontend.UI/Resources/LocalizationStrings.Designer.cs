@@ -1448,5 +1448,11 @@ namespace HomeBook.Frontend.UI.Resources {
                 return ResourceManager.GetString("MainLayout_SearchTextField_Placeholder", resourceCulture);
             }
         }
+        
+        public static string Settings_About_ExternalLink_ProjectWebsite_Href {
+            get {
+                return ResourceManager.GetString("Settings_About_ExternalLink_ProjectWebsite_Href", resourceCulture);
+            }
+        }
     }
 }

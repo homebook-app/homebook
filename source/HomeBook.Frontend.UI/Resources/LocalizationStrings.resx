@@ -725,4 +725,7 @@
     <data name="MainLayout_SearchTextField_Placeholder" xml:space="preserve">
         <value>Search for...</value>
     </data>
+    <data name="Settings_About_ExternalLink_ProjectWebsite_Href" xml:space="preserve">
+        <value>https://homebook-app.github.io/</value>
+    </data>
 </root>
