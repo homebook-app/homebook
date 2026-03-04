@@ -311,7 +311,7 @@ public partial class UserEdit : ComponentBase
         if (_originalUser == null || IsCurrentUser())
             return;
 
-        bool? result = await DialogService.ShowMessageBox(
+        bool? result = await DialogService.ShowMessageBoxAsync(
             Loc[nameof(LocalizationStrings.Settings_User_Edit_DeleteUserDialog_Title)],
             string.Format(Loc[nameof(LocalizationStrings.Settings_User_Edit_DeleteUserDialog_MessageTemplate)],
                 _originalUser.UserName),
