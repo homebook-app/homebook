@@ -45,12 +45,12 @@ jobs:
                     release_date="$(date -u +%Y%m%d)"
                     release_date_iso="$(date -u +%F)"
                     short_sha="${GITHUB_SHA:0:7}"
-                    release_title="Homebook ${VERSION}"
+                    release_title="HomeBook ${VERSION}"
                     tag_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${VERSION}"
                     commit_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
                     run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-                    markdown_relative_path="${WEBSITE_RELEASES_MARKDOWN_DIR}/${release_date}-${VERSION}.md"
-                    markdown_absolute_path="${WEBSITE_REPO_PATH}/${markdown_relative_path}"
+                    markdown_file_name="${WEBSITE_RELEASES_MARKDOWN_DIR}/${release_date}-${VERSION}.md"
+                    markdown_absolute_path="${WEBSITE_REPO_PATH}/${markdown_file_name}"
 
                     mkdir -p "$(dirname "$markdown_absolute_path")"
 
@@ -66,9 +66,10 @@ jobs:
 
                     - Git tag: [\`${VERSION}\`](${tag_url})
 
-                    ## Notes
+                    ## Changes
 
-                    This file was created automatically by \`.github/workflows/build.yml\`.
+                    * add here the changes of this release
+
                     EOF
 
             -   name: Add markdown path and release to json-file
@@ -78,12 +79,11 @@ jobs:
 
                     release_date="$(date -u +%Y%m%d)"
                     release_date_iso="$(date -u +%F)"
-                    release_title="Homebook ${VERSION}"
-                    tag_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${VERSION}"
-                    commit_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
-                    run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-                    markdown_relative_path="${WEBSITE_RELEASES_MARKDOWN_DIR}/${release_date}-${VERSION}.md"
+                    markdown_file_name="${release_date}-${VERSION}.md"
                     json_absolute_path="${WEBSITE_REPO_PATH}/${WEBSITE_RELEASES_JSON_FILE}"
+                    short_sha="${GITHUB_SHA:0:7}"
+                    commit_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+                    run_id="${GITHUB_RUN_ID}"
 
                     mkdir -p "$(dirname "$json_absolute_path")"
 
@@ -94,19 +94,17 @@ jobs:
                     entry_json="$(jq -n \
                       --arg version "$VERSION" \
                       --arg date "$release_date_iso" \
-                      --arg title "$release_title" \
-                      --arg markdownPath "$markdown_relative_path" \
-                      --arg tagUrl "$tag_url" \
-                      --arg commitUrl "$commit_url" \
-                      --arg runUrl "$run_url" \
+                      --arg markdownFile "$markdown_file_name" \
+                      --arg short_sha "$short_sha" \
+                      --arg commit_url "$commit_url" \
+                      --arg run_id "$run_id" \
                       '{
                         version: $version,
                         date: $date,
-                        title: $title,
-                        markdownPath: $markdownPath,
-                        tagUrl: $tagUrl,
-                        commitUrl: $commitUrl,
-                        runUrl: $runUrl
+                        markdownFile: $markdownFile,
+                        short_sha: $short_sha,
+                        commit_url: $commit_url,
+                        run_id: $run_id
                       }')"
 
                     tmp_file="$(mktemp)"
