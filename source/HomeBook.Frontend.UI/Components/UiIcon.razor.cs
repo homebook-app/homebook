@@ -33,7 +33,7 @@ public partial class UiIcon : ComponentBase
 
             .AddClass($"ui-icon-plain",
                 IconStyle == UiIconStyle.Plain)
-            .AddClass($"mud-{Color.ToDescriptionString()}-text",
+            .AddClass($"mud-{Color.ToStringFast()}-text",
                 IconStyle == UiIconStyle.Plain
                 && Color != Color.Default
                 && Color != Color.Inherit)
@@ -47,11 +47,11 @@ public partial class UiIcon : ComponentBase
             .AddClass($"background-color: {ColorValue};",
                 IconStyle == UiIconStyle.Filled
                 && Color == Color.Default)
-            .AddClass($"background-color: var(--mud-palette-{Color.ToDescriptionString()});",
+            .AddClass($"background-color: var(--mud-palette-{Color.ToStringFast()});",
                 IconStyle == UiIconStyle.Filled
                 && Color != Color.Default
                 && Color != Color.Inherit)
-            .AddClass($"fill: var(--mud-palette-{Color.ToDescriptionString()}-text);",
+            .AddClass($"fill: var(--mud-palette-{Color.ToStringFast()}-text);",
                 IconStyle == UiIconStyle.Filled
                 && Color != Color.Default
                 && Color != Color.Inherit)
@@ -63,11 +63,11 @@ public partial class UiIcon : ComponentBase
             .AddClass($"fill: {ColorValue};",
                 IconStyle == UiIconStyle.Outlined
                 && Color == Color.Default)
-            .AddClass($"border-color: var(--mud-palette-{Color.ToDescriptionString()});",
+            .AddClass($"border-color: var(--mud-palette-{Color.ToStringFast()});",
                 IconStyle == UiIconStyle.Outlined
                 && Color != Color.Default
                 && Color != Color.Inherit)
-            .AddClass($"fill: var(--mud-palette-{Color.ToDescriptionString()});",
+            .AddClass($"fill: var(--mud-palette-{Color.ToStringFast()});",
                 IconStyle == UiIconStyle.Outlined
                 && Color != Color.Default
                 && Color != Color.Inherit)
