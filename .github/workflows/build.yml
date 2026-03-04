@@ -32,6 +32,10 @@ env:
     CLIENT_CLASS: "BackendClient"
     UNIT_TEST_CSPROJ: "./source/HomeBook.UnitTests/HomeBook.UnitTests.csproj"
     E2E_TEST_CSPROJ: "./source/HomeBook.E2ETests/HomeBook.E2ETests.csproj"
+    WEBSITE_REPOSITORY: "homebook-app/homebook-app.github.io"
+    WEBSITE_REPO_PATH: "./website-repo"
+    WEBSITE_RELEASES_MARKDOWN_DIR: "app/content/releases"
+    WEBSITE_RELEASES_JSON_FILE: "app/content/releases/releases.json"
 
 jobs:
 
@@ -363,6 +367,8 @@ jobs:
 
     website-release-sync:
         runs-on: ubuntu-latest
+        needs:
+            - docker-deploy
 
         steps:
             -   name: Git checkout
