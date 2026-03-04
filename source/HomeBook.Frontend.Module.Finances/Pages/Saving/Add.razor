@@ -424,9 +424,8 @@
                             <MudChart ChartType="ChartType.Line"
                                       Width="100%"
                                       ChartOptions="_summaryVM.ChartOptions"
-                                      AxisChartOptions="_summaryVM.AxisChartOptions"
-                                      InputLabels="@_summaryVM.YAxisLabels"
-                                      XAxisLabels="@_summaryVM.XAxisLabels"
+                                      MatchBoundsToSize="true"
+                                      ChartLabels="@_summaryVM.ChartLabels"
                                       ChartSeries="@_summaryVM.ChartSeries"/>
                         }
 

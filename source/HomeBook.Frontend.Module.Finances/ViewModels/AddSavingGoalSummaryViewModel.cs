@@ -32,26 +32,19 @@ public class AddSavingGoalSummaryViewModel(
             .Select(m => AmountPerMonth * m)
             .ToArray();
 
-
-    public AxisChartOptions AxisChartOptions = new()
-    {
-        MatchBoundsToSize = true,
-        XAxisLabelRotation = 60
-    };
-
     public ChartOptions ChartOptions = new()
     {
-        YAxisToStringFunc = value => value.ToString("C"),
-        ValueFormatString = "C",
+        // YAxisToStringFunc = value => value.ToString("C"),
+        // ValueFormatString = "C",
         ShowToolTips = false,
     };
 
-    public List<ChartSeries> ChartSeries =>
+    public List<ChartSeries<double>> ChartSeries =>
     [
         new()
         {
             Name = Loc[nameof(Strings.AddSavingGoalSummary_Total_Name)],
-            LineDisplayType = LineDisplayType.Area,
+            // LineDisplayType = LineDisplayType.Area,
             Data = TargetDate.HasValue
                 ? (AmountsWithInterests ?? [])
                 .Select(Convert.ToDouble)
@@ -61,7 +54,7 @@ public class AddSavingGoalSummaryViewModel(
         new()
         {
             Name = Loc[nameof(Strings.AddSavingGoalSummary_Payments_Name)],
-            LineDisplayType = LineDisplayType.Line,
+            // LineDisplayType = LineDisplayType.Line,
             Data = TargetDate.HasValue
                 ? (AmountsWithoutInterests ?? [])
                 .Select(Convert.ToDouble)
@@ -86,7 +79,7 @@ public class AddSavingGoalSummaryViewModel(
             .ToArray()
             : [];
 
-    public string[] XAxisLabels =>
+    public string[] ChartLabels =>
         TargetDate.HasValue
             ? Enumerable.Range(1, NumberOfMonths)
                 .Select(i => DateTime.Now.AddMonths(i).ToString("MMM", CultureInfo.CurrentUICulture))
