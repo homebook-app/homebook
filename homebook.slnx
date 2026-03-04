@@ -66,6 +66,7 @@
   <Folder Name="/Solution/github/workflows/">
     <File Path=".github\workflows\build.yml" />
     <File Path=".github\workflows\pull-request.yml" />
+    <File Path=".github\workflows\release-info-docs.yml" />
   </Folder>
   <Folder Name="/Tests/">
     <Project Path="source\HomeBook.UnitTests\HomeBook.UnitTests.csproj" />
