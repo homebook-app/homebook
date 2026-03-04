@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Release Info to GitHub IO
 
 on:
     push:
