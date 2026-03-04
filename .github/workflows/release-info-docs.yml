@@ -61,12 +61,10 @@ jobs:
                     - Version: ${VERSION}
                     - Commit: [\`${short_sha}\`](${commit_url})
                     - Workflow Run: [#${GITHUB_RUN_ID}](${run_url})
-                    - Docker Image: \`${DOCKER_IMAGE}:${VERSION}\`
 
                     ## Artifacts
 
                     - Git tag: [\`${VERSION}\`](${tag_url})
-                    - Docker image: \`${DOCKER_IMAGE}:${VERSION}\`
 
                     ## Notes
 
@@ -101,7 +99,6 @@ jobs:
                       --arg tagUrl "$tag_url" \
                       --arg commitUrl "$commit_url" \
                       --arg runUrl "$run_url" \
-                      --arg dockerImage "${DOCKER_IMAGE}:${VERSION}" \
                       '{
                         version: $version,
                         date: $date,
@@ -109,8 +106,7 @@ jobs:
                         markdownPath: $markdownPath,
                         tagUrl: $tagUrl,
                         commitUrl: $commitUrl,
-                        runUrl: $runUrl,
-                        dockerImage: $dockerImage
+                        runUrl: $runUrl
                       }')"
 
                     tmp_file="$(mktemp)"
