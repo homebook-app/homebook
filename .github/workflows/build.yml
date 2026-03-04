@@ -359,3 +359,112 @@ jobs:
                     build-args: |
                         FRONTEND_APPSETTINGS_FILE=${{ env.FRONTEND_APPSETTINGS_FILE }}
                         BACKEND_APPSETTINGS_FILE=${{ env.BACKEND_APPSETTINGS_FILE }}
+
+
+    website-release-sync:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Git checkout
+                uses: actions/checkout@v4
+                with:
+                    repository: ${{ env.WEBSITE_REPOSITORY }}
+                    token: ${{ secrets.WEBSITE_GITHUBIO_REPO_TOKEN }}
+                    path: ${{ env.WEBSITE_REPO_PATH }}
+                    clean: true
+
+            -   name: Configure Git User
+                working-directory: ${{ env.WEBSITE_REPO_PATH }}
+                run: |
+                    git config user.name "GitHub Actions"
+                    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+            -   name: Create release markdown
+                shell: bash
+                run: |
+                    set -euo pipefail
+
+                    release_date="$(date -u +%Y%m%d)"
+                    release_date_iso="$(date -u +%F)"
+                    short_sha="${GITHUB_SHA:0:7}"
+                    release_title="HomeBook ${VERSION}"
+                    tag_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/tree/${VERSION}"
+                    commit_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+                    run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+                    markdown_file_name="${WEBSITE_RELEASES_MARKDOWN_DIR}/${release_date}-${VERSION}.md"
+                    markdown_absolute_path="${WEBSITE_REPO_PATH}/${markdown_file_name}"
+
+                    mkdir -p "$(dirname "$markdown_absolute_path")"
+
+                    cat > "$markdown_absolute_path" <<EOF
+                    # ${release_title}
+
+                    - Date: ${release_date_iso}
+                    - Version: ${VERSION}
+                    - Commit: [\`${short_sha}\`](${commit_url})
+                    - Workflow Run: [#${GITHUB_RUN_ID}](${run_url})
+
+                    ## Artifacts
+
+                    - Git tag: [\`${VERSION}\`](${tag_url})
+
+                    ## Changes
+
+                    * add here the changes of this release
+
+                    EOF
+
+            -   name: Add markdown path and release to json-file
+                shell: bash
+                run: |
+                    set -euo pipefail
+
+                    release_date="$(date -u +%Y%m%d)"
+                    release_date_iso="$(date -u +%F)"
+                    markdown_file_name="${release_date}-${VERSION}.md"
+                    json_absolute_path="${WEBSITE_REPO_PATH}/${WEBSITE_RELEASES_JSON_FILE}"
+                    short_sha="${GITHUB_SHA:0:7}"
+                    commit_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+                    run_id="${GITHUB_RUN_ID}"
+
+                    mkdir -p "$(dirname "$json_absolute_path")"
+
+                    if [ ! -f "$json_absolute_path" ]; then
+                      echo "[]" > "$json_absolute_path"
+                    fi
+
+                    entry_json="$(jq -n \
+                      --arg version "$VERSION" \
+                      --arg date "$release_date_iso" \
+                      --arg markdownFile "$markdown_file_name" \
+                      --arg short_sha "$short_sha" \
+                      --arg commit_url "$commit_url" \
+                      --arg run_id "$run_id" \
+                      '{
+                        version: $version,
+                        date: $date,
+                        markdownFile: $markdownFile,
+                        short_sha: $short_sha,
+                        commit_url: $commit_url,
+                        run_id: $run_id
+                      }')"
+
+                    tmp_file="$(mktemp)"
+                    jq --arg version "$VERSION" --argjson entry "$entry_json" '
+                      (if type == "array" then . else [] end)
+                      | map(select(.version != $version))
+                      | [$entry] + .
+                    ' "$json_absolute_path" > "$tmp_file"
+                    mv "$tmp_file" "$json_absolute_path"
+
+            -   name: Commit changes
+                working-directory: ${{ env.WEBSITE_REPO_PATH }}
+                run: |
+                    if [ -z "$(git status --short)" ]; then
+                      echo "No website release changes detected."
+                      exit 0
+                    fi
+
+                    git add ${{ env.WEBSITE_RELEASES_MARKDOWN_DIR }} ${{ env.WEBSITE_RELEASES_JSON_FILE }}
+                    git commit -m "Add release ${{ env.VERSION }}"
+                    git push
