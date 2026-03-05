@@ -60,4 +60,19 @@
     <data name="RecipeOverview_AnnotationServings_TextTemplate" xml:space="preserve">
         <value>{0} Servings</value>
     </data>
+    <data name="RecipeEdit_RecipeNameEditToolTip_Text" xml:space="preserve">
+        <value>Edit Recipename</value>
+    </data>
+    <data name="RecipeEdit_RecipeNameEditTextField_Placeholder" xml:space="preserve">
+        <value>Recipename</value>
+    </data>
+    <data name="RecipeEdit_ViewRecipeButton_Text" xml:space="preserve">
+        <value>View Recipe</value>
+    </data>
+    <data name="RecipeEdit_RecipeNameSaveTooltip_Text" xml:space="preserve">
+        <value>Save Recipename</value>
+    </data>
+    <data name="RecipeEdit_RecipeDeleteTooltip_Text" xml:space="preserve">
+        <value>Delete Recipe</value>
+    </data>
 </root>

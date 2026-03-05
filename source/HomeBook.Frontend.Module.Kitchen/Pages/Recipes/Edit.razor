@@ -25,7 +25,7 @@
                 @if (RecipeId != Guid.Empty)
                 {
                     <MudTooltip Color="Color.Primary"
-                                Text="+View Recipe">
+                                Text="@Loc[nameof(Resources.Strings.RecipeEdit_ViewRecipeButton_Text)]">
                         <MudIconButton Icon="@HomeBookIcons.Icons8.Windows11.Outline.RestaurantMenu"
                                        Variant="Variant.Filled"
                                        Class="pa-3 rounded-pill"
@@ -40,7 +40,7 @@
                 {
                     <MudTextField T="string"
                                   @bind-Value="@_recipe.Name"
-                                  Placeholder="+Rezeptname"/>
+                                  Placeholder="@Loc[nameof(Resources.Strings.RecipeEdit_RecipeNameEditTextField_Placeholder)]"/>
                 }
                 else if (!_nameEditMode)
                 {
@@ -48,7 +48,7 @@
                         @_recipe.Name
                     </MudText>
                     <MudTooltip Color="Color.Primary"
-                                Text="+Edit Recipe Name">
+                                Text="@Loc[nameof(Resources.Strings.RecipeEdit_RecipeNameEditToolTip_Text)]">
                         <MudIconButton Icon="@HomeBookIcons.Icons8.Windows11.Outline.Edit"
                                        Color="Color.Primary"
                                        OnClick="EditRecipeNameAsync"
@@ -60,7 +60,7 @@
                     <MudTextField T="string"
                                   @bind-Value="@_recipe.Name"/>
                     <MudTooltip Color="Color.Primary"
-                                Text="+Save Recipe Name">
+                                Text="@Loc[nameof(Resources.Strings.RecipeEdit_RecipeNameSaveTooltip_Text)]">
                         <MudIconButton Icon="@HomeBookIcons.Icons8.Windows11.Outline.Save"
                                        Color="Color.Primary"
                                        OnClick="UpdateRecipeNameAsync"
@@ -73,7 +73,7 @@
                 @if (RecipeId != Guid.Empty)
                 {
                     <MudTooltip Color="Color.Error"
-                                Text="+Delete Recipe">
+                                Text="@Loc[nameof(Resources.Strings.RecipeEdit_RecipeDeleteTooltip_Text)]">
                         <MudIconButton Icon="@HomeBookIcons.Icons8.Windows11.Outline.Trash"
                                        OnClick="DeleteRecipe"
                                        Color="Color.Error"/>

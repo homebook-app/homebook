@@ -128,5 +128,35 @@ namespace HomeBook.Frontend.Module.Kitchen.Resources {
                 return ResourceManager.GetString("RecipeOverview_AnnotationServings_TextTemplate", resourceCulture);
             }
         }
+        
+        public static string RecipeEdit_RecipeNameEditToolTip_Text {
+            get {
+                return ResourceManager.GetString("RecipeEdit_RecipeNameEditToolTip_Text", resourceCulture);
+            }
+        }
+        
+        public static string RecipeEdit_RecipeNameEditTextField_Placeholder {
+            get {
+                return ResourceManager.GetString("RecipeEdit_RecipeNameEditTextField_Placeholder", resourceCulture);
+            }
+        }
+        
+        public static string RecipeEdit_ViewRecipeButton_Text {
+            get {
+                return ResourceManager.GetString("RecipeEdit_ViewRecipeButton_Text", resourceCulture);
+            }
+        }
+        
+        public static string RecipeEdit_RecipeNameSaveTooltip_Text {
+            get {
+                return ResourceManager.GetString("RecipeEdit_RecipeNameSaveTooltip_Text", resourceCulture);
+            }
+        }
+        
+        public static string RecipeEdit_RecipeDeleteTooltip_Text {
+            get {
+                return ResourceManager.GetString("RecipeEdit_RecipeDeleteTooltip_Text", resourceCulture);
+            }
+        }
     }
 }
