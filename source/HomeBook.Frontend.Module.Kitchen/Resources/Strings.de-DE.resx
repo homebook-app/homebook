@@ -50,4 +50,13 @@
     <data name="RecipeOverview_AnnotationServings_TextTemplate" xml:space="preserve">
         <value>{0} Portionen</value>
     </data>
+    <data name="RecipeEdit_RecipeNameEditToolTip_Text" xml:space="preserve">
+        <value>Rezeptname bearbeiten</value>
+    </data>
+    <data name="RecipeEdit_RecipeNameEditTextField_Placeholder" xml:space="preserve">
+        <value>Rezeptname</value>
+    </data>
+    <data name="RecipeEdit_ViewRecipeButton_Text" xml:space="preserve">
+        <value>Rezept ansehen</value>
+    </data>
 </root>

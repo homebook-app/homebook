@@ -32,6 +32,14 @@ via Docker.
 
 ---
 
+## Translate
+
+you can help to translate HomeBook into your language.
+
+translate via [Weblate](https://hosted.weblate.org/projects/homebook/)
+
+---
+
 ## 🚀 Quick Start
 
 ### Requirements
