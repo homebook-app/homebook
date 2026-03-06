@@ -1,6 +1,6 @@
 # HomeBook
 
-![homebook](https://raw.githubusercontent.com/lk-code/homebook/main/icon_128.png)
+![homebook](https://raw.githubusercontent.com/homebook-app/homebook/main/icon_128.png)
 
 **HomeBook** is a self-hosted web application for organizing household tasks and joint financial planning. Developed for
 families, it creates structure, transparency, and collaboration in everyday life. Easily deployable on your own server
@@ -8,12 +8,12 @@ via Docker.
 
 ---
 
-[![Docker](https://img.shields.io/badge/Docker-alpha-blue)](https://hub.docker.com/u/homebookio)
-![License](https://img.shields.io/github/license/homebook-io/homebook)
+[![Docker](https://img.shields.io/badge/Docker-alpha-blue)](https://hub.docker.com/u/homebookapp)
+![License](https://img.shields.io/github/license/homebook-app/homebook)
 
-[![Version](https://img.shields.io/docker/v/homebookio/app)](https://hub.docker.com/u/homebookio)
-[![Docker Pulls](https://img.shields.io/docker/pulls/homebookio/app)](https://hub.docker.com/u/homebookio)
-[![Docker Star](https://img.shields.io/docker/stars/homebookio/app)](https://hub.docker.com/u/homebookio)
+[![Version](https://img.shields.io/docker/v/homebookapp/app)](https://hub.docker.com/u/homebookapp)
+[![Docker Pulls](https://img.shields.io/docker/pulls/homebookio/app)](https://hub.docker.com/u/homebookapp)
+[![Docker Star](https://img.shields.io/docker/stars/homebookapp/app)](https://hub.docker.com/u/homebookapp)
 
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=lk-code_homebook&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=lk-code_homebook)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=lk-code_homebook&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=lk-code_homebook)
