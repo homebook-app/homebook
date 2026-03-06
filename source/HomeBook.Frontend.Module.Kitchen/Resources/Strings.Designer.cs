@@ -158,5 +158,11 @@ namespace HomeBook.Frontend.Module.Kitchen.Resources {
                 return ResourceManager.GetString("RecipeEdit_RecipeDeleteTooltip_Text", resourceCulture);
             }
         }
+        
+        public static string RecipeEdit_RecipeDescriptionTextField_Label {
+            get {
+                return ResourceManager.GetString("RecipeEdit_RecipeDescriptionTextField_Label", resourceCulture);
+            }
+        }
     }
 }

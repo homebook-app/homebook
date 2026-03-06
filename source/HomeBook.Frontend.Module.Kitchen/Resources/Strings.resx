@@ -75,4 +75,7 @@
     <data name="RecipeEdit_RecipeDeleteTooltip_Text" xml:space="preserve">
         <value>Delete Recipe</value>
     </data>
+    <data name="RecipeEdit_RecipeDescriptionTextField_Label" xml:space="preserve">
+        <value>Description</value>
+    </data>
 </root>
