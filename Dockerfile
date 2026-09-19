@@ -2,7 +2,7 @@
 # Recommended to use Docker Buildx for multi-architecture builds
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
-ARG DOTNET_VERSION=10.0.201
+ARG DOTNET_VERSION=10.0.401
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /homebook-src
 
