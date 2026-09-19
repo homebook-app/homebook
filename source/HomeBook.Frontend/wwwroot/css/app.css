@@ -625,266 +625,266 @@
 :root {
   --hb-color-brand-github: rgb(36, 41, 46);
   --hb-color-brand-github-rgb: 36, 41, 46;
-  --hb-color-brand-github-dark: rgb(28.8, 32.8, 36.8);
+  --hb-color-brand-github-dark: rgb(11.2941176471%, 12.862745098%, 14.431372549%);
   --hb-color-brand-github-dark-rgb:
       28.8,
       32.8,
       36.8;
   --hb-color-brand-docker: rgb(36, 150, 237);
   --hb-color-brand-docker-rgb: 36, 150, 237;
-  --hb-color-brand-docker-dark: rgb(16.5873417722, 121.6405063291, 201.8126582278);
+  --hb-color-brand-docker-dark: rgb(6.5048399106%, 47.7021593448%, 79.1422189129%);
   --hb-color-brand-docker-dark-rgb:
       16.5873417722,
       121.6405063291,
       201.8126582278;
   --hb-color-brand-ubuntu: rgb(233, 84, 32);
   --hb-color-brand-ubuntu-rgb: 233, 84, 32;
-  --hb-color-brand-ubuntu-dark: rgb(192.9632653061, 64.0326530612, 19.0367346939);
+  --hb-color-brand-ubuntu-dark: rgb(75.6718687475%, 25.1108443377%, 7.4653861545%);
   --hb-color-brand-ubuntu-dark-rgb:
       192.9632653061,
       64.0326530612,
       19.0367346939;
   --hb-color-brand-homebook: rgb(147, 229, 189);
   --hb-color-brand-homebook-rgb: 147, 229, 189;
-  --hb-color-brand-homebook-dark: rgb(86.3910447761, 214.4089552239, 151.9611940299);
+  --hb-color-brand-homebook-dark: rgb(33.8788410887%, 84.0819432251%, 59.5926251097%);
   --hb-color-brand-homebook-dark-rgb:
       86.3910447761,
       214.4089552239,
       151.9611940299;
   --hb-color-aqua: rgb(0, 180, 216);
   --hb-color-aqua-rgb: 0, 180, 216;
-  --hb-color-aqua-dark: rgb(0, 144, 172.8);
+  --hb-color-aqua-dark: rgb(0%, 56.4705882353%, 67.7647058824%);
   --hb-color-aqua-dark-rgb:
       0,
       144,
       172.8;
   --hb-color-amethyst: rgb(147, 51, 234);
   --hb-color-amethyst-rgb: 147, 51, 234;
-  --hb-color-amethyst-dark: rgb(118.56, 21.28, 206.72);
+  --hb-color-amethyst-dark: rgb(46.4941176471%, 8.3450980392%, 81.0666666667%);
   --hb-color-amethyst-dark-rgb:
       118.56,
       21.28,
       206.72;
   --hb-color-indigo: rgb(63, 81, 181);
   --hb-color-indigo-rgb: 63, 81, 181;
-  --hb-color-indigo-dark: rgb(50.4, 64.8, 144.8);
+  --hb-color-indigo-dark: rgb(19.7647058824%, 25.4117647059%, 56.7843137255%);
   --hb-color-indigo-dark-rgb:
       50.4,
       64.8,
       144.8;
   --hb-color-denim: rgb(47, 102, 144);
   --hb-color-denim-rgb: 47, 102, 144;
-  --hb-color-denim-dark: rgb(37.6, 81.6, 115.2);
+  --hb-color-denim-dark: rgb(14.7450980392%, 32%, 45.1764705882%);
   --hb-color-denim-dark-rgb:
       37.6,
       81.6,
       115.2;
   --hb-color-cerulean: rgb(81, 73, 211);
   --hb-color-cerulean-rgb: 81, 73, 211;
-  --hb-color-cerulean-dark: rgb(52.2761061947, 44.2336283186, 182.9663716814);
+  --hb-color-cerulean-dark: rgb(20.5004338018%, 17.3465209092%, 71.7515183064%);
   --hb-color-cerulean-dark-rgb:
       52.2761061947,
       44.2336283186,
       182.9663716814;
   --hb-color-ocean: rgb(30, 96, 145);
   --hb-color-ocean-rgb: 30, 96, 145;
-  --hb-color-ocean-dark: rgb(24, 76.8, 116);
+  --hb-color-ocean-dark: rgb(9.4117647059%, 30.1176470588%, 45.4901960784%);
   --hb-color-ocean-dark-rgb:
       24,
       76.8,
       116;
   --hb-color-purple: rgb(147, 52, 234);
   --hb-color-purple-rgb: 147, 52, 234;
-  --hb-color-purple-dark: rgb(118.4857142857, 21.45, 207.35);
+  --hb-color-purple-dark: rgb(46.4649859944%, 8.4117647059%, 81.3137254902%);
   --hb-color-purple-dark-rgb:
       118.4857142857,
       21.45,
       207.35;
   --hb-color-azure: rgb(79, 158, 248);
   --hb-color-azure-rgb: 79, 158, 248;
-  --hb-color-azure-dark: rgb(16.1016393443, 123.3344262295, 245.4983606557);
+  --hb-color-azure-dark: rgb(6.3143683703%, 48.3664416586%, 96.2738669238%);
   --hb-color-azure-dark-rgb:
       16.1016393443,
       123.3344262295,
       245.4983606557;
   --hb-color-lavender: rgb(192, 132, 252);
   --hb-color-lavender-rgb: 192, 132, 252;
-  --hb-color-lavender-dark: rgb(153.6, 57.0285714286, 250.1714285714);
+  --hb-color-lavender-dark: rgb(60.2352941176%, 22.3641456583%, 98.106442577%);
   --hb-color-lavender-dark-rgb:
       153.6,
       57.0285714286,
       250.1714285714;
   --hb-color-plum: rgb(142, 69, 133);
   --hb-color-plum-rgb: 142, 69, 133;
-  --hb-color-plum-dark: rgb(113.6, 55.2, 106.4);
+  --hb-color-plum-dark: rgb(44.5490196078%, 21.6470588235%, 41.7254901961%);
   --hb-color-plum-dark-rgb:
       113.6,
       55.2,
       106.4;
   --hb-color-rose: rgb(229, 115, 115);
   --hb-color-rose-rgb: 229, 115, 115;
-  --hb-color-rose-dark: rgb(218.2240963855, 56.9759036145, 56.9759036145);
+  --hb-color-rose-dark: rgb(85.5780770139%, 22.3434916135%, 22.3434916135%);
   --hb-color-rose-dark-rgb:
       218.2240963855,
       56.9759036145,
       56.9759036145;
   --hb-color-pink: rgb(233, 30, 99);
   --hb-color-pink-rgb: 233, 30, 99;
-  --hb-color-pink-dark: rgb(191.6599190283, 18.7400809717, 77.5157894737);
+  --hb-color-pink-dark: rgb(75.1607525601%, 7.3490513614%, 30.3983488132%);
   --hb-color-pink-dark-rgb:
       191.6599190283,
       18.7400809717,
       77.5157894737;
   --hb-color-crimson: rgb(220, 38, 38);
   --hb-color-crimson-rgb: 220, 38, 38;
-  --hb-color-crimson-dark: rgb(177.7333333333, 28.6666666667, 28.6666666667);
+  --hb-color-crimson-dark: rgb(69.6993464052%, 11.2418300654%, 11.2418300654%);
   --hb-color-crimson-dark-rgb:
       177.7333333333,
       28.6666666667,
       28.6666666667;
   --hb-color-ruby: rgb(22, 163, 74);
   --hb-color-ruby-rgb: 22, 163, 74;
-  --hb-color-ruby-dark: rgb(17.6, 130.4, 59.2);
+  --hb-color-ruby-dark: rgb(6.9019607843%, 51.137254902%, 23.2156862745%);
   --hb-color-ruby-dark-rgb:
       17.6,
       130.4,
       59.2;
   --hb-color-spring: rgb(0, 230, 118);
   --hb-color-spring-rgb: 0, 230, 118;
-  --hb-color-spring-dark: rgb(0, 184, 94.4);
+  --hb-color-spring-dark: rgb(0%, 72.1568627451%, 37.0196078431%);
   --hb-color-spring-dark-rgb:
       0,
       184,
       94.4;
   --hb-color-apple: rgb(46, 204, 113);
   --hb-color-apple-rgb: 46, 204, 113;
-  --hb-color-apple-dark: rgb(36.8, 163.2, 90.4);
+  --hb-color-apple-dark: rgb(14.431372549%, 64%, 35.4509803922%);
   --hb-color-apple-dark-rgb:
       36.8,
       163.2,
       90.4;
   --hb-color-lime: rgb(203, 220, 56);
   --hb-color-lime-rgb: 203, 220, 56;
-  --hb-color-lime-dark: rgb(171.7333333333, 187.7743589744, 33.0256410256);
+  --hb-color-lime-dark: rgb(67.3464052288%, 73.6370035194%, 12.9512317748%);
   --hb-color-lime-dark-rgb:
       171.7333333333,
       187.7743589744,
       33.0256410256;
   --hb-color-emerald: rgb(15, 184, 129);
   --hb-color-emerald-rgb: 15, 184, 129;
-  --hb-color-emerald-dark: rgb(12, 147.2, 103.2);
+  --hb-color-emerald-dark: rgb(4.7058823529%, 57.7254901961%, 40.4705882353%);
   --hb-color-emerald-dark-rgb:
       12,
       147.2,
       103.2;
   --hb-color-teal: rgb(0, 150, 136);
   --hb-color-teal-rgb: 0, 150, 136;
-  --hb-color-teal-dark: rgb(0, 120, 108.8);
+  --hb-color-teal-dark: rgb(0%, 47.0588235294%, 42.6666666667%);
   --hb-color-teal-dark-rgb:
       0,
       120,
       108.8;
   --hb-color-petrol: rgb(0, 128, 128);
   --hb-color-petrol-rgb: 0, 128, 128;
-  --hb-color-petrol-dark: rgb(0, 102.4, 102.4);
+  --hb-color-petrol-dark: rgb(0%, 40.1568627451%, 40.1568627451%);
   --hb-color-petrol-dark-rgb:
       0,
       102.4,
       102.4;
   --hb-color-wine: rgb(114, 47, 55);
   --hb-color-wine-rgb: 114, 47, 55;
-  --hb-color-wine-dark: rgb(91.2, 37.6, 44);
+  --hb-color-wine-dark: rgb(35.7647058824%, 14.7450980392%, 17.2549019608%);
   --hb-color-wine-dark-rgb:
       91.2,
       37.6,
       44;
   --hb-color-mulberry: rgb(155, 34, 66);
   --hb-color-mulberry-rgb: 155, 34, 66;
-  --hb-color-mulberry-dark: rgb(124, 27.2, 52.8);
+  --hb-color-mulberry-dark: rgb(48.6274509804%, 10.6666666667%, 20.7058823529%);
   --hb-color-mulberry-dark-rgb:
       124,
       27.2,
       52.8;
   --hb-color-fern: rgb(98, 139, 72);
   --hb-color-fern-rgb: 98, 139, 72;
-  --hb-color-fern-dark: rgb(78.4, 111.2, 57.6);
+  --hb-color-fern-dark: rgb(30.7450980392%, 43.6078431373%, 22.5882352941%);
   --hb-color-fern-dark-rgb:
       78.4,
       111.2,
       57.6;
   --hb-color-honey: rgb(246, 190, 79);
   --hb-color-honey-rgb: 246, 190, 79;
-  --hb-color-honey-dark: rgb(242.8378378378, 167.1621621622, 17.1621621622);
+  --hb-color-honey-dark: rgb(95.2305246423%, 65.5537890832%, 6.7302596714%);
   --hb-color-honey-dark-rgb:
       242.8378378378,
       167.1621621622,
       17.1621621622;
   --hb-color-lemon: rgb(255, 241, 118);
   --hb-color-lemon-rgb: 255, 241, 118;
-  --hb-color-lemon-dark: rgb(255, 233.3766423358, 43.4);
+  --hb-color-lemon-dark: rgb(100%, 91.5202518964%, 17.0196078431%);
   --hb-color-lemon-dark-rgb:
       255,
       233.3766423358,
       43.4;
   --hb-color-gold: rgb(255, 181, 71);
   --hb-color-gold-rgb: 255, 181, 71;
-  --hb-color-gold-dark: rgb(255, 154.7782608696, 5.8);
+  --hb-color-gold-dark: rgb(100%, 60.6973572038%, 2.2745098039%);
   --hb-color-gold-dark-rgb:
       255,
       154.7782608696,
       5.8;
   --hb-color-amber: rgb(255, 193, 7);
   --hb-color-amber-rgb: 255, 193, 7;
-  --hb-color-amber-dark: rgb(209.6, 157.2, 0);
+  --hb-color-amber-dark: rgb(82.1960784314%, 61.6470588235%, 0%);
   --hb-color-amber-dark-rgb:
       209.6,
       157.2,
       0;
   --hb-color-coral: rgb(255, 127, 80);
   --hb-color-coral-rgb: 255, 127, 80;
-  --hb-color-coral-dark: rgb(255, 77.9942857143, 13);
+  --hb-color-coral-dark: rgb(100%, 30.5859943978%, 5.0980392157%);
   --hb-color-coral-dark-rgb:
       255,
       77.9942857143,
       13;
   --hb-color-orange: rgb(244, 158, 11);
   --hb-color-orange-rgb: 244, 158, 11;
-  --hb-color-orange-dark: rgb(195.2, 126.4, 8.8);
+  --hb-color-orange-dark: rgb(76.5490196078%, 49.568627451%, 3.4509803922%);
   --hb-color-orange-dark-rgb:
       195.2,
       126.4,
       8.8;
   --hb-color-caramel: rgb(199, 122, 53);
   --hb-color-caramel-rgb: 199, 122, 53;
-  --hb-color-caramel-dark: rgb(159.2, 97.6, 42.4);
+  --hb-color-caramel-dark: rgb(62.431372549%, 38.2745098039%, 16.6274509804%);
   --hb-color-caramel-dark-rgb:
       159.2,
       97.6,
       42.4;
   --hb-color-stone: rgb(120, 113, 108);
   --hb-color-stone-rgb: 120, 113, 108;
-  --hb-color-stone-dark: rgb(96, 90.4, 86.4);
+  --hb-color-stone-dark: rgb(37.6470588235%, 35.4509803922%, 33.8823529412%);
   --hb-color-stone-dark-rgb:
       96,
       90.4,
       86.4;
   --hb-color-graphite: rgb(61, 61, 61);
   --hb-color-graphite-rgb: 61, 61, 61;
-  --hb-color-graphite-dark: rgb(48.8, 48.8, 48.8);
+  --hb-color-graphite-dark: rgb(19.137254902%, 19.137254902%, 19.137254902%);
   --hb-color-graphite-dark-rgb:
       48.8,
       48.8,
       48.8;
   --hb-color-charcoal: rgb(75, 85, 99);
   --hb-color-charcoal-rgb: 75, 85, 99;
-  --hb-color-charcoal-dark: rgb(60, 68, 79.2);
+  --hb-color-charcoal-dark: rgb(23.5294117647%, 26.6666666667%, 31.0588235294%);
   --hb-color-charcoal-dark-rgb:
       60,
       68,
       79.2;
   --hb-color-storm: rgb(71, 85, 105);
   --hb-color-storm-rgb: 71, 85, 105;
-  --hb-color-storm-dark: rgb(56.8, 68, 84);
+  --hb-color-storm-dark: rgb(22.2745098039%, 26.6666666667%, 32.9411764706%);
   --hb-color-storm-dark-rgb:
       56.8,
       68,
@@ -898,42 +898,42 @@
       92;
   --hb-color-shadow: rgb(31, 41, 55);
   --hb-color-shadow-rgb: 31, 41, 55;
-  --hb-color-shadow-dark: rgb(24.8, 32.8, 44);
+  --hb-color-shadow-dark: rgb(9.7254901961%, 12.862745098%, 17.2549019608%);
   --hb-color-shadow-dark-rgb:
       24.8,
       32.8,
       44;
   --hb-color-steel: rgb(107, 114, 128);
   --hb-color-steel-rgb: 107, 114, 128;
-  --hb-color-steel-dark: rgb(85.6, 91.2, 102.4);
+  --hb-color-steel-dark: rgb(33.568627451%, 35.7647058824%, 40.1568627451%);
   --hb-color-steel-dark-rgb:
       85.6,
       91.2,
       102.4;
   --hb-color-peach: rgb(255, 188, 154);
   --hb-color-peach-rgb: 255, 188, 154;
-  --hb-color-peach-dark: rgb(255, 133.7366336634, 72.2);
+  --hb-color-peach-dark: rgb(100%, 52.4457386915%, 28.3137254902%);
   --hb-color-peach-dark-rgb:
       255,
       133.7366336634,
       72.2;
   --hb-color-sunset: rgb(251, 113, 133);
   --hb-color-sunset-rgb: 251, 113, 133;
-  --hb-color-sunset-dark: rgb(249.0054794521, 42.1945205479, 72.1671232877);
+  --hb-color-sunset-dark: rgb(97.6492076283%, 16.5468708031%, 28.3008326618%);
   --hb-color-sunset-dark-rgb:
       249.0054794521,
       42.1945205479,
       72.1671232877;
   --hb-color-chartreuse: rgb(167, 244, 50);
   --hb-color-chartreuse-rgb: 167, 244, 50;
-  --hb-color-chartreuse-dark: rgb(139.3777777778, 223.2222222222, 11.9777777778);
+  --hb-color-chartreuse-dark: rgb(54.6579520697%, 87.5381263617%, 4.697167756%);
   --hb-color-chartreuse-dark-rgb:
       139.3777777778,
       223.2222222222,
       11.9777777778;
   --hb-color-jade: rgb(0, 191, 165);
   --hb-color-jade-rgb: 0, 191, 165;
-  --hb-color-jade-dark: rgb(0, 152.8, 132);
+  --hb-color-jade-dark: rgb(0%, 59.9215686275%, 51.7647058824%);
   --hb-color-jade-dark-rgb:
       0,
       152.8,
