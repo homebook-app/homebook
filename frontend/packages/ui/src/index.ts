@@ -1,4 +1,6 @@
 export { default as UiColoredIcon } from './components/UiColoredIcon.vue';
+export { default as UiDetailCard } from './components/UiDetailCard.vue';
+export { default as UiDetailListItem } from './components/UiDetailListItem.vue';
 export { default as UiIcon } from './components/UiIcon.vue';
 export { default as UiPageTitle } from './components/UiPageTitle.vue';
 export { default as UiPictogram } from './components/UiPictogram.vue';
