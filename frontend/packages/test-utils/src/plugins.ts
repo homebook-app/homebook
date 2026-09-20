@@ -1,4 +1,4 @@
-import { primeVueOptions } from '@homebook/ui';
+import { primeVueOptions } from '@homebook/ui/theme';
 import { createPinia, type Pinia } from 'pinia';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';

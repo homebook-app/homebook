@@ -3,6 +3,8 @@ import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import { defaultClientConditions, defaultServerConditions, defineConfig, type ProxyOptions } from 'vite';
 
+import { homebookIconSprites } from '../../packages/ui/vite/index.ts';
+
 // The backend maps its endpoints at the root. nginx strips the /api prefix in production
 // (`proxy_pass http://127.0.0.1:5000/;`), the dev proxy has to do the same.
 const apiProxy: Record<string, ProxyOptions> = {
@@ -14,7 +16,7 @@ const apiProxy: Record<string, ProxyOptions> = {
 };
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), homebookIconSprites()],
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     // Workspace packages are consumed from source, no build step in between

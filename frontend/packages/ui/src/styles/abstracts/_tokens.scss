@@ -28,6 +28,11 @@ $breakpoints: (
 // Radii
 $ui-icon-border-radius: 6px;
 
+// UiIcon / UiPictogram, the former MudBlazor icon sizes
+$icon-size-sm: 1.25rem;
+$icon-size-md: 1.5rem;
+$icon-size-lg: 2.25rem;
+
 // Frosted glass
 $frosted-color: rgb(255, 255, 255); // Base color (RGB)
 $frosted-alpha-min: 0.05; // Alpha for b1
