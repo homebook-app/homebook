@@ -1,3 +1,5 @@
+import '@homebook/ui/styles';
+
 import { primeVueOptions } from '@homebook/ui';
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';

@@ -1,0 +1,44 @@
+@use 'abstracts/media' as *;
+
+// Width utilities based on Bootstrap. `$infix` is empty for the base classes and `sm-`, `md-`, …
+// for the responsive ones: `.w-50`, `.w-md-50`.
+@mixin width-utilities($infix: '') {
+  .w-#{$infix}0 {
+    width: 0%;
+  }
+  .w-#{$infix}25 {
+    width: 25%;
+  }
+  .w-#{$infix}50 {
+    width: 50%;
+  }
+  .w-#{$infix}75 {
+    width: 75%;
+  }
+  .w-#{$infix}100 {
+    width: 100%;
+  }
+  .w-#{$infix}auto {
+    width: auto;
+  }
+}
+
+@include width-utilities;
+
+@each $breakpoint in (sm, md, lg, xl, xxl, xxxl, xxxxl) {
+  @include media-up($breakpoint) {
+    @include width-utilities('#{$breakpoint}-');
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-none {
+  float: none;
+}

@@ -1,0 +1,18 @@
+@use 'abstracts/tokens' as *;
+@use 'abstracts/frosted' as *;
+
+@for $i from 1 through $frosted-steps {
+  $alpha: $frosted-alpha-min + ($i - 1) * $frosted-alpha-step;
+
+  .frosted-b#{$i} {
+    @include frosted-base($alpha);
+
+    &.no-backdrop-blur {
+      backdrop-filter: none;
+    }
+  }
+
+  .frosted-bg-b#{$i} {
+    @include frosted-bg-base($alpha);
+  }
+}

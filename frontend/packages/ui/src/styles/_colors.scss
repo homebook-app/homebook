@@ -1,0 +1,38 @@
+@use 'abstracts/tokens' as *;
+
+$github-color: #24292e;
+$docker-color: #2496ed;
+$ubuntu-color: #e95420;
+
+:root {
+  --#{$hb-prefix}-github-color: #{$github-color};
+  --#{$hb-prefix}-docker-color: #{$docker-color};
+  --#{$hb-prefix}-ubuntu-color: #{$ubuntu-color};
+}
+
+.github-bg {
+  background-color: $github-color;
+  color: #ffffff;
+}
+
+.github-text {
+  color: $github-color;
+}
+
+.docker-bg {
+  background-color: $docker-color;
+  color: #ffffff;
+}
+
+.docker-text {
+  color: $docker-color;
+}
+
+.ubuntu-bg {
+  background-color: $ubuntu-color;
+  color: #ffffff;
+}
+
+.ubuntu-text {
+  color: $ubuntu-color;
+}

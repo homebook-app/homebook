@@ -1,0 +1,22 @@
+// The one rule-emitting stylesheet of the design system, imported once by the app.
+//
+// Everything lands in the `hb` layer. PrimeVue declares the order `primevue, hb`, so these rules
+// win over PrimeVue without `!important`, and a component's scoped (unlayered) style wins over both.
+
+@use 'sass:meta';
+
+@layer hb {
+  @include meta.load-css('variables');
+  @include meta.load-css('theme');
+  @include meta.load-css('base');
+  @include meta.load-css('color-palette');
+  @include meta.load-css('colors');
+  @include meta.load-css('settings-colors');
+  @include meta.load-css('typography');
+  @include meta.load-css('frosted');
+  @include meta.load-css('layout');
+  @include meta.load-css('widgets');
+  @include meta.load-css('wallpaper');
+  // Last, utilities have to win over everything above
+  @include meta.load-css('utilities');
+}

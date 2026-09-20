@@ -1,0 +1,39 @@
+@use 'abstracts/tokens' as *;
+@use 'abstracts/media' as *;
+
+// Floating, rounded chrome above the wallpaper. `--hb-drawer-width` and `--hb-appbar-height`
+// replace the MudBlazor variables of the same meaning, the layout overrides them when it has to.
+:root {
+  --#{$hb-prefix}-drawer-width: 240px;
+  --#{$hb-prefix}-appbar-height: 64px;
+  --#{$hb-prefix}-chrome-border-radius: 12px;
+  --#{$hb-prefix}-chrome-gap: 8px;
+}
+
+.hb-drawer {
+  border-radius: var(--#{$hb-prefix}-chrome-border-radius);
+  margin: var(--#{$hb-prefix}-chrome-gap);
+  height: calc(100vh - (var(--#{$hb-prefix}-chrome-gap) * 2));
+  width: calc(var(--#{$hb-prefix}-drawer-width) - (var(--#{$hb-prefix}-chrome-gap) * 2));
+  top: 0px;
+}
+
+.hb-header-appbar {
+  border-radius: var(--#{$hb-prefix}-chrome-border-radius);
+  margin-top: var(--#{$hb-prefix}-chrome-gap);
+  width: calc(100% - var(--#{$hb-prefix}-chrome-gap) - var(--#{$hb-prefix}-drawer-width));
+}
+
+.hb-footer-appbar {
+  border-radius: var(--#{$hb-prefix}-chrome-border-radius);
+  margin-bottom: var(--#{$hb-prefix}-chrome-gap);
+  margin-right: var(--#{$hb-prefix}-chrome-gap);
+  width: calc(100% - var(--#{$hb-prefix}-chrome-gap) - var(--#{$hb-prefix}-drawer-width));
+}
+
+.hb-main-content {
+  @include media-up(sm) {
+    padding-top: calc(var(--#{$hb-prefix}-appbar-height) + (var(--#{$hb-prefix}-chrome-gap) * 2));
+    padding-bottom: calc(var(--#{$hb-prefix}-appbar-height) + (var(--#{$hb-prefix}-chrome-gap) * 2));
+  }
+}

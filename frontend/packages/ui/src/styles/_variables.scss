@@ -1,0 +1,33 @@
+@use 'abstracts/tokens' as *;
+
+// Mirrors the Sass tokens as custom properties, so components and inline styles can reach them.
+:root {
+  --#{$hb-prefix}-breakpoint-xs: #{$breakpoint-xs};
+  --#{$hb-prefix}-breakpoint-sm: #{$breakpoint-sm};
+  --#{$hb-prefix}-breakpoint-md: #{$breakpoint-md};
+  --#{$hb-prefix}-breakpoint-lg: #{$breakpoint-lg};
+  --#{$hb-prefix}-breakpoint-xl: #{$breakpoint-xl};
+  --#{$hb-prefix}-breakpoint-xxl: #{$breakpoint-xxl};
+  --#{$hb-prefix}-breakpoint-xxxl: #{$breakpoint-xxxl};
+  --#{$hb-prefix}-breakpoint-xxxxl: #{$breakpoint-xxxxl};
+
+  --#{$hb-prefix}-frosted-color: #{$frosted-color};
+  --#{$hb-prefix}-frosted-alpha-min: #{$frosted-alpha-min};
+  --#{$hb-prefix}-frosted-alpha-step: #{$frosted-alpha-step};
+  --#{$hb-prefix}-frosted-blur: #{$frosted-blur};
+  --#{$hb-prefix}-frosted-steps: #{$frosted-steps};
+  --#{$hb-prefix}-frosted-border-alpha: #{$frosted-border-alpha};
+  --#{$hb-prefix}-frosted-gradient-deg: #{$frosted-gradient-deg};
+  --#{$hb-prefix}-frosted-gradient-add: #{$frosted-gradient-add};
+  --#{$hb-prefix}-frosted-inner-shadow-alpha: #{$frosted-inner-shadow-alpha};
+
+  --#{$hb-prefix}-ui-icon-border-radius: #{$ui-icon-border-radius};
+
+  --#{$hb-prefix}-ui-colored-icon-background-opacity: #{$ui-colored-icon-background-opacity};
+  --#{$hb-prefix}-ui-colored-icon-borderradius: #{$ui-colored-icon-borderradius};
+  --#{$hb-prefix}-ui-colored-icon-size: #{$ui-colored-icon-size};
+
+  --#{$hb-prefix}-startmenu-background-icon-size: #{$startmenu-background-icon-size};
+  --#{$hb-prefix}-startmenu-background-icon-opacity: #{$startmenu-background-icon-opacity};
+  --#{$hb-prefix}-startmenu-container-background: #{$startmenu-container-background};
+}

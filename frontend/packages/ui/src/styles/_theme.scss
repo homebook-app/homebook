@@ -1,0 +1,23 @@
+@use 'abstracts/tokens' as *;
+
+// Brand tokens, formerly `HomebookTheme.cs`. The same values live in `src/theme/brand.ts` for the
+// PrimeVue preset; `tokens.spec.ts` keeps both in sync. They are literals on purpose: the `--p-*`
+// variables only exist once PrimeVue has injected its styles, the boot error page has none.
+:root {
+  --#{$hb-prefix}-color-primary: #382960;
+  --#{$hb-prefix}-color-primary-contrast: #ffffff;
+  --#{$hb-prefix}-color-secondary: #5a9690;
+  --#{$hb-prefix}-color-secondary-contrast: #ffffff;
+  --#{$hb-prefix}-color-tertiary: #373f31;
+  --#{$hb-prefix}-color-tertiary-contrast: #ffffff;
+  --#{$hb-prefix}-color-background: #f5f5f5;
+
+  --#{$hb-prefix}-text-primary: #080606;
+  // text-primary with 0.4 added to its HSL lightness, what MudBlazor's ColorLighten(0.4) produced
+  --#{$hb-prefix}-text-secondary: #7d5e5e;
+
+  --#{$hb-prefix}-border-radius-default: 20px;
+
+  --#{$hb-prefix}-font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --#{$hb-prefix}-font-size-caption: 0.8rem;
+}

@@ -1,0 +1,8 @@
+@use 'abstracts/tokens' as *;
+
+body {
+  margin: 0;
+  background-color: var(--#{$hb-prefix}-color-background);
+  color: var(--#{$hb-prefix}-text-primary);
+  font-family: var(--#{$hb-prefix}-font-family);
+}

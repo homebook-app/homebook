@@ -1,5 +1,9 @@
 // Injected into every SCSS block of the app through `css.preprocessorOptions.scss.additionalData`.
 //
-// Declarations only: variables, mixins, functions. Step 04 `@forward`s its declaration-only
-// partials from here. Never add rules - anything that emits CSS would be duplicated into
-// every component. Never import this file as a stylesheet entry either, it would `@use` itself.
+// Declarations only: variables, mixins, functions. Never add rules - anything that emits CSS
+// would be duplicated into every component. Never import this file as a stylesheet entry either,
+// it would `@use` itself. The rule-emitting counterpart is `index.scss`.
+
+@forward 'abstracts/tokens';
+@forward 'abstracts/frosted';
+@forward 'abstracts/media';

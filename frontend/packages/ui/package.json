@@ -5,6 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
+    "./styles": "./src/styles/index.ts",
+    "./styles/index.scss": "./src/styles/index.scss",
     "./styles/abstracts.scss": "./src/styles/abstracts.scss"
   },
   "scripts": {

@@ -1,0 +1,94 @@
+@use 'sass:color';
+@use 'abstracts/tokens' as *;
+
+// Keep in sync with `src/theme/colorNames.ts`, `tokens.spec.ts` checks it.
+$modern-colors: (
+  // brands
+  brand-github: rgb(36, 41, 46),
+  brand-docker: rgb(36, 150, 237),
+  brand-ubuntu: rgb(233, 84, 32),
+  brand-homebook: rgb(147, 229, 189),
+  // colors
+  aqua: rgb(0, 180, 216),
+  amethyst: rgb(147, 51, 234),
+  indigo: rgb(63, 81, 181),
+  denim: rgb(47, 102, 144),
+  cerulean: rgb(81, 73, 211),
+  ocean: rgb(30, 96, 145),
+  purple: rgb(147, 52, 234),
+  azure: rgb(79, 158, 248),
+  lavender: rgb(192, 132, 252),
+  plum: rgb(142, 69, 133),
+  rose: rgb(229, 115, 115),
+  pink: rgb(233, 30, 99),
+  crimson: rgb(220, 38, 38),
+  ruby: rgb(22, 163, 74),
+  spring: rgb(0, 230, 118),
+  apple: rgb(46, 204, 113),
+  lime: rgb(203, 220, 56),
+  emerald: rgb(15, 184, 129),
+  teal: rgb(0, 150, 136),
+  petrol: rgb(0, 128, 128),
+  wine: rgb(114, 47, 55),
+  mulberry: rgb(155, 34, 66),
+  fern: rgb(98, 139, 72),
+  honey: rgb(246, 190, 79),
+  lemon: rgb(255, 241, 118),
+  gold: rgb(255, 181, 71),
+  amber: rgb(255, 193, 7),
+  coral: rgb(255, 127, 80),
+  orange: rgb(244, 158, 11),
+  caramel: rgb(199, 122, 53),
+  stone: rgb(120, 113, 108),
+  graphite: rgb(61, 61, 61),
+  charcoal: rgb(75, 85, 99),
+  storm: rgb(71, 85, 105),
+  smoke: rgb(115, 115, 115),
+  shadow: rgb(31, 41, 55),
+  steel: rgb(107, 114, 128),
+  peach: rgb(255, 188, 154),
+  sunset: rgb(251, 113, 133),
+  chartreuse: rgb(167, 244, 50),
+  jade: rgb(0, 191, 165)
+);
+
+@function rgb-channels($color) {
+  @return '#{color.channel($color, 'red', $space: rgb)}, #{color.channel($color, 'green', $space: rgb)}, #{color.channel($color, 'blue', $space: rgb)}';
+}
+
+:root {
+  @each $name, $color in $modern-colors {
+    $dark: color.scale($color, $lightness: -20%);
+
+    --#{$hb-prefix}-color-#{'' + $name}: #{$color};
+    --#{$hb-prefix}-color-#{'' + $name}-rgb: #{rgb-channels($color)};
+    --#{$hb-prefix}-color-#{'' + $name}-dark: #{$dark};
+    --#{$hb-prefix}-color-#{'' + $name}-dark-rgb: #{rgb-channels($dark)};
+  }
+}
+
+@each $name, $color in $modern-colors {
+  $bg-text-color: #ffffff;
+
+  @if color.channel($color, 'lightness', $space: hsl) > 60 {
+    $bg-text-color: #000000;
+  }
+
+  .ui-color-#{'' + $name} {
+    color: var(--#{$hb-prefix}-color-#{$name});
+  }
+
+  .ui-color-bg-#{'' + $name} {
+    background-color: var(--#{$hb-prefix}-color-#{$name});
+    color: $bg-text-color;
+  }
+
+  .ui-color-bg-gradient-#{'' + $name} {
+    background: linear-gradient(
+      to right,
+      var(--#{$hb-prefix}-color-#{$name}),
+      var(--#{$hb-prefix}-color-#{$name}-dark)
+    );
+    color: $bg-text-color;
+  }
+}

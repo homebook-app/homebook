@@ -1,0 +1,50 @@
+// Sass-side design tokens. Declarations only, nothing in here may emit CSS.
+// Values are ported one to one from the Blazor frontend, do not tidy them up.
+
+$hb-prefix: hb;
+
+// Breakpoints, the first six match the former MudBlazor ladder
+$breakpoint-xs: 0px !default;
+$breakpoint-sm: 600px !default;
+$breakpoint-md: 960px !default;
+$breakpoint-lg: 1280px !default;
+$breakpoint-xl: 1920px !default;
+$breakpoint-xxl: 2560px !default;
+// own breakpoints
+$breakpoint-xxxl: 3840px !default; // 4K and up
+$breakpoint-xxxxl: 5120px !default; // 5K and up
+
+$breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl,
+  xxxl: $breakpoint-xxxl,
+  xxxxl: $breakpoint-xxxxl,
+);
+
+// Radii
+$ui-icon-border-radius: 6px;
+
+// Frosted glass
+$frosted-color: rgb(255, 255, 255); // Base color (RGB)
+$frosted-alpha-min: 0.05; // Alpha for b1
+$frosted-alpha-step: 0.05; // Fixed alpha step per class
+$frosted-blur: 6px; // Blur strength
+$frosted-steps: 10; // Number of classes
+$frosted-border-alpha: 0.05; // Extra alpha for border
+$frosted-gradient-deg: 160deg; // Gradient angle
+$frosted-gradient-add: 0.25; // Extra alpha at gradient end
+$frosted-inner-shadow-alpha: 0.3; // Strength of the white inner shadow
+
+// UiColoredIcon
+$ui-colored-icon-background-opacity: 75%;
+$ui-colored-icon-borderradius: 8px;
+$ui-colored-icon-size: 1.5em;
+
+// Start menu item
+$startmenu-background-icon-size: 140px;
+$startmenu-background-icon-opacity: 0.25;
+$startmenu-container-background: transparent;

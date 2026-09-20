@@ -1,0 +1,13 @@
+@use 'abstracts/tokens' as *;
+
+$settings-color-instance-name: #2563eb;
+$settings-color-default-language: #16a34a;
+$settings-color-user-actions-disable: #ffa726;
+$settings-color-user-actions-delete: #e53935;
+
+:root {
+  --#{$hb-prefix}-settings-color-instance-name: #{$settings-color-instance-name};
+  --#{$hb-prefix}-settings-color-default-language: #{$settings-color-default-language};
+  --#{$hb-prefix}-settings-color-user-actions-disable: #{$settings-color-user-actions-disable};
+  --#{$hb-prefix}-settings-color-user-actions-delete: #{$settings-color-user-actions-delete};
+}

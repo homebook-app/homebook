@@ -3,5 +3,5 @@
   "compilerOptions": {
     "types": ["node", "vitest/globals"]
   },
-  "include": ["vite/**/*.ts", "vitest.config.ts", "../../vitest.shared.ts"]
+  "include": ["vite/**/*.ts", "vitest.config.ts", "../../vitest.shared.ts", "src/styles/tokens.spec.ts"]
 }
