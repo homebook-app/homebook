@@ -1,0 +1,23 @@
+{
+  "name": "homebook-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter '@homebook/web' --if-present dev",
+    "preview": "bun run --filter '@homebook/web' --if-present preview",
+    "build": "bun run --filter '@homebook/*' --if-present build",
+    "test": "bun run --filter '@homebook/*' --if-present test",
+    "test:watch": "bun run --filter '@homebook/*' --if-present test:watch",
+    "test:coverage": "bun run --filter '@homebook/*' --if-present test:coverage",
+    "lint": "bun run --filter '@homebook/*' --if-present lint",
+    "lint:fix": "bun run --filter '@homebook/*' --if-present lint:fix",
+    "format": "bun run --filter '@homebook/*' --if-present format",
+    "typecheck": "bun run --filter '@homebook/*' --if-present typecheck"
+  }
+}

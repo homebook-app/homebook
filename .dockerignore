@@ -24,3 +24,5 @@
 LICENSE
 
 README
+**/dist
+**/coverage

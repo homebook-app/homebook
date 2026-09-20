@@ -78,3 +78,8 @@ resharper_hard_wrap_at_max_line_length = true
 
 # Microsoft .NET properties
 csharp_new_line_before_members_in_object_initializers = true
+
+# Frontend workspace (Vue, TypeScript, SCSS, JSON)
+[frontend/**]
+indent_size = 2
+tab_width = 2

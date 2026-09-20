@@ -1,0 +1,46 @@
+{
+  "lockfileVersion": 2,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "homebook-frontend",
+    },
+    "apps/web": {
+      "name": "@homebook/web",
+      "version": "0.0.0",
+    },
+    "packages/api-client": {
+      "name": "@homebook/api-client",
+      "version": "0.0.0",
+    },
+    "packages/module-finances": {
+      "name": "@homebook/module-finances",
+      "version": "0.0.0",
+    },
+    "packages/module-kitchen": {
+      "name": "@homebook/module-kitchen",
+      "version": "0.0.0",
+    },
+    "packages/module-platform-info": {
+      "name": "@homebook/module-platform-info",
+      "version": "0.0.0",
+    },
+    "packages/ui": {
+      "name": "@homebook/ui",
+      "version": "0.0.0",
+    },
+  },
+  "packages": {
+    "@homebook/api-client": ["@homebook/api-client@workspace:packages/api-client"],
+
+    "@homebook/module-finances": ["@homebook/module-finances@workspace:packages/module-finances"],
+
+    "@homebook/module-kitchen": ["@homebook/module-kitchen@workspace:packages/module-kitchen"],
+
+    "@homebook/module-platform-info": ["@homebook/module-platform-info@workspace:packages/module-platform-info"],
+
+    "@homebook/ui": ["@homebook/ui@workspace:packages/ui"],
+
+    "@homebook/web": ["@homebook/web@workspace:apps/web"],
+  }
+}

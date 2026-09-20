@@ -79,3 +79,8 @@ source/HomeBook.Backend/HomeBook.Backend.json
 *.feature.cs
 
 node_modules/
+
+# frontend build, test and type-check output
+dist/
+coverage/
+*.tsbuildinfo
