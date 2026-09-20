@@ -4,6 +4,6 @@
     "types": ["vite/client", "vitest/globals"]
   },
   "include": ["src/**/*.ts", "src/**/*.vue"],
-  // Compiles SCSS with node APIs, checked by tsconfig.node.json
-  "exclude": ["src/styles/tokens.spec.ts"]
+  // Compile SCSS with node APIs, checked by tsconfig.node.json
+  "exclude": ["src/styles/tokens.spec.ts", "src/components/componentStyles.spec.ts"]
 }

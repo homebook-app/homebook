@@ -6,6 +6,7 @@ export { default as UiNumericGroup } from './components/UiNumericGroup.vue';
 export { default as UiPageTitle } from './components/UiPageTitle.vue';
 export { default as UiPictogram } from './components/UiPictogram.vue';
 export { default as UiProgressItem, type UiProgressSize } from './components/UiProgressItem.vue';
+export { default as UiSettingsItem } from './components/UiSettingsItem.vue';
 export { default as UiStripeBackground } from './components/UiStripeBackground.vue';
 export { default as UiValueCard } from './components/UiValueCard.vue';
 export { default as UiWaveBackground } from './components/UiWaveBackground.vue';
