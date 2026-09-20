@@ -92,6 +92,10 @@
       "dependencies": {
         "@primeuix/themes": "catalog:",
         "primevue": "catalog:",
+        "vue": "catalog:",
+      },
+      "devDependencies": {
+        "@homebook/test-utils": "workspace:*",
       },
     },
   },

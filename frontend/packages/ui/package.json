@@ -8,10 +8,17 @@
     "./styles/abstracts.scss": "./src/styles/abstracts.scss"
   },
   "scripts": {
-    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json && vue-tsc --noEmit -p tsconfig.node.json"
   },
   "dependencies": {
     "@primeuix/themes": "catalog:",
-    "primevue": "catalog:"
+    "primevue": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@homebook/test-utils": "workspace:*"
   }
 }

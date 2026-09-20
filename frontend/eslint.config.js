@@ -36,7 +36,7 @@ export default tseslint.config(
   },
 
   {
-    files: ['**/*.config.{js,ts}', 'vitest.shared.ts'],
+    files: ['**/*.config.{js,ts}', 'vitest.shared.ts', 'packages/ui/vite/**'],
     languageOptions: { globals: globals.node },
   },
 
