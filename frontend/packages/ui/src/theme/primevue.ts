@@ -1,5 +1,6 @@
-import Aura from '@primeuix/themes/aura';
 import type { PrimeVueConfiguration } from 'primevue/config';
+
+import { HomeBookPreset } from './preset';
 
 /**
  * PrimeVue configuration shared by the app and the test helper.
@@ -9,7 +10,7 @@ import type { PrimeVueConfiguration } from 'primevue/config';
  */
 export const primeVueOptions: PrimeVueConfiguration = {
   theme: {
-    preset: Aura,
+    preset: HomeBookPreset,
     options: {
       darkModeSelector: false,
       cssLayer: { name: 'primevue', order: 'primevue, hb' },

@@ -17,6 +17,7 @@
   @include meta.load-css('layout');
   @include meta.load-css('widgets');
   @include meta.load-css('wallpaper');
+  @include meta.load-css('primevue');
   // Last, utilities have to win over everything above
   @include meta.load-css('utilities');
 }

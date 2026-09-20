@@ -1,0 +1,65 @@
+@use 'abstracts/tokens' as *;
+@use 'abstracts/frosted' as *;
+
+// Deviations from the PrimeVue defaults that have no design token in Aura. They reproduce what
+// the MudBlazor overrides of the Blazor frontend were after, not those overrides themselves.
+:root {
+  --#{$hb-prefix}-card-header-padding: 8px 12px;
+  --#{$hb-prefix}-card-content-padding: 16px;
+  --#{$hb-prefix}-card-footer-padding: 8px;
+  --#{$hb-prefix}-fileupload-dropzone-height: 300px;
+  --#{$hb-prefix}-tinted-surface-opacity: 0.7;
+}
+
+// Card: sections are separated by a line on their top edge, the footer is a gray bar that
+// follows the rounded bottom corners.
+.p-card {
+  overflow: hidden;
+
+  .p-card-caption {
+    padding: var(--#{$hb-prefix}-card-header-padding);
+  }
+
+  .p-card-content {
+    padding: var(--#{$hb-prefix}-card-content-padding);
+  }
+
+  .p-card-caption + .p-card-content,
+  .p-card-footer {
+    border-top: 1px solid var(--p-content-border-color);
+  }
+
+  .p-card-footer {
+    padding: var(--#{$hb-prefix}-card-footer-padding);
+    background-color: var(--p-surface-100);
+  }
+
+  &.no-divider {
+    .p-card-content,
+    .p-card-footer {
+      border: none;
+    }
+  }
+}
+
+// File upload: a drop area with a fixed height
+.p-fileupload-content {
+  min-height: var(--#{$hb-prefix}-fileupload-dropzone-height);
+}
+
+// Frosted chrome, `<aside class="frosted">`, optionally tinted with a theme color
+.frosted {
+  @include frosted-bg-base(0.25);
+
+  @each $theme in (primary, secondary, tertiary) {
+    &.hb-theme-#{$theme} {
+      background: rgb(from var(--#{$hb-prefix}-color-#{$theme}) r g b / var(--#{$hb-prefix}-tinted-surface-opacity));
+      color: var(--#{$hb-prefix}-color-#{$theme}-contrast);
+
+      // no inner shadow
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
