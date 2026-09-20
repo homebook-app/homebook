@@ -3,3 +3,23 @@
 .text-dark {
   color: var(--#{$hb-prefix}-text-primary);
 }
+
+// The three MudBlazor `Typo` values the ported components rely on. They are classes rather than
+// per-component declarations because half the design system repeats the same four properties.
+.ui-text-caption {
+  font-size: var(--#{$hb-prefix}-font-size-caption);
+  line-height: var(--#{$hb-prefix}-line-height-caption);
+  letter-spacing: var(--#{$hb-prefix}-letter-spacing-caption);
+}
+
+.ui-text-title {
+  font-size: var(--#{$hb-prefix}-font-size-title);
+  font-weight: var(--#{$hb-prefix}-font-weight-title);
+  line-height: var(--#{$hb-prefix}-line-height-title);
+}
+
+.ui-text-value {
+  font-size: var(--#{$hb-prefix}-font-size-value);
+  font-weight: var(--#{$hb-prefix}-font-weight-value);
+  line-height: var(--#{$hb-prefix}-line-height-value);
+}

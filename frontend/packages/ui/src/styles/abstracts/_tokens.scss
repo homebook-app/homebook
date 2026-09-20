@@ -54,3 +54,41 @@ $ui-colored-icon-padding: 8px; // the former `pa-2` of the frame
 $startmenu-background-icon-size: 140px;
 $startmenu-background-icon-opacity: 0.25;
 $startmenu-container-background: transparent;
+
+// Spacing, the former MudBlazor 4px ladder (`pa-3` was 12px, `me-4` 16px, `gap-5` 20px)
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 28px;
+$space-8: 32px;
+
+// Typography, the former MudBlazor `Typo` values. The caption size lives in `_theme.scss`.
+$font-size-title: 1.25rem; // Typo.h6
+$font-weight-title: 500;
+$line-height-title: 1.6;
+$font-size-value: 1.5rem; // Typo.h5
+$font-weight-value: 500;
+$line-height-value: 1.334;
+$line-height-caption: 1.66;
+$letter-spacing-caption: 0.03333em;
+
+// UiProgressItem, the former MudProgressLinear sizes
+$progress-size-sm: 4px;
+$progress-size-md: 8px;
+$progress-size-lg: 12px;
+
+// UiValueCard, the former `Colors.Gray.Darken2` that the original wrote into an inline style
+$ui-value-card-caption-color: #616161;
+
+// UiDetailListItem, the former `mud-list-item mud-list-item-gutters` plus `gap-5`
+$ui-detail-list-item-padding: $space-2 $space-4;
+$ui-detail-list-item-gap: $space-5;
+
+// UiSettingsItem
+$ui-settings-item-content-width: 240px;
+
+// Start menu item, the former hardcoded offset of the background icon
+$startmenu-background-icon-offset: -25px;

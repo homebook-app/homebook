@@ -35,4 +35,35 @@
   --#{$hb-prefix}-startmenu-background-icon-size: #{$startmenu-background-icon-size};
   --#{$hb-prefix}-startmenu-background-icon-opacity: #{$startmenu-background-icon-opacity};
   --#{$hb-prefix}-startmenu-container-background: #{$startmenu-container-background};
+
+  --#{$hb-prefix}-space-1: #{$space-1};
+  --#{$hb-prefix}-space-2: #{$space-2};
+  --#{$hb-prefix}-space-3: #{$space-3};
+  --#{$hb-prefix}-space-4: #{$space-4};
+  --#{$hb-prefix}-space-5: #{$space-5};
+  --#{$hb-prefix}-space-6: #{$space-6};
+  --#{$hb-prefix}-space-7: #{$space-7};
+  --#{$hb-prefix}-space-8: #{$space-8};
+
+  --#{$hb-prefix}-font-size-title: #{$font-size-title};
+  --#{$hb-prefix}-font-weight-title: #{$font-weight-title};
+  --#{$hb-prefix}-line-height-title: #{$line-height-title};
+  --#{$hb-prefix}-font-size-value: #{$font-size-value};
+  --#{$hb-prefix}-font-weight-value: #{$font-weight-value};
+  --#{$hb-prefix}-line-height-value: #{$line-height-value};
+  --#{$hb-prefix}-line-height-caption: #{$line-height-caption};
+  --#{$hb-prefix}-letter-spacing-caption: #{$letter-spacing-caption};
+
+  --#{$hb-prefix}-progress-size-sm: #{$progress-size-sm};
+  --#{$hb-prefix}-progress-size-md: #{$progress-size-md};
+  --#{$hb-prefix}-progress-size-lg: #{$progress-size-lg};
+
+  --#{$hb-prefix}-ui-value-card-caption-color: #{$ui-value-card-caption-color};
+
+  --#{$hb-prefix}-ui-detail-list-item-padding: #{$ui-detail-list-item-padding};
+  --#{$hb-prefix}-ui-detail-list-item-gap: #{$ui-detail-list-item-gap};
+
+  --#{$hb-prefix}-ui-settings-item-content-width: #{$ui-settings-item-content-width};
+
+  --#{$hb-prefix}-startmenu-background-icon-offset: #{$startmenu-background-icon-offset};
 }
