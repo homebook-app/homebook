@@ -1,3 +1,4 @@
+export { default as UiColoredIcon } from './components/UiColoredIcon.vue';
 export { default as UiIcon } from './components/UiIcon.vue';
 export { default as UiPictogram } from './components/UiPictogram.vue';
 export {
