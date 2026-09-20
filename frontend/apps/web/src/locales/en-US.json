@@ -15,5 +15,10 @@
         "copyName": "Copy the name {name}"
       }
     }
+  },
+  "ui": {
+    "startMenuItem": {
+      "open": "Open"
+    }
   }
 }
