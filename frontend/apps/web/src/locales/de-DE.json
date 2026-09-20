@@ -1,1 +1,19 @@
-{}
+{
+  "settings": {
+    "developer": {
+      "colors": {
+        "title": "Farben",
+        "brandTitle": "Markenfarben",
+        "paletteTitle": "Palette",
+        "gradientTitle": "Verläufe"
+      },
+      "frosted": {
+        "title": "Milchglas"
+      },
+      "icons": {
+        "title": "Icons",
+        "copyName": "Den Namen {name} kopieren"
+      }
+    }
+  }
+}

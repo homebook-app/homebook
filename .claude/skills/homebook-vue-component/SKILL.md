@@ -70,8 +70,8 @@ const formatted = computed(() => props.value.toFixed(2))
 
 <style scoped lang="scss">
 .ui-value-card {
-  border-radius: var(--hb-radius-default);
-  color: var(--hb-color-text-primary);
+  border-radius: var(--hb-border-radius-default);
+  color: var(--hb-text-primary);
 
   &--compact {
     padding: 0;
@@ -95,7 +95,14 @@ Block order is always `<script setup lang="ts">`, then `<template>`, then
 
 - **No hardcoded colors, spacings, radii or font sizes.** Use `--hb-*` tokens or PrimeVue
   tokens.
-- A new token belongs in `@homebook/ui`, never in a single component.
+- A new token belongs in `@homebook/ui`, never in a single component. The Sass side lives in
+  `frontend/packages/ui/src/styles/abstracts/_tokens.scss`, the custom properties in
+  `_variables.scss`, `_theme.scss` and `_layout.scss` next to it. `abstracts.scss` is injected
+  into every SCSS block, so `$breakpoint-*`, `media-up()` and the `frosted-*` mixins are
+  available without an import.
+- Icons: `UiIcon` for the single-color sets (takes `color`), `UiPictogram` for the sets with
+  their own colors (no `color`). For a set that arrives as a string, `isTintableIconSet()`
+  picks the component.
 - CSS layer order is `primevue, hb`. Override PrimeVue inside the `hb` layer - **not** with
   `!important`.
 - Breakpoints: 0 / 600 / 960 / 1280 / 1920 / 2560 / 3840 / 5120.
@@ -129,5 +136,4 @@ Every component with logic - conditional rendering, emitted events, computed val
 
 | Item | Arrives in |
 |---|---|
-| `@homebook/ui` tokens and the concrete `--hb-*` names | step 04 |
 | The `Ui*` component library | step 05 |

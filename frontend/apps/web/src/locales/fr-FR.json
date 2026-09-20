@@ -1,1 +1,19 @@
-{}
+{
+  "settings": {
+    "developer": {
+      "colors": {
+        "title": "Couleurs",
+        "brandTitle": "Couleurs de marque",
+        "paletteTitle": "Palette",
+        "gradientTitle": "Dégradés"
+      },
+      "frosted": {
+        "title": "Verre dépoli"
+      },
+      "icons": {
+        "title": "Icônes",
+        "copyName": "Copier le nom {name}"
+      }
+    }
+  }
+}

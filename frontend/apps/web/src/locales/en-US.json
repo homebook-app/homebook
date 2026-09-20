@@ -1,1 +1,19 @@
-{}
+{
+  "settings": {
+    "developer": {
+      "colors": {
+        "title": "Colors",
+        "brandTitle": "Brand colors",
+        "paletteTitle": "Palette",
+        "gradientTitle": "Gradients"
+      },
+      "frosted": {
+        "title": "Frosted glass"
+      },
+      "icons": {
+        "title": "Icons",
+        "copyName": "Copy the name {name}"
+      }
+    }
+  }
+}

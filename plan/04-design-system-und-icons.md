@@ -116,3 +116,26 @@ Eine Entwicklungsroute, die die komplette Palette, alle zehn Frosted-Stufen und 
 - Keine Anwendungskomponenten, kein Layout, keine Seiten
 - Kein Dark Mode
 - Keine MudBlazor-Überschreibungen portieren
+
+---
+
+## Umsetzungsnotizen
+
+Umgesetzt auf Branch `HB-188`. Abweichungen vom Text oben:
+
+- **Die Palette hat 45 Farben, nicht 44** — vier Marken- und 41 benannte Farben. Die Quelle gewinnt. Die Namen stehen zusätzlich in `src/theme/colorNames.ts`.
+- **Kein `!important` mehr.** Der Bestand brauchte es gegen MudBlazor. Im `hb`-Layer gewinnt man ohnehin gegen `primevue`, und eine wichtige Deklaration innerhalb eines Layers wäre von einem scoped (unlayered) Komponentenstil nicht mehr überschreibbar. Alles andere ist wertgleich: `src/styles/tokens.spec.ts` kompiliert `index.scss` und vergleicht alle `--hb-*`-Properties und die portierten Regeln gegen `wwwroot/css/app.css`. Der Vergleich schaltet sich ab, sobald das Blazor-Frontend entfernt ist.
+- **Aufteilung der Styles:** `abstracts.scss` leitet nur Deklarationen weiter (`abstracts/_tokens`, `_frosted`, `_media`) und wird in jeden SCSS-Block injiziert. `index.scss` ist der einzige regelerzeugende Einstieg, lädt alle Partials per `meta.load-css` in `@layer hb` und wird von der App über `import '@homebook/ui/styles'` eingebunden.
+- **Zusätzliche Partials:** `_theme.scss` (Markenwerte aus `HomebookTheme.cs` als `--hb-*`), `_base.scss` (body), `_primevue.scss` (gewollte Abweichungen ohne Aura-Token: Card-Trennlinien und -Footer, Dropzone-Höhe, getönter Frosted-Drawer). Nav-Menü-xxl und Listen-Eckenrundung folgen mit dem Layout in Schritt 06.
+- **`--mud-*` ersetzt:** `--hb-drawer-width` (240px), `--hb-appbar-height` (64px), `--hb-text-primary`. Radius und Rand des Chromes sind `--hb-chrome-border-radius` und `--hb-chrome-gap`.
+- **Preset:** Primärrampe aus `palette('#382960')`, Surface auf Auras `neutral` (100 = `#f5f5f5`), Radius 20px als eigenes Token `hb.border.radius`, Sekundär/Tertiär als `--p-secondary-*`/`--p-tertiary-*`. Sekundärtext ist `#7d5e5e` — nachgerechnet aus MudBlazors `ColorLighten(0.4)`, noch nicht gegen die laufende Blazor-App geprüft.
+- **Zwei Icon-Komponenten statt einer.** `UiIcon` rendert die einfärbbaren Sätze (`windows11-outline`, `windows11-filled`, `logos`) und hat `color`; `UiPictogram` rendert die Sätze mit eigenen Farben (`windows11-colored`, `glass-morphism`, `liquid-glass-color`) und hat bewusst kein `color`. Die Typen `TintableIconSet`/`MulticolorIconSet` verhindern die Verwechslung, `isTintableIconSet()` entscheidet bei Icons, die zur Laufzeit als Zeichenkette kommen. Beide teilen sich `useIconSprite()`.
+- **Sprites werden inline injiziert, nicht extern referenziert.** Das Vite-Plugin (`@homebook/ui/vite`, `homebookIconSprites()`) stellt je Satz ein virtuelles Modul bereit, das als eigener Lazy-Chunk geladen wird; die Registry fügt das Sprite einmalig ins Dokument ein, gerendert wird `<use href="#hb-<set>-<Name>">`. Grund: `url(#gradient)`, Filter und Masken in extern per `<use>` referenzierten Dateien lösen Browser nicht verlässlich auf. Alle IDs innerhalb eines Icons bekommen das Symbol-Präfix.
+- **viewBox ist nicht überall `0 0 48 48`:** liquid-glass nutzt 32, die Logos 24/48/50, das HomeBook-Logo `0 0 960 1148`. Die jeweils vorhandene viewBox bleibt erhalten.
+- **Die einfarbigen Sätze hatten gar keine `fill`-Attribute.** Das Skript setzt `fill="currentColor"` am Wurzelelement, auch bei den Icons8-Logos. Das HomeBook-Logo (`OwnLogos`) liegt wie geplant im Satz `logos`, behält aber seine Farben.
+- **Farbschemata des Stripe-Hintergrunds liegen in TypeScript** (`stripeSchemes`), nicht mehr als CSS-Variablen auf dem Canvas — der Umweg über `getComputedStyle` samt Polling war ein Blazor-Timing-Workaround. Scroll-, Legenden- und Maus-Code des Originals war nie verdrahtet und ist nicht portiert. Neu: `ResizeObserver` statt einmaliger Größenmessung, Einzelbild bei `prefers-reduced-motion`, CSS-Verlauf als Rückfall ohne WebGL.
+- **`UiWaveBackground`:** `ui-bg-02` entfällt, die Datei `ws25.jpg` gab es nie. Das ungültige `translateX(1)` der Keyframes ist als das ausgeschrieben, was Browser daraus gemacht haben.
+- **`@homebook/ui/theme`** ist ein eigener Einstieg ohne Komponenten. `@homebook/test-utils` nutzt ihn, damit es weder das Vue- noch das Sprite-Plugin braucht. **Für Schritt 05 und später:** ein Workspace, dessen Tests `UiIcon`/`UiPictogram` mounten, nimmt `homebookIconSprites()` in seine Vitest-Konfiguration auf oder stellt über `iconRegistryKey` eine eigene Registry bereit.
+- **Nachweisseite:** `/dev/design-system`, nur bei `import.meta.env.DEV`, im Produktionsbuild nicht enthalten. Die Icon-Sätze laden erst beim Aufklappen. Die i18n-Schlüssel liegen schon am endgültigen Ort (`settings.developer.*`).
+- **`public/wallpaper/**` ist von ESLint und Prettier ausgenommen**, die Dateien sind byte-identisch zum Bestand.
+- **Offen:** der Screenshot-Vergleich gegen die Blazor-Entwicklerseiten und die Sichtprüfung der Gradient-/Filter-/Masken-Icons im Browser.
