@@ -94,6 +94,8 @@
         "@primeuix/themes": "catalog:",
         "primevue": "catalog:",
         "vue": "catalog:",
+        "vue-i18n": "catalog:",
+        "vue-router": "catalog:",
       },
       "devDependencies": {
         "@homebook/test-utils": "workspace:*",
