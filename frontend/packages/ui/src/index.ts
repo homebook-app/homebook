@@ -1,5 +1,6 @@
 export { default as UiColoredIcon } from './components/UiColoredIcon.vue';
 export { default as UiIcon } from './components/UiIcon.vue';
+export { default as UiPageTitle } from './components/UiPageTitle.vue';
 export { default as UiPictogram } from './components/UiPictogram.vue';
 export { default as UiStripeBackground } from './components/UiStripeBackground.vue';
 export { default as UiWaveBackground } from './components/UiWaveBackground.vue';
@@ -10,6 +11,7 @@ export {
   type UseIconSprite,
   type UseIconSpriteOptions,
 } from './composables/useIconSprite';
+export { APP_TITLE, usePageTitle } from './composables/usePageTitle';
 export {
   createIconRegistry,
   getIconRegistry,
