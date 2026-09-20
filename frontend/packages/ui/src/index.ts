@@ -5,6 +5,7 @@ export { default as UiIcon } from './components/UiIcon.vue';
 export { default as UiPageTitle } from './components/UiPageTitle.vue';
 export { default as UiPictogram } from './components/UiPictogram.vue';
 export { default as UiStripeBackground } from './components/UiStripeBackground.vue';
+export { default as UiValueCard } from './components/UiValueCard.vue';
 export { default as UiWaveBackground } from './components/UiWaveBackground.vue';
 export { stripeSchemes, type StripeScheme } from './backgrounds/stripeGradient/colors';
 export {
