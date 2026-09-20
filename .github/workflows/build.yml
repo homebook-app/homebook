@@ -23,15 +23,15 @@ env:
     DOCKER_PLATFORMS: "linux/amd64,linux/arm64"
     VERSION: "1.0.${{ github.run_number }}"
     DOTNET_VERSION: "10.0"
-    FRONTEND_APPSETTINGS_FILE: "./source/HomeBook.Frontend/wwwroot/appsettings.json"
-    BACKEND_APPSETTINGS_FILE: "./source/HomeBook.Backend/appsettings.json"
-    OPENAPI_FILE: "./source/HomeBook.Backend/HomeBook.Backend.json"
-    CLIENT_CSPROJ: "./source/HomeBook.Client/HomeBook.Client.csproj"
-    CLIENT_OUTPUT_DIR: "./source/HomeBook.Client"
+    FRONTEND_APPSETTINGS_FILE: "./backend/HomeBook.Frontend/wwwroot/appsettings.json"
+    BACKEND_APPSETTINGS_FILE: "./backend/HomeBook.Backend/appsettings.json"
+    OPENAPI_FILE: "./backend/HomeBook.Backend/HomeBook.Backend.json"
+    CLIENT_CSPROJ: "./backend/HomeBook.Client/HomeBook.Client.csproj"
+    CLIENT_OUTPUT_DIR: "./backend/HomeBook.Client"
     CLIENT_NAMESPACE: "HomeBook.Client"
     CLIENT_CLASS: "BackendClient"
-    UNIT_TEST_CSPROJ: "./source/HomeBook.UnitTests/HomeBook.UnitTests.csproj"
-    E2E_TEST_CSPROJ: "./source/HomeBook.E2ETests/HomeBook.E2ETests.csproj"
+    UNIT_TEST_CSPROJ: "./backend/HomeBook.UnitTests/HomeBook.UnitTests.csproj"
+    E2E_TEST_CSPROJ: "./backend/HomeBook.E2ETests/HomeBook.E2ETests.csproj"
     WEBSITE_REPOSITORY: "homebook-app/homebook-app.github.io"
     WEBSITE_REPO_PATH: "./website-repo"
     WEBSITE_RELEASES_MARKDOWN_DIR: "app/content/releases"
@@ -213,22 +213,22 @@ jobs:
             #
             #            -   name: clean up nuget licenses
             #                run: |
-            #                    rm source/HomeBook.Backend.Core.Licenses/Licenses.json
-            #                    rm -rf source/HomeBook.Backend.Core.Licenses/Licenses
-            #                    mkdir -p source/HomeBook.Backend.Core.Licenses/Licenses
+            #                    rm backend/HomeBook.Backend.Core.Licenses/Licenses.json
+            #                    rm -rf backend/HomeBook.Backend.Core.Licenses/Licenses
+            #                    mkdir -p backend/HomeBook.Backend.Core.Licenses/Licenses
             #
             #            -   name: generate nuget license index
             #                run: |
-            #                    nuget-license -i ./homebook.slnx --include-transitive --output JsonPretty --file-output source/HomeBook.Backend.Core.Licenses/Licenses.json
+            #                    nuget-license -i ./homebook.slnx --include-transitive --output JsonPretty --file-output backend/HomeBook.Backend.Core.Licenses/Licenses.json
             #
             #            -   name: generate nuget licenses
             #                run: |
-            #                    nuget-license -i ./homebook.slnx --include-transitive -d source/HomeBook.Backend.Core.Licenses/Licenses/
+            #                    nuget-license -i ./homebook.slnx --include-transitive -d backend/HomeBook.Backend.Core.Licenses/Licenses/
             #
             #            -   name: save nuget licenses
             #                run: |
-            #                    git add source/HomeBook.Backend.Core.Licenses/Licenses.json
-            #                    git add source/HomeBook.Backend.Core.Licenses/Licenses/
+            #                    git add backend/HomeBook.Backend.Core.Licenses/Licenses.json
+            #                    git add backend/HomeBook.Backend.Core.Licenses/Licenses/
 
             -   name: update Frontend appsettings.json
                 run: |

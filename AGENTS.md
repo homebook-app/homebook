@@ -8,7 +8,7 @@ Verbindliche Anweisungen für alle Agenten und Menschen, die in diesem Repositor
 
 **HomeBook** ist eine selbst gehostete Web-Anwendung zur Organisation von Haushalt und gemeinsamer Finanzplanung.
 
-- **Backend:** .NET 10, Minimal APIs, modular. Unter `source/HomeBook.Backend*`.
+- **Backend:** .NET 10, Minimal APIs, modular. Unter `backend/HomeBook.Backend*`.
 - **Frontend:** Vue 3 Single-Page-Anwendung. Unter `frontend/`.
 - **Auslieferung:** ein Docker-Image mit zwei Prozessen — nginx auf `:8080` liefert das SPA statisch aus und leitet `/api/` an Kestrel auf `127.0.0.1:5000` weiter.
 - **Datenbanken:** PostgreSQL, MySQL, SQLite.
@@ -39,7 +39,7 @@ Alle Frontend-Befehle aus `frontend/`:
 Backend lokal starten:
 
 ```
-dotnet run --project source/HomeBook.Backend
+dotnet run --project backend/HomeBook.Backend
 ```
 
 Lauscht auf `http://localhost:5032`, API-Referenz unter `/scalar`. Der Vite-Proxy leitet `/api` dorthin.
@@ -134,7 +134,7 @@ bun run lint && bun run typecheck && bun run test && bun run build
 Bei Änderungen am Backend zusätzlich:
 
 ```
-dotnet build homebook.slnx && dotnet test source/HomeBook.UnitTests/HomeBook.UnitTests.csproj
+dotnet build homebook.slnx && dotnet test backend/HomeBook.UnitTests/HomeBook.UnitTests.csproj
 ```
 
 ---
@@ -162,7 +162,7 @@ Wann welcher zu laden ist:
 | **`vue-best-practices`** | **Bei jeder Arbeit an Vue-Code.** Sobald eine `.vue`-Datei, ein Composable, ein Pinia-Store, eine Router-Konfiguration oder Vite-mit-Vue im Spiel ist. Deckt Composition API mit `<script setup>`, Reaktivität, Slots, Transitions, asynchrone Komponenten und Performance-Muster ab. Die Standards dieses Repositories (Composition API, TypeScript, keine Options API) decken sich mit dem Skill — wo er etwas genauer sagt, gilt er. |
 | **`ui-ux-pro-max`** | Wenn eine Oberfläche **entworfen, umgebaut oder überprüft** wird: neue Seite, neue Komponente, Layoutfrage, Responsive-Verhalten, Zugänglichkeit, Interaktions- und Ladezustände, Diagramme. Nicht laden für reine Logik-, API- oder Infrastrukturarbeit. Besonders hilfreich für den Zugänglichkeits- und Interaktionsteil (Kontrast, Zielgrößen, Tastaturbedienung) — dort hat das Projekt heute die größten Lücken. |
 | **`frontend-design`** | Nur wenn **gestalterisch neu entschieden** wird, also bei einer Oberfläche ohne Vorbild. **Beim Nachbau bestehender Seiten nicht laden** — die visuelle Richtung steht bereits fest, sie kommt aus den Token in `@homebook/ui` und dem Blazor-Bestand. Der Skill drängt bewusst zu eigenständigen, abweichenden Gestaltungsentscheidungen; das ist bei einer 1:1-Portierung genau falsch. |
-| **`dotnet-best-practices`** | Bei Arbeit an C#-Code unter `source/`, etwa dem OpenAPI-Transformer oder Backend-Tests. Für Frontend-Arbeit irrelevant. |
+| **`dotnet-best-practices`** | Bei Arbeit an C#-Code unter `backend/`, etwa dem OpenAPI-Transformer oder Backend-Tests. Für Frontend-Arbeit irrelevant. |
 
 Einen bezogenen Skill hinzufügen oder aktualisieren:
 
@@ -200,7 +200,7 @@ frontend/
   packages/module-kitchen/     # Rezepte, Speiseplan
   packages/module-finances/    # Sparziele
   packages/module-platform-info/
-source/                        # .NET-Backend und der C#-Client
+backend/                       # .NET-Backend und der C#-Client
 scripts/
   generate-openapi.sh          # vollständige OpenAPI-Spezifikation erzeugen
   generate-clients.sh          # C#- und TypeScript-Client daraus generieren

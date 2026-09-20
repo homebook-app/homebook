@@ -20,7 +20,7 @@ Schritt 01 hat die Regeln geschrieben, bevor es Code gab. Jetzt gegen die Wirkli
 - **Stimmen alle Befehle?** Jeden Befehl in `AGENTS.md` einmal ausführen. Was nicht funktioniert oder nicht mehr existiert, korrigieren.
 - **Fehlen Regeln?** Alles, worüber während der Umsetzung entschieden werden musste und was in keiner Regel stand, gehört jetzt hinein. Typische Kandidaten: Fehlerbehandlung und Toasts, Ladezustände, Formularvalidierung, Umgang mit optionalen Backend-Feldern, wo Attrappen-Daten liegen dürfen und wie sie gekennzeichnet werden.
 - **Sind Regeln überflüssig?** Was nie gegriffen hat oder sich als hinderlich erwiesen hat, streichen. Eine Regel, an die sich niemand hält, schadet mehr als keine.
-- Verweise auf `source/HomeBook.Frontend*` entfernen — die Projekte gibt es nicht mehr.
+- Verweise auf `backend/HomeBook.Frontend*` entfernen — die Projekte gibt es nicht mehr.
 - Die Verbotsliste aktualisieren: „keine Blazor-Dateien anfassen" ist erledigt, „keine Änderung an `nginx.conf`" bleibt.
 
 ### 2. Projekteigene Skills nachziehen

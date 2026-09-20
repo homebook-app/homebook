@@ -17,7 +17,7 @@ Die Startseite und alle 15 Einstellungsrouten. Das ist der größte Block an Sei
 
 ### 1. Startseite — `/`
 
-Vorlage `source/HomeBook.Frontend/Pages/Start.razor`.
+Vorlage `backend/HomeBook.Frontend/Pages/Start.razor`.
 
 - Kachelraster aus den `startMenuItems` aller registrierten Module, gerendert mit `UiStartMenuItem`
 - Die Kacheln sind datengetrieben: Titel, Untertitel, Ziel-URL, Icon und Farbe kommen aus der Modul-Registrierung, nicht aus der Seite
@@ -25,7 +25,7 @@ Vorlage `source/HomeBook.Frontend/Pages/Start.razor`.
 
 ### 2. Einstellungsnavigation
 
-Vorlage `source/HomeBook.Frontend/Pages/Settings/SettingsNavMenu.razor`.
+Vorlage `backend/HomeBook.Frontend/Pages/Settings/SettingsNavMenu.razor`.
 
 Im Bestand wird sie in jeder Einstellungsseite einzeln eingebunden. In Vue besser als **verschachteltes Layout** unter `/Settings` lösen, damit sie einmal existiert.
 

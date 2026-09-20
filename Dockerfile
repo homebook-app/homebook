@@ -24,14 +24,14 @@ COPY . .
 # Restore dependenciesok
 #RUN dotnet tool install --global Microsoft.OpenApi.Kiota
 #ENV PATH="$PATH:/root/.dotnet/tools"
-RUN dotnet restore "source/HomeBook.Backend/HomeBook.Backend.csproj"
-RUN dotnet restore "source/HomeBook.Frontend/HomeBook.Frontend.csproj"
+RUN dotnet restore "backend/HomeBook.Backend/HomeBook.Backend.csproj"
+RUN dotnet restore "backend/HomeBook.Frontend/HomeBook.Frontend.csproj"
 
 # Publish Blazor frontend
-RUN dotnet publish "source/HomeBook.Frontend/HomeBook.Frontend.csproj" -c "$BUILD_CONFIGURATION" -o /frontend_dist
+RUN dotnet publish "backend/HomeBook.Frontend/HomeBook.Frontend.csproj" -c "$BUILD_CONFIGURATION" -o /frontend_dist
 
 # Publish backend
-RUN dotnet publish "source/HomeBook.Backend/HomeBook.Backend.csproj" -c "$BUILD_CONFIGURATION" -o /backend_dist /p:UseAppHost=false
+RUN dotnet publish "backend/HomeBook.Backend/HomeBook.Backend.csproj" -c "$BUILD_CONFIGURATION" -o /backend_dist /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 ARG APP_UID=21001
@@ -83,10 +83,10 @@ WORKDIR /opt/homebook
 
 RUN chown -R $APP_UID /opt/homebook
 
-ARG FRONTEND_APPSETTINGS_FILE="./source/HomeBook.Frontend/wwwroot/appsettings.json"
+ARG FRONTEND_APPSETTINGS_FILE="./backend/HomeBook.Frontend/wwwroot/appsettings.json"
 COPY $FRONTEND_APPSETTINGS_FILE /usr/share/nginx/html/wwwroot/appsettings.json
 
-ARG BACKEND_APPSETTINGS_FILE="./source/HomeBook.Backend/appsettings.json"
+ARG BACKEND_APPSETTINGS_FILE="./backend/HomeBook.Backend/appsettings.json"
 COPY $BACKEND_APPSETTINGS_FILE /opt/homebook/appsettings.json
 
 # Copy and make docker-entrypoint.sh executable

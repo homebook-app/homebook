@@ -17,12 +17,12 @@ Dieser Schritt entscheidet darüber, ob die App am Ende aussieht wie vorher. Er 
 
 | Was | Wo |
 |---|---|
-| Farbthema, Radius, Typografie | `source/HomeBook.Frontend/Themes/HomebookTheme.cs` |
-| Alle SCSS-Quellen (45 Partials) | `source/HomeBook.Frontend/Styles/` |
-| Einstiegspunkt | `source/HomeBook.Frontend/Styles/app.scss` |
-| Kompiliertes Ergebnis zum Abgleich | `source/HomeBook.Frontend/wwwroot/css/app.css` |
-| Icons als C#-Konstanten | `source/HomeBook.Frontend.Core/Icons/` |
-| Dynamische Wallpaper | `source/HomeBook.Frontend/wwwroot/wallpaper/` |
+| Farbthema, Radius, Typografie | `backend/HomeBook.Frontend/Themes/HomebookTheme.cs` |
+| Alle SCSS-Quellen (45 Partials) | `backend/HomeBook.Frontend/Styles/` |
+| Einstiegspunkt | `backend/HomeBook.Frontend/Styles/app.scss` |
+| Kompiliertes Ergebnis zum Abgleich | `backend/HomeBook.Frontend/wwwroot/css/app.css` |
+| Icons als C#-Konstanten | `backend/HomeBook.Frontend.Core/Icons/` |
+| Dynamische Wallpaper | `backend/HomeBook.Frontend/wwwroot/wallpaper/` |
 
 ---
 
@@ -67,16 +67,16 @@ Der Bestand lädt Roboto von Google Fonts. Für eine selbst gehostete Anwendung 
 
 ### 4. Hintergründe portieren
 
-- `UiStripeBackground.vue` — Canvas mit animiertem Gradient. Logik aus `source/HomeBook.Frontend/Components/UiStripeBackground.razor.js`, die drei Farbschemata (Noctara, Nerion, Frosted) aus `Styles/components/_ui-stripe-background.scss`. Das JS-Interop-Muster mit `init`/`disconnect` wird zu `onMounted`/`onUnmounted`.
+- `UiStripeBackground.vue` — Canvas mit animiertem Gradient. Logik aus `backend/HomeBook.Frontend/Components/UiStripeBackground.razor.js`, die drei Farbschemata (Noctara, Nerion, Frosted) aus `Styles/components/_ui-stripe-background.scss`. Das JS-Interop-Muster mit `init`/`disconnect` wird zu `onMounted`/`onUnmounted`.
 - `UiWaveBackground.vue` — reines CSS aus `Styles/components/_ui-wave-background.scss`: Gradient-Animation über 150 s, drei gestapelte Wellen mit 30/54/60 s Dauer, Deckkraft 0,8/0,8/0,9, `border-radius: 1000% 1000% 0 0`.
-- Die drei dynamischen Wallpaper aus `source/HomeBook.Frontend/wwwroot/wallpaper/{ember_lines,ocean_waves,tide_cells}/` **unverändert** nach `frontend/apps/web/public/wallpaper/` kopieren. Es ist eigenständiges Vanilla-JS in einem iframe; die Layout-Logik in Schritt 06 erwartet genau die Pfade `/wallpaper/<name>/index.html`. Ebenso die Vorschaubilder aus `wwwroot/img/dynwallpaper_thumbs/`.
+- Die drei dynamischen Wallpaper aus `backend/HomeBook.Frontend/wwwroot/wallpaper/{ember_lines,ocean_waves,tide_cells}/` **unverändert** nach `frontend/apps/web/public/wallpaper/` kopieren. Es ist eigenständiges Vanilla-JS in einem iframe; die Layout-Logik in Schritt 06 erwartet genau die Pfade `/wallpaper/<name>/index.html`. Ebenso die Vorschaubilder aus `wwwroot/img/dynwallpaper_thumbs/`.
 - Statische Hintergrundbilder aus `wwwroot/img/bg/` übernehmen.
 
 ### 5. Icons extrahieren
 
 `scripts/extract-icons.ts`, einmalig auszuführen, Ergebnis wird eingecheckt:
 
-- Parst die Dateien in `source/HomeBook.Frontend.Core/Icons/` und zieht je Konstante das SVG-Markup heraus
+- Parst die Dateien in `backend/HomeBook.Frontend.Core/Icons/` und zieht je Konstante das SVG-Markup heraus
 - Schreibt nach `frontend/packages/ui/src/icons/<set>/<Name>.svg` mit den Set-Bezeichnern `windows11-outline`, `windows11-filled`, `windows11-colored`, `glass-morphism`, `liquid-glass-color`, `logos`
 - Dateinamen entsprechen exakt den C#-Konstantennamen, damit die Zuordnung nachvollziehbar bleibt
 - Normalisiert das Markup: `viewBox="0 0 48 48"` beibehalten, feste `width`/`height` entfernen, bei den einfarbigen Sätzen (`windows11-outline`, `windows11-filled`) Füllfarben auf `currentColor` setzen. Die farbigen Sätze behalten ihre Farben.

@@ -1,43 +1,43 @@
 <Solution>
   <Folder Name="/Backend/">
-    <Project Path="source/HomeBook.Backend.Modules.Abstractions/HomeBook.Backend.Modules.Abstractions.csproj" />
-    <Project Path="source\HomeBook.Backend.Abstractions\HomeBook.Backend.Abstractions.csproj" />
-    <Project Path="source\HomeBook.Backend.DTOs\HomeBook.Backend.DTOs.csproj" />
-    <Project Path="source\HomeBook.Backend\HomeBook.Backend.csproj" />
+    <Project Path="backend/HomeBook.Backend.Modules.Abstractions/HomeBook.Backend.Modules.Abstractions.csproj" />
+    <Project Path="backend\HomeBook.Backend.Abstractions\HomeBook.Backend.Abstractions.csproj" />
+    <Project Path="backend\HomeBook.Backend.DTOs\HomeBook.Backend.DTOs.csproj" />
+    <Project Path="backend\HomeBook.Backend\HomeBook.Backend.csproj" />
   </Folder>
   <Folder Name="/Backend/Core/">
-    <Project Path="source/HomeBook.Backend.Core.Modules/HomeBook.Backend.Core.Modules.csproj" />
-    <Project Path="source/HomeBook.Backend.Core.Search/HomeBook.Backend.Core.Search.csproj" />
-    <Project Path="source/HomeBook.Backend.Core.Storage/HomeBook.Backend.Core.Storage.csproj" />
-    <Project Path="source\HomeBook.Backend.Core.Account\HomeBook.Backend.Core.Account.csproj" />
-    <Project Path="source\HomeBook.Backend.Core.DataProvider\HomeBook.Backend.Core.DataProvider.csproj" />
-    <Project Path="source\HomeBook.Backend.Core.Licenses\HomeBook.Backend.Core.Licenses.csproj" />
-    <Project Path="source\Homebook.Backend.Core.Setup\Homebook.Backend.Core.Setup.csproj" />
-    <Project Path="source\HomeBook.Backend.Core\HomeBook.Backend.Core.csproj" />
+    <Project Path="backend/HomeBook.Backend.Core.Modules/HomeBook.Backend.Core.Modules.csproj" />
+    <Project Path="backend/HomeBook.Backend.Core.Search/HomeBook.Backend.Core.Search.csproj" />
+    <Project Path="backend/HomeBook.Backend.Core.Storage/HomeBook.Backend.Core.Storage.csproj" />
+    <Project Path="backend\HomeBook.Backend.Core.Account\HomeBook.Backend.Core.Account.csproj" />
+    <Project Path="backend\HomeBook.Backend.Core.DataProvider\HomeBook.Backend.Core.DataProvider.csproj" />
+    <Project Path="backend\HomeBook.Backend.Core.Licenses\HomeBook.Backend.Core.Licenses.csproj" />
+    <Project Path="backend\Homebook.Backend.Core.Setup\Homebook.Backend.Core.Setup.csproj" />
+    <Project Path="backend\HomeBook.Backend.Core\HomeBook.Backend.Core.csproj" />
   </Folder>
   <Folder Name="/Backend/Data/">
-    <Project Path="source\HomeBook.Backend.Data.Mysql\HomeBook.Backend.Data.Mysql.csproj" />
-    <Project Path="source\HomeBook.Backend.Data.PostgreSql\HomeBook.Backend.Data.PostgreSql.csproj" />
-    <Project Path="source\HomeBook.Backend.Data.Sqlite\HomeBook.Backend.Data.Sqlite.csproj" />
-    <Project Path="source\HomeBook.Backend.Data\HomeBook.Backend.Data.csproj" />
+    <Project Path="backend\HomeBook.Backend.Data.Mysql\HomeBook.Backend.Data.Mysql.csproj" />
+    <Project Path="backend\HomeBook.Backend.Data.PostgreSql\HomeBook.Backend.Data.PostgreSql.csproj" />
+    <Project Path="backend\HomeBook.Backend.Data.Sqlite\HomeBook.Backend.Data.Sqlite.csproj" />
+    <Project Path="backend\HomeBook.Backend.Data\HomeBook.Backend.Data.csproj" />
   </Folder>
   <Folder Name="/Backend/Modules/">
-    <Project Path="source/HomeBook.Backend.Module.Finances/HomeBook.Backend.Module.Finances.csproj" />
-    <Project Path="source/HomeBook.Backend.Module.Kitchen/HomeBook.Backend.Module.Kitchen.csproj" />
+    <Project Path="backend/HomeBook.Backend.Module.Finances/HomeBook.Backend.Module.Finances.csproj" />
+    <Project Path="backend/HomeBook.Backend.Module.Kitchen/HomeBook.Backend.Module.Kitchen.csproj" />
   </Folder>
   <Folder Name="/Frontend/">
-    <Project Path="source\HomeBook.Client\HomeBook.Client.csproj" />
-    <Project Path="source\HomeBook.Frontend.Abstractions\HomeBook.Frontend.Abstractions.csproj" />
-    <Project Path="source\HomeBook.Frontend.Core\HomeBook.Frontend.Core.csproj" />
-    <Project Path="source\HomeBook.Frontend.Modules.Abstractions\HomeBook.Frontend.Modules.Abstractions.csproj" />
-    <Project Path="source\HomeBook.Frontend.Services\HomeBook.Frontend.Services.csproj" />
-    <Project Path="source\HomeBook.Frontend.UI\HomeBook.Frontend.UI.csproj" />
-    <Project Path="source\HomeBook.Frontend\HomeBook.Frontend.csproj" />
+    <Project Path="backend\HomeBook.Client\HomeBook.Client.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Abstractions\HomeBook.Frontend.Abstractions.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Core\HomeBook.Frontend.Core.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Modules.Abstractions\HomeBook.Frontend.Modules.Abstractions.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Services\HomeBook.Frontend.Services.csproj" />
+    <Project Path="backend\HomeBook.Frontend.UI\HomeBook.Frontend.UI.csproj" />
+    <Project Path="backend\HomeBook.Frontend\HomeBook.Frontend.csproj" />
   </Folder>
   <Folder Name="/Frontend/Modules/">
-    <Project Path="source\HomeBook.Frontend.Module.Finances\HomeBook.Frontend.Module.Finances.csproj" />
-    <Project Path="source\HomeBook.Frontend.Module.Kitchen\HomeBook.Frontend.Module.Kitchen.csproj" />
-    <Project Path="source\HomeBook.Frontend.Module.PlatformInfo\HomeBook.Frontend.Module.PlatformInfo.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Module.Finances\HomeBook.Frontend.Module.Finances.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Module.Kitchen\HomeBook.Frontend.Module.Kitchen.csproj" />
+    <Project Path="backend\HomeBook.Frontend.Module.PlatformInfo\HomeBook.Frontend.Module.PlatformInfo.csproj" />
   </Folder>
   <Folder Name="/Solution/">
     <File Path="LICENSE" />
@@ -70,6 +70,6 @@
     <File Path=".github\workflows\pull-request.yml" />
   </Folder>
   <Folder Name="/Tests/">
-    <Project Path="source\HomeBook.UnitTests\HomeBook.UnitTests.csproj" />
+    <Project Path="backend\HomeBook.UnitTests\HomeBook.UnitTests.csproj" />
   </Folder>
 </Solution>

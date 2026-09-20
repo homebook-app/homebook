@@ -18,7 +18,7 @@ Das Package `@homebook/module-kitchen` mit Rezeptverwaltung, Wochen-Speiseplan, 
 | Bereich | Stand im Bestand |
 |---|---|
 | **Rezepte** | Vollständig gegen das Backend implementiert. Wird 1:1 portiert. |
-| **Wochen-Speiseplan** | **Reine Attrappe.** `source/HomeBook.Frontend.Module.Kitchen/Pages/MealPlan/PlanOverview.razor.cs` erzeugt die Daten im Code (der Kommentar lautet `// Simulate data fetching`) mit fest eingetragenen deutschen Rezeptnamen. Es gibt **keine** Backend-Endpunkte für Speisepläne. |
+| **Wochen-Speiseplan** | **Reine Attrappe.** `backend/HomeBook.Frontend.Module.Kitchen/Pages/MealPlan/PlanOverview.razor.cs` erzeugt die Daten im Code (der Kommentar lautet `// Simulate data fetching`) mit fest eingetragenen deutschen Rezeptnamen. Es gibt **keine** Backend-Endpunkte für Speisepläne. |
 | **Vorratskammer** | Platzhalter mit einer Überschrift. |
 
 Der Speiseplan wird deshalb als **Attrappe portiert**: gleiche Darstellung, gleiche Interaktion, Daten weiterhin clientseitig. Es wird **kein** Backend dafür gebaut — das wäre ein eigenes Vorhaben und sprengt die Migration.
@@ -72,7 +72,7 @@ Platzhalter. Route und Start-Kachel bleiben, damit Navigation und Verlinkung unv
 
 ### 6. Modulregistrierung
 
-Vorlage `source/HomeBook.Frontend.Module.Kitchen/Module.cs`.
+Vorlage `backend/HomeBook.Frontend.Module.Kitchen/Module.cs`.
 
 - Schlüssel `homebook.kitchen`, Name und Beschreibung aus dem Modul-Katalog, Icon `glass-morphism/Tableware`
 - Drei Start-Kacheln, Farben und Icons exakt wie im Bestand:

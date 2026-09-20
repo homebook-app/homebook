@@ -18,7 +18,7 @@ Noch keine Gestaltung, keine Seiten, keine Geschäftslogik.
 ### 1. App-Gerüst `frontend/apps/web`
 
 - Vite mit `@vitejs/plugin-vue`
-- `index.html` mit `lang`-Attribut, Viewport-Meta wie im Bestand (`width=device-width, initial-scale=1.0`), Favicon, Web-App-Manifest und Apple-Touch-Icons. Vorlage: `source/HomeBook.Frontend/wwwroot/index.html` und `manifest.webmanifest` (Name `HomeBook`, `display: standalone`, `theme_color: #03173d`, Icons 192 und 512).
+- `index.html` mit `lang`-Attribut, Viewport-Meta wie im Bestand (`width=device-width, initial-scale=1.0`), Favicon, Web-App-Manifest und Apple-Touch-Icons. Vorlage: `backend/HomeBook.Frontend/wwwroot/index.html` und `manifest.webmanifest` (Name `HomeBook`, `display: standalone`, `theme_color: #03173d`, Icons 192 und 512).
 - `src/main.ts`, `src/App.vue`
 - Ordnerstruktur anlegen: `src/router/`, `src/layouts/`, `src/pages/`, `src/stores/`, `src/composables/`, `src/locales/`
 - Kein Service Worker — der Bestand hat keinen, und Offline-Betrieb ist nicht Teil dieser Migration
@@ -38,7 +38,7 @@ Noch keine Gestaltung, keine Seiten, keine Geschäftslogik.
 
 ### 4. Laufzeitkonfiguration
 
-`frontend/apps/web/public/appsettings.json` in **exakt der heutigen Struktur** anlegen — Vorlage `source/HomeBook.Frontend/wwwroot/appsettings.json`:
+`frontend/apps/web/public/appsettings.json` in **exakt der heutigen Struktur** anlegen — Vorlage `backend/HomeBook.Frontend/wwwroot/appsettings.json`:
 
 ```json
 {

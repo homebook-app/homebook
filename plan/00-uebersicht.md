@@ -9,8 +9,8 @@
 
 HomeBook ist eine selbst-gehostete Haushalts-App. Das Repository enthält:
 
-- ein **.NET 10 Backend** (Minimal APIs, modular) unter `source/HomeBook.Backend*`
-- ein **Blazor-WebAssembly-Frontend** unter `source/HomeBook.Frontend*`
+- ein **.NET 10 Backend** (Minimal APIs, modular) unter `backend/HomeBook.Backend*`
+- ein **Blazor-WebAssembly-Frontend** unter `backend/HomeBook.Frontend*`
 
 Beide werden in **ein Docker-Image** gepackt: nginx lauscht auf `:8080`, liefert das SPA statisch aus und proxied `/api/` an Kestrel auf `127.0.0.1:5000`.
 
@@ -60,6 +60,7 @@ frontend/
     module-kitchen/            # @homebook/module-kitchen
     module-finances/           # @homebook/module-finances
     module-platform-info/      # @homebook/module-platform-info
+backend/                       # das .NET-Backend, der C#-Client und die Tests
 scripts/
   generate-openapi.sh
   generate-clients.sh
@@ -258,7 +259,7 @@ Das Backend hat **keine** Lokalisierungsinfrastruktur. Fehlermeldungen sind hart
 
 ### Design-Grundlagen
 
-Quelle: `source/HomeBook.Frontend/Styles/` (45 SCSS-Partials) und `source/HomeBook.Frontend/Themes/HomebookTheme.cs`.
+Quelle: `backend/HomeBook.Frontend/Styles/` (45 SCSS-Partials) und `backend/HomeBook.Frontend/Themes/HomebookTheme.cs`.
 
 | Token | Wert |
 |---|---|
@@ -286,7 +287,7 @@ Prägende, nicht-generische Elemente — die müssen sitzen:
 
 ### Icons
 
-Aktuell ~1,1 MB SVG-Markup als C#-Konstanten in `source/HomeBook.Frontend.Core/Icons/`:
+Aktuell ~1,1 MB SVG-Markup als C#-Konstanten in `backend/HomeBook.Frontend.Core/Icons/`:
 
 | Datei | Set-Bezeichner neu |
 |---|---|
@@ -305,10 +306,10 @@ Alle 24×24 mit `viewBox="0 0 48 48"`. Ab Schritt 04 sind einzelne `.svg`-Dateie
 
 | Datei | Keys |
 |---|---|
-| `source/HomeBook.Frontend.UI/Resources/LocalizationStrings*.resx` | 254 |
-| `source/HomeBook.Frontend.Module.Kitchen/Resources/Strings*.resx` | 53 |
-| `source/HomeBook.Frontend.Module.Finances/Resources/Strings*.resx` | 41 |
-| `source/HomeBook.Frontend.Module.PlatformInfo/Resources/Strings*.resx` | 2 |
+| `backend/HomeBook.Frontend.UI/Resources/LocalizationStrings*.resx` | 254 |
+| `backend/HomeBook.Frontend.Module.Kitchen/Resources/Strings*.resx` | 53 |
+| `backend/HomeBook.Frontend.Module.Finances/Resources/Strings*.resx` | 41 |
+| `backend/HomeBook.Frontend.Module.PlatformInfo/Resources/Strings*.resx` | 2 |
 
 Varianten: neutral, `de-DE`, `en-us`, `fr-FR`. Die Krücke in `LocalizationCultureMapper.cs`, die `en-US` auf ein nicht existierendes `en-EN` abbildet, entfällt ersatzlos — neu gilt schlicht `en-US`.
 

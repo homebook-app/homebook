@@ -13,7 +13,7 @@ Die wiederverwendbaren Präsentationskomponenten des Bestands nach `@homebook/ui
 
 ## Zu portierende Komponenten
 
-### Design-System — Quelle `source/HomeBook.Frontend.UI/Components/`
+### Design-System — Quelle `backend/HomeBook.Frontend.UI/Components/`
 
 Jede liegt als `.razor` plus `.razor.cs` vor. Die Logik steht in der `.cs`, das Markup in der `.razor`.
 
@@ -28,7 +28,7 @@ Jede liegt als `.razor` plus `.razor.cs` vor. Die Logik steht in der `.cs`, das 
 | `UiProgressItem` | beschrifteter Fortschrittsbalken mit Akzentfarbe. Verwendet bei Speicherbelegung und Sparzielen. |
 | `UiNumericGroup` | numerisches Eingabefeld mit Minus- und Plus-Schaltfläche. Im Original generisch über `T` — in TypeScript als `number` mit optionalen `min`, `max`, `step`. |
 
-### App-nahe Komponenten — Quelle `source/HomeBook.Frontend/Components/`
+### App-nahe Komponenten — Quelle `backend/HomeBook.Frontend/Components/`
 
 | Komponente | Zweck |
 |---|---|
@@ -39,7 +39,7 @@ Jede liegt als `.razor` plus `.razor.cs` vor. Die Logik steht in der `.cs`, das 
 | `UiWidgetContainer` | Hülle, die ein Widget gemäß seiner Größe dimensioniert |
 | `UiWidgetList` | einfacher Container für eine Widget-Liste |
 
-Zugehörige Stile liegen in `source/HomeBook.Frontend/Styles/components/_ui-*.scss` und wandern als `<style scoped lang="scss">` in die jeweilige Komponente. Token bleiben in `@homebook/ui`.
+Zugehörige Stile liegen in `backend/HomeBook.Frontend/Styles/components/_ui-*.scss` und wandern als `<style scoped lang="scss">` in die jeweilige Komponente. Token bleiben in `@homebook/ui`.
 
 ### Was bewusst nicht portiert wird
 

@@ -15,12 +15,12 @@ Die beiden Seiten, die eine frische Installation zuerst sieht: den Ersteinrichtu
 
 | Was | Wo |
 |---|---|
-| Anmeldeseite | `source/HomeBook.Frontend/Pages/Account/Login.razor` und `.razor.cs` |
-| Assistenten-Hülle | `source/HomeBook.Frontend/Pages/Setup/SetupExperiance.razor` |
-| Schrittleiste und Inhalt | `source/HomeBook.Frontend/Pages/Setup/UISetupStepper.razor`, `UISetupContent.razor` |
-| Die sieben Schritte | `source/HomeBook.Frontend/Setup/SetupSteps/` |
-| Schrittreihenfolge | `source/HomeBook.Frontend/Services/SetupService.cs` |
-| Stile | `source/HomeBook.Frontend/Styles/views/_login.scss`, `_setup.scss` |
+| Anmeldeseite | `backend/HomeBook.Frontend/Pages/Account/Login.razor` und `.razor.cs` |
+| Assistenten-Hülle | `backend/HomeBook.Frontend/Pages/Setup/SetupExperiance.razor` |
+| Schrittleiste und Inhalt | `backend/HomeBook.Frontend/Pages/Setup/UISetupStepper.razor`, `UISetupContent.razor` |
+| Die sieben Schritte | `backend/HomeBook.Frontend/Setup/SetupSteps/` |
+| Schrittreihenfolge | `backend/HomeBook.Frontend/Services/SetupService.cs` |
+| Stile | `backend/HomeBook.Frontend/Styles/views/_login.scss`, `_setup.scss` |
 
 ---
 

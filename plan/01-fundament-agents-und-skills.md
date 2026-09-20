@@ -27,7 +27,7 @@ Sollbeschreibung des Inhalts:
 
 - Ausschließlich `bun`. Niemals `npm`, `npx`, `yarn` oder `pnpm`.
 - Befehle, jeweils aus `frontend/`: `bun install`, `bun run dev`, `bun run build`, `bun run test`, `bun run lint`, `bun run typecheck`, `bun run format`
-- Backend lokal: `dotnet run --project source/HomeBook.Backend` — lauscht auf `http://localhost:5032`, API-Referenz unter `/scalar`
+- Backend lokal: `dotnet run --project backend/HomeBook.Backend` — lauscht auf `http://localhost:5032`, API-Referenz unter `/scalar`
 
 **Sprachregelung**
 
@@ -93,7 +93,7 @@ Sollbeschreibung des Inhalts:
 - Keine neue Abhängigkeit ohne Begründung im PR — zuerst prüfen, ob PrimeVue, VueUse oder das eigene UI-Package es schon können
 - Kein Umbau des Backends. Einzige Ausnahme: der OpenAPI-Transformer aus Schritt 02
 - Keine Änderung an `nginx.conf`
-- Keine Änderung an den Blazor-Projekten unter `source/HomeBook.Frontend*` — sie bleiben bis Schritt 11 unverändert lauffähig
+- Keine Änderung an den Blazor-Projekten unter `backend/HomeBook.Frontend*` — sie bleiben bis Schritt 11 unverändert lauffähig
 - Kein Dark Mode in dieser Migration
 - Kein Umbenennen oder Neustrukturieren von Routen
 
@@ -168,11 +168,33 @@ Drei Festlegungen, die bei der Umsetzung dazukamen und für die folgenden Schrit
   Workspace-Wurzel heißt bewusst `homebook-frontend` ohne Scope und kann so nicht sich selbst
   treffen.
 - **`.editorconfig` hat einen Abschnitt `[frontend/**]`** mit `indent_size = 2`. `end_of_line`
-  bleibt `crlf` aus `[*]` geerbt. Pfadgebunden statt nach Dateiendung, damit `source/**/*.json`
+  bleibt `crlf` aus `[*]` geerbt. Pfadgebunden statt nach Dateiendung, damit `backend/**/*.json`
   und die Workflow-YAMLs bei 4 Leerzeichen bleiben.
 
 Eine Abhängigkeit war **nicht** nötig: `bun install` behält `bun.lock` auch ohne jedes Paket,
 weil die sechs Workspace-Member selbst als Pakete zählen.
+
+### Umbenennung `source/` → `backend/`
+
+Zusätzlich beauftragt und in diesem Schritt erledigt: das Repository hat jetzt genau zwei
+Code-Ordner, `frontend/` für die Vue-App und `backend/` für alles .NET. Alle 31 Projekte sind
+per `git mv` gewandert, die Historie bleibt damit erhalten.
+
+Die sieben Blazor-Projekte liegen übergangsweise mit unter `backend/`. Das ist bewusst so
+entschieden, weil sie in Schritt 11 ohnehin entfernt werden und ein dritter Ordner sich dafür
+nicht lohnt. **Schritt 11 löscht sie unter `backend/HomeBook.Frontend*`, nicht unter
+`source/`.**
+
+Nachgezogen wurden `homebook.slnx`, `Dockerfile`, beide GitHub-Workflows, `generate-client.sh`,
+`update-licenses.sh`, `.gitignore`, `AGENTS.md`, alle Dateien in `plan/` und der Skill
+`homebook-i18n` — 159 Fundstellen. Nicht angefasst:
+`backend/HomeBook.Backend.Core.Licenses/Licenses.json`. Die `source`-Treffer dort stehen in
+`"Context"`-Feldern von `"Error"`-Einträgen und sind absolute Pfade eines fremden Rechners aus
+einem alten `nuget-license`-Lauf. Sie werden von nichts gelesen und von `update-licenses.sh`
+vollständig neu erzeugt.
+
+Die relativen `ProjectReference`-Pfade in den `.csproj` waren nicht betroffen, weil alle
+Projekte eine Ebene unter dem umbenannten Ordner liegen.
 
 ## Nicht in diesem Schritt
 

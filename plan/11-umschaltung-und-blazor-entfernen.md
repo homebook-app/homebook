@@ -43,16 +43,16 @@ In `.github/workflows/build.yml` und `.github/workflows/pull-request.yml`:
 
 Löschen:
 
-- `source/HomeBook.Frontend`
-- `source/HomeBook.Frontend.UI`
-- `source/HomeBook.Frontend.Core`
-- `source/HomeBook.Frontend.Abstractions`
-- `source/HomeBook.Frontend.Services`
-- `source/HomeBook.Frontend.Modules.Abstractions`
-- `source/HomeBook.Frontend.Module.Kitchen`
-- `source/HomeBook.Frontend.Module.Finances`
-- `source/HomeBook.Frontend.Module.PlatformInfo`
-- `source/HomeBook.UnitTests/Frontend/` samt der nun unbenutzten Helfer in `TestCore/` (etwa `TestJSRuntime`)
+- `backend/HomeBook.Frontend`
+- `backend/HomeBook.Frontend.UI`
+- `backend/HomeBook.Frontend.Core`
+- `backend/HomeBook.Frontend.Abstractions`
+- `backend/HomeBook.Frontend.Services`
+- `backend/HomeBook.Frontend.Modules.Abstractions`
+- `backend/HomeBook.Frontend.Module.Kitchen`
+- `backend/HomeBook.Frontend.Module.Finances`
+- `backend/HomeBook.Frontend.Module.PlatformInfo`
+- `backend/HomeBook.UnitTests/Frontend/` samt der nun unbenutzten Helfer in `TestCore/` (etwa `TestJSRuntime`)
 - `install-dev.sh` (installierte nur global `sass`)
 - `frontend_dist/` (lokales Build-Artefakt)
 
@@ -60,9 +60,9 @@ Anpassen:
 
 - `homebook.slnx`: den Ordner `/Frontend/` und `/Frontend/Modules/` samt Projekteinträgen entfernen; `HomeBook.Client` bleibt, aber verschieben nach `/Backend/` oder einen eigenen Ordner `/Client/`
 - `.run/Backend with Frontend.run.xml`: entfernen oder auf reines Backend umstellen
-- `source/HomeBook.UnitTests/HomeBook.UnitTests.csproj`: Projektverweis auf `HomeBook.Frontend` entfernen
+- `backend/HomeBook.UnitTests/HomeBook.UnitTests.csproj`: Projektverweis auf `HomeBook.Frontend` entfernen
 
-**`source/HomeBook.Client` bleibt bestehen** — der C#-Client wird weiterhin als NuGet-Paket veröffentlicht, das erledigt der Job `client-deploy`.
+**`backend/HomeBook.Client` bleibt bestehen** — der C#-Client wird weiterhin als NuGet-Paket veröffentlicht, das erledigt der Job `client-deploy`.
 
 Vorher gegenprüfen: Verweist noch irgendetwas auf die gelöschten Projekte? `grep -r "HomeBook.Frontend" --include=*.csproj --include=*.slnx --include=*.yml --include=*.sh --include=*.xml`
 
@@ -79,7 +79,7 @@ Vorher gegenprüfen: Verweist noch irgendetwas auf die gelöschten Projekte? `gr
 - [ ] `docker run -p 8080:8080 homebook-test` liefert auf `http://localhost:8080` die Vue-App; Ersteinrichtung und Anmeldung funktionieren im Container
 - [ ] Das Image ist **kleiner** als zuvor — keine WebAssembly-Nutzlast, keine 1,1 MB Icon-Konstanten
 - [ ] `dotnet build homebook.slnx` läuft durch, keine verwaisten Verweise
-- [ ] `dotnet test source/HomeBook.UnitTests/HomeBook.UnitTests.csproj` läuft durch
+- [ ] `dotnet test backend/HomeBook.UnitTests/HomeBook.UnitTests.csproj` läuft durch
 - [ ] Beide Workflows sind grün, die Abdeckung von Frontend und Backend landet in SonarCloud
 - [ ] Das Versions-Stempeln setzt die Version in der Frontend-Konfiguration
 - [ ] `grep -r "HomeBook.Frontend"` findet nur noch Erwähnungen in `plan/` und in der Historie

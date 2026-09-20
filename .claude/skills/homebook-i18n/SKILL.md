@@ -59,10 +59,10 @@ The Blazor originals, for reference while porting a page:
 
 | File | Keys |
 |---|---|
-| `source/HomeBook.Frontend.UI/Resources/LocalizationStrings*.resx` | 254 |
-| `source/HomeBook.Frontend.Module.Kitchen/Resources/Strings*.resx` | 53 |
-| `source/HomeBook.Frontend.Module.Finances/Resources/Strings*.resx` | 41 |
-| `source/HomeBook.Frontend.Module.PlatformInfo/Resources/Strings*.resx` | 2 |
+| `backend/HomeBook.Frontend.UI/Resources/LocalizationStrings*.resx` | 254 |
+| `backend/HomeBook.Frontend.Module.Kitchen/Resources/Strings*.resx` | 53 |
+| `backend/HomeBook.Frontend.Module.Finances/Resources/Strings*.resx` | 41 |
+| `backend/HomeBook.Frontend.Module.PlatformInfo/Resources/Strings*.resx` | 2 |
 
 The `LocalizationCultureMapper` workaround that mapped `en-US` onto a non-existent `en-EN` is
 dropped with no replacement - it is plain `en-US` now.

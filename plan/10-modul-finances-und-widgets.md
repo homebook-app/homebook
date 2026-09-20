@@ -62,15 +62,15 @@ Platzhalter. Bleibt einer.
 
 ### 4. Modulregistrierung Finances
 
-Schlüssel `homebook.finances`, Start-Kachel, Icon und Farbe aus `source/HomeBook.Frontend.Module.Finances/Module.cs`. Suchergebnis-Komponente registriert unter dem Handler-Namen des Backends für Sparziele; Vorlage `Search/Templates/SavingGoalsSearchHandlerResultTemplate.razor` samt CSS (Radius 14px, Textfarbe über `color-mix`). Übersetzungskatalog migriert aus `Resources/Strings*.resx` (41 Schlüssel).
+Schlüssel `homebook.finances`, Start-Kachel, Icon und Farbe aus `backend/HomeBook.Frontend.Module.Finances/Module.cs`. Suchergebnis-Komponente registriert unter dem Handler-Namen des Backends für Sparziele; Vorlage `Search/Templates/SavingGoalsSearchHandlerResultTemplate.razor` samt CSS (Radius 14px, Textfarbe über `color-mix`). Übersetzungskatalog migriert aus `Resources/Strings*.resx` (41 Schlüssel).
 
 ### 5. Modul PlatformInfo
 
-Schlüssel und Metadaten aus `source/HomeBook.Frontend.Module.PlatformInfo/Module.cs`. Ein einziges Widget, `VersionWidget`, das die Version aus der Laufzeitkonfiguration zeigt. Stile aus der zugehörigen isolierten CSS-Datei: Flex-Spalte, 4px Abstand, Innenabstand `var(--hb-widget-padding)`. Katalog mit zwei Schlüsseln.
+Schlüssel und Metadaten aus `backend/HomeBook.Frontend.Module.PlatformInfo/Module.cs`. Ein einziges Widget, `VersionWidget`, das die Version aus der Laufzeitkonfiguration zeigt. Stile aus der zugehörigen isolierten CSS-Datei: Flex-Spalte, 4px Abstand, Innenabstand `var(--hb-widget-padding)`. Katalog mit zwei Schlüsseln.
 
 ### 6. Widget-Raster
 
-Ersetzt `source/HomeBook.Frontend/Components/UiWidgetGrid.razor` samt zugehörigem JavaScript.
+Ersetzt `backend/HomeBook.Frontend/Components/UiWidgetGrid.razor` samt zugehörigem JavaScript.
 
 - Geometrie aus `Styles/components/_ui-widgets.scss`: `--cell-size: 73px`, `--cell-gap: 24px`, Größenklassen `w-2/4/8` und `h-1/2/4`, Widget-Radius 12px
 - Verschieben und Größenändern per Zeigereingabe. PrimeVue hat dafür nichts Passendes — VueUse `useSortable` oder eine kleine eigene Lösung auf Basis von Pointer-Events. Keine schwergewichtige Rasterbibliothek.

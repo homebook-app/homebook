@@ -2,11 +2,11 @@
 set -e
 
 # Configuration variables
-BACKEND_CSPROJ="./source/HomeBook.Backend/HomeBook.Backend.csproj"
+BACKEND_CSPROJ="./backend/HomeBook.Backend/HomeBook.Backend.csproj"
 CLIENT_CLASS="BackendClient"
 CLIENT_NAMESPACE="HomeBook.Client"
-OPENAPI_FILE="./source/HomeBook.Backend/HomeBook.Backend.json"
-CLIENT_OUTPUT_DIR="./source/HomeBook.Client"
+OPENAPI_FILE="./backend/HomeBook.Backend/HomeBook.Backend.json"
+CLIENT_OUTPUT_DIR="./backend/HomeBook.Client"
 CLIENT_CSPROJ="HomeBook.Client.csproj"
 
 # Clean output dir except the client csproj

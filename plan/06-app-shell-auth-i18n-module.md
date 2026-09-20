@@ -17,7 +17,7 @@ Dies ist der umfangreichste Schritt. Wenn er zu groß wird, teile ihn in zwei Du
 
 ### 1. Layouts
 
-**`MainLayout.vue`** — Vorlage `source/HomeBook.Frontend/Layout/MainLayout.razor`. Von außen nach innen:
+**`MainLayout.vue`** — Vorlage `backend/HomeBook.Frontend/Layout/MainLayout.razor`. Von außen nach innen:
 
 - **Wallpaper-Ebene**, bildschirmfüllend hinter allem (`z-index: -1`), mit drei Typen:
   - `Static` — Hintergrundbild von `/api/system/wallpaper/<name>`. Der Dateiname wird URL-kodiert, Punkte zusätzlich als `%2E`. Bei Wallpapern mit Themenkonfiguration wird derzeit schlicht der erste Eintrag genommen; dieses Verhalten übernehmen.
@@ -35,14 +35,14 @@ Dies ist der umfangreichste Schritt. Wenn er zu groß wird, teile ihn in zwei Du
 Alle Routen aus der Tabelle in `plan/00-uebersicht.md`, **Schreibweise zeichengenau** (`/Login`, nicht `/login`). Modul-Routen steuert die Registry bei.
 
 - Meta-Feld je Route: welches Layout, ob Anmeldung nötig, ob Adminrechte nötig, ob nur im Entwicklermodus sichtbar
-- Standard ist **Anmeldung erforderlich** — so wirkt heute das globale `[Authorize]` in `source/HomeBook.Frontend/_Imports.razor`. Ausnahmen sind nur `/Login` und `/Setup`.
+- Standard ist **Anmeldung erforderlich** — so wirkt heute das globale `[Authorize]` in `backend/HomeBook.Frontend/_Imports.razor`. Ausnahmen sind nur `/Login` und `/Setup`.
 - Admin-Pflicht für `/Settings/Users`, `/Settings/Users/Add` und `/Settings/Users/{UserId}`
 - Eine `NotFound`-Route
 - Ergänzend eine Umleitung, die abweichende Groß- und Kleinschreibung auf die kanonische Route führt, damit alte Lesezeichen weiter funktionieren
 
 ### 3. Auth-Store und Guards
 
-Vorlagen: `source/HomeBook.Frontend/Services/AuthenticationService.cs` und `source/HomeBook.Frontend/Provider/CustomAuthenticationStateProvider.cs`.
+Vorlagen: `backend/HomeBook.Frontend/Services/AuthenticationService.cs` und `backend/HomeBook.Frontend/Provider/CustomAuthenticationStateProvider.cs`.
 
 - Pinia-Store mit Token, Ablaufzeitpunkt, Benutzername, Benutzer-ID und Adminkennzeichen
 - localStorage-Schlüssel **unverändert**: `authToken`, `refreshToken`, `expiresAt`
@@ -55,7 +55,7 @@ Vorlagen: `source/HomeBook.Frontend/Services/AuthenticationService.cs` und `sour
 
 ### 4. Startsequenz
 
-Vorlagen: `source/HomeBook.Frontend/Services/StartupService.cs` und `App.razor`.
+Vorlagen: `backend/HomeBook.Frontend/Services/StartupService.cs` und `App.razor`.
 
 Ein Bootstrap-Store führt beim Start aus:
 
@@ -74,14 +74,14 @@ Backend nicht erreichbar: verständliche Fehlerseite mit Wiederholen-Möglichkei
 
 `scripts/migrate-resx.ts`, einmalig, Ergebnis wird eingecheckt:
 
-- Liest alle `.resx` aus `source/HomeBook.Frontend.UI/Resources/` und `source/HomeBook.Frontend.Module.*/Resources/`
+- Liest alle `.resx` aus `backend/HomeBook.Frontend.UI/Resources/` und `backend/HomeBook.Frontend.Module.*/Resources/`
 - Wandelt Schlüssel in die vue-i18n-Konvention: aus `MainLayout_SearchTextField_Placeholder` wird `mainLayout.searchTextField.placeholder`. Unterstriche trennen Ebenen, jedes Segment in camelCase. Die Regel deterministisch implementieren und dokumentieren.
 - Schreibt verschachteltes JSON nach `frontend/apps/web/src/locales/<locale>.json` beziehungsweise `frontend/packages/module-*/src/locales/<locale>.json`
 - Sprachen: `de-DE`, `en-US`, `fr-FR`. Die neutrale `.resx` liefert die englische Fassung. Die bisherige Datei `LocalizationStrings.en-us.resx` wird zu `en-US`.
 - Schreibt zusätzlich `frontend/locale-key-mapping.json` mit der Zuordnung alt zu neu — die braucht die Weblate-Umstellung, damit keine Übersetzung verloren geht
 - Meldet Schlüssel, die in einer Sprache fehlen
 
-Die Krücke aus `source/HomeBook.Frontend.UI/Utilities/LocalizationCultureMapper.cs`, die `en-US` auf ein nicht existierendes `en-EN` abbildet, wird **nicht** übernommen.
+Die Krücke aus `backend/HomeBook.Frontend.UI/Utilities/LocalizationCultureMapper.cs`, die `en-US` auf ein nicht existierendes `en-EN` abbildet, wird **nicht** übernommen.
 
 Sprachumschaltung: Sprache setzen, in `localStorage` unter `HomeBook.User.Locale` ablegen und per `POST /api/user/preferences/locale` sichern. Anders als heute ohne vollständigen Seiten-Neuaufbau — vue-i18n kann zur Laufzeit wechseln.
 
@@ -89,7 +89,7 @@ Weblate: In `README.md` und, falls vorhanden, in der Weblate-Konfiguration die K
 
 ### 6. Modul-Registry
 
-Ersetzt die Assembly-Scan-Mechanik aus `source/HomeBook.Frontend/ModuleCore/` und `source/HomeBook.Frontend.Modules.Abstractions/`.
+Ersetzt die Assembly-Scan-Mechanik aus `backend/HomeBook.Frontend/ModuleCore/` und `backend/HomeBook.Frontend.Modules.Abstractions/`.
 
 Ein Interface `HomeBookModule` in `@homebook/ui` oder einem schlanken eigenen Package:
 
@@ -109,7 +109,7 @@ Ein Interface `HomeBookModule` in `@homebook/ui` oder einem schlanken eigenen Pa
 
 ### 7. Kontextmenü und globale Suche
 
-- Menü-Store als Ersatz für `source/HomeBook.Frontend.Services/Services/MenuService.cs`: Seiten melden ihre Kontexteinträge an, bei Navigation wird geleert. Die Seitenleiste zeigt sie zwischen Startseite und Einstellungen.
+- Menü-Store als Ersatz für `backend/HomeBook.Frontend.Services/Services/MenuService.cs`: Seiten melden ihre Kontexteinträge an, bei Navigation wird geleert. Die Seitenleiste zeigt sie zwischen Startseite und Einstellungen.
 - `UiSearchComponent.vue` — Eingabefeld in der Kopfleiste, **1000 ms Entprellung** wie im Bestand, ruft `GET /api/search?s=<query>`, gruppiert die Treffer nach Modul und rendert sie über die Ergebniskomponenten aus der Registry.
 
 ---
