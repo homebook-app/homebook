@@ -1,4 +1,5 @@
 export { default as UiColoredIcon } from './components/UiColoredIcon.vue';
+export { default as UiCountdownAlert, type UiCountdownSeverity } from './components/UiCountdownAlert.vue';
 export { default as UiDetailCard } from './components/UiDetailCard.vue';
 export { default as UiDetailListItem } from './components/UiDetailListItem.vue';
 export { default as UiIcon } from './components/UiIcon.vue';
@@ -19,6 +20,12 @@ export {
   type UseIconSprite,
   type UseIconSpriteOptions,
 } from './composables/useIconSprite';
+export {
+  useCountdown,
+  type UiCountdownEasing,
+  type UseCountdown,
+  type UseCountdownOptions,
+} from './composables/useCountdown';
 export { APP_TITLE, usePageTitle } from './composables/usePageTitle';
 export {
   createIconRegistry,
