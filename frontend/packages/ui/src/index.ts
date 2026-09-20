@@ -13,6 +13,8 @@ export { default as UiStartMenuItem } from './components/UiStartMenuItem.vue';
 export { default as UiStripeBackground } from './components/UiStripeBackground.vue';
 export { default as UiValueCard } from './components/UiValueCard.vue';
 export { default as UiWaveBackground } from './components/UiWaveBackground.vue';
+export { default as UiWidgetContainer, type UiWidgetSize } from './components/UiWidgetContainer.vue';
+export { default as UiWidgetList } from './components/UiWidgetList.vue';
 export { stripeSchemes, type StripeScheme } from './backgrounds/stripeGradient/colors';
 export {
   useIconSprite,
