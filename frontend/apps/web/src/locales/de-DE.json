@@ -19,6 +19,11 @@
   "ui": {
     "startMenuItem": {
       "open": "Öffnen"
+    },
+    "licenseDialog": {
+      "title": "HomeBook Projekt Lizenzen",
+      "close": "Schließen",
+      "acceptContinue": "Akzeptieren und fortfahren"
     }
   }
 }
