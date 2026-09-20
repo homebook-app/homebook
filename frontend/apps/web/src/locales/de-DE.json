@@ -13,6 +13,12 @@
       "icons": {
         "title": "Icons",
         "copyName": "Den Namen {name} kopieren"
+      },
+      "components": {
+        "title": "Komponenten",
+        "showLicenses": "Lizenzdialog anzeigen",
+        "restartCountdown": "Countdown neu starten",
+        "countdownBody": "Dies schließt sich automatisch."
       }
     }
   },
