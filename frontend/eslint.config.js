@@ -6,7 +6,14 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   {
-    ignores: ['**/node_modules/**', '**/dist/**', '**/coverage/**', 'packages/api-client/src/generated/**'],
+    ignores: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/coverage/**',
+      'packages/api-client/src/generated/**',
+      // Copied unchanged from the Blazor frontend, stand-alone pages inside an iframe
+      'apps/web/public/wallpaper/**',
+    ],
   },
 
   js.configs.recommended,
