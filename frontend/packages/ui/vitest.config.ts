@@ -17,5 +17,14 @@ export default defineConfig({
     ...sharedTest,
     include: ['src/**/*.spec.ts', 'vite/**/*.spec.ts'],
     setupFiles: ['./src/test/setup.ts'],
+    coverage: {
+      ...sharedTest.coverage,
+      exclude: [
+        ...(sharedTest.coverage?.exclude ?? []),
+        // Raw WebGL and GLSL, not reachable in happy-dom
+        'src/backgrounds/stripeGradient/miniGl.ts',
+        'src/backgrounds/stripeGradient/shaders.ts',
+      ],
+    },
   },
 });
