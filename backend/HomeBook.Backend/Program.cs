@@ -6,6 +6,7 @@ using HomeBook.Backend.Extensions;
 using HomeBook.Backend.Core.Account.Extensions;
 using HomeBook.Backend.Middleware;
 using HomeBook.Backend.ModuleCore;
+using HomeBook.Backend.OpenApi;
 using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using Serilog;
@@ -43,6 +44,8 @@ builder.Host.UseSerilog((ctx, services, cfg) =>
 builder.Services.AddOpenApi(options =>
 {
     options.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
+    options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+    options.AddOperationTransformer<BearerSecuritySchemeTransformer>();
 });
 builder.Services.ConfigureHttpJsonOptions(options =>
 {

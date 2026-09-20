@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "3FD0ACF4E42999751927A12493F7F9A872792E33BF426388C17A8AAD41CF83E0D10D0EEE389CF24D181C2B3A6AA71A7ECE9D75D5D91F8DF7F3D8015B59A1B43D",
+  "descriptionHash": "9E7359F6F01FD15DB1EE1369B54DED3AE862519991ACC7D168CC9AC221B0089C793718B01685F05F4C0E989A37F3AE0BE24F102E24A464D2597BAEB854AB1209",
   "descriptionLocation": "../HomeBook.Backend/HomeBook.Backend.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "BackendClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "HomeBook.Client",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

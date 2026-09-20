@@ -25,11 +25,8 @@ env:
     DOTNET_VERSION: "10.0"
     FRONTEND_APPSETTINGS_FILE: "./backend/HomeBook.Frontend/wwwroot/appsettings.json"
     BACKEND_APPSETTINGS_FILE: "./backend/HomeBook.Backend/appsettings.json"
-    OPENAPI_FILE: "./backend/HomeBook.Backend/HomeBook.Backend.json"
     CLIENT_CSPROJ: "./backend/HomeBook.Client/HomeBook.Client.csproj"
     CLIENT_OUTPUT_DIR: "./backend/HomeBook.Client"
-    CLIENT_NAMESPACE: "HomeBook.Client"
-    CLIENT_CLASS: "BackendClient"
     UNIT_TEST_CSPROJ: "./backend/HomeBook.UnitTests/HomeBook.UnitTests.csproj"
     E2E_TEST_CSPROJ: "./backend/HomeBook.E2ETests/HomeBook.E2ETests.csproj"
     WEBSITE_REPOSITORY: "homebook-app/homebook-app.github.io"
@@ -72,10 +69,6 @@ jobs:
                 run: |
                     dotnet tool install --global dotnet-sonarscanner
 
-            -   name: Install Kiota CLI
-                run: |
-                    dotnet tool install --global Microsoft.OpenApi.Kiota
-
             -   name: Install ReportGenerator
                 run: |
                     dotnet tool install --global dotnet-reportgenerator-globaltool
@@ -88,19 +81,9 @@ jobs:
                 run: |
                     dotnet restore
 
-            -   name: .NET Build (Service for Client Generation)
-                run: |
-                    dotnet build --no-restore
-
-            -   name: Generate Client
+            -   name: Generate API Clients
                 shell: bash
-                run: |
-                    kiota generate \
-                      --language csharp \
-                      --class-name ${{ env.CLIENT_CLASS }} \
-                      --namespace-name ${{ env.CLIENT_NAMESPACE }} \
-                      --openapi ${{ env.OPENAPI_FILE }} \
-                      --output ${{ env.CLIENT_OUTPUT_DIR }} \
+                run: ./scripts/generate-clients.sh
 
             -   name: Begin SonarQube
                 shell: pwsh
@@ -278,26 +261,13 @@ jobs:
                 with:
                     dotnet-version: ${{ env.DOTNET_VERSION }}
 
-            -   name: Install Kiota CLI
-                run: |
-                    dotnet tool install --global Microsoft.OpenApi.Kiota
-
             -   name: Restore dependencies
                 run: |
                     dotnet restore
 
-            -   name: Build Solution
-                run: |
-                    dotnet build --configuration Release --no-restore
-
-            -   name: Generate Client
-                run: |
-                    kiota generate \
-                      --language csharp \
-                      --class-name ${{ env.CLIENT_CLASS }} \
-                      --namespace-name ${{ env.CLIENT_NAMESPACE }} \
-                      --openapi ${{ env.OPENAPI_FILE }} \
-                      --output ${{ env.CLIENT_OUTPUT_DIR }} \
+            -   name: Generate API Clients
+                shell: bash
+                run: ./scripts/generate-clients.sh
 
             -   name: Build Client
                 run: |

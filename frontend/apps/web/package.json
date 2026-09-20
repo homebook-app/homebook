@@ -2,5 +2,31 @@
   "name": "@homebook/web",
   "version": "0.0.0",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json && vue-tsc --noEmit -p tsconfig.vitest.json && vue-tsc --noEmit -p tsconfig.node.json"
+  },
+  "dependencies": {
+    "@homebook/api-client": "workspace:*",
+    "@homebook/module-finances": "workspace:*",
+    "@homebook/module-kitchen": "workspace:*",
+    "@homebook/module-platform-info": "workspace:*",
+    "@homebook/ui": "workspace:*",
+    "@primeuix/themes": "catalog:",
+    "@vue/devtools-api": "catalog:",
+    "pinia": "catalog:",
+    "primevue": "catalog:",
+    "vue": "catalog:",
+    "vue-i18n": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@homebook/test-utils": "workspace:*"
+  }
 }

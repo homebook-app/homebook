@@ -1,0 +1,4 @@
+packages/api-client/src/generated
+**/dist
+**/coverage
+bun.lock

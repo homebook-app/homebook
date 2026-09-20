@@ -83,3 +83,14 @@ csharp_new_line_before_members_in_object_initializers = true
 [frontend/**]
 indent_size = 2
 tab_width = 2
+
+# Shell scripts must keep LF, a CRLF shebang breaks on Linux
+[*.sh]
+end_of_line = lf
+
+# Generated files are written with LF by their generators (jq, kiota)
+[backend/HomeBook.Backend/HomeBook.Backend.json]
+end_of_line = lf
+
+[frontend/packages/api-client/src/generated/**]
+end_of_line = lf

@@ -1,6 +1,39 @@
 {
   "name": "@homebook/api-client",
   "version": "0.0.0",
+  "description": "TypeScript client for the HomeBook backend, generated with Kiota plus a hand-written surface.",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "homebook:source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@microsoft/kiota-abstractions": "1.0.0-preview.107",
+    "@microsoft/kiota-http-fetchlibrary": "1.0.0-preview.107",
+    "@microsoft/kiota-serialization-form": "1.0.0-preview.107",
+    "@microsoft/kiota-serialization-json": "1.0.0-preview.107",
+    "@microsoft/kiota-serialization-multipart": "1.0.0-preview.107",
+    "@microsoft/kiota-serialization-text": "1.0.0-preview.107"
+  }
 }

@@ -48,7 +48,7 @@ namespace HomeBook.Client.Modules.Homebook.Kitchen.Recipes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecipesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/homebook/kitchen/recipes?searchFilter={searchFilter}", pathParameters)
+        public RecipesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/homebook/kitchen/recipes", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace HomeBook.Client.Modules.Homebook.Kitchen.Recipes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecipesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/homebook/kitchen/recipes?searchFilter={searchFilter}", rawUrl)
+        public RecipesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/modules/homebook/kitchen/recipes", rawUrl)
         {
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace HomeBook.Client.Modules.Homebook.Kitchen.Recipes
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::HomeBook.Client.Modules.Homebook.Kitchen.Recipes.RecipesRequestBuilder.RecipesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/modules/homebook/kitchen/recipes?searchFilter={searchFilter}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -131,7 +131,7 @@ namespace HomeBook.Client.Modules.Homebook.Kitchen.Recipes
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/modules/homebook/kitchen/recipes", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -154,12 +154,16 @@ namespace HomeBook.Client.Modules.Homebook.Kitchen.Recipes
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("searchFilter")]
             public string? SearchFilter { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("searchFilter")]
             public string SearchFilter { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

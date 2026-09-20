@@ -153,18 +153,26 @@ namespace HomeBook.Client.System.Users
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("pageSize")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("username")]
             public string? Username { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("username")]
             public string Username { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

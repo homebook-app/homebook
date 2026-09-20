@@ -99,16 +99,32 @@ Kiotas TypeScript-Generator ist deutlich unreifer als der C#-Generator. Prüfe f
 
 ## Akzeptanzkriterien
 
-- [ ] `scripts/generate-openapi.sh` läuft lokal durch und erzeugt ein Dokument mit deutlich mehr als 21 Pfaden
-- [ ] Das Dokument enthält `/account/login`, `/info`, `/user/preferences/locale`, `/search`, `/storage/files`, `/media/{mediaId}/url` und die Pfade unter `/modules/homebook/kitchen` sowie `/modules/homebook/finances`
-- [ ] `components.securitySchemes` enthält ein Bearer-Schema, geschützte Operationen sind entsprechend markiert
-- [ ] `scripts/generate-clients.sh` erzeugt beide Clients; `dotnet build backend/HomeBook.Client/HomeBook.Client.csproj` läuft durch
-- [ ] `bun run build` und `bun run test` im Package `api-client` laufen durch
-- [ ] Beide Workflows rufen die Skripte auf und enthalten keine inline-`kiota`-Aufrufe mehr
-- [ ] `generate-client.sh` ist entfernt
+- [x] `scripts/generate-openapi.sh` läuft lokal durch und erzeugt ein Dokument mit deutlich mehr als 21 Pfaden
+- [x] Das Dokument enthält `/account/login`, `/info`, `/user/preferences/locale`, `/search`, `/storage/files`, `/media/{mediaId}/url` und die Pfade unter `/modules/homebook/kitchen` sowie `/modules/homebook/finances`
+- [x] `components.securitySchemes` enthält ein Bearer-Schema, geschützte Operationen sind entsprechend markiert
+- [x] `scripts/generate-clients.sh` erzeugt beide Clients; `dotnet build backend/HomeBook.Client/HomeBook.Client.csproj` läuft durch
+- [x] `bun run build` und `bun run test` im Package `api-client` laufen durch
+- [x] Beide Workflows rufen die Skripte auf und enthalten keine inline-`kiota`-Aufrufe mehr
+- [x] `generate-client.sh` ist entfernt
 
 ## Nicht in diesem Schritt
 
 - Keine Vue-App, keine UI
 - Kein npm-Publish
 - Keine sonstigen Backend-Änderungen über den Transformer hinaus
+
+---
+
+## Umsetzungsnotizen
+
+Umgesetzt auf Branch `HB-188`. Abweichungen vom Text oben, alle abgestimmt:
+
+- **Das OpenAPI-Dokument war nie eingecheckt**, sondern per `.gitignore` ausgeschlossen. Es wird jetzt eingecheckt. Damit `dotnet build` es nicht mehr mit der 21-Pfade-Version überschreibt, sind `Microsoft.Extensions.ApiDescription.Server` und `OpenApiDocumentsDirectory` aus `HomeBook.Backend.csproj` entfernt. `scripts/generate-openapi.sh` ist der einzige Erzeuger.
+- **Keine Runtime-Datei im Temp-Verzeichnis.** `PathHandler` verdrahtet den Pfad fest auf `/var/lib/homebook`, ohne Override. Das Skript bringt das Backend stattdessen über die vorhandenen Umgebungsvariablen `HB_Database__Provider=SQLITE` und `HB_Database__UseInMemory=true` in den Zustand `RUNNING`. Das Temp-Verzeichnis nimmt den `dotnet publish`-Output und das Log auf.
+- **`servers` wird aus dem Dokument entfernt**, weil die laufende Instanz dort ihre temporäre lokale Adresse einträgt und Kiota sie sonst als Basis-URL in die Clients schreibt.
+- **Formatierung mit `jq -S`.** jq ist auf Ubuntu-Runnern vorhanden und lokal als Dev-Tool installiert.
+- **Kiota-TypeScript-Checkpoint bestanden, mit zwei Einschränkungen**, beide im Package gekapselt: `GET /storage/scopes` liefert eine nackte GUID, wofür Kiota ein `"Guid"`-Primitiv erzeugt, das die TypeScript-Laufzeit weder typisiert noch deserialisiert. Die Operation ist per `--exclude-path` ausgenommen und als `getScopeIdByName` von Hand geschrieben. Der JSON-Serializer von Kiota kodiert Byte-Arrays im Browser über `TextDecoder`, was Binärdaten beschädigt; `uploadFile` baut den Body deshalb selbst mit `toBase64Content`.
+- `pull-request.yml` erzeugte den Client mit `--class-name RestClient`, die anderen Stellen mit `BackendClient`. Durch die Skripte gibt es nur noch `BackendClient`.
+- Kiota ist im Skript auf 1.35.0 gepinnt, TypeScript im Workspace auf 5.x (bun löste sonst 7.x auf, was `vue-tsc` in Schritt 03 noch nicht trägt).
+- `.editorconfig`: `*.sh`, das OpenAPI-Dokument und `src/generated/**` bekommen LF, weil ein CRLF-Shebang unter Linux bricht und die Generatoren LF schreiben.
+- Nicht in diesem Schritt: ein Helfer für `/setup/availability`, weil dort 200/201/204 unterschieden werden müssen und der generierte Client den Status einer 2xx-Antwort nicht liefert. Gehört zum Setup-Schritt.

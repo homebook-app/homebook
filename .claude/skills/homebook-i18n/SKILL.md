@@ -7,13 +7,18 @@ description: Add or change a user-visible string in this repository. Use wheneve
 
 ## Status
 
-The catalogs and the `t()` wiring land in **step 03** and **step 06**. The rules below apply
-from the very first key onwards.
+vue-i18n is wired up and the three app catalogs exist, still empty. They are filled in
+**step 06**. The rules below apply from the very first key onwards.
 
 ## The one rule
 
 **No visible string without `t()`.** Never literal user-facing text in a template, a
 `computed`, a `throw`, a toast or a confirmation dialog.
+
+**The single exception** is `frontend/apps/web/src/bootstrap/renderBootError.ts`. It renders
+the error page shown when `appsettings.json` cannot be loaded - before the app and vue-i18n
+exist. Its three short texts (de, en, fr) live in that file and are not in Weblate. Do not
+treat it as a precedent: anything that renders after the app has mounted goes through `t()`.
 
 ## Key naming
 
@@ -79,5 +84,5 @@ dropped with no replacement - it is plain `en-US` now.
 
 | Item | Arrives in |
 |---|---|
-| The locale catalogs and the vue-i18n setup | steps 03 and 06 |
+| The content of the catalogs and the module catalogs | step 06 |
 | `scripts/migrate-resx.ts` | step 06 |

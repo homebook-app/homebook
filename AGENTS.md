@@ -42,7 +42,7 @@ Backend lokal starten:
 dotnet run --project backend/HomeBook.Backend
 ```
 
-Lauscht auf `http://localhost:5032`, API-Referenz unter `/scalar`. Der Vite-Proxy leitet `/api` dorthin.
+Lauscht auf `http://localhost:5032`, API-Referenz unter `/scalar`. Der Vite-Proxy leitet `/api` dorthin und schneidet das Präfix ab, genau wie nginx in der Produktion — das Backend selbst kennt kein `/api`.
 
 API-Client neu erzeugen, nachdem sich Backend-Endpunkte geändert haben:
 
@@ -117,7 +117,7 @@ Aus dem Bestand übernommen, bitte fortführen:
 - Getestet wird: jede Komponente mit Logik (bedingtes Rendern, Events, berechnete Werte), jeder Store, jedes Composable, jede Hilfsfunktion.
 - Nicht getestet wird: reines Markup ohne Verzweigung, generierter Code.
 - Der API-Client wird **gemockt**, nie echt aufgerufen.
-- Zum Mounten den Helfer `mountWithPlugins` verwenden — er bringt PrimeVue, i18n, Pinia und Router vorkonfiguriert mit.
+- Zum Mounten den Helfer `mountWithPlugins` aus `@homebook/test-utils` verwenden — er bringt PrimeVue, i18n, Pinia und Router vorkonfiguriert mit.
 
 Es gibt bewusst **keine** End-to-End-Tests. Wer welche einführen will, stimmt das vorher ab.
 
@@ -200,6 +200,7 @@ frontend/
   packages/module-kitchen/     # Rezepte, Speiseplan
   packages/module-finances/    # Sparziele
   packages/module-platform-info/
+  packages/test-utils/         # @homebook/test-utils — mountWithPlugins, Vitest-Setup (nur für Tests)
 backend/                       # .NET-Backend und der C#-Client
 scripts/
   generate-openapi.sh          # vollständige OpenAPI-Spezifikation erzeugen

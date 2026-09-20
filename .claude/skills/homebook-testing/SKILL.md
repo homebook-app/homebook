@@ -5,13 +5,6 @@ description: Write or fix a test in this repository. Use when adding a Vitest sp
 
 # HomeBook Testing
 
-## Status
-
-Parts of this skill describe artifacts that do not exist yet. Anything tagged
-**Not yet available** is a contract for a later migration step, not something you can import
-today. If you need one and the file is missing: **stop and report.** Do not invent a
-substitute, and do not build the missing module as a side effect of another task.
-
 ## Stack
 
 - Vitest with `@vue/test-utils`, environment happy-dom, globals enabled.
@@ -50,16 +43,47 @@ Never a parallel `__tests__/` tree.
 the shared helper, so every test sees the same PrimeVue theme, the same i18n setup, a fresh
 Pinia and a router.
 
-**Not yet available - arrives in step 03.** Intended location
-`frontend/apps/web/src/test/mountWithPlugins.ts`. It must preconfigure:
+The helper lives in its own private workspace package, `frontend/packages/test-utils`, so
+specs in `apps/web`, `packages/ui` and the module packages all import it the same way:
 
-- PrimeVue with the Aura preset, `darkModeSelector: false`, and
-  `cssLayer: { name: 'primevue', order: 'primevue, hb' }`
-- vue-i18n with `legacy: false` and fallback `en-US`
-- a **fresh** Pinia instance per test, so state never leaks between tests
-- a memory-history router
+```ts
+import { mountWithPlugins } from '@homebook/test-utils'
 
-Until it exists, do not hand-roll a local equivalent - report that the helper is missing.
+const { wrapper, router, pinia, i18n } = await mountWithPlugins(UiValueCard, {
+  props: { label: 'Total', value: 3 },
+})
+```
+
+It is **async** - it navigates and waits for the router before mounting. It preconfigures:
+
+- PrimeVue with the shared `primeVueOptions` from `@homebook/ui` (`darkModeSelector: false`,
+  `cssLayer: { name: 'primevue', order: 'primevue, hb' }`) plus `ToastService`,
+  `ConfirmationService` and `DialogService`
+- vue-i18n with `legacy: false`, fallback `en-US` and **no catalogs**, so `t('some.key')`
+  renders `some.key`
+- a **fresh** Pinia instance per call, so state never leaks between tests
+- a memory-history router with a catch-all route
+
+Options, on top of every `mount` option of `@vue/test-utils`:
+
+| Option | Purpose |
+|---|---|
+| `locale` | Active locale, default `en-US` |
+| `messages` | Catalogs by locale, only for tests that are about translation |
+| `routes` | Route table of the memory router |
+| `initialRoute` | Path to navigate to before mounting, default `/` |
+| `pinia` | A Pinia prepared beforehand instead of a fresh one |
+
+`global.plugins` passed by the caller are installed after the built-in ones.
+
+A package that gets its first spec needs three things: `@homebook/test-utils` as a
+devDependency (`workspace:*`), a `vitest.config.ts` that spreads `sharedTest` from
+`frontend/vitest.shared.ts`, and `@homebook/test-utils/setup` in `setupFiles`. Copy
+`frontend/packages/test-utils/vitest.config.ts` and add `@vitejs/plugin-vue`.
+
+Code that reads the runtime configuration needs `setAppConfig(fixture)` from
+`@/composables/useAppConfig` before it runs - the configuration is a module singleton, not
+a plugin.
 
 ## Mocking the API client
 
@@ -67,7 +91,7 @@ The API client is **always** mocked, never really called. Mock at the module bou
 
 ```ts
 vi.mock('@homebook/api-client', () => ({
-  // named exports - see "Not yet available"
+  // the named exports the code under test uses, see packages/api-client/src/index.ts
 }))
 ```
 
@@ -89,10 +113,3 @@ bun run test
 bun run test:watch
 bun run test:coverage
 ```
-
-## Not yet available
-
-| Item | Arrives in |
-|---|---|
-| `mountWithPlugins` and the Vitest configuration | step 03 |
-| The named exports of `@homebook/api-client` | step 02 |

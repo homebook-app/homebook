@@ -106,3 +106,22 @@ In `frontend/package.json`: `dev`, `build`, `preview`, `test`, `test:watch`, `te
 - Keine Gestaltung, keine Token, kein eigenes Preset — das ist Schritt 04
 - Keine Seiten, kein Layout, keine Authentifizierung
 - Keine Änderungen an Dockerfile oder Workflows
+
+---
+
+## Umsetzungsnotizen
+
+Umgesetzt auf Branch `HB-188`. Abweichungen vom Text oben:
+
+- **Der Dev-Proxy schneidet `/api` ab.** Das Backend mappt seine Endpunkte an der Wurzel (`/version`, nicht `/api/version`), und nginx entfernt das Präfix mit `proxy_pass http://127.0.0.1:5000/;`. Ohne `rewrite` im Vite-Proxy liefert `/api/version` 404. Dasselbe gilt für `preview`.
+- **Chunking über `build.rolldownOptions.output.codeSplitting.groups`.** Vite 8 baut mit rolldown; `manualChunks` ist dort abgelöst. Zwei Gruppen: `vue` und `primevue`.
+- **`mountWithPlugins` liegt in einem eigenen Package `frontend/packages/test-utils`** (`@homebook/test-utils`), nicht unter `apps/web/src/test/`. Specs in `packages/ui` und den Modul-Packages können nicht aus der App importieren. Das Package enthält auch das gemeinsame Vitest-Setup; die geteilten Testeinstellungen stehen in `frontend/vitest.shared.ts`.
+- **Workspace-Packages werden aus dem Quellcode konsumiert.** `ui`, `module-*` und `test-utils` exportieren `./src/index.ts` direkt. `api-client` behält seinen tsup-Build, hat aber zusätzlich die Export-Condition `homebook:source` auf `./src/index.ts`. `tsconfig.base.json` (`customConditions`) und Vite (`resolve.conditions`) aktivieren sie. Dadurch braucht `lint && typecheck && test && build` auf einem frischen Clone keinen vorherigen Build von api-client.
+- **Typecheck pro Workspace mit `vue-tsc --noEmit`**, nicht `--build`. Das Root-`tsconfig.json` führt die Project References für die IDE; ein Build-Modus würde `composite` und Emit in allen Packages erzwingen.
+- **`lint`, `lint:fix` und `format` laufen als ein Aufruf im Root** (`eslint .`, `prettier --write .`) statt per `--filter` durch die Workspaces. Eine Konfiguration, ein Prozess, und `.` deckt alle Workspaces ab.
+- **Prettier mit `endOfLine: 'auto'`.** Die Zeilenenden regeln `.editorconfig` und git; bun schreibt `package.json` mit LF, und ein festes `crlf` würde später auf der Linux-CI scheitern.
+- **Geteilte Versionen stehen im Bun-`catalog`** der Root-`package.json` (vue, vue-router, pinia, vue-i18n, primevue, `@primeuix/themes`, `@vue/test-utils`, `@vue/devtools-api`), damit es genau eine Vue-Instanz gibt. `@primeuix/themes` ist auf 2.0.3 gepinnt: 3.x gehört zu einer neueren `@primeuix/styled`-Generation als PrimeVue 4.5. `@vue/devtools-api` 8 ist explizit deklariert, weil Pinia 4 es als Peer verlangt und sonst die 6er-Version von vue-router aufgelöst wird.
+- **Die Konfiguration wird ohne Schema-Bibliothek geprüft**, mit einer handgeschriebenen `parseAppConfig(unknown)`. Geladen wird sie per `fetch` — `appsettings.json` ist ein statisches Asset, kein Backend-Endpunkt. `useAppConfig()` ist ein Modul-Singleton, damit auch Stores und Router-Guards ohne Komponentenkontext darauf zugreifen können.
+- **Die Boot-Fehlerseite ist die eine Ausnahme von „kein String ohne `t()`“.** Sie erscheint, bevor vue-i18n läuft, und bringt ihre drei kurzen Texte (de, en, fr) selbst mit. Vermerkt im Skill `homebook-i18n`.
+- `<Toast>`, `<ConfirmDialog>` und `<DynamicDialog>` sind noch nicht im Template — die Services sind registriert, die Host-Komponenten gehören ins Layout aus Schritt 06.
+- Geprüft wurde der Proxy mit `curl` gegen den laufenden Dev-Server und das laufende Backend. Die Browser-Konsole wurde nicht in einem echten Browser kontrolliert.

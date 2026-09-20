@@ -1,0 +1,4740 @@
+{
+  "components": {
+    "schemas": {
+      "CalculateSavingRequest": {
+        "properties": {
+          "interestRate": {
+            "format": "double",
+            "type": "number"
+          },
+          "interestRateOption": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "targetAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "targetDate": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "targetSimpleRate": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "targetAmount",
+          "targetDate",
+          "interestRateOption",
+          "interestRate",
+          "targetSimpleRate"
+        ],
+        "type": "object"
+      },
+      "CalculatedSavingResponse": {
+        "properties": {
+          "amounts": {
+            "items": {
+              "format": "double",
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "interests": {
+            "items": {
+              "format": "double",
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "monthlyPayment": {
+            "format": "double",
+            "type": "number"
+          },
+          "monthsNeeded": {
+            "format": "int16",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "monthsNeeded",
+          "monthlyPayment",
+          "amounts",
+          "interests"
+        ],
+        "type": "object"
+      },
+      "CheckDatabaseRequest": {
+        "properties": {
+          "databaseHost": {
+            "type": "string"
+          },
+          "databaseName": {
+            "type": "string"
+          },
+          "databasePort": {
+            "format": "uint16",
+            "type": "integer"
+          },
+          "databaseUserName": {
+            "type": "string"
+          },
+          "databaseUserPassword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "databaseHost",
+          "databasePort",
+          "databaseName",
+          "databaseUserName",
+          "databaseUserPassword"
+        ],
+        "type": "object"
+      },
+      "CreateRecipeIngredientRequest": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "unit": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "quantity",
+          "unit"
+        ],
+        "type": "object"
+      },
+      "CreateRecipeMediaItemRequest": {
+        "properties": {
+          "index": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "mediaItemId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mediaItemId",
+          "index"
+        ],
+        "type": "object"
+      },
+      "CreateRecipeStepRequest": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "position": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "timerDurationInSeconds": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "description",
+          "position",
+          "timerDurationInSeconds"
+        ],
+        "type": "object"
+      },
+      "CreateSavingGoalRequest": {
+        "properties": {
+          "color": {
+            "type": "string"
+          },
+          "currentAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "interestRate": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "interestRateOption": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "monthlyPayment": {
+            "format": "double",
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "targetAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "targetDate": {
+            "format": "date-time",
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "color",
+          "icon",
+          "targetAmount",
+          "currentAmount",
+          "monthlyPayment",
+          "interestRateOption",
+          "interestRate",
+          "targetDate"
+        ],
+        "type": "object"
+      },
+      "CreateUserRequest": {
+        "properties": {
+          "isAdmin": {
+            "type": "boolean"
+          },
+          "password": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password",
+          "isAdmin"
+        ],
+        "type": "object"
+      },
+      "CreateUserResponse": {
+        "properties": {
+          "userId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId"
+        ],
+        "type": "object"
+      },
+      "DependencyLicense": {
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "content"
+        ],
+        "type": "object"
+      },
+      "DevModeResponse": {
+        "properties": {
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "isActive"
+        ],
+        "type": "object"
+      },
+      "FileGetResponse": {
+        "properties": {
+          "content": {
+            "format": "byte",
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "scopeId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "filename",
+          "scopeId",
+          "content"
+        ],
+        "type": "object"
+      },
+      "FilePostRequest": {
+        "properties": {
+          "content": {
+            "format": "byte",
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "scopeId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "filename",
+          "content",
+          "scopeId"
+        ],
+        "type": "object"
+      },
+      "FilePostResponse": {
+        "properties": {
+          "mediaItemId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mediaItemId"
+        ],
+        "type": "object"
+      },
+      "GetDatabaseCheckResponse": {
+        "properties": {
+          "databaseHost": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databasePort": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseUserName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseUserPassword": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "databaseHost",
+          "databasePort",
+          "databaseName",
+          "databaseUserName",
+          "databaseUserPassword"
+        ],
+        "type": "object"
+      },
+      "GetDevelopmentConfigResponse": {
+        "properties": {
+          "values": {
+            "items": {
+              "$ref": "#/components/schemas/KeyValuePairOfstringAndstring"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "values"
+        ],
+        "type": "object"
+      },
+      "GetInstanceInfoResponse": {
+        "properties": {
+          "defaultLocale": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "defaultLocale"
+        ],
+        "type": "object"
+      },
+      "GetLicensesResponse": {
+        "properties": {
+          "licenses": {
+            "items": {
+              "$ref": "#/components/schemas/DependencyLicense"
+            },
+            "type": "array"
+          },
+          "licensesAccepted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "licensesAccepted",
+          "licenses"
+        ],
+        "type": "object"
+      },
+      "GetLocalesResponse": {
+        "properties": {
+          "locales": {
+            "items": {
+              "$ref": "#/components/schemas/LocaleResponse"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "locales"
+        ],
+        "type": "object"
+      },
+      "GetSystemInfoResponse": {
+        "properties": {
+          "appVersion": {
+            "type": "string"
+          },
+          "databaseProvider": {
+            "type": "string"
+          },
+          "deploymentType": {
+            "type": "string"
+          },
+          "dotnetRuntimeVersion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dotnetRuntimeVersion",
+          "appVersion",
+          "databaseProvider",
+          "deploymentType"
+        ],
+        "type": "object"
+      },
+      "GetSystemStorageInfoResponse": {
+        "properties": {
+          "cache": {
+            "$ref": "#/components/schemas/StorageUsageResponse"
+          },
+          "logs": {
+            "$ref": "#/components/schemas/StorageUsageResponse"
+          },
+          "mediaStorage": {
+            "items": {
+              "$ref": "#/components/schemas/MediaStorageSizeTypeResponse"
+            },
+            "type": "array"
+          },
+          "temp": {
+            "$ref": "#/components/schemas/StorageUsageResponse"
+          }
+        },
+        "required": [
+          "cache",
+          "logs",
+          "temp",
+          "mediaStorage"
+        ],
+        "type": "object"
+      },
+      "GetSystemWallpapersResponse": {
+        "properties": {
+          "systemWallpapers": {
+            "items": {
+              "$ref": "#/components/schemas/StaticWallpaperEntry"
+            },
+            "type": "array"
+          },
+          "uploadedWallpapers": {
+            "items": {
+              "$ref": "#/components/schemas/MediaWallpaperEntry"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "systemWallpapers",
+          "uploadedWallpapers"
+        ],
+        "type": "object"
+      },
+      "GetUserPreferenceLocaleResponse": {
+        "properties": {
+          "locale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "locale"
+        ],
+        "type": "object"
+      },
+      "GetUserPreferenceWallpaperResponse": {
+        "properties": {
+          "configuration": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "key": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "wallpaper": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "configuration",
+          "type",
+          "wallpaper"
+        ],
+        "type": "object"
+      },
+      "HttpValidationProblemDetails": {
+        "properties": {
+          "detail": {
+            "nullable": true,
+            "type": "string"
+          },
+          "errors": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "instance": {
+            "nullable": true,
+            "type": "string"
+          },
+          "status": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "title": {
+            "nullable": true,
+            "type": "string"
+          },
+          "type": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "KeyValuePairOfstringAndstring": {
+        "properties": {
+          "key": {
+            "nullable": true,
+            "type": "string"
+          },
+          "value": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object"
+      },
+      "LocaleResponse": {
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "name"
+        ],
+        "type": "object"
+      },
+      "LoginRequest": {
+        "properties": {
+          "password": {
+            "minLength": 5,
+            "type": "string"
+          },
+          "username": {
+            "minLength": 6,
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object"
+      },
+      "LoginResponse": {
+        "properties": {
+          "expiresAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "userId": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token",
+          "refreshToken",
+          "expiresAt",
+          "userId",
+          "username"
+        ],
+        "type": "object"
+      },
+      "MediaStorageSizeTypeResponse": {
+        "properties": {
+          "moduleKey": {
+            "type": "string"
+          },
+          "moduleName": {
+            "type": "string"
+          },
+          "scopeKey": {
+            "type": "string"
+          },
+          "storageSizeBytes": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "scopeKey",
+          "moduleKey",
+          "moduleName",
+          "storageSizeBytes"
+        ],
+        "type": "object"
+      },
+      "MediaUrlResponse": {
+        "properties": {
+          "mediaUri": {
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mediaUri"
+        ],
+        "type": "object"
+      },
+      "MediaWallpaperEntry": {
+        "properties": {
+          "mediaId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mediaId"
+        ],
+        "type": "object"
+      },
+      "RecipeDetailResponse": {
+        "properties": {
+          "caloriesKcal": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "comments": {
+            "nullable": true,
+            "type": "string"
+          },
+          "description": {
+            "nullable": true,
+            "type": "string"
+          },
+          "durationCookingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "durationRestingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "durationWorkingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "ingredients": {
+            "items": {
+              "$ref": "#/components/schemas/RecipeIngredientResponse"
+            },
+            "type": "array"
+          },
+          "mediaIds": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mediaItems": {
+            "items": {
+              "$ref": "#/components/schemas/RecipeMediaItemResponse"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "normalizedName": {
+            "type": "string"
+          },
+          "servings": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "source": {
+            "nullable": true,
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/RecipeStepResponse"
+            },
+            "type": "array"
+          },
+          "username": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "username",
+          "name",
+          "normalizedName",
+          "description",
+          "servings",
+          "mediaIds",
+          "mediaItems",
+          "ingredients",
+          "steps",
+          "durationWorkingMinutes",
+          "durationCookingMinutes",
+          "durationRestingMinutes",
+          "caloriesKcal",
+          "comments",
+          "source"
+        ],
+        "type": "object"
+      },
+      "RecipeImagesResponse": {
+        "properties": {
+          "imageMediaIds": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "imageMediaIds"
+        ],
+        "type": "object"
+      },
+      "RecipeIngredientResponse": {
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "normalizedName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "quantity": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "unit": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "normalizedName",
+          "quantity",
+          "unit"
+        ],
+        "type": "object"
+      },
+      "RecipeMediaItemResponse": {
+        "properties": {
+          "index": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "mediaItemId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mediaItemId",
+          "index"
+        ],
+        "type": "object"
+      },
+      "RecipeRenameRequest": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "RecipeRequest": {
+        "properties": {
+          "caloriesKcal": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "comments": {
+            "nullable": true,
+            "type": "string"
+          },
+          "description": {
+            "nullable": true,
+            "type": "string"
+          },
+          "durationCookingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "durationRestingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "durationWorkingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "ingredients": {
+            "items": {
+              "$ref": "#/components/schemas/CreateRecipeIngredientRequest"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "mediaIds": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "mediaItems": {
+            "items": {
+              "$ref": "#/components/schemas/CreateRecipeMediaItemRequest"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "servings": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "source": {
+            "nullable": true,
+            "type": "string"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/CreateRecipeStepRequest"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "servings",
+          "ingredients",
+          "steps",
+          "durationWorkingMinutes",
+          "durationCookingMinutes",
+          "durationRestingMinutes",
+          "caloriesKcal",
+          "comments",
+          "source",
+          "mediaItems",
+          "mediaIds"
+        ],
+        "type": "object"
+      },
+      "RecipeResponse": {
+        "properties": {
+          "caloriesKcal": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "comments": {
+            "nullable": true,
+            "type": "string"
+          },
+          "description": {
+            "nullable": true,
+            "type": "string"
+          },
+          "durationCookingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "durationRestingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "durationWorkingMinutes": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "heroMediaId": {
+            "format": "uuid",
+            "nullable": true,
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "normalizedName": {
+            "type": "string"
+          },
+          "servings": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "source": {
+            "nullable": true,
+            "type": "string"
+          },
+          "username": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "username",
+          "name",
+          "normalizedName",
+          "description",
+          "servings",
+          "durationWorkingMinutes",
+          "durationCookingMinutes",
+          "durationRestingMinutes",
+          "caloriesKcal",
+          "comments",
+          "source",
+          "heroMediaId"
+        ],
+        "type": "object"
+      },
+      "RecipeStepResponse": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "position": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "recipeId": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "timerDurationInSeconds": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "recipeId",
+          "position",
+          "description"
+        ],
+        "type": "object"
+      },
+      "RecipesListResponse": {
+        "properties": {
+          "recipes": {
+            "items": {
+              "$ref": "#/components/schemas/RecipeResponse"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "recipes"
+        ],
+        "type": "object"
+      },
+      "SavingGoalListResponse": {
+        "properties": {
+          "savingGoals": {
+            "items": {
+              "$ref": "#/components/schemas/SavingGoalResponse"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "savingGoals"
+        ],
+        "type": "object"
+      },
+      "SavingGoalResponse": {
+        "properties": {
+          "color": {
+            "type": "string"
+          },
+          "currentAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "interestRate": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "interestRateOption": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "monthlyPayment": {
+            "format": "double",
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "targetAmount": {
+            "format": "double",
+            "type": "number"
+          },
+          "targetDate": {
+            "format": "date-time",
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "color",
+          "icon",
+          "targetAmount",
+          "currentAmount",
+          "monthlyPayment",
+          "interestRateOption",
+          "interestRate",
+          "targetDate"
+        ],
+        "type": "object"
+      },
+      "SearchItemResponse": {
+        "properties": {
+          "description": {
+            "nullable": true,
+            "type": "string"
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "identifier"
+        ],
+        "type": "object"
+      },
+      "SearchModuleResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SearchItemResponse"
+            },
+            "type": "array"
+          },
+          "moduleKey": {
+            "type": "string"
+          },
+          "totalCount": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "moduleKey",
+          "totalCount",
+          "items"
+        ],
+        "type": "object"
+      },
+      "SearchResponse": {
+        "properties": {
+          "searchModuleResponses": {
+            "items": {
+              "$ref": "#/components/schemas/SearchModuleResponse"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "searchModuleResponses"
+        ],
+        "type": "object"
+      },
+      "StartSetupRequest": {
+        "properties": {
+          "databaseFile": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseHost": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databasePort": {
+            "format": "uint16",
+            "nullable": true,
+            "type": "integer"
+          },
+          "databaseType": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseUserName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "databaseUserPassword": {
+            "nullable": true,
+            "type": "string"
+          },
+          "homebookConfigurationDefaultLocale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "homebookConfigurationName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "homebookUserName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "homebookUserPassword": {
+            "nullable": true,
+            "type": "string"
+          },
+          "licensesAccepted": {
+            "nullable": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "licensesAccepted",
+          "databaseType",
+          "databaseHost",
+          "databasePort",
+          "databaseName",
+          "databaseUserName",
+          "databaseUserPassword",
+          "homebookUserName",
+          "homebookUserPassword",
+          "homebookConfigurationName",
+          "homebookConfigurationDefaultLocale"
+        ],
+        "type": "object"
+      },
+      "StaticWallpaperEntry": {
+        "properties": {
+          "configuration": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "nullable": true,
+            "type": "object"
+          },
+          "filePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filePath",
+          "configuration"
+        ],
+        "type": "object"
+      },
+      "StorageUsageResponse": {
+        "properties": {
+          "storgeKey": {
+            "type": "string"
+          },
+          "usageSizeBytes": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "storgeKey",
+          "usageSizeBytes"
+        ],
+        "type": "object"
+      },
+      "UpdateInstanceDefaultLocaleRequest": {
+        "properties": {
+          "locale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "locale"
+        ],
+        "type": "object"
+      },
+      "UpdateInstanceNameRequest": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "UpdatePasswordRequest": {
+        "properties": {
+          "newPassword": {
+            "type": "string"
+          },
+          "userId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "newPassword"
+        ],
+        "type": "object"
+      },
+      "UpdateSavingGoalAmountsRequest": {
+        "properties": {
+          "currentAmount": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "interestRate": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "interestRateOption": {
+            "format": "int32",
+            "nullable": true,
+            "type": "integer"
+          },
+          "monthlyPayment": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          },
+          "targetAmount": {
+            "format": "double",
+            "nullable": true,
+            "type": "number"
+          }
+        },
+        "required": [
+          "targetAmount",
+          "currentAmount",
+          "monthlyPayment",
+          "interestRateOption",
+          "interestRate"
+        ],
+        "type": "object"
+      },
+      "UpdateSavingGoalAppearanceRequest": {
+        "properties": {
+          "color": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "color",
+          "icon"
+        ],
+        "type": "object"
+      },
+      "UpdateSavingGoalInfoRequest": {
+        "properties": {
+          "targetDate": {
+            "format": "date-time",
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetDate"
+        ],
+        "type": "object"
+      },
+      "UpdateSavingGoalNameRequest": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "UpdateUserAdminRequest": {
+        "properties": {
+          "isAdmin": {
+            "type": "boolean"
+          },
+          "userId": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "isAdmin"
+        ],
+        "type": "object"
+      },
+      "UpdateUserPreferenceLocaleRequest": {
+        "properties": {
+          "locale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "locale"
+        ],
+        "type": "object"
+      },
+      "UpdateUserPreferenceWallpaperRequest": {
+        "properties": {
+          "wallpaperConfiguration": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "wallpaperConfiguration"
+        ],
+        "type": "object"
+      },
+      "UpdateUsernameRequest": {
+        "properties": {
+          "newUsername": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "UserResponse": {
+        "properties": {
+          "created": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "disabled": {
+            "format": "date-time",
+            "nullable": true,
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "isAdmin": {
+            "type": "boolean"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "username",
+          "created",
+          "disabled",
+          "isAdmin"
+        ],
+        "type": "object"
+      },
+      "UsersResponse": {
+        "properties": {
+          "page": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "pageSize": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "totalPages": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "users": {
+            "items": {
+              "$ref": "#/components/schemas/UserResponse"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "users",
+          "totalCount",
+          "page",
+          "pageSize",
+          "totalPages"
+        ],
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "bearerFormat": "JWT",
+        "description": "JWT access token obtained from POST /account/login.",
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "title": "HomeBook.Backend | v1",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.4",
+  "paths": {
+    "/Development/Config": {
+      "get": {
+        "description": "Returns all configuration values currently present in IConfiguration",
+        "operationId": "GetDevelopmentConfig",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetDevelopmentConfigResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Development"
+        ]
+      }
+    },
+    "/account/login": {
+      "post": {
+        "description": "Authenticates a user with email and password, returns JWT tokens",
+        "operationId": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "tags": [
+          "Account",
+          "Authentication"
+        ]
+      }
+    },
+    "/account/logout": {
+      "post": {
+        "description": "Invalidates the current user's access token",
+        "operationId": "Logout",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Account",
+          "Authentication"
+        ]
+      }
+    },
+    "/info": {
+      "get": {
+        "description": "Returns instance information (requires authentication)",
+        "operationId": "GetInstanceInfo",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetInstanceInfoResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Info"
+        ]
+      }
+    },
+    "/info/default-locale": {
+      "get": {
+        "description": "Returns the instance default locale as a string (public endpoint) e.g. 'en-EN', 'de-DE' ...",
+        "operationId": "GetInstanceDefaultLocale",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Info"
+        ]
+      }
+    },
+    "/info/devmode": {
+      "get": {
+        "description": "Returns the development mode settings",
+        "operationId": "GetDevModeSettings",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DevModeResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Info"
+        ]
+      }
+    },
+    "/info/name": {
+      "get": {
+        "description": "Returns the instance name as a string (public endpoint)",
+        "operationId": "GetInstanceName",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Info"
+        ]
+      }
+    },
+    "/media/{mediaId}/url": {
+      "get": {
+        "description": "Reads file content by filename and scope\r\n\r\nHTTP 200: Media Item returned successfully\r\n\r\nHTTP 404: Media Item not found\r\n\r\nHTTP 422: Media Id is invalid\r\n\r\nHTTP 500: Unknown error while reading media item",
+        "operationId": "GetUrlForMediaId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mediaId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MediaUrlResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Media"
+        ]
+      }
+    },
+    "/modules/homebook/finances/calculations/savings": {
+      "post": {
+        "description": "returns the calculated savings based on the provided parameters\r\n\r\nHTTP 200: successfully calculated savings\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting saving goals",
+        "operationId": "CalculateSavings",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalculateSavingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalculatedSavingResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/finances/saving-goals": {
+      "get": {
+        "description": "returns the users finances saving goals\r\n\r\nHTTP 200: Finances saving goals were found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting saving goals",
+        "operationId": "GetSavingGoals",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavingGoalListResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      },
+      "post": {
+        "description": "creates a new finances saving goal for the user\r\n\r\nHTTP 201: Finances saving goal was created\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while creating saving goal",
+        "operationId": "CreateSavingGoal",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSavingGoalRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/finances/saving-goals/{id}": {
+      "delete": {
+        "description": "deletes an existing finances saving goal for the user\r\n\r\nHTTP 200: Finances saving goal was deleted\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Saving goal not found\r\n\r\nHTTP 500: Unknown error while deleting saving goal",
+        "operationId": "DeleteSavingGoal",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/finances/saving-goals/{savingGoalId}/amounts": {
+      "patch": {
+        "description": "updates the amounts of an existing finances saving goal for the user\r\n\r\nHTTP 200: Finances saving goal was updated\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Saving goal not found\r\n\r\nHTTP 500: Unknown error while updating saving goal",
+        "operationId": "UpdateSavingGoalAmounts",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "savingGoalId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSavingGoalAmountsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/finances/saving-goals/{savingGoalId}/appearance": {
+      "patch": {
+        "description": "updates the appearance of an existing finances saving goal for the user\r\n\r\nHTTP 200: Finances saving goal was updated\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Saving goal not found\r\n\r\nHTTP 500: Unknown error while updating saving goal",
+        "operationId": "UpdateSavingGoalAppearance",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "savingGoalId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSavingGoalAppearanceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/finances/saving-goals/{savingGoalId}/info": {
+      "patch": {
+        "description": "updates the info (target date, etc.) of an existing finances saving goal for the user\r\n\r\nHTTP 200: Finances saving goal was updated\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Saving goal not found\r\n\r\nHTTP 500: Unknown error while updating saving goal",
+        "operationId": "UpdateSavingGoalInfo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "savingGoalId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSavingGoalInfoRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/finances/saving-goals/{savingGoalId}/name": {
+      "patch": {
+        "description": "updates the name of an existing finances saving goal for the user\r\n\r\nHTTP 200: Finances saving goal was updated\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Saving goal not found\r\n\r\nHTTP 500: Unknown error while updating saving goal",
+        "operationId": "UpdateSavingGoalName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "savingGoalId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSavingGoalNameRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Finances Module"
+        ]
+      }
+    },
+    "/modules/homebook/kitchen/recipes": {
+      "get": {
+        "description": "returns recipes matching the search filter\r\n\r\nHTTP 200: Recipes were found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting recipes",
+        "operationId": "GetRecipes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "searchFilter",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipesListResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      },
+      "post": {
+        "description": "creates a new recipe\r\n\r\nHTTP 201: Recipe was created\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while creating recipe",
+        "operationId": "CreateRecipe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecipeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      }
+    },
+    "/modules/homebook/kitchen/recipes/{id}": {
+      "delete": {
+        "description": "deletes an existing recipe\r\n\r\nHTTP 200: Recipe was deleted\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Saving goal not found\r\n\r\nHTTP 500: Unknown error while deleting recipe",
+        "operationId": "DeleteRecipe",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      },
+      "get": {
+        "description": "returns recipe by id\r\n\r\nHTTP 200: Recipes were found\r\n\r\nHTTP 404: Recipe not found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting recipes",
+        "operationId": "GetRecipeById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipeDetailResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      },
+      "patch": {
+        "description": "updates the name of an existing recipe\r\n\r\nHTTP 200: Recipe Name was updated\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Recipe not found\r\n\r\nHTTP 500: Unknown error while updating recipe",
+        "operationId": "UpdateRecipeName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecipeRenameRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      },
+      "put": {
+        "description": "updates an existing recipe\r\n\r\nHTTP 200: Recipe was updated\r\n\r\nHTTP 400: Invalid request data\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: Recipe not found\r\n\r\nHTTP 500: Unknown error while updating recipe",
+        "operationId": "UpdateRecipe",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecipeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      }
+    },
+    "/modules/homebook/kitchen/recipes/{id}/images": {
+      "get": {
+        "description": "returns recipe by id\r\n\r\nHTTP 200: Recipes were found\r\n\r\nHTTP 404: Recipe not found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting recipes",
+        "operationId": "GetImagesByRecipeId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipeImagesResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Kitchen Module"
+        ]
+      }
+    },
+    "/platform/locales": {
+      "get": {
+        "description": "returns all available locales",
+        "operationId": "GetLocales",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetLocalesResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Platform"
+        ]
+      }
+    },
+    "/search": {
+      "get": {
+        "description": "returns search results based on the query\r\n\r\nHTTP 200: Search results were found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting preference",
+        "operationId": "Search",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "s",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Search"
+        ]
+      }
+    },
+    "/setup/availability": {
+      "get": {
+        "description": "returns the status of the setup availability\r\n\r\nHTTP 200: Setup is not executed yet and available => Setup can be started\r\n\r\nHTTP 201: Setup is finished, but an update is required => Update must be executed before Homebook can be used\r\n\r\nHTTP 204: Setup is finished and no update is required => Homebook is ready to use\r\n\r\nHTTP 500: Unknown error while setup checking",
+        "operationId": "GetAvailability",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Created"
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/setup/configuration": {
+      "get": {
+        "description": "returns the homebook setup configuration if it is set via environment variables.\r\n\r\nHTTP 200: Configuration was found\r\n\r\nHTTP 404: No configuration found\r\n\r\nHTTP 500: Unknown error while loading configuration",
+        "operationId": "GetConfiguration",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/setup/database/check": {
+      "post": {
+        "description": "check that the Database is available\r\n\r\nHTTP 200: Database is available => returns the detected database provider in uppercases\r\n\r\nHTTP 500: Unknown error while database connection check\r\n\r\nHTTP 503: Database is not available",
+        "operationId": "CheckDatabase",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckDatabaseRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          },
+          "503": {
+            "description": "Service Unavailable"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/setup/database/configuration": {
+      "get": {
+        "description": "check if database configuration is available via environment variables\r\n\r\nHTTP 200: Database configuration found\r\n\r\nHTTP 400: Validation error, e.g. too short password, etc.\r\n\r\nHTTP 404: No Database configuration found\r\n\r\nHTTP 500: Unknown error while checking Database configuration",
+        "operationId": "GetDatabaseCheck",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetDatabaseCheckResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/setup/licenses": {
+      "get": {
+        "description": "returns all licenses of the project\r\n\r\nHTTP 200: Licenses found\r\n\r\nHTTP 500: Unknown error while loading licenses",
+        "operationId": "GetLicenses",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetLicensesResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/setup/start": {
+      "post": {
+        "description": "start the setup process. it will save the configuration for the setup steps\r\n\r\nHTTP 200: Setup started successfully\r\n\r\nHTTP 400: Validation error for example with the database configuration, e.g. too short password, etc.\r\n\r\nHTTP 422: Licenses not accepted\r\n\r\nHTTP 500: Unknown error while starting setup",
+        "operationId": "StartSetup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartSetupRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/setup/user": {
+      "get": {
+        "description": "check if a pre-configured user is available via environment variables\r\n\r\nHTTP 200: A user was pre-configured\r\n\r\nHTTP 404: No pre-configured user found\r\n\r\nHTTP 500: Unknown error while loading pre-configured user",
+        "operationId": "GetPreConfiguredUser",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Setup"
+        ]
+      }
+    },
+    "/storage/files": {
+      "delete": {
+        "description": "Deletes a file by filename and scope\r\n\r\nHTTP 200: File deleted successfully\r\n\r\nHTTP 400: Invalid parameters\r\n\r\nHTTP 422: Storage Scope not found\r\n\r\nHTTP 500: Unknown error while deleting file",
+        "operationId": "DeleteFile",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "scopeId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Storage"
+        ]
+      },
+      "get": {
+        "description": "Reads file content by filename and scope\r\n\r\nHTTP 200: File content returned successfully\r\n\r\nHTTP 400: Invalid parameters\r\n\r\nHTTP 404: File not found\r\n\r\nHTTP 422: Storage Scope not found\r\n\r\nHTTP 500: Unknown error while reading file",
+        "operationId": "GetFile",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "scopeId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileGetResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Storage"
+        ]
+      },
+      "post": {
+        "description": "Creates or updates a file with binary content\r\n\r\nHTTP 200: File created/updated successfully\r\n\r\nHTTP 400: Invalid parameters or content\r\n\r\nHTTP 422: Storage Scope not found\r\n\r\nHTTP 500: Unknown error while writing file",
+        "operationId": "PostFile",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilePostRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FilePostResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Storage"
+        ]
+      }
+    },
+    "/storage/media/{mediaId}": {
+      "get": {
+        "description": "get the file as assets content\r\n\r\nHTTP 200: File content returned successfully\r\n\r\nHTTP 404: File not found",
+        "operationId": "GetFileByIdMedia",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mediaId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "Storage"
+        ]
+      }
+    },
+    "/storage/scopes": {
+      "get": {
+        "description": "Returns the scope ID for a given scope name",
+        "operationId": "GetScopeIdByName",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "format": "uuid",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "Storage"
+        ]
+      }
+    },
+    "/system/instance/default-locale": {
+      "put": {
+        "description": "Updates the instance default locale (Admin only)",
+        "operationId": "UpdateInstanceDefaultLocale",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInstanceDefaultLocaleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Instance",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/instance/info": {
+      "get": {
+        "description": "returns several system informations (Admin only)",
+        "operationId": "GetSystemInfo",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSystemInfoResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Instance",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/instance/name": {
+      "put": {
+        "description": "Updates the instance name (Admin only)",
+        "operationId": "UpdateInstanceName",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInstanceNameRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Instance",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/storage/info": {
+      "get": {
+        "description": "returns several system informations (Admin only)",
+        "operationId": "GetSystemStorageInfo",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSystemStorageInfoResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Storage",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users": {
+      "get": {
+        "description": "Returns all users with pagination, optionally filtered by username (Admin only)",
+        "operationId": "GetUsers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "default": 1,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "default": 10,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      },
+      "post": {
+        "description": "Creates a new user (Admin only)",
+        "operationId": "CreateUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUserResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users/{userId}": {
+      "delete": {
+        "description": "Deletes a user (Admin only, cannot delete self)",
+        "operationId": "DeleteUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      },
+      "get": {
+        "description": "Returns a user by its id (Admin only)",
+        "operationId": "GetUserById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users/{userId}/admin": {
+      "put": {
+        "description": "Updates a user's admin status (Admin only, cannot change own status)",
+        "operationId": "UpdateUserAdmin",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserAdminRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users/{userId}/disable": {
+      "put": {
+        "description": "Disables an active user (Admin only, cannot disable self)",
+        "operationId": "DisableUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users/{userId}/enable": {
+      "put": {
+        "description": "Enables a disabled user (Admin only, cannot enable self)",
+        "operationId": "EnableUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users/{userId}/password": {
+      "put": {
+        "description": "Updates a user's password (Admin only)",
+        "operationId": "UpdateUserPassword",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePasswordRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/users/{userId}/username": {
+      "put": {
+        "description": "Updates a user's username (Admin only, checks for uniqueness ignoring case)",
+        "operationId": "UpdateUsername",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUsernameRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Users",
+          "Require Admin"
+        ]
+      }
+    },
+    "/system/wallpaper": {
+      "get": {
+        "description": "Returns all available wallpapers\r\n\r\nHTTP 200: Wallpapers were found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while retrieving wallpapers",
+        "operationId": "GetSystemWallpapers",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSystemWallpapersResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "System",
+          "System/Wallpaper"
+        ]
+      }
+    },
+    "/system/wallpaper/{wallpaper}": {
+      "get": {
+        "description": "get the wallpaper as assets content\r\n\r\nHTTP 200: File content returned successfully\r\n\r\nHTTP 404: File not found",
+        "operationId": "GetWallpaperByName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "wallpaper",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "tags": [
+          "System",
+          "System/Wallpaper"
+        ]
+      }
+    },
+    "/update/start": {
+      "post": {
+        "description": "start the update process\r\n\r\nHTTP 200: Update was successful\r\n\r\nHTTP 409: Setup was not executed yet - setup must be completed before update can be started\r\n\r\nHTTP 500: Unknown error while starting update",
+        "operationId": "Update",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Update"
+        ]
+      }
+    },
+    "/user/preferences/locale": {
+      "get": {
+        "description": "returns the user preference for locale\r\n\r\nHTTP 200: User preference was found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while getting preference",
+        "operationId": "GetUserPreferenceForLocale",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserPreferenceLocaleResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      },
+      "post": {
+        "description": "updates the user preference for locale\r\n\r\nHTTP 200: User preference was updated\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while updating preference",
+        "operationId": "UpdateUserPreferenceForLocale",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserPreferenceLocaleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/user/preferences/wallpaper": {
+      "get": {
+        "description": "returns the user preference for wallpaper\r\n\r\nHTTP 200: User preference was found\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 404: User preference was not found\r\n\r\nHTTP 500: Unknown error while getting preference",
+        "operationId": "GetUserPreferenceForWallpaper",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserPreferenceWallpaperResponse"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      },
+      "post": {
+        "description": "updates the user preference for wallpaper\r\n\r\nHTTP 200: User preference was updated\r\n\r\nHTTP 401: User is not authorized\r\n\r\nHTTP 500: Unknown error while updating preference",
+        "operationId": "UpdateUserPreferenceForWallpaper",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserPreferenceWallpaperRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "tags": [
+          "User"
+        ]
+      }
+    },
+    "/version": {
+      "get": {
+        "description": "returns the version of the backend service",
+        "operationId": "GetVersion",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "Version"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Version"
+    },
+    {
+      "name": "System"
+    },
+    {
+      "name": "System/Users"
+    },
+    {
+      "name": "Require Admin"
+    },
+    {
+      "name": "System/Instance"
+    },
+    {
+      "name": "System/Storage"
+    },
+    {
+      "name": "Platform"
+    },
+    {
+      "name": "Development"
+    },
+    {
+      "name": "Setup"
+    },
+    {
+      "name": "Update"
+    },
+    {
+      "name": "Account"
+    },
+    {
+      "name": "Authentication"
+    },
+    {
+      "name": "Info"
+    },
+    {
+      "name": "User"
+    },
+    {
+      "name": "Search"
+    },
+    {
+      "name": "Storage"
+    },
+    {
+      "name": "Media"
+    },
+    {
+      "name": "System/Wallpaper"
+    },
+    {
+      "name": "Finances Module"
+    },
+    {
+      "name": "Kitchen Module"
+    }
+  ]
+}

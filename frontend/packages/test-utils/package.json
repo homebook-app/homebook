@@ -1,0 +1,27 @@
+{
+  "name": "@homebook/test-utils",
+  "version": "0.0.0",
+  "description": "Shared Vitest setup and the mountWithPlugins helper. Test-only, never part of the shipped app.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./setup": "./src/setup.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@homebook/ui": "workspace:*",
+    "@vue/devtools-api": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "pinia": "catalog:",
+    "primevue": "catalog:",
+    "vue": "catalog:",
+    "vue-i18n": "catalog:",
+    "vue-router": "catalog:"
+  }
+}

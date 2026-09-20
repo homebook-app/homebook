@@ -131,5 +131,3 @@ Every component with logic - conditional rendering, emitted events, computed val
 |---|---|
 | `@homebook/ui` tokens and the concrete `--hb-*` names | step 04 |
 | The `Ui*` component library | step 05 |
-| Module package entry points | step 03 |
-| The `mountWithPlugins` test helper | step 03 |
