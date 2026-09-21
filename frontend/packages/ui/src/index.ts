@@ -29,6 +29,7 @@ export {
   type UseCountdownOptions,
 } from './composables/useCountdown';
 export { APP_TITLE, usePageTitle } from './composables/usePageTitle';
+export { useBreakpointUp } from './composables/useBreakpoint';
 export {
   createIconRegistry,
   getIconRegistry,

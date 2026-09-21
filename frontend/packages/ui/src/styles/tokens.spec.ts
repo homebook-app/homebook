@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { compile } from 'sass-embedded';
 
 import { brand } from '../theme/brand';
+import { breakpoints } from '../theme/breakpoints';
 import { colorNames } from '../theme/colorNames';
 
 type Declarations = Map<string, string>;
@@ -119,11 +120,17 @@ describe('design tokens', () => {
   });
 
   it('emits the eight breakpoints', () => {
-    const breakpoints = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl'].map((name) =>
+    const emitted = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl', 'xxxxl'].map((name) =>
       root.get(`--hb-breakpoint-${name}`),
     );
 
-    expect(breakpoints).toEqual(['0px', '600px', '960px', '1280px', '1920px', '2560px', '3840px', '5120px']);
+    expect(emitted).toEqual(['0px', '600px', '960px', '1280px', '1920px', '2560px', '3840px', '5120px']);
+  });
+
+  it('keeps breakpoints.ts in sync with the custom properties', () => {
+    for (const [name, pixels] of Object.entries(breakpoints)) {
+      expect(root.get(`--hb-breakpoint-${name}`), name).toBe(`${pixels}px`);
+    }
   });
 
   it('never uses !important, the hb layer already wins over PrimeVue', () => {

@@ -8,6 +8,11 @@
   --#{$hb-prefix}-appbar-height: 64px;
   --#{$hb-prefix}-chrome-border-radius: 12px;
   --#{$hb-prefix}-chrome-gap: 8px;
+  // Above the page content, below PrimeVue overlays (1000 and up)
+  --#{$hb-prefix}-chrome-z-index: 100;
+  // The large navigation entries of the drawer
+  --#{$hb-prefix}-nav-link-icon-size: 2rem;
+  --#{$hb-prefix}-nav-link-font-size: 1rem;
 }
 
 .hb-drawer {
@@ -31,9 +36,80 @@
   width: calc(100% - var(--#{$hb-prefix}-chrome-gap) - var(--#{$hb-prefix}-drawer-width));
 }
 
+// MudBlazor positioned its app bars and the drawer itself, here the layout does it: the bars
+// float at the top and bottom edge next to the drawer, the drawer floats on the left.
+.hb-header-appbar,
+.hb-footer-appbar {
+  position: fixed;
+  left: var(--#{$hb-prefix}-drawer-width);
+  z-index: var(--#{$hb-prefix}-chrome-z-index);
+  display: flex;
+  align-items: center;
+  gap: var(--#{$hb-prefix}-space-2);
+  min-height: var(--#{$hb-prefix}-appbar-height);
+  padding: 0 var(--#{$hb-prefix}-space-4);
+}
+
+.hb-header-appbar {
+  top: 0;
+}
+
+.hb-footer-appbar {
+  bottom: 0;
+}
+
 .hb-main-content {
+  margin-left: var(--#{$hb-prefix}-drawer-width);
+  padding: var(--#{$hb-prefix}-appbar-height) var(--#{$hb-prefix}-chrome-gap);
+
   @include media-up(sm) {
     padding-top: calc(var(--#{$hb-prefix}-appbar-height) + (var(--#{$hb-prefix}-chrome-gap) * 2));
     padding-bottom: calc(var(--#{$hb-prefix}-appbar-height) + (var(--#{$hb-prefix}-chrome-gap) * 2));
+  }
+}
+
+// Navigation list of the drawer, the "xxl" nav menu of the Blazor layout: large icons, text in
+// the primary color, and the first and last entries follow the rounded corners of their surface.
+.hb-nav-menu {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li:first-child {
+    border-top-left-radius: var(--#{$hb-prefix}-border-radius-default);
+    border-top-right-radius: var(--#{$hb-prefix}-border-radius-default);
+  }
+
+  > li:last-child {
+    border-bottom-left-radius: var(--#{$hb-prefix}-border-radius-default);
+    border-bottom-right-radius: var(--#{$hb-prefix}-border-radius-default);
+  }
+}
+
+.hb-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--#{$hb-prefix}-space-3);
+  padding: var(--#{$hb-prefix}-space-2);
+  border-radius: inherit;
+  color: var(--#{$hb-prefix}-color-primary);
+  font-size: var(--#{$hb-prefix}-nav-link-font-size);
+  text-decoration: none;
+  transition: background-color 120ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgb(from var(--#{$hb-prefix}-color-primary) r g b / 0.08);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--#{$hb-prefix}-color-primary);
+    outline-offset: -2px;
+  }
+
+  &.router-link-exact-active {
+    background: rgb(from var(--#{$hb-prefix}-color-primary) r g b / 0.14);
   }
 }
