@@ -13,6 +13,7 @@ public static class LocaleMappings
             "en-GB" => "English (British English)",
             "en-US" => "English (US English)",
             "fr-FR" => "Français (French)",
+            "ru-RU" => "Русский (Russian)",
             _ => locale // Fallback to the locale code if no display name is found
         };
 

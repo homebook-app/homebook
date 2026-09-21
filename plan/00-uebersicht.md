@@ -129,7 +129,7 @@ Das Backend entscheidet anhand von `Database:Provider`, ob es im Zustand `SETUP`
 | Methode | Route | Auth | Zweck |
 |---|---|---|---|
 | GET | `/version` | – | Versionsstring |
-| GET | `/platform/locales` | – | verfügbare Sprachen (`en-GB`, `en-US`, `de-DE`, `fr-FR`) |
+| GET | `/platform/locales` | – | verfügbare Sprachen (`en-GB`, `en-US`, `de-DE`, `fr-FR`, `ru-RU`) |
 | GET | `/info` | Bearer | `{ name, defaultLocale }` |
 | GET | `/info/name` | – | Instanzname |
 | GET | `/info/devmode` | – | `{ isActive }` |

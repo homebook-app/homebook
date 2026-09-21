@@ -18,7 +18,8 @@ public class PlatformHandler
                 "en-GB",
                 "en-US",
                 "de-DE",
-                "fr-FR"
+                "fr-FR",
+                "ru-RU"
             };
 
             LocaleResponse[] localeResponse = availableLocales
