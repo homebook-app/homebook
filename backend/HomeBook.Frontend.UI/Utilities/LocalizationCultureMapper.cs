@@ -10,7 +10,7 @@ public static class LocalizationCultureMapper
         { "en-GB", "en-EN" },
         { "de-DE", "de-DE" },
         { "fr-FR", "fr-FR" },
-        { "ru-RU", "ru" },
+        { "ru-RU", "ru-RU" },
     };
 
     public static CultureInfo GetResourceCulture(string selectedCulture)
