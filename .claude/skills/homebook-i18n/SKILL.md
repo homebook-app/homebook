@@ -7,8 +7,8 @@ description: Add or change a user-visible string in this repository. Use wheneve
 
 ## Status
 
-vue-i18n is wired up and the three app catalogs exist, still empty. They are filled in
-**step 06**. The rules below apply from the very first key onwards.
+The catalogs were migrated from the Blazor resx files in step 06 (`scripts/migrate-resx.ts`,
+one-off). From now on the JSON files are the source of truth and are maintained in Weblate.
 
 ## The one rule
 
@@ -25,42 +25,50 @@ treat it as a precedent: anything that renders after the app has mounted goes th
 - camelCase segments, nested by area: `settings.users.addButton`.
 - Derive the key from **where the string appears**, not from its English wording. The wording
   changes; the location does not.
+- A key is either a message or a group, never both. Where the migration met a key that was
+  both, the message moved one level down as `label` (`finances.addSavingGoal.mudStep.goal.title.label`).
 
 ## Which catalog
 
 | Scope | Catalog |
 |---|---|
-| App-wide | `frontend/apps/web/src/locales/<locale>.json` |
-| Module-specific | `frontend/packages/module-<name>/src/locales/<locale>.json` |
+| App-wide, including `@homebook/ui` components | `frontend/apps/web/src/locales/<language>.json` |
+| Module-specific | `frontend/packages/module-<name>/src/locales/<language>.json` |
 
-A module key never goes into the global catalog. The paths above are the layout that steps 03
-and 06 create.
+A module key never goes into the global catalog. Module catalogs are nested under the module's
+namespace - `kitchen.…`, `finances.…`, `platformInfo.…` - because the app merges every module
+catalog into one vue-i18n instance.
 
-## Every locale, every time
+## Languages
 
-The catalogs are `de-DE`, `en-US` and `fr-FR`. A new key goes into **all** of them in the
-**same commit**.
+Catalogs are named by the plain language code: `en`, `de`, `fr`, `ru`. No region
+(`de-DE`, `en-US`). The backend and the browser speak in culture tags; `resolveLocale()` in
+`apps/web/src/locales/index.ts` maps a tag to its catalog.
 
-A missing translation is a **copy of the English value** - **never an empty string**. Weblate
-renders an empty value as nothing at all, so an empty placeholder silently ships a blank
-label.
+- **English is the default and the only mandatory language.** Every English value is filled.
+- A new key goes into **every** catalog in the **same commit**. In the other languages the value
+  may be an empty string - Weblate shows it as untranslated. Fill in what you can translate
+  reliably yourself, leave the rest empty.
+- **There is no fallback.** An empty or missing value renders as nothing at runtime, not as the
+  English text. That is deliberate.
 
-> Open question, do not decide unilaterally: `GET /platform/locales` advertises a fourth
-> locale, `en-GB`, which has no counterpart in the Blazor resx files. `AGENTS.md` specifies
-> three catalogs and is the authoritative rulebook, so three it is. Whether `en-GB` gets a
-> catalog is a step 06 decision to be agreed, not taken in passing.
+The specs enforce the shape: `describeCatalogs()` from `@homebook/test-utils` checks that every
+language has exactly the English keys and that no English value is empty.
 
 ## Weblate
 
-Translations are maintained at <https://hosted.weblate.org/projects/homebook/>.
+Translations are maintained at <https://hosted.weblate.org/projects/homebook/>, one component
+per catalog, file format "JSON nested structure".
 
 - Renaming or deleting a key discards its existing translations. Consider that before
   touching one.
 - Do not reformat or reorder catalogs by hand.
+- `frontend/locale-key-mapping.json` records old resx key and new key of every migrated string.
 
-## Where the strings come from
+## Where the strings came from
 
-The Blazor originals, for reference while porting a page:
+The Blazor originals, for reference while porting a page. `locale-key-mapping.json` gives the new
+key for each of them.
 
 | File | Keys |
 |---|---|
@@ -70,19 +78,12 @@ The Blazor originals, for reference while porting a page:
 | `backend/HomeBook.Frontend.Module.PlatformInfo/Resources/Strings*.resx` | 2 |
 
 The `LocalizationCultureMapper` workaround that mapped `en-US` onto a non-existent `en-EN` is
-dropped with no replacement - it is plain `en-US` now.
+dropped with no replacement.
 
 ## Checklist
 
 - [ ] No visible string left without `t()`
 - [ ] Key in camelCase, nested by area
-- [ ] Key present in `de-DE`, `en-US` and `fr-FR`
-- [ ] No empty values - untranslated entries hold the English text
-- [ ] Module keys in the module catalog, not the global one
-
-## Not yet available
-
-| Item | Arrives in |
-|---|---|
-| The content of the catalogs and the module catalogs | step 06 |
-| `scripts/migrate-resx.ts` | step 06 |
+- [ ] Key present in every catalog: `en`, `de`, `fr`, `ru`
+- [ ] English value filled; other languages filled or empty
+- [ ] Module keys in the module catalog, under the module's namespace

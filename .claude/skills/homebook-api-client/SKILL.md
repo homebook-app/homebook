@@ -44,8 +44,9 @@ predicates `isUnauthorized`, `isBadRequest`, `isForbidden`, `isNotFound`, `isCon
 status code; `isBackendApiError(error)` tells them apart.
 
 The generated `setup.availability.get()` cannot distinguish 200, 201 and 204 - Kiota hides
-the status of successful responses. A helper for that endpoint is still to be written in the
-setup step (Kiota's `NativeResponseHandler`).
+the status of successful responses. Use `client.getSetupAvailability()`, which reads the status
+through a response handler and resolves to `200 | 201 | 204 | 409`; any other status rejects
+with a `BackendApiError`.
 
 ## Authentication
 
@@ -122,10 +123,18 @@ From `@homebook/api-client`:
 
 - `createBackendClient({ baseUrl?, getAccessToken, onUnauthorized?, fetch? })` returns a
   `HomeBookClient` with `api` (generated builders), `baseUrl`, `search`, `listRecipes`,
-  `deleteSavingGoal`, `resolveMediaUrl`, `mediaUrl`, `getScopeIdByName`, `uploadFile`
+  `deleteSavingGoal`, `resolveMediaUrl`, `mediaUrl`, `getScopeIdByName`, `uploadFile`,
+  `getSetupAvailability`, `staticWallpaperUrl`
 - `BearerAccessTokenProvider`, `UnauthorizedMiddleware`, `AccessTokenSource`
 - `BackendApiError`, `isBackendApiError`, `statusCodeOf` and the status predicates
-- `prefixMediaPath(baseUrl, path)`, `mediaUrl(baseUrl, mediaId)`
+- `prefixMediaPath(baseUrl, path)`, `mediaUrl(baseUrl, mediaId)`,
+  `staticWallpaperUrl(baseUrl, fileName)` (file name URL-encoded, dots as `%2E`)
+- `SetupAvailability`
+
+In the app there is exactly one client, created in `apps/web/src/bootstrap/createHomeBookApp.ts`.
+Its `onUnauthorized` ends the session and sends the user to `/Login?reason=expired`. Stores and
+guards reach it through `useBackend()` from `@/api/backend`, components and modules through
+`useBackendClient()` from `@homebook/module-sdk`. Never create a second one.
 - `toBase64Content(file, filename?)`, `assertUploadSize`, `MAX_UPLOAD_BYTES`, `UploadTooLargeError`
 - all generated model types (`LoginRequest`, `RecipeResponse`, ...) and `BackendClient`
 

@@ -59,7 +59,7 @@ It is **async** - it navigates and waits for the router before mounting. It prec
 - PrimeVue with the shared `primeVueOptions` from `@homebook/ui` (`darkModeSelector: false`,
   `cssLayer: { name: 'primevue', order: 'primevue, hb' }`) plus `ToastService`,
   `ConfirmationService` and `DialogService`
-- vue-i18n with `legacy: false`, fallback `en-US` and **no catalogs**, so `t('some.key')`
+- vue-i18n with `legacy: false`, locale `en` and **no catalogs**, so `t('some.key')`
   renders `some.key`
 - a **fresh** Pinia instance per call, so state never leaks between tests
 - a memory-history router with a catch-all route
@@ -68,7 +68,7 @@ Options, on top of every `mount` option of `@vue/test-utils`:
 
 | Option | Purpose |
 |---|---|
-| `locale` | Active locale, default `en-US` |
+| `locale` | Active locale, default `en` |
 | `messages` | Catalogs by locale, only for tests that are about translation |
 | `routes` | Route table of the memory router |
 | `initialRoute` | Path to navigate to before mounting, default `/` |
@@ -94,6 +94,16 @@ vi.mock('@homebook/api-client', () => ({
   // the named exports the code under test uses, see packages/api-client/src/index.ts
 }))
 ```
+
+In `apps/web` this is already done for every spec: `src/test/setup.ts` replaces the package
+with `src/test/apiClientMock.ts` (the status predicates plus a spied `createBackendClient`).
+Stores and guards reach the client through `useBackend()`; `mockBackend({...})` from
+`@/test/backend` installs a stub with just the parts a test needs, and `apiError(status)`
+builds a rejection with a status code. The app never loads the real client in tests - its
+Kiota runtime pulls in an ESM build of `@opentelemetry/api` that Node cannot load outside Vite.
+
+Module components get the client injected (`useBackendClient()` from `@homebook/module-sdk`);
+their specs pass a stub through `global.provide` under `backendClientKey`.
 
 Assert on the **status-code** branches of the code under test, never on response body text.
 The reason is in the `homebook-api-client` skill: the bodies are inconsistent and not

@@ -94,8 +94,9 @@ Aus dem Bestand übernommen, bitte fortführen:
 
 - **Kein sichtbarer String ohne `t()`.**
 - Schlüssel in camelCase, verschachtelt nach Bereich: `settings.users.addButton`.
-- Ein neuer Schlüssel wird in **allen** Katalogen angelegt: `de-DE`, `en-US`, `fr-FR`. Fehlende Übersetzungen als Kopie des englischen Werts, **nie leer** — Weblate zeigt sonst nichts an.
-- Modulspezifische Schlüssel gehören in den Katalog des jeweiligen Modul-Packages, nicht in den globalen.
+- Kataloge heißen nach dem reinen Sprachcode: `en`, `de`, `fr`, `ru`. **Englisch ist Standard und die einzige Pflichtsprache** — dort ist jeder Wert gefüllt.
+- Ein neuer Schlüssel wird in **allen** Katalogen angelegt. In den anderen Sprachen darf der Wert leer sein; Weblate füllt ihn. Es gibt **keinen Fallback**: ein leerer oder fehlender Wert wird zur Laufzeit als nichts angezeigt, nicht als Englisch.
+- Modulspezifische Schlüssel gehören in den Katalog des jeweiligen Modul-Packages, nicht in den globalen, und liegen dort unter dem Namensraum des Moduls: `kitchen.…`, `finances.…`, `platformInfo.…`.
 - Übersetzt wird über [Weblate](https://hosted.weblate.org/projects/homebook/). Schlüssel nicht umbenennen, ohne die Folgen dort zu bedenken.
 
 ---
@@ -200,6 +201,7 @@ frontend/
   packages/module-kitchen/     # Rezepte, Speiseplan
   packages/module-finances/    # Sparziele
   packages/module-platform-info/
+  packages/module-sdk/         # @homebook/module-sdk — Modulvertrag, Backend-Client-Injektion, Kontextmenü
   packages/test-utils/         # @homebook/test-utils — mountWithPlugins, Vitest-Setup (nur für Tests)
 backend/                       # .NET-Backend und der C#-Client
 scripts/

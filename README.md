@@ -38,6 +38,21 @@ you can help to translate HomeBook into your language.
 
 translate via [Weblate](https://hosted.weblate.org/projects/homebook/)
 
+The translations live in nested JSON catalogs, one file per language named by the plain language code (`en.json`,
+`de.json`, `fr.json`, `ru.json`). English is the source language and the only complete one; an untranslated value is an
+empty string and shows as untranslated in Weblate. Each catalog set is a Weblate component with the file format
+"JSON nested structure":
+
+| Component            | File mask                                                   |
+|----------------------|-------------------------------------------------------------|
+| app                  | `frontend/apps/web/src/locales/*.json`                      |
+| module-kitchen       | `frontend/packages/module-kitchen/src/locales/*.json`       |
+| module-finances      | `frontend/packages/module-finances/src/locales/*.json`      |
+| module-platform-info | `frontend/packages/module-platform-info/src/locales/*.json` |
+
+The catalogs were migrated from the resx files of the former Blazor frontend. `frontend/locale-key-mapping.json` maps
+every old resx key to its new key.
+
 ---
 
 ## 🚀 Quick Start
