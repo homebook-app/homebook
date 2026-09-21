@@ -17,6 +17,7 @@
     "@homebook/module-finances": "workspace:*",
     "@homebook/module-kitchen": "workspace:*",
     "@homebook/module-platform-info": "workspace:*",
+    "@homebook/module-sdk": "workspace:*",
     "@homebook/ui": "workspace:*",
     "@primeuix/themes": "catalog:",
     "@vue/devtools-api": "catalog:",

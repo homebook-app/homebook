@@ -35,6 +35,7 @@
         "@homebook/module-finances": "workspace:*",
         "@homebook/module-kitchen": "workspace:*",
         "@homebook/module-platform-info": "workspace:*",
+        "@homebook/module-sdk": "workspace:*",
         "@homebook/ui": "workspace:*",
         "@primeuix/themes": "catalog:",
         "@vue/devtools-api": "catalog:",
@@ -71,6 +72,20 @@
     "packages/module-platform-info": {
       "name": "@homebook/module-platform-info",
       "version": "0.0.0",
+    },
+    "packages/module-sdk": {
+      "name": "@homebook/module-sdk",
+      "version": "0.0.0",
+      "dependencies": {
+        "@homebook/api-client": "workspace:*",
+        "@homebook/ui": "workspace:*",
+        "pinia": "catalog:",
+        "vue": "catalog:",
+        "vue-router": "catalog:",
+      },
+      "devDependencies": {
+        "@homebook/test-utils": "workspace:*",
+      },
     },
     "packages/test-utils": {
       "name": "@homebook/test-utils",
@@ -204,6 +219,8 @@
     "@homebook/module-kitchen": ["@homebook/module-kitchen@workspace:packages/module-kitchen"],
 
     "@homebook/module-platform-info": ["@homebook/module-platform-info@workspace:packages/module-platform-info"],
+
+    "@homebook/module-sdk": ["@homebook/module-sdk@workspace:packages/module-sdk"],
 
     "@homebook/test-utils": ["@homebook/test-utils@workspace:packages/test-utils"],
 

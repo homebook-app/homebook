@@ -1,0 +1,26 @@
+{
+  "name": "@homebook/module-sdk",
+  "version": "0.0.0",
+  "description": "The contract between the app and its modules: module definition, backend client injection and the context menu.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@homebook/api-client": "workspace:*",
+    "@homebook/ui": "workspace:*",
+    "pinia": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@homebook/test-utils": "workspace:*"
+  }
+}
