@@ -57,6 +57,10 @@ export function installGuards(router: Router, pinia: Pinia): void {
       // The app shows the error view instead of the page
       return true;
     }
+    if (to.name === RouteNames.setup) {
+      // Nothing to set up on an operational instance
+      return { name: RouteNames.home, replace: true };
+    }
 
     const auth = useAuthStore(pinia);
     if (to.name === RouteNames.login) {

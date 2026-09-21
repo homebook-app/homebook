@@ -25,7 +25,7 @@ export const coreRoutes: RouteRecordRaw[] = [
   {
     path: '/Setup',
     name: RouteNames.setup,
-    component: PlaceholderPage,
+    component: () => import('@/pages/setup/SetupPage.vue'),
     meta: { layout: 'contentOnly', requiresAuth: false },
   },
   { path: '/Settings', name: RouteNames.settings, component: PlaceholderPage },

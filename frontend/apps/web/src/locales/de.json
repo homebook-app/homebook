@@ -580,6 +580,19 @@
         "databasePassword": {
           "label": "Passwort",
           "helperText": "Geben Sie das Passwort ein, um auf die Datenbank zuzugreifen"
+        },
+        "provider": {
+          "label": "Datenbanksystem",
+          "helperText": "Das Datenbanksystem wählen, in dem HomeBook seine Daten speichert",
+          "options": {
+            "postgresql": "PostgreSQL",
+            "mysql": "MySQL",
+            "sqlite": "SQLite"
+          }
+        },
+        "databaseFile": {
+          "label": "Datenbankdatei",
+          "helperText": "Pfad der SQLite-Datei auf dem Server, z. B. /var/lib/homebook/homebook.db"
         }
       },
       "testConnection": {
@@ -598,6 +611,15 @@
         "notAvailableError": {
           "message": "Die Datenbank ist nicht verfügbar."
         }
+      },
+      "sqliteHint": {
+        "message": "SQLite ist nur für Tests gedacht. Die Datei lässt sich vorab nicht prüfen, das Setup legt sie an."
+      },
+      "sqliteSaved": {
+        "text": "SQLite-Datenbankdatei gespeichert."
+      },
+      "presetError": {
+        "message": "Die vorbelegte Datenbankkonfiguration des Servers konnte nicht gelesen werden. Die Verbindung bitte von Hand eingeben."
       }
     },
     "adminUser": {
@@ -616,12 +638,19 @@
         "password": {
           "label": "Passwort",
           "helperText": "Geben Sie ein sicheres Passwort für das Konto ein"
+        },
+        "passwordConfirm": {
+          "label": "Passwort wiederholen",
+          "helperText": "Das Passwort noch einmal eingeben"
         }
       },
       "save": {
         "button": {
           "text": "Benutzer speichern"
         }
+      },
+      "presetError": {
+        "message": "Unbekannter Serverfehler beim Prüfen der Benutzerkonfiguration. Bitte die Serverprotokolle ansehen."
       }
     },
     "configuration": {
@@ -635,7 +664,8 @@
       "form": {
         "instanceName": {
           "label": "HomeBook Instanz Name",
-          "helperText": "Geben Sie Ihrer HomeBook-Instanz einen eigenen Namen"
+          "helperText": "Geben Sie Ihrer HomeBook-Instanz einen eigenen Namen",
+          "defaultValue": "Mein HomeBook"
         },
         "instanceDefaultLocale": {
           "label": "HomeBook Standard Sprache",
@@ -646,6 +676,9 @@
         "button": {
           "text": "Konfiguration speichern"
         }
+      },
+      "loadingError": {
+        "message": "Unbekannter Serverfehler beim Laden der Konfiguration. Bitte die Serverprotokolle ansehen."
       }
     },
     "process": {
@@ -667,6 +700,9 @@
         },
         "removeEnvironmentVariables": {
           "message": "Bitte entfernen Sie die Setup-Umgebungsvariablen aus Ihrer Docker-Konfiguration."
+        },
+        "redirect": {
+          "message": "Gleich geht es weiter zur Anmeldung."
         }
       },
       "processingError": {
@@ -684,6 +720,9 @@
       "processingUnknownError": {
         "message": "Während des Installationsvorgangs ist ein unbekannter Fehler aufgetreten. Bitte überprüfen Sie die Serverprotokolle.",
         "messageTemplate": "Während der Installation ist ein unbekannter Fehler aufgetreten: {0}"
+      },
+      "restartHint": {
+        "message": "HomeBook wird eingerichtet. Der Server startet danach neu, das kann einige Minuten dauern."
       }
     },
     "processFinished": {
@@ -738,6 +777,9 @@
         },
         "startHomeBook": {
           "message": "HomeBook öffnen"
+        },
+        "redirect": {
+          "message": "Gleich geht es weiter zu HomeBook."
         }
       },
       "retry": {
@@ -757,6 +799,9 @@
       },
       "processingSetupMissingError": {
         "message": "Führen Sie zunächst das HomeBook-Setup aus."
+      },
+      "restartHint": {
+        "message": "HomeBook wird aktualisiert. Der Server startet danach neu, das kann einige Minuten dauern."
       }
     }
   },
@@ -837,5 +882,14 @@
     "resultsLabel": "Suchergebnisse",
     "searching": "Suche läuft…",
     "fallbackModuleName": "Suche"
+  },
+  "validation": {
+    "required": "Dieses Feld ist erforderlich.",
+    "minLength": "Mindestens {min} Zeichen eingeben.",
+    "maxLength": "Höchstens {max} Zeichen eingeben.",
+    "range": "Eine ganze Zahl von {min} bis {max} eingeben.",
+    "usernameCharacters": "Nur Buchstaben, Ziffern, Unterstrich und Bindestrich verwenden.",
+    "passwordCharacters": "Diese Zeichen sind nicht erlaubt: {characters}",
+    "passwordMismatch": "Die Passwörter stimmen nicht überein."
   }
 }

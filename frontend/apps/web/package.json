@@ -20,6 +20,7 @@
     "@homebook/module-sdk": "workspace:*",
     "@homebook/ui": "workspace:*",
     "@primeuix/themes": "catalog:",
+    "@primevue/forms": "catalog:",
     "@vue/devtools-api": "catalog:",
     "pinia": "catalog:",
     "primevue": "catalog:",

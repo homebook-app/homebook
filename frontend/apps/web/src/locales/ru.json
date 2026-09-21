@@ -112,6 +112,19 @@
         "databasePassword": {
           "label": "Пароль",
           "helperText": "Введите пароль для доступа к базе данных"
+        },
+        "provider": {
+          "label": "Система баз данных",
+          "helperText": "Выберите систему баз данных, в которой HomeBook хранит свои данные",
+          "options": {
+            "postgresql": "PostgreSQL",
+            "mysql": "MySQL",
+            "sqlite": "SQLite"
+          }
+        },
+        "databaseFile": {
+          "label": "Файл базы данных",
+          "helperText": "Путь к файлу SQLite на сервере, например /var/lib/homebook/homebook.db"
         }
       },
       "testConnection": {
@@ -130,6 +143,15 @@
         "notAvailableError": {
           "message": "База данных недоступна."
         }
+      },
+      "sqliteHint": {
+        "message": "SQLite предназначен только для тестирования. Файл нельзя проверить заранее, установка создаст его."
+      },
+      "sqliteSaved": {
+        "text": "Файл базы данных SQLite сохранён."
+      },
+      "presetError": {
+        "message": "Не удалось прочитать предустановленную конфигурацию базы данных сервера. Введите подключение вручную."
       }
     },
     "adminUser": {
@@ -148,12 +170,19 @@
         "password": {
           "label": "Пароль",
           "helperText": "Введите надёжный пароль для учётной записи"
+        },
+        "passwordConfirm": {
+          "label": "Повторите пароль",
+          "helperText": "Введите пароль ещё раз"
         }
       },
       "save": {
         "button": {
           "text": "Сохранить пользователя"
         }
+      },
+      "presetError": {
+        "message": "Неизвестная ошибка сервера при проверке конфигурации пользователя. Пожалуйста, посмотрите журналы сервера."
       }
     },
     "configuration": {
@@ -167,7 +196,8 @@
       "form": {
         "instanceName": {
           "label": "Имя экземпляра HomeBook",
-          "helperText": "Дайте вашему экземпляру HomeBook уникальное имя"
+          "helperText": "Дайте вашему экземпляру HomeBook уникальное имя",
+          "defaultValue": "Мой HomeBook"
         },
         "instanceDefaultLocale": {
           "label": "Язык HomeBook по умолчанию",
@@ -178,6 +208,9 @@
         "button": {
           "text": "Сохранить конфигурацию"
         }
+      },
+      "loadingError": {
+        "message": "Неизвестная ошибка сервера при загрузке конфигурации. Пожалуйста, посмотрите журналы сервера."
       }
     },
     "process": {
@@ -199,6 +232,9 @@
         },
         "removeEnvironmentVariables": {
           "message": "Удалите переменные окружения установки из конфигурации Docker."
+        },
+        "redirect": {
+          "message": "Сейчас вы будете перенаправлены на страницу входа."
         }
       },
       "processingError": {
@@ -216,6 +252,9 @@
       "processingUnknownError": {
         "message": "Неизвестная ошибка при установке. Проверьте логи сервера.",
         "messageTemplate": "Неизвестная ошибка при установке: {0}"
+      },
+      "restartHint": {
+        "message": "HomeBook устанавливается. Затем сервер перезапустится, это может занять несколько минут."
       }
     },
     "processFinished": {
@@ -738,6 +777,9 @@
         },
         "startHomeBook": {
           "message": "Открыть HomeBook"
+        },
+        "redirect": {
+          "message": "Сейчас вы будете перенаправлены в HomeBook."
         }
       },
       "retry": {
@@ -757,6 +799,9 @@
       },
       "processingSetupMissingError": {
         "message": "Сначала запустите установку HomeBook."
+      },
+      "restartHint": {
+        "message": "HomeBook обновляется. Затем сервер перезапустится, это может занять несколько минут."
       }
     }
   },
@@ -837,5 +882,14 @@
     "resultsLabel": "",
     "searching": "",
     "fallbackModuleName": ""
+  },
+  "validation": {
+    "required": "Это поле обязательно.",
+    "minLength": "Введите не менее {min} символов.",
+    "maxLength": "Введите не более {max} символов.",
+    "range": "Введите целое число от {min} до {max}.",
+    "usernameCharacters": "Используйте только буквы, цифры, подчёркивание и дефис.",
+    "passwordCharacters": "Эти символы не допускаются: {characters}",
+    "passwordMismatch": "Пароли не совпадают."
   }
 }

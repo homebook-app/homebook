@@ -38,6 +38,7 @@
         "@homebook/module-sdk": "workspace:*",
         "@homebook/ui": "workspace:*",
         "@primeuix/themes": "catalog:",
+        "@primevue/forms": "catalog:",
         "@vue/devtools-api": "catalog:",
         "pinia": "catalog:",
         "primevue": "catalog:",
@@ -155,6 +156,7 @@
   },
   "catalog": {
     "@primeuix/themes": "2.0.3",
+    "@primevue/forms": "4.5.5",
     "@vue/devtools-api": "8.2.1",
     "@vue/test-utils": "2.5.1",
     "pinia": "4.0.3",
@@ -336,6 +338,8 @@
 
     "@parcel/watcher-win32-x64": ["@parcel/watcher-win32-x64@2.6.0", "", { "os": "win32", "cpu": "x64" }, "sha512-cA+/pXV2YkfxlIcXOQ5fSWqAzzPyD78/x5qbK/I0vUkrlYHA8TIz+MXjAbGouguKVSI4bOmkTSJ1/poVSsgt+A=="],
 
+    "@primeuix/forms": ["@primeuix/forms@0.1.0", "", { "dependencies": { "@primeuix/utils": "^0.6.0" } }, "sha512-LctcQidb+B5PuvAFWH24YH/SIzmHlOabLHpaTeGY/k51iBv1WyCp+5w9JMYuMB/BplSvV0ZGySxQVkN5Azr/aQ=="],
+
     "@primeuix/styled": ["@primeuix/styled@0.7.4", "", { "dependencies": { "@primeuix/utils": "^0.6.1" } }, "sha512-QSO/NpOQg8e9BONWRBx9y8VGMCMYz0J/uKfNJEya/RGEu7ARx0oYW0ugI1N3/KB1AAvyGxzKBzGImbwg0KUiOQ=="],
 
     "@primeuix/styles": ["@primeuix/styles@2.0.3", "", { "dependencies": { "@primeuix/styled": "^0.7.4" } }, "sha512-2ykAB6BaHzR/6TwF8ShpJTsZrid6cVIEBVlookSdvOdmlWuevGu5vWOScgIwqWwlZcvkFYAGR/SUV3OHCTBMdw=="],
@@ -345,6 +349,8 @@
     "@primeuix/utils": ["@primeuix/utils@0.6.4", "", {}, "sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg=="],
 
     "@primevue/core": ["@primevue/core@4.5.5", "", { "dependencies": { "@primeuix/styled": "^0.7.4", "@primeuix/utils": "^0.6.2" }, "peerDependencies": { "vue": "^3.5.0" } }, "sha512-JpkXhq1ddc70JdsC3CC4dM+UbeeWuCW/8DpS9dNBfrOk824TLSlRlMEGFyVKqRMn5WPQvYLiy3xXfLQeNdSqhQ=="],
+
+    "@primevue/forms": ["@primevue/forms@4.5.5", "", { "dependencies": { "@primeuix/forms": "^0.1.0", "@primeuix/utils": "^0.6.2", "@primevue/core": "4.5.5" } }, "sha512-LUeIt6oItwCZyBreQ7ycErE8aEjPmBWOTq1VPLhyaATcnzMBOZRIiwclaYk8s/tf5VYMqN9N4B80XnXoO7OdvQ=="],
 
     "@primevue/icons": ["@primevue/icons@4.5.5", "", { "dependencies": { "@primeuix/utils": "^0.6.2", "@primevue/core": "4.5.5" } }, "sha512-eteOhTdAOXEYE9qW1AOrBBgDxQ2szHJxSkEK1XVdV2TKxGM5FQf03Ovms0VDyZTc16XBIgvwYjXJQS0BPbhPaA=="],
 

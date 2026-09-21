@@ -580,6 +580,19 @@
         "databasePassword": {
           "label": "Password",
           "helperText": "Enter the password to access the database"
+        },
+        "provider": {
+          "label": "Database System",
+          "helperText": "Select the database system HomeBook stores its data in",
+          "options": {
+            "postgresql": "PostgreSQL",
+            "mysql": "MySQL",
+            "sqlite": "SQLite"
+          }
+        },
+        "databaseFile": {
+          "label": "Database File",
+          "helperText": "Path of the SQLite file on the server, e.g. /var/lib/homebook/homebook.db"
         }
       },
       "testConnection": {
@@ -598,6 +611,15 @@
         "notAvailableError": {
           "message": "Database is not available."
         }
+      },
+      "sqliteHint": {
+        "message": "SQLite is meant for testing only. The file cannot be checked in advance, the setup creates it."
+      },
+      "sqliteSaved": {
+        "text": "SQLite database file saved."
+      },
+      "presetError": {
+        "message": "The preset database configuration of the server could not be read. Enter the connection manually."
       }
     },
     "adminUser": {
@@ -616,12 +638,19 @@
         "password": {
           "label": "Password",
           "helperText": "Enter a good password for the account"
+        },
+        "passwordConfirm": {
+          "label": "Repeat Password",
+          "helperText": "Enter the password once more"
         }
       },
       "save": {
         "button": {
           "text": "Save User"
         }
+      },
+      "presetError": {
+        "message": "Unknown Server Error while checking the user configuration. Please have a look into the Server logs."
       }
     },
     "configuration": {
@@ -635,7 +664,8 @@
       "form": {
         "instanceName": {
           "label": "HomeBook Instance Name",
-          "helperText": "Give your HomeBook instance its own name"
+          "helperText": "Give your HomeBook instance its own name",
+          "defaultValue": "My HomeBook"
         },
         "instanceDefaultLocale": {
           "label": "HomeBook Default Language",
@@ -646,6 +676,9 @@
         "button": {
           "text": "Save Configuration"
         }
+      },
+      "loadingError": {
+        "message": "Unknown Server Error while loading the configuration. Please have a look into the Server logs."
       }
     },
     "process": {
@@ -667,6 +700,9 @@
         },
         "removeEnvironmentVariables": {
           "message": "Please remove the Setup Environment Variables from your docker configuration."
+        },
+        "redirect": {
+          "message": "You will be taken to the sign-in in a moment."
         }
       },
       "processingError": {
@@ -684,6 +720,9 @@
       "processingUnknownError": {
         "message": "An unknown error occurred during the setup process. Please check the server logs.",
         "messageTemplate": "An unknown error occurred during the setup process: {0}"
+      },
+      "restartHint": {
+        "message": "HomeBook is being set up. The server restarts afterwards, this can take a few minutes."
       }
     },
     "processFinished": {
@@ -738,6 +777,9 @@
         },
         "startHomeBook": {
           "message": "Open HomeBook"
+        },
+        "redirect": {
+          "message": "You will be taken to HomeBook in a moment."
         }
       },
       "retry": {
@@ -757,6 +799,9 @@
       },
       "processingSetupMissingError": {
         "message": "Run the HomeBook Setup first."
+      },
+      "restartHint": {
+        "message": "HomeBook is being updated. The server restarts afterwards, this can take a few minutes."
       }
     }
   },
@@ -837,5 +882,14 @@
     "resultsLabel": "Search results",
     "searching": "Searching…",
     "fallbackModuleName": "Search"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "minLength": "Enter at least {min} characters.",
+    "maxLength": "Enter at most {max} characters.",
+    "range": "Enter a whole number from {min} to {max}.",
+    "usernameCharacters": "Use only letters, digits, underscore and hyphen.",
+    "passwordCharacters": "These characters are not allowed: {characters}",
+    "passwordMismatch": "The passwords do not match."
   }
 }

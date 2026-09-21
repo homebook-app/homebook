@@ -74,11 +74,22 @@ describe('installGuards', () => {
     expect(useAuthStore().clear).toHaveBeenCalled();
   });
 
-  it('keeps the login page and the setup reachable without a session', async () => {
+  it('keeps the login page reachable without a session', async () => {
     const { router } = setup({ authenticated: false, hasSession: false });
 
     expect((await visit(router, '/Login')).path).toBe('/Login');
+  });
+
+  it('keeps the setup reachable without a session while it is needed', async () => {
+    const { router } = setup({ status: 'setupRequired', authenticated: false, hasSession: false });
+
     expect((await visit(router, '/Setup')).path).toBe('/Setup');
+  });
+
+  it('sends everyone away from the setup of an operational instance', async () => {
+    const { router } = setup();
+
+    expect((await visit(router, '/Setup')).path).toBe('/');
   });
 
   it('sends a signed-in user away from the login page', async () => {
@@ -119,6 +130,11 @@ describe('installGuards', () => {
     const { router } = setup({ authenticated: false, hasSession: false });
 
     expect((await visit(router, '/login')).fullPath).toBe('/Login');
+  });
+
+  it('corrects the spelling of the setup path while it is needed', async () => {
+    const { router } = setup({ status: 'setupRequired' });
+
     expect((await visit(router, '/setup?step=2')).fullPath).toBe('/Setup?step=2');
   });
 

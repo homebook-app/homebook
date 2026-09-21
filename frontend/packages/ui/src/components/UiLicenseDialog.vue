@@ -13,7 +13,7 @@ import UiIcon from './UiIcon.vue';
 export interface UiLicense {
   /** Package name. Spaces are encoded as `__`, the way the license files are named. */
   name: string;
-  /** The license text as HTML, generated at build time from the dependency manifest. */
+  /** The license text as HTML, generated at build time from the dependency manifests. */
   htmlContent: string;
 }
 
@@ -63,8 +63,8 @@ function accept(): void {
       <AccordionPanel v-for="(license, index) in licenses" :key="license.name" :value="String(index)">
         <AccordionHeader>{{ displayName(license) }}</AccordionHeader>
         <AccordionContent>
-          <!-- Generated at build time from the dependency manifest and bundled with the app, the
-               same trust level as this template. It never comes from the API or from a user, and
+          <!-- Generated at build time from the dependency manifests: bundled with the app, or served
+               by the own backend's GET /setup/licenses during the setup. Never user input, and
                sanitising it would mangle the markup the license texts rely on. -->
           <!-- eslint-disable-next-line vue/no-v-html -->
           <article class="ui-license-dialog-text" v-html="license.htmlContent"></article>

@@ -92,3 +92,9 @@ $ui-settings-item-content-width: 240px;
 
 // Start menu item, the former hardcoded offset of the background icon
 $startmenu-background-icon-offset: -25px;
+
+// Pages in the content-only layout (login, setup), the former `padding-top/bottom: 120px`
+$content-only-offset: 120px;
+
+// Setup wizard, the glowing tiles of the closing animation
+$setup-tile-glow: rgba(255, 255, 255, 0.5);

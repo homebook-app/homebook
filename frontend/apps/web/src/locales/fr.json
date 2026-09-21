@@ -580,6 +580,19 @@
         "databasePassword": {
           "label": "",
           "helperText": ""
+        },
+        "provider": {
+          "label": "Système de base de données",
+          "helperText": "Sélectionnez le système de base de données dans lequel HomeBook stocke ses données",
+          "options": {
+            "postgresql": "PostgreSQL",
+            "mysql": "MySQL",
+            "sqlite": "SQLite"
+          }
+        },
+        "databaseFile": {
+          "label": "Fichier de base de données",
+          "helperText": "Chemin du fichier SQLite sur le serveur, p. ex. /var/lib/homebook/homebook.db"
         }
       },
       "testConnection": {
@@ -598,6 +611,15 @@
         "notAvailableError": {
           "message": ""
         }
+      },
+      "sqliteHint": {
+        "message": "SQLite est destiné uniquement aux tests. Le fichier ne peut pas être vérifié à l’avance, l’installation le crée."
+      },
+      "sqliteSaved": {
+        "text": "Fichier de base de données SQLite enregistré."
+      },
+      "presetError": {
+        "message": "La configuration de base de données prédéfinie du serveur n’a pas pu être lue. Saisissez la connexion manuellement."
       }
     },
     "adminUser": {
@@ -616,12 +638,19 @@
         "password": {
           "label": "",
           "helperText": ""
+        },
+        "passwordConfirm": {
+          "label": "Répéter le mot de passe",
+          "helperText": "Saisissez à nouveau le mot de passe"
         }
       },
       "save": {
         "button": {
           "text": ""
         }
+      },
+      "presetError": {
+        "message": "Erreur serveur inconnue lors de la vérification de la configuration utilisateur. Veuillez consulter les journaux du serveur."
       }
     },
     "configuration": {
@@ -635,7 +664,8 @@
       "form": {
         "instanceName": {
           "label": "",
-          "helperText": ""
+          "helperText": "",
+          "defaultValue": "Mon HomeBook"
         },
         "instanceDefaultLocale": {
           "label": "",
@@ -646,6 +676,9 @@
         "button": {
           "text": ""
         }
+      },
+      "loadingError": {
+        "message": "Erreur serveur inconnue lors du chargement de la configuration. Veuillez consulter les journaux du serveur."
       }
     },
     "process": {
@@ -667,6 +700,9 @@
         },
         "removeEnvironmentVariables": {
           "message": ""
+        },
+        "redirect": {
+          "message": "Vous allez être redirigé vers la connexion dans un instant."
         }
       },
       "processingError": {
@@ -684,6 +720,9 @@
       "processingUnknownError": {
         "message": "",
         "messageTemplate": ""
+      },
+      "restartHint": {
+        "message": "HomeBook est en cours d’installation. Le serveur redémarre ensuite, cela peut prendre quelques minutes."
       }
     },
     "processFinished": {
@@ -738,6 +777,9 @@
         },
         "startHomeBook": {
           "message": ""
+        },
+        "redirect": {
+          "message": "Vous allez être redirigé vers HomeBook dans un instant."
         }
       },
       "retry": {
@@ -757,6 +799,9 @@
       },
       "processingSetupMissingError": {
         "message": ""
+      },
+      "restartHint": {
+        "message": "HomeBook est en cours de mise à jour. Le serveur redémarre ensuite, cela peut prendre quelques minutes."
       }
     }
   },
@@ -837,5 +882,14 @@
     "resultsLabel": "",
     "searching": "",
     "fallbackModuleName": ""
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire.",
+    "minLength": "Saisissez au moins {min} caractères.",
+    "maxLength": "Saisissez au plus {max} caractères.",
+    "range": "Saisissez un nombre entier de {min} à {max}.",
+    "usernameCharacters": "Utilisez uniquement des lettres, des chiffres, le tiret bas et le trait d’union.",
+    "passwordCharacters": "Ces caractères ne sont pas autorisés : {characters}",
+    "passwordMismatch": "Les mots de passe ne correspondent pas."
   }
 }
