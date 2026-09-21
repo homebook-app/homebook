@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { createBackendClient, DEFAULT_BASE_URL } from './client.js';
 import { isServiceUnavailable, statusCodeOf } from './errors.js';
 import { createFetchMock, emptyResponse, jsonResponse, textResponse } from './testing/fetchMock.js';
@@ -15,6 +15,21 @@ describe('createBackendClient', () => {
     const client = clientWith(createFetchMock(() => emptyResponse()));
 
     expect(client.baseUrl).toBe(DEFAULT_BASE_URL);
+  });
+
+  it('sends through the global fetch when no fetch is configured', async () => {
+    const mock = createFetchMock(() => jsonResponse({ searchModuleResponses: [] }));
+    vi.stubGlobal('fetch', mock.fetch);
+    try {
+      const client = createBackendClient({ getAccessToken: () => 'abc' });
+
+      await client.search('tea');
+
+      expect(mock.last().url).toBe('/api/search?s=tea');
+      expect(mock.last().headers.get('authorization')).toBe('Bearer abc');
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 
   it('strips a trailing slash from the base URL', async () => {

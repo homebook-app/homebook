@@ -83,7 +83,11 @@ export function createBackendClient(options: BackendClientOptions): HomeBookClie
     new ParametersNameDecodingHandler(),
     new HeadersInspectionHandler(),
   ];
-  const httpClient = new HttpClient(options.fetch, ...middlewares);
+  // Kiota appends the terminal fetch handler only for a custom fetch; with own middlewares and
+  // none given, the chain would end without one. The global fetch is resolved per request, so it
+  // is always the current one.
+  const fetchFunction: FetchFunction = options.fetch ?? ((url, init) => fetch(url, init));
+  const httpClient = new HttpClient(fetchFunction, ...middlewares);
   const authenticationProvider = new BaseBearerTokenAuthenticationProvider(
     new BearerAccessTokenProvider(options.getAccessToken),
   );
