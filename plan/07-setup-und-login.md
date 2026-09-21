@@ -86,3 +86,26 @@ Die beiden Seiten, die eine frische Installation zuerst sieht: den Ersteinrichtu
 
 - Keine Startseite, keine Einstellungen
 - Keine Modulseiten
+
+---
+
+## Umsetzungsnotizen
+
+Umgesetzt auf Branch `HB-188`. Abweichungen vom Text oben, die meisten wegen des tatsächlichen Backend-Vertrags:
+
+- **Kein 409 bei `GET /setup/availability`.** Das Backend antwortet nur mit 200 (Setup nötig), 201 (Update nötig), 204 (bereit) oder 500. Der 409-Zweig im Bestand konnte nie greifen. Verbindungsschritt und Bootstrap-Store behandeln 409 trotzdem weiter, als Absicherung.
+- **Mindestlängen beim Login 5/5 statt 6/5, mit dem Nutzer abgestimmt.** Das Backend erzwingt keine davon, weil `AddValidation()` fehlt; zu kurze Eingaben enden in 401. Beim Anlegen erlaubt der `UserValidator` Benutzernamen ab 5 Zeichen, bei 6 wäre so ein Konto ausgesperrt.
+- **Administrator-Passwort: mindestens 8 Zeichen plus Zeichensatz aus der `README.md`, mit dem Nutzer abgestimmt.** Das Backend prüft beim Setup gar nichts. Die Meldung nennt die unzulässigen Zeichen. Der Benutzername wird clientseitig wie im `UserValidator` geprüft (5–20, `^[a-zA-Z0-9_-]+$`), denn das Backend prüft ihn erst, nachdem Datenbankkonfiguration und Migration schon gelaufen sind.
+- **SQLite nur im Entwicklermodus, mit dem Nutzer abgestimmt.** SQLite ist nur für Tests gedacht. Im Entwicklermodus gibt es statt Host und Port ein Dateipfadfeld und keine Prüfung, denn `POST /setup/database/check` kennt kein SQLite. Der Bestand hat SQLite faktisch nicht beherrscht (es fehlte `databaseFile`).
+- **Der Anbieter kommt von der Prüfung.** `POST /setup/database/check` hat kein Anbieterfeld, probiert alle durch und meldet den, der antwortet. Der gemeldete Wert geht an `POST /setup/start`, die Auswahl im Formular setzt nur den Standardport (5432/3306).
+- **Formularvalidierung mit `@primevue/forms`, mit dem Nutzer abgestimmt.** Neue Abhängigkeit, im Catalog auf 4.5.5 wie PrimeVue. Die Regeln sind eigene Resolver-Funktionen in `apps/web/src/setup/validation.ts`, ohne Zod. Die Fehlermeldungen bleiben Katalogschlüssel, bis `HbFormField` sie rendert.
+- **Setup und Update beenden den Prozess.** Danach wird `GET /setup/availability` gepollt: 10 s Wartezeit, dann alle 5 s, höchstens 5 Minuten (`waitForBackendRestart`). Nach dem Setup gelten 201 und 204, nach dem Update nur 204. Abgebrochene Anfragen und 502–504 von nginx sind dabei normal und erzeugen keine Meldung, nur Antworten des Backends selbst (400, 409, 422, 500). `POST /update/start` antwortet mit 200 und bleibt oben, wenn nichts zu migrieren ist; das Polling sieht dann sofort 204.
+- **Schrittschnittstelle.** Jeder Schritt ist eine eigene Komponente unter `apps/web/src/pages/setup/steps/` und nutzt `useSetupStep(key)`: `run` (mit Mindestanzeigedauer), `fail`, `succeed` (Countdown, danach weiter) und `complete` (sofort weiter). „Überspringbar“ heißt: `succeed(…, { skipped: true })` mit sichtbarem Hinweis. Der Zustand liegt im Store `stores/setup.ts`. `startRequest` lässt leere Werte weg, damit das Backend auf seine Umgebungsvariablen zurückfällt.
+- **Ein Stepper statt zwei.** Der Bestand hat die Schrittleiste auf kleinen Bildschirmen doppelt gerendert. Jetzt gibt es einen PrimeVue-`Stepper`, ab 960 px senkrecht neben dem Schritt, darunter quer und scrollbar; der aktive Schritt wird ins Bild gescrollt. Anklicken lässt er sich nicht (`linear`).
+- **`/Setup` auf einer eingerichteten Instanz** leitet der Guard zur Startseite. Nach Setup oder Update läuft die Startsequenz neu (`bootstrap.retry()`), dann öffnet sich `/Login`. Davor spielt die Abschlussanimation des Bestands, bei `prefers-reduced-motion` nicht.
+- **Nicht übernommen:** der ungeprüfte `returnUrl` (offene Weiterleitung), jeder Fehler als „falsche Zugangsdaten“, doppeltes `StepSuccess` beim Zustimmen im Lizenzdialog.
+- **Vier Kataloge statt drei.** Neue Schlüssel stehen in `en`, `de`, `fr` und `ru`, alle gefüllt. Neu ist unter anderem die Gruppe `validation.*`. Der Standard-Instanzname („My HomeBook“) ist jetzt übersetzbar.
+- **Neue Token:** `--hb-content-only-offset` (der Abstand oben und unten von Login und Setup) und `--hb-setup-tile-glow` (Kacheln der Abschlussanimation).
+- **Größerer PrimeVue-Chunk.** Stepper, Select, InputNumber, Forms und der Lizenzdialog heben den `primevue`-Chunk von 367 auf 524 kB. Das löst die Vite-Warnung über 500 kB aus. Ursache ist die `codeSplitting`-Gruppe in `vite.config.ts`, die alles von PrimeVue in einen Chunk legt, auch was nur lazy geladene Seiten brauchen. Nicht geändert.
+- **Im Browser geprüft** gegen das lokale Backend im Setup-Zustand, bei 1440 und 375 px: Verbindungsschritt, übersprungener Lizenzschritt (die Lizenzen waren per Umgebung akzeptiert), Vorbelegung der Datenbank aus der Umgebung, Prüfung mit 503 und Markierung im Stepper. Die Anmeldeseite mit abgefangenen Antworten (204, 401): Mindestlängen, Absenden per Eingabetaste, übersetzte 401-Meldung.
+- **Offen — Ende-zu-Ende.** Ein vollständiger Durchlauf bis zur fertigen Installation, der Update-Zweig mit echtem Neustart und eine echte Anmeldung stehen aus. Das Setup hätte die Konfiguration nach `/var/lib/homebook` geschrieben (hier `E:\var\lib\homebook`) und braucht eine erreichbare Datenbank. Der Screenshot-Vergleich gegen den Blazor-Bestand steht ebenfalls aus.
