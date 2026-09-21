@@ -9,3 +9,5 @@ export {
   type StartMenuItemDefinition,
   type WidgetDefinition,
 } from './module';
+export { default as ModulePlaceholderPage } from './ModulePlaceholderPage.vue';
+export { GUID_ROUTE_PATTERN, isGuid } from './routes';

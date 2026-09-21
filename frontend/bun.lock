@@ -64,14 +64,50 @@
     "packages/module-finances": {
       "name": "@homebook/module-finances",
       "version": "0.0.0",
+      "dependencies": {
+        "@homebook/api-client": "workspace:*",
+        "@homebook/module-sdk": "workspace:*",
+        "@homebook/ui": "workspace:*",
+        "primevue": "catalog:",
+        "vue": "catalog:",
+        "vue-i18n": "catalog:",
+        "vue-router": "catalog:",
+      },
+      "devDependencies": {
+        "@homebook/test-utils": "workspace:*",
+      },
     },
     "packages/module-kitchen": {
       "name": "@homebook/module-kitchen",
       "version": "0.0.0",
+      "dependencies": {
+        "@homebook/api-client": "workspace:*",
+        "@homebook/module-sdk": "workspace:*",
+        "@homebook/ui": "workspace:*",
+        "primevue": "catalog:",
+        "vue": "catalog:",
+        "vue-i18n": "catalog:",
+        "vue-router": "catalog:",
+      },
+      "devDependencies": {
+        "@homebook/test-utils": "workspace:*",
+      },
     },
     "packages/module-platform-info": {
       "name": "@homebook/module-platform-info",
       "version": "0.0.0",
+      "dependencies": {
+        "@homebook/api-client": "workspace:*",
+        "@homebook/module-sdk": "workspace:*",
+        "@homebook/ui": "workspace:*",
+        "primevue": "catalog:",
+        "vue": "catalog:",
+        "vue-i18n": "catalog:",
+        "vue-router": "catalog:",
+      },
+      "devDependencies": {
+        "@homebook/test-utils": "workspace:*",
+      },
     },
     "packages/module-sdk": {
       "name": "@homebook/module-sdk",

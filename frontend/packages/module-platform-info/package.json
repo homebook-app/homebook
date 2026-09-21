@@ -7,6 +7,21 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@homebook/api-client": "workspace:*",
+    "@homebook/module-sdk": "workspace:*",
+    "@homebook/ui": "workspace:*",
+    "primevue": "catalog:",
+    "vue": "catalog:",
+    "vue-i18n": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@homebook/test-utils": "workspace:*"
   }
 }
