@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, type Router, type RouteRecordRaw, type 
 import { coreRoutes, devRoutes, notFoundRoute } from './routes';
 
 export { installGuards, loginLocation, SESSION_EXPIRED_REASON } from './guards';
-export { coreRoutes, devRoutes, GUID_PATTERN, notFoundRoute, RouteNames } from './routes';
+export { coreRoutes, devRoutes, notFoundRoute, RouteNames } from './routes';
 
 /** Every route the app itself declares. Module routes are added by the module registry. */
 export const routes: RouteRecordRaw[] = [...coreRoutes, ...devRoutes, notFoundRoute];

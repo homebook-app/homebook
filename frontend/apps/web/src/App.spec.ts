@@ -5,6 +5,7 @@ import type { RouteRecordRaw } from 'vue-router';
 
 import App from '@/App.vue';
 import BootErrorView from '@/components/boot/BootErrorView.vue';
+import { createModuleRegistry, moduleRegistryKey } from '@/modules';
 import { useBootstrapStore, type BootStatus } from '@/stores/bootstrap';
 
 const Page = defineComponent({ render: () => h('div', { class: 'probe-page' }) });
@@ -23,7 +24,12 @@ async function mountApp(status: BootStatus, initialRoute = '/') {
     bootstrap.status = 'ready';
     return 'ready';
   });
-  const mounted = await mountWithPlugins(App, { routes, pinia, initialRoute });
+  const mounted = await mountWithPlugins(App, {
+    routes,
+    pinia,
+    initialRoute,
+    global: { provide: { [moduleRegistryKey as symbol]: createModuleRegistry([]) } },
+  });
   await vi.waitFor(() => expect(mounted.wrapper.find('.hb-boot-screen').exists()).toBe(status === 'loading'));
   return { ...mounted, retry };
 }

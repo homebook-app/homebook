@@ -1,5 +1,5 @@
 import { createBackendClient, type FetchFunction, type HomeBookClient } from '@homebook/api-client';
-import { backendClientKey } from '@homebook/module-sdk';
+import { backendClientKey, type HomeBookModule } from '@homebook/module-sdk';
 import { primeVueOptions } from '@homebook/ui';
 import { createPinia, type Pinia } from 'pinia';
 import PrimeVue from 'primevue/config';
@@ -13,6 +13,7 @@ import { setBackendClient } from '@/api/backend';
 import App from '@/App.vue';
 import type { AppConfig } from '@/config/appConfig';
 import { createAppI18n, type AppI18n } from '@/locales';
+import { modules as defaultModules, registerModules, type ModuleRegistry } from '@/modules';
 import { createAppRouter, installGuards, loginLocation, RouteNames } from '@/router';
 import { useAuthStore } from '@/stores/auth';
 import { useBootstrapStore } from '@/stores/bootstrap';
@@ -21,6 +22,7 @@ import { useLocaleStore } from '@/stores/locale';
 export interface HomeBookAppOptions {
   history?: RouterHistory;
   fetch?: FetchFunction;
+  modules?: readonly HomeBookModule[];
 }
 
 export interface HomeBookApp {
@@ -29,6 +31,7 @@ export interface HomeBookApp {
   pinia: Pinia;
   i18n: AppI18n;
   client: HomeBookClient;
+  registry: ModuleRegistry;
 }
 
 /**
@@ -86,11 +89,14 @@ export function createHomeBookApp(config: AppConfig, options: HomeBookAppOptions
     { immediate: true },
   );
 
+  // Before the router is installed: its first navigation already needs the module routes
+  const registry = registerModules(app, router, i18n, options.modules ?? defaultModules);
+
   installGuards(router, pinia);
   app.use(router);
   app.use(i18n);
 
   void useBootstrapStore(pinia).start();
 
-  return { app, router, pinia, i18n, client };
+  return { app, router, pinia, i18n, client, registry };
 }

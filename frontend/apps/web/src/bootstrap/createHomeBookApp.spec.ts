@@ -84,6 +84,14 @@ describe('createHomeBookApp', () => {
     expect(replace).not.toHaveBeenCalled();
   });
 
+  it('registers the modules with their routes and tiles', () => {
+    const { router, registry } = create();
+
+    expect(router.resolve('/Kitchen/MealPlan').name).toBe('kitchen-meal-plan');
+    expect(router.resolve('/Finances/Savings/Add').name).toBe('finances-savings-add');
+    expect(registry.startMenuItems).toHaveLength(4);
+  });
+
   it('switches the language without a reload', async () => {
     const { pinia, i18n } = create();
 

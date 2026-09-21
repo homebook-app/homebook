@@ -1,10 +1,8 @@
+import { GUID_ROUTE_PATTERN } from '@homebook/module-sdk';
 import type { RouteRecordRaw } from 'vue-router';
 
 import NotFoundPage from '@/pages/NotFoundPage.vue';
 import PlaceholderPage from '@/pages/PlaceholderPage.vue';
-
-/** Route parameter pattern for GUIDs, the `:guid` constraint of the Blazor routes. */
-export const GUID_PATTERN = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
 
 export const RouteNames = {
   home: 'home',
@@ -48,7 +46,7 @@ export const coreRoutes: RouteRecordRaw[] = [
     meta: { requiresAdmin: true },
   },
   {
-    path: `/Settings/Users/:UserId(${GUID_PATTERN})`,
+    path: `/Settings/Users/:UserId(${GUID_ROUTE_PATTERN})`,
     name: 'settings-users-edit',
     component: PlaceholderPage,
     meta: { requiresAdmin: true },

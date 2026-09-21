@@ -6,6 +6,7 @@ import { computed, shallowRef, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
+import UiSearchComponent from '@/components/search/UiSearchComponent.vue';
 import { RouteNames } from '@/router/routes';
 import { useAuthStore } from '@/stores/auth';
 import { useBootstrapStore } from '@/stores/bootstrap';
@@ -62,7 +63,7 @@ async function logout(): Promise<void> {
       @logout="logout"
     >
       <template #search>
-        <slot name="search" />
+        <UiSearchComponent />
       </template>
     </HbAppBar>
     <main class="hb-main-content">

@@ -4,6 +4,7 @@ import { createPinia, setActivePinia } from 'pinia';
 import { defineComponent, h, nextTick } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
 
+import { createModuleRegistry, moduleRegistryKey } from '@/modules';
 import { useAuthStore } from '@/stores/auth';
 import { useBootstrapStore } from '@/stores/bootstrap';
 import { useWallpaperStore } from '@/stores/wallpaper';
@@ -42,6 +43,7 @@ async function mountLayout(signedIn: boolean) {
     pinia,
     routes,
     slots: { default: '<p class="probe">page</p>' },
+    global: { provide: { [moduleRegistryKey as symbol]: createModuleRegistry([]) } },
   });
   return { ...mounted, load, clear, logout, auth };
 }
