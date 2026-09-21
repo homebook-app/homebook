@@ -698,7 +698,17 @@
       },
       "signInButton": {
         "text": "Anmelden"
-      }
+      },
+      "username": {
+        "label": "Benutzername"
+      },
+      "password": {
+        "label": "Passwort"
+      },
+      "invalidCredentials": "Benutzername oder Passwort ist falsch. Bitte versuche es erneut.",
+      "error": "Bei der Anmeldung ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+      "sessionExpired": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an.",
+      "successMessage": "Anmeldung erfolgreich!"
     }
   },
   "appSlogan": "Dein selbst gehosteter Haushalts- und Finanzplaner",
@@ -776,6 +786,24 @@
   "mainLayout": {
     "searchTextField": {
       "placeholder": "Suche nach..."
+    },
+    "menuButton": {
+      "label": "Menü öffnen"
+    },
+    "homeButton": {
+      "label": "Startseite"
+    },
+    "profileMenu": {
+      "label": "Profil"
+    },
+    "moreMenu": {
+      "label": "Mehr"
+    },
+    "loginButton": {
+      "label": "Anmelden"
+    },
+    "drawer": {
+      "label": "Navigation"
     }
   },
   "homebook": {
@@ -787,5 +815,27 @@
     "kitchen": {
       "recipeimages": "Rezeptbilder"
     }
+  },
+  "boot": {
+    "loading": "HomeBook wird gestartet…",
+    "unreachable": {
+      "title": "Der Server ist nicht erreichbar",
+      "text": "HomeBook konnte keine Verbindung zu seinem Server herstellen. Prüfe, ob er läuft, und versuche es erneut."
+    },
+    "setupRunning": {
+      "title": "Einrichtung läuft",
+      "text": "HomeBook wird gerade eingerichtet. Versuche es gleich noch einmal."
+    },
+    "retry": "Erneut versuchen"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Unter dieser Adresse gibt es leider nichts.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "search": {
+    "resultsLabel": "Suchergebnisse",
+    "searching": "Suche läuft…",
+    "fallbackModuleName": "Suche"
   }
 }

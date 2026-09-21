@@ -230,7 +230,17 @@
       },
       "signInButton": {
         "text": "Войти"
-      }
+      },
+      "username": {
+        "label": ""
+      },
+      "password": {
+        "label": ""
+      },
+      "invalidCredentials": "",
+      "error": "",
+      "sessionExpired": "",
+      "successMessage": ""
     }
   },
   "appSlogan": "Ваша самостоятельная система управления домом и финансами",
@@ -776,6 +786,24 @@
   "mainLayout": {
     "searchTextField": {
       "placeholder": "Поиск..."
+    },
+    "menuButton": {
+      "label": ""
+    },
+    "homeButton": {
+      "label": ""
+    },
+    "profileMenu": {
+      "label": ""
+    },
+    "moreMenu": {
+      "label": ""
+    },
+    "loginButton": {
+      "label": ""
+    },
+    "drawer": {
+      "label": ""
     }
   },
   "homebook": {
@@ -787,5 +815,27 @@
     "kitchen": {
       "recipeimages": "Изображения рецептов"
     }
+  },
+  "boot": {
+    "loading": "",
+    "unreachable": {
+      "title": "",
+      "text": ""
+    },
+    "setupRunning": {
+      "title": "",
+      "text": ""
+    },
+    "retry": ""
+  },
+  "notFound": {
+    "title": "",
+    "text": "",
+    "backHome": ""
+  },
+  "search": {
+    "resultsLabel": "",
+    "searching": "",
+    "fallbackModuleName": ""
   }
 }

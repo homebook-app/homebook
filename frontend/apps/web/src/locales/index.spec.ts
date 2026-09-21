@@ -1,24 +1,50 @@
-import { FALLBACK_LOCALE, messages } from './index';
+import { describeCatalogs } from '@homebook/test-utils';
 
-function flatten(node: unknown, prefix = ''): Record<string, unknown> {
-  if (typeof node !== 'object' || node === null) return { [prefix]: node };
+import { createAppI18n, messages, resolveLocale } from './index';
 
-  return Object.entries(node).reduce<Record<string, unknown>>(
-    (entries, [key, value]) => ({ ...entries, ...flatten(value, prefix === '' ? key : `${prefix}.${key}`) }),
-    {},
-  );
-}
+describeCatalogs('app', messages);
 
-describe('catalogs', () => {
-  const reference = Object.keys(flatten(messages[FALLBACK_LOCALE])).sort();
+describe('resolveLocale', () => {
+  it.each([
+    ['de-DE', 'de'],
+    ['de', 'de'],
+    ['en-US', 'en'],
+    ['en-GB', 'en'],
+    ['en-EN', 'en'],
+    ['FR_fr', 'fr'],
+    ['ru', 'ru'],
+  ])('%s -> %s', (tag, expected) => {
+    expect(resolveLocale(tag)).toBe(expected);
+  });
 
-  it.each(Object.keys(messages) as (keyof typeof messages)[])('%s has every key, none of them empty', (locale) => {
-    const entries = flatten(messages[locale]);
+  it.each(['es-ES', '', null, undefined])('has no catalog for %s', (tag) => {
+    expect(resolveLocale(tag)).toBeUndefined();
+  });
+});
 
-    expect(Object.keys(entries).sort()).toEqual(reference);
-    for (const [key, value] of Object.entries(entries)) {
-      // Weblate shows nothing at all for an empty value
-      expect(typeof value === 'string' && value.trim() !== '', key).toBe(true);
-    }
+describe('createAppI18n', () => {
+  it('renders an untranslated value as nothing instead of falling back to English', () => {
+    const i18n = createAppI18n('fr');
+    i18n.global.mergeLocaleMessage('en', { probe: { empty: 'English' } });
+    i18n.global.mergeLocaleMessage('fr', { probe: { empty: '' } });
+
+    expect(i18n.global.t('probe.empty')).toBe('');
+  });
+
+  it('renders a missing key as nothing', () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const i18n = createAppI18n('de');
+
+    expect(i18n.global.t('probe.doesNotExist')).toBe('');
+  });
+
+  it('switches the language at runtime', () => {
+    const i18n = createAppI18n('en');
+    i18n.global.mergeLocaleMessage('en', { probe: { text: 'Hello' } });
+    i18n.global.mergeLocaleMessage('de', { probe: { text: 'Hallo' } });
+
+    i18n.global.locale.value = 'de';
+
+    expect(i18n.global.t('probe.text')).toBe('Hallo');
   });
 });

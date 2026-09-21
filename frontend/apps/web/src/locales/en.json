@@ -698,7 +698,17 @@
       },
       "signInButton": {
         "text": "Sign In"
-      }
+      },
+      "username": {
+        "label": "Username"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "invalidCredentials": "Invalid username or password. Please try again.",
+      "error": "An error occurred during login. Please try again later.",
+      "sessionExpired": "Your session has expired. Please sign in again.",
+      "successMessage": "Login successful!"
     }
   },
   "appSlogan": "Your Self-Hosted Household & Finance Organizer",
@@ -776,6 +786,24 @@
   "mainLayout": {
     "searchTextField": {
       "placeholder": "Search for..."
+    },
+    "menuButton": {
+      "label": "Open menu"
+    },
+    "homeButton": {
+      "label": "Start page"
+    },
+    "profileMenu": {
+      "label": "Profile"
+    },
+    "moreMenu": {
+      "label": "More"
+    },
+    "loginButton": {
+      "label": "Sign in"
+    },
+    "drawer": {
+      "label": "Navigation"
     }
   },
   "homebook": {
@@ -787,5 +815,27 @@
     "kitchen": {
       "recipeimages": "Recipe Images"
     }
+  },
+  "boot": {
+    "loading": "Starting HomeBook…",
+    "unreachable": {
+      "title": "The server cannot be reached",
+      "text": "HomeBook could not connect to its server. Check that it is running and try again."
+    },
+    "setupRunning": {
+      "title": "Setup in progress",
+      "text": "HomeBook is being set up right now. Try again in a moment."
+    },
+    "retry": "Try again"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "Sorry, there's nothing at this address.",
+    "backHome": "Back to the start page"
+  },
+  "search": {
+    "resultsLabel": "Search results",
+    "searching": "Searching…",
+    "fallbackModuleName": "Search"
   }
 }

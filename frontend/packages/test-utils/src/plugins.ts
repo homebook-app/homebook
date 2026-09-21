@@ -11,7 +11,7 @@ import { createMemoryHistory, createRouter, type Router, type RouteRecordRaw } f
 export type TestMessages = NonNullable<I18nOptions['messages']>;
 
 export interface TestPluginOptions {
-  /** Active locale, defaults to `en-US`. */
+  /** Active locale, defaults to `en`. */
   locale?: string;
   /** Message catalogs by locale. Empty by default, so `t('some.key')` renders the key. */
   messages?: TestMessages;
@@ -44,8 +44,8 @@ export function createTestPlugins(options: TestPluginOptions = {}): TestPlugins 
 
   const i18n = createI18n({
     legacy: false,
-    locale: options.locale ?? 'en-US',
-    fallbackLocale: 'en-US',
+    locale: options.locale ?? 'en',
+    fallbackLocale: 'en',
     messages: options.messages ?? {},
     // Tests assert on keys, a missing translation is the expected case
     missingWarn: false,
