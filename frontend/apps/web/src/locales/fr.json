@@ -1,0 +1,791 @@
+{
+  "settings": {
+    "developer": {
+      "colors": {
+        "title": "Couleurs",
+        "brandTitle": "Couleurs de marque",
+        "paletteTitle": "Palette",
+        "gradientTitle": "Dégradés"
+      },
+      "frosted": {
+        "title": "Verre dépoli"
+      },
+      "icons": {
+        "title": "Icônes",
+        "copyName": "Copier le nom {name}"
+      },
+      "components": {
+        "title": "Composants",
+        "showLicenses": "Afficher la boîte de dialogue des licences",
+        "restartCountdown": "Redémarrer le compte à rebours",
+        "countdownBody": "Cette fenêtre se ferme automatiquement."
+      },
+      "configurationArea": {
+        "title": ""
+      },
+      "configurationItemsFrontend": {
+        "title": ""
+      },
+      "configurationItemsBackend": {
+        "title": ""
+      }
+    },
+    "about": {
+      "version": {
+        "text": {
+          "template": ""
+        }
+      },
+      "applicationArea": {
+        "title": "",
+        "backend": {
+          "text": ""
+        },
+        "database": {
+          "text": ""
+        },
+        "ui": {
+          "text": ""
+        },
+        "deployment": {
+          "text": ""
+        }
+      },
+      "licensesArea": {
+        "title": "",
+        "showLicenses": {
+          "button": {
+            "text": ""
+          }
+        },
+        "copyright": {
+          "textTemplate": ""
+        }
+      },
+      "externalLink": {
+        "gitHubProject": {
+          "href": ""
+        },
+        "projectWebsite": {
+          "href": ""
+        }
+      },
+      "error": {
+        "messageTemplate": ""
+      },
+      "pageTitle": ""
+    },
+    "navMenu": {
+      "languageRegion": {
+        "text": ""
+      },
+      "about": {
+        "text": ""
+      },
+      "users": {
+        "text": ""
+      },
+      "homebookConfiguration": {
+        "text": ""
+      },
+      "homebookModules": {
+        "text": ""
+      },
+      "developerComponents": {
+        "text": ""
+      },
+      "developerIcons": {
+        "text": ""
+      },
+      "feedback": {
+        "text": ""
+      },
+      "developer": {
+        "text": ""
+      },
+      "developerColors": {
+        "text": ""
+      },
+      "homebookStorage": {
+        "text": ""
+      },
+      "appearance": {
+        "text": ""
+      }
+    },
+    "localization": {
+      "pageTitle": "",
+      "pageCaption": "",
+      "displayLanguage": {
+        "title": "",
+        "caption": ""
+      },
+      "saveChanges": {
+        "button": ""
+      },
+      "preferencesUpdated": {
+        "success": {
+          "message": ""
+        },
+        "error": {
+          "messageTemplate": ""
+        }
+      },
+      "loadPreferences": {
+        "error": {
+          "messageTemplate": ""
+        }
+      }
+    },
+    "instance": {
+      "pageTitle": "",
+      "pageCaption": "",
+      "instanceName": {
+        "title": "",
+        "caption": ""
+      },
+      "instanceDefaultLocale": {
+        "title": "",
+        "caption": ""
+      },
+      "saveChanges": {
+        "button": ""
+      },
+      "loadPreferences": {
+        "error": {
+          "messageTemplate": ""
+        }
+      },
+      "preferencesUpdated": {
+        "success": {
+          "message": ""
+        },
+        "error": {
+          "messageTemplate": ""
+        }
+      }
+    },
+    "user": {
+      "overview": {
+        "pageTitle": "",
+        "addUserButton": {
+          "text": ""
+        },
+        "loading": {
+          "message": ""
+        },
+        "currentCount": {
+          "messageTemplate": ""
+        },
+        "itemsPerPageSelect": {
+          "label": ""
+        },
+        "resultsTable": {
+          "username": {
+            "tableHeader": ""
+          },
+          "status": {
+            "tableHeader": ""
+          },
+          "role": {
+            "tableHeader": ""
+          },
+          "created": {
+            "tableHeader": ""
+          },
+          "actions": {
+            "tableHeader": "",
+            "editUser": {
+              "toolTipText": ""
+            }
+          },
+          "noResult": {
+            "message": ""
+          }
+        },
+        "toggleStatusTooltip": {
+          "enable": {
+            "text": ""
+          },
+          "disable": {
+            "text": ""
+          }
+        },
+        "userStatus": {
+          "disabled": {
+            "text": ""
+          },
+          "active": {
+            "text": ""
+          }
+        },
+        "userRole": {
+          "admin": {
+            "text": ""
+          },
+          "user": {
+            "text": ""
+          }
+        },
+        "loadCurrentUserError": {
+          "messageTemplate": ""
+        },
+        "loadAllUsersError": {
+          "messageTemplate": ""
+        },
+        "ownUserError": {
+          "message": ""
+        },
+        "userEnabled": {
+          "messageTemplate": ""
+        },
+        "userDisabled": {
+          "messageTemplate": ""
+        },
+        "userUpdatingError": {
+          "messageTemplate": ""
+        }
+      },
+      "add": {
+        "pageTitle": "",
+        "creating": {
+          "message": ""
+        },
+        "createButton": {
+          "text": ""
+        },
+        "cancelButton": {
+          "text": ""
+        },
+        "administratorFlag": {
+          "label": "",
+          "caption": ""
+        },
+        "form": {
+          "username": {
+            "label": "",
+            "caption": ""
+          },
+          "password": {
+            "label": "",
+            "caption": ""
+          },
+          "confirmPassword": {
+            "label": "",
+            "caption": ""
+          }
+        },
+        "passwordsDoNotMatchError": {
+          "message": ""
+        },
+        "passwordRequiredError": {
+          "messageTemplate": ""
+        },
+        "usernameRequiredError": {
+          "message": ""
+        },
+        "usernameLengthError": {
+          "messageTemplate": ""
+        },
+        "passwordTooShortError": {
+          "messageTemplate": ""
+        },
+        "userCouldNotCreatedError": {
+          "messageTemplate": ""
+        },
+        "userCreatedSuccess": {
+          "messageTemplate": ""
+        },
+        "creationUnknownError": {
+          "messageTemplate": ""
+        }
+      },
+      "edit": {
+        "pageTitle": "",
+        "loadingUser": {
+          "message": ""
+        },
+        "userNotFound": {
+          "message": ""
+        },
+        "form": {
+          "username": {
+            "label": "",
+            "caption": ""
+          },
+          "password": {
+            "label": "",
+            "caption": ""
+          },
+          "confirmPassword": {
+            "label": "",
+            "caption": ""
+          }
+        },
+        "administratorFlag": {
+          "label": "",
+          "caption": ""
+        },
+        "cantChangeOwnAdministratorFlag": {
+          "caption": ""
+        },
+        "cancelButton": {
+          "text": ""
+        },
+        "saving": {
+          "message": ""
+        },
+        "saveButton": {
+          "text": ""
+        },
+        "actionsHeader": {
+          "text": ""
+        },
+        "actions": {
+          "enableDisable": {
+            "title": "",
+            "caption": ""
+          },
+          "delete": {
+            "title": "",
+            "caption": "",
+            "cantDeleteOwnUser": {
+              "message": ""
+            },
+            "cantDisableOwnUser": {
+              "message": ""
+            }
+          },
+          "deleteButton": {
+            "text": ""
+          }
+        },
+        "loadingUserError": {
+          "messageTemplate": ""
+        },
+        "getUserIdError": {
+          "messageTemplate": ""
+        },
+        "passwordsDoNotMatchError": {
+          "message": ""
+        },
+        "passwordTooShortError": {
+          "messageTemplate": ""
+        },
+        "usernameRequiredError": {
+          "message": ""
+        },
+        "usernameLengthError": {
+          "messageTemplate": ""
+        },
+        "updateSuccess": {
+          "message": ""
+        },
+        "noChanges": {
+          "message": ""
+        },
+        "updatingError": {
+          "messageTemplate": ""
+        },
+        "userEnabledSuccess": {
+          "message": ""
+        },
+        "userDisabledSuccess": {
+          "message": ""
+        },
+        "user": {
+          "statusUpdatingError": {
+            "messageTemplate": ""
+          },
+          "deletingError": {
+            "messageTemplate": ""
+          }
+        },
+        "userDeleteSuccess": {
+          "message": ""
+        },
+        "deleteUserDialog": {
+          "title": "",
+          "messageTemplate": "",
+          "yesText": "",
+          "cancelText": ""
+        }
+      }
+    },
+    "pageTitle": "",
+    "storage": {
+      "storageInformationsArea": {
+        "title": ""
+      },
+      "usedSpace": {
+        "title": "",
+        "text": ""
+      },
+      "usageChart": {
+        "usage": {
+          "title": ""
+        }
+      },
+      "usageType": {
+        "media": {
+          "title": ""
+        },
+        "cache": {
+          "title": ""
+        },
+        "temp": {
+          "title": ""
+        },
+        "logs": {
+          "title": ""
+        }
+      }
+    },
+    "appearance": {
+      "wallpaperArea": {
+        "title": "",
+        "description": ""
+      },
+      "staticWallpaperArea": {
+        "title": ""
+      },
+      "uploadedWallpaperArea": {
+        "title": ""
+      },
+      "dynamicWallpaperArea": {
+        "title": ""
+      }
+    }
+  },
+  "ui": {
+    "startMenuItem": {
+      "open": "Ouvrir"
+    },
+    "licenseDialog": {
+      "title": "Licences du projet HomeBook",
+      "close": "Fermer",
+      "acceptContinue": "Accepter et continuer"
+    }
+  },
+  "appTitle": "HomeBook",
+  "uiSetupStepper": {
+    "backendConnectionSetupStep": {
+      "title": ""
+    },
+    "licenseAgreementSetupStep": {
+      "title": ""
+    },
+    "databaseConfigurationSetupStep": {
+      "title": ""
+    },
+    "databaseMigrationSetupStep": {
+      "title": ""
+    },
+    "adminUserSetupStep": {
+      "title": ""
+    },
+    "configurationSetupStep": {
+      "title": ""
+    },
+    "setupProcessSetupStep": {
+      "title": ""
+    },
+    "updateProcessSetupStep": {
+      "title": ""
+    }
+  },
+  "setup": {
+    "title": "",
+    "cardActions": {
+      "server": "",
+      "version": ""
+    },
+    "licenses": {
+      "title": "",
+      "alreadyAccepted": {
+        "text": ""
+      },
+      "retry": {
+        "button": {
+          "text": ""
+        }
+      },
+      "showLicenses": {
+        "button": {
+          "text": ""
+        }
+      },
+      "acceptContinue": {
+        "button": {
+          "text": ""
+        }
+      },
+      "loadingError": {
+        "messageTemplate": ""
+      }
+    },
+    "backendConnection": {
+      "title": "",
+      "serverFound": {
+        "text": ""
+      },
+      "retry": {
+        "button": {
+          "text": ""
+        }
+      },
+      "checkError": {
+        "messageTemplate": ""
+      },
+      "check": {
+        "versionError": {
+          "message": ""
+        },
+        "versionMatchError": {
+          "message": ""
+        },
+        "setupInProgressError": {
+          "message": ""
+        },
+        "unknownError": {
+          "message": "",
+          "messageTemplate": ""
+        }
+      }
+    },
+    "backendConnectionFailed": {
+      "message": ""
+    },
+    "database": {
+      "title": "",
+      "provider": {
+        "messageTemplate": ""
+      },
+      "form": {
+        "host": {
+          "label": "",
+          "helperText": ""
+        },
+        "port": {
+          "label": ""
+        },
+        "databaseName": {
+          "label": "",
+          "helperText": ""
+        },
+        "databaseUsername": {
+          "label": "",
+          "helperText": ""
+        },
+        "databasePassword": {
+          "label": "",
+          "helperText": ""
+        }
+      },
+      "testConnection": {
+        "button": ""
+      },
+      "unknownError": {
+        "messageTemplate": ""
+      },
+      "check": {
+        "notAvailableOrSupportedError": {
+          "message": ""
+        },
+        "unknownError": {
+          "message": ""
+        },
+        "notAvailableError": {
+          "message": ""
+        }
+      }
+    },
+    "adminUser": {
+      "title": "",
+      "configurationFound": {
+        "text": ""
+      },
+      "configurationSaved": {
+        "text": ""
+      },
+      "form": {
+        "username": {
+          "label": "",
+          "helperText": ""
+        },
+        "password": {
+          "label": "",
+          "helperText": ""
+        }
+      },
+      "save": {
+        "button": {
+          "text": ""
+        }
+      }
+    },
+    "configuration": {
+      "title": "",
+      "configurationFound": {
+        "title": ""
+      },
+      "configurationSaved": {
+        "title": ""
+      },
+      "form": {
+        "instanceName": {
+          "label": "",
+          "helperText": ""
+        },
+        "instanceDefaultLocale": {
+          "label": "",
+          "helperText": ""
+        }
+      },
+      "save": {
+        "button": {
+          "text": ""
+        }
+      }
+    },
+    "process": {
+      "title": "",
+      "setupIsPrepared": {
+        "message": ""
+      },
+      "retry": {
+        "button": {
+          "text": ""
+        }
+      },
+      "finished": {
+        "success": {
+          "message": ""
+        },
+        "startHomeBook": {
+          "message": ""
+        },
+        "removeEnvironmentVariables": {
+          "message": ""
+        }
+      },
+      "processingError": {
+        "messageTemplate": ""
+      },
+      "processingServerRestartError": {
+        "message": ""
+      },
+      "processingValidationError": {
+        "message": ""
+      },
+      "processingLicenseError": {
+        "message": ""
+      },
+      "processingUnknownError": {
+        "message": "",
+        "messageTemplate": ""
+      }
+    },
+    "processFinished": {
+      "title": ""
+    }
+  },
+  "account": {
+    "login": {
+      "title": "",
+      "signingInButton": {
+        "text": ""
+      },
+      "signInButton": {
+        "text": ""
+      }
+    }
+  },
+  "appSlogan": "",
+  "authorName": "lk-code",
+  "authorLink": "https://www.lk-code.dev/",
+  "authorMadeWithText": "made with ❤️ by",
+  "accountMenu": {
+    "logout": "",
+    "settings": ""
+  },
+  "logout": {
+    "successMessage": "",
+    "errorMessage": ""
+  },
+  "update": {
+    "processFinished": {
+      "title": ""
+    },
+    "process": {
+      "title": "",
+      "updateIsPrepared": {
+        "message": ""
+      },
+      "finished": {
+        "success": {
+          "message": ""
+        },
+        "startHomeBook": {
+          "message": ""
+        }
+      },
+      "retry": {
+        "button": {
+          "text": ""
+        }
+      },
+      "processingError": {
+        "messageTemplate": ""
+      },
+      "processingServerRestartError": {
+        "message": ""
+      },
+      "processingUnknownError": {
+        "message": "",
+        "messageTemplate": ""
+      },
+      "processingSetupMissingError": {
+        "message": ""
+      }
+    }
+  },
+  "module": {
+    "finances": {
+      "startMenuItem": {
+        "title": "",
+        "caption": ""
+      }
+    },
+    "kitchenManager": {
+      "startMenuItem": {
+        "recipes": {
+          "title": "",
+          "caption": ""
+        },
+        "pantry": {
+          "title": "",
+          "caption": ""
+        }
+      }
+    }
+  },
+  "home": {
+    "pageTitle": ""
+  },
+  "mainLayout": {
+    "searchTextField": {
+      "placeholder": ""
+    }
+  },
+  "homebook": {
+    "core": {
+      "wallpaper": {
+        "userwallpaper": ""
+      }
+    },
+    "kitchen": {
+      "recipeimages": ""
+    }
+  }
+}

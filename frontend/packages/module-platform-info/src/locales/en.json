@@ -1,0 +1,6 @@
+{
+  "platformInfo": {
+    "moduleName": "Platform Info",
+    "moduleDescription": "Provides information about the platform and environment."
+  }
+}

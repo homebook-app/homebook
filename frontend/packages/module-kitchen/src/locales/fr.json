@@ -1,0 +1,165 @@
+{
+  "kitchen": {
+    "moduleName": "",
+    "moduleDescription": "",
+    "startMenuItem": {
+      "recipes": {
+        "title": "",
+        "caption": ""
+      },
+      "pantry": {
+        "title": "",
+        "caption": ""
+      },
+      "mealPlan": {
+        "title": "",
+        "caption": ""
+      }
+    },
+    "dateTimeFormat": {
+      "shortDateOnlyFormat": "dd/MM"
+    },
+    "planOverview": {
+      "header": {
+        "calendarWeek": {
+          "textTemplate": ""
+        }
+      },
+      "mealType": {
+        "breakfast": {
+          "text": ""
+        },
+        "lunch": {
+          "text": ""
+        },
+        "dinner": {
+          "text": ""
+        }
+      }
+    },
+    "recipeOverview": {
+      "annotationServings": {
+        "textTemplate": ""
+      }
+    },
+    "recipeEdit": {
+      "recipeNameEditToolTip": {
+        "text": ""
+      },
+      "recipeNameEditTextField": {
+        "placeholder": ""
+      },
+      "viewRecipeButton": {
+        "text": ""
+      },
+      "recipeNameSaveTooltip": {
+        "text": ""
+      },
+      "recipeDeleteTooltip": {
+        "text": ""
+      },
+      "recipeDescriptionTextField": {
+        "label": ""
+      },
+      "servingsLabel": {
+        "singular": "",
+        "plural": ""
+      },
+      "durationAdditionalArea": {
+        "title": ""
+      },
+      "saveRecipeButton": {
+        "content": ""
+      },
+      "recipeSource": {
+        "content": ""
+      },
+      "recipeComment": {
+        "content": ""
+      },
+      "caloriesPerServing": {
+        "content": "",
+        "adornmentText": ""
+      },
+      "restingTime": {
+        "content": ""
+      },
+      "cookingBakingTime": {
+        "content": ""
+      },
+      "workingTime": {
+        "content": ""
+      },
+      "workingTimeHour": {
+        "adornmentText": ""
+      },
+      "workingTimeMinute": {
+        "adornmentText": ""
+      },
+      "cookingBakingTimeHour": {
+        "adornmentText": ""
+      },
+      "cookingBakingTimeMinute": {
+        "adornmentText": ""
+      },
+      "restingTimeHour": {
+        "adornmentText": ""
+      },
+      "restingTimeMinute": {
+        "adornmentText": ""
+      },
+      "imageGallery": {
+        "title": "",
+        "emptyState": {
+          "text": ""
+        },
+        "reorderHint": {
+          "text": ""
+        },
+        "removeButton": {
+          "text": ""
+        }
+      }
+    },
+    "recipeEditIngredients": {
+      "ingredients": {
+        "title": ""
+      },
+      "quantity": {
+        "placeholder": ""
+      },
+      "unit": {
+        "placeholder": ""
+      },
+      "ingredientName": {
+        "placeholder": ""
+      },
+      "additionalNote": {
+        "placeholder": ""
+      }
+    },
+    "recipeEditSteps": {
+      "steps": {
+        "title": ""
+      },
+      "stepIndexText": {
+        "content": ""
+      },
+      "stepTimerText": {
+        "content": ""
+      },
+      "stepTimerTitle": {
+        "content": ""
+      },
+      "stepTimerHour": {
+        "adornmentText": ""
+      },
+      "stepTimerMinute": {
+        "adornmentText": ""
+      },
+      "stepDescription": {
+        "placeholder": ""
+      }
+    }
+  }
+}

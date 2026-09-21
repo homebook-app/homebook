@@ -18,7 +18,8 @@ export {
   statusCodeOf,
   type BackendApiError,
 } from './errors.js';
-export { mediaUrl, prefixMediaPath } from './media.js';
+export { mediaUrl, prefixMediaPath, staticWallpaperUrl } from './media.js';
+export { type SetupAvailability } from './setup.js';
 export {
   assertUploadSize,
   bytesToBase64,

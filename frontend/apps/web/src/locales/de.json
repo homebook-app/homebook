@@ -1,0 +1,791 @@
+{
+  "settings": {
+    "developer": {
+      "colors": {
+        "title": "Farben",
+        "brandTitle": "Markenfarben",
+        "paletteTitle": "Palette",
+        "gradientTitle": "Verläufe"
+      },
+      "frosted": {
+        "title": "Milchglas"
+      },
+      "icons": {
+        "title": "Icons",
+        "copyName": "Den Namen {name} kopieren"
+      },
+      "components": {
+        "title": "Komponenten",
+        "showLicenses": "Lizenzdialog anzeigen",
+        "restartCountdown": "Countdown neu starten",
+        "countdownBody": "Dies schließt sich automatisch."
+      },
+      "configurationArea": {
+        "title": "App Konfiguration"
+      },
+      "configurationItemsFrontend": {
+        "title": "Frontend"
+      },
+      "configurationItemsBackend": {
+        "title": "Backend"
+      }
+    },
+    "about": {
+      "version": {
+        "text": {
+          "template": "HomeBook Version: {0}"
+        }
+      },
+      "applicationArea": {
+        "title": "Anwendung",
+        "backend": {
+          "text": "Backend:"
+        },
+        "database": {
+          "text": "Datenbank:"
+        },
+        "ui": {
+          "text": "UI:"
+        },
+        "deployment": {
+          "text": "Deployment Typ:"
+        }
+      },
+      "licensesArea": {
+        "title": "Lizenzen",
+        "showLicenses": {
+          "button": {
+            "text": "Zeige Projekt Lizenzen"
+          }
+        },
+        "copyright": {
+          "textTemplate": "©{0} HomeBook. Alle Rechte vorbehalten."
+        }
+      },
+      "externalLink": {
+        "gitHubProject": {
+          "href": "https://github.com/homebook-app"
+        },
+        "projectWebsite": {
+          "href": "https://homebook-app.github.io/"
+        }
+      },
+      "error": {
+        "messageTemplate": "Das Laden der Systeminformationen ist fehlgeschlagen: {0}"
+      },
+      "pageTitle": "Über Homebook"
+    },
+    "navMenu": {
+      "languageRegion": {
+        "text": "Sprache & Region"
+      },
+      "about": {
+        "text": "Über HomeBook"
+      },
+      "users": {
+        "text": "Benutzer"
+      },
+      "homebookConfiguration": {
+        "text": "HomeBook Einstellungen"
+      },
+      "homebookModules": {
+        "text": "HomeBook Module"
+      },
+      "developerComponents": {
+        "text": "Dev UI"
+      },
+      "developerIcons": {
+        "text": "Dev Icons"
+      },
+      "feedback": {
+        "text": "Feedback"
+      },
+      "developer": {
+        "text": "Entwickler"
+      },
+      "developerColors": {
+        "text": "Dev Colors"
+      },
+      "homebookStorage": {
+        "text": "HomeBook Speicher"
+      },
+      "appearance": {
+        "text": "Darstellung"
+      }
+    },
+    "localization": {
+      "pageTitle": "Sprache & Region",
+      "pageCaption": "Stelle ein, in welcher Sprache und mit welchen regionalen Standards HomeBook angezeigt wird.",
+      "displayLanguage": {
+        "title": "Anzeigesprache",
+        "caption": "Bestimme, in welcher Sprache die Benutzeroberfläche angezeigt wird."
+      },
+      "saveChanges": {
+        "button": "Änderungen speichern"
+      },
+      "preferencesUpdated": {
+        "success": {
+          "message": "Benutzereinstellungen aktualisiert"
+        },
+        "error": {
+          "messageTemplate": "Fehler beim Aktualisieren der Benutzereinstellungen: {0}"
+        }
+      },
+      "loadPreferences": {
+        "error": {
+          "messageTemplate": "Fehler beim Laden der Benutzereinstellungen: {0}"
+        }
+      }
+    },
+    "instance": {
+      "pageTitle": "Homebook Einstellungen",
+      "pageCaption": "Verwalten Sie die globalen Einstellungen und Funktionen Ihrer HomeBook-Instanz.",
+      "instanceName": {
+        "title": "HomeBook Instanz Name",
+        "caption": "Geben Sie Ihrer HomeBook-Instanz einen eigenen Namen"
+      },
+      "instanceDefaultLocale": {
+        "title": "HomeBook Standard Sprache",
+        "caption": "Wählen Sie die Standardsprache für die Darstellung von HomeBook aus"
+      },
+      "saveChanges": {
+        "button": "Änderungen speichern"
+      },
+      "loadPreferences": {
+        "error": {
+          "messageTemplate": "Fehler beim Laden der HomeBook-Einstellungen: {0}"
+        }
+      },
+      "preferencesUpdated": {
+        "success": {
+          "message": "HomeBook-Konfiguration erfolgreich aktualisiert!"
+        },
+        "error": {
+          "messageTemplate": "Fehler beim Aktualisieren der HomeBook-Konfiguration: {0}"
+        }
+      }
+    },
+    "user": {
+      "overview": {
+        "pageTitle": "Benutzer Verwaltung",
+        "addUserButton": {
+          "text": "Neuer Benutzer"
+        },
+        "loading": {
+          "message": "Lade Benutzer..."
+        },
+        "currentCount": {
+          "messageTemplate": "Es werden {0} von {1} angezeigt"
+        },
+        "itemsPerPageSelect": {
+          "label": "Benutzer pro Seite"
+        },
+        "resultsTable": {
+          "username": {
+            "tableHeader": "Benutzername"
+          },
+          "status": {
+            "tableHeader": "Status"
+          },
+          "role": {
+            "tableHeader": "Rolle"
+          },
+          "created": {
+            "tableHeader": "Erstellt"
+          },
+          "actions": {
+            "tableHeader": "Aktionen",
+            "editUser": {
+              "toolTipText": "Benutzer editieren"
+            }
+          },
+          "noResult": {
+            "message": "Keine Benutzer gefunden."
+          }
+        },
+        "toggleStatusTooltip": {
+          "enable": {
+            "text": "Benutzer aktivieren"
+          },
+          "disable": {
+            "text": "Benutzer deaktivieren"
+          }
+        },
+        "userStatus": {
+          "disabled": {
+            "text": "Deaktiviert"
+          },
+          "active": {
+            "text": "Aktiv"
+          }
+        },
+        "userRole": {
+          "admin": {
+            "text": "Admin"
+          },
+          "user": {
+            "text": "Benutzer"
+          }
+        },
+        "loadCurrentUserError": {
+          "messageTemplate": "Fehler beim Abrufen des aktuellen Benutzers: {0}"
+        },
+        "loadAllUsersError": {
+          "messageTemplate": "Fehler beim Laden aller Benutzer: {0}"
+        },
+        "ownUserError": {
+          "message": "Sie können den Status Ihres eigenen Kontos nicht ändern."
+        },
+        "userEnabled": {
+          "messageTemplate": "Der Benutzer '{0}' wurde freigeschaltet."
+        },
+        "userDisabled": {
+          "messageTemplate": "Der Benutzer '{0}' wurde deaktiviert."
+        },
+        "userUpdatingError": {
+          "messageTemplate": "Fehler beim Aktualisieren des Benutzers: {0}"
+        }
+      },
+      "add": {
+        "pageTitle": "Neuen Benutzer anlegen",
+        "creating": {
+          "message": "Erstelle..."
+        },
+        "createButton": {
+          "text": "Benutzer erstellen"
+        },
+        "cancelButton": {
+          "text": "Abbrechen"
+        },
+        "administratorFlag": {
+          "label": "Administrator",
+          "caption": "Administratoren haben uneingeschränkten Zugriff auf alle Funktionen"
+        },
+        "form": {
+          "username": {
+            "label": "Benutzername",
+            "caption": "Gib einen eindeutigen Benutzernamen ein"
+          },
+          "password": {
+            "label": "Passwort",
+            "caption": "Geben Sie ein sicheres Passwort ein"
+          },
+          "confirmPassword": {
+            "label": "Passwort bestätigen",
+            "caption": "Passwort bestätigen"
+          }
+        },
+        "passwordsDoNotMatchError": {
+          "message": "Die Passwörter stimmen nicht überein"
+        },
+        "passwordRequiredError": {
+          "messageTemplate": "Passwort ist erforderlich"
+        },
+        "usernameRequiredError": {
+          "message": "Benutzername ist erforderlich"
+        },
+        "usernameLengthError": {
+          "messageTemplate": "Der Benutzername muss zwischen {0} und {1} Zeichen lang sein"
+        },
+        "passwordTooShortError": {
+          "messageTemplate": "Das Passwort muss mindestens {0} Zeichen lang sein"
+        },
+        "userCouldNotCreatedError": {
+          "messageTemplate": "Der Benutzer '{0}' konnte nicht angelegt werden"
+        },
+        "userCreatedSuccess": {
+          "messageTemplate": "Der Benutzer '{0}' wurde erfolgreich angelegt"
+        },
+        "creationUnknownError": {
+          "messageTemplate": "Fehler beim Anlegen des Benutzers: {0}"
+        }
+      },
+      "edit": {
+        "pageTitle": "Benutzer bearbeiten",
+        "loadingUser": {
+          "message": "Lade Benutzer..."
+        },
+        "userNotFound": {
+          "message": "Benutzer nicht gefunden!"
+        },
+        "form": {
+          "username": {
+            "label": "Benutzername",
+            "caption": "Geben Sie einen eindeutigen Benutzernamen ein"
+          },
+          "password": {
+            "label": "Passwort",
+            "caption": "Geben Sie ein sicheres Passwort ein"
+          },
+          "confirmPassword": {
+            "label": "Passwort bestätigen",
+            "caption": "Passwort bestätigen"
+          }
+        },
+        "administratorFlag": {
+          "label": "Administrator",
+          "caption": "Administratoren haben uneingeschränkten Zugriff auf alle Funktionen"
+        },
+        "cantChangeOwnAdministratorFlag": {
+          "caption": "Sie können Ihren eigenen Administratorstatus nicht ändern"
+        },
+        "cancelButton": {
+          "text": "Abbrechen"
+        },
+        "saving": {
+          "message": "Speichere..."
+        },
+        "saveButton": {
+          "text": "Benutzer speichern"
+        },
+        "actionsHeader": {
+          "text": "Aktionen"
+        },
+        "actions": {
+          "enableDisable": {
+            "title": "Benutzer aktivieren/deaktivieren",
+            "caption": "Aktiviert oder deaktiviert den Benutzerzugriff."
+          },
+          "delete": {
+            "title": "Benutzer löschen",
+            "caption": "Der Benutzer wird dauerhaft aus HomeBook entfernt.",
+            "cantDeleteOwnUser": {
+              "message": "Du kannst dein eigenes Konto nicht löschen"
+            },
+            "cantDisableOwnUser": {
+              "message": "Du kannst dein eigenes Konto nicht deaktivieren"
+            }
+          },
+          "deleteButton": {
+            "text": "Benutzer löschen"
+          }
+        },
+        "loadingUserError": {
+          "messageTemplate": "Fehler beim Laden des aktuellen Benutzers: {0}"
+        },
+        "getUserIdError": {
+          "messageTemplate": "Fehler beim Abrufen der Daten des aktuellen Benutzers: {0}"
+        },
+        "passwordsDoNotMatchError": {
+          "message": "Die Passwörter stimmen nicht überein"
+        },
+        "passwordTooShortError": {
+          "messageTemplate": "Das Passwort muss mindestens {0} Zeichen lang sein"
+        },
+        "usernameRequiredError": {
+          "message": "Benutzername ist erforderlich"
+        },
+        "usernameLengthError": {
+          "messageTemplate": "Der Benutzername muss zwischen {0} und {1} Zeichen lang sein"
+        },
+        "updateSuccess": {
+          "message": "Benutzer erfolgreich aktualisiert"
+        },
+        "noChanges": {
+          "message": "Keine Änderungen zum Speichern"
+        },
+        "updatingError": {
+          "messageTemplate": "Fehler beim Aktualisieren des Benutzers: {0}"
+        },
+        "userEnabledSuccess": {
+          "message": "Der Benutzer wurde freigeschaltet"
+        },
+        "userDisabledSuccess": {
+          "message": "Der Benutzer wurde deaktiviert"
+        },
+        "user": {
+          "statusUpdatingError": {
+            "messageTemplate": "Fehler beim Aktualisieren des Benutzerstatus: {0}"
+          },
+          "deletingError": {
+            "messageTemplate": "Fehler beim Löschen des Benutzers: {0}"
+          }
+        },
+        "userDeleteSuccess": {
+          "message": "Der Benutzer wurde gelöscht"
+        },
+        "deleteUserDialog": {
+          "title": "Benutzer löschen",
+          "messageTemplate": "Möchten Sie den Benutzer '{0}' wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden.",
+          "yesText": "Löschen",
+          "cancelText": "Abbrechen"
+        }
+      }
+    },
+    "pageTitle": "Einstellungen",
+    "storage": {
+      "storageInformationsArea": {
+        "title": "Speicher Informationen"
+      },
+      "usedSpace": {
+        "title": "Verwendeter Speicher",
+        "text": "{0} von {1} verfügbar"
+      },
+      "usageChart": {
+        "usage": {
+          "title": "Belegung"
+        }
+      },
+      "usageType": {
+        "media": {
+          "title": "Speicher"
+        },
+        "cache": {
+          "title": "Cache"
+        },
+        "temp": {
+          "title": "Temp"
+        },
+        "logs": {
+          "title": "Logs"
+        }
+      }
+    },
+    "appearance": {
+      "wallpaperArea": {
+        "title": "Darstellung",
+        "description": "Passe die HomeBook Optik nach deinen Wünschen an"
+      },
+      "staticWallpaperArea": {
+        "title": "Hintergrundbilder"
+      },
+      "uploadedWallpaperArea": {
+        "title": "Eigene Hintergrundbilder"
+      },
+      "dynamicWallpaperArea": {
+        "title": "Dynamische Hintergrundbilder"
+      }
+    }
+  },
+  "ui": {
+    "startMenuItem": {
+      "open": "Öffnen"
+    },
+    "licenseDialog": {
+      "title": "HomeBook Projekt Lizenzen",
+      "close": "Schließen",
+      "acceptContinue": "Akzeptieren und fortfahren"
+    }
+  },
+  "appTitle": "HomeBook",
+  "uiSetupStepper": {
+    "backendConnectionSetupStep": {
+      "title": "Server überprüfen"
+    },
+    "licenseAgreementSetupStep": {
+      "title": "Lizenzen"
+    },
+    "databaseConfigurationSetupStep": {
+      "title": "Datenbank"
+    },
+    "databaseMigrationSetupStep": {
+      "title": "Setup"
+    },
+    "adminUserSetupStep": {
+      "title": "Admin Benutzer"
+    },
+    "configurationSetupStep": {
+      "title": "Konfiguration"
+    },
+    "setupProcessSetupStep": {
+      "title": "HomeBook Setup"
+    },
+    "updateProcessSetupStep": {
+      "title": "HomeBook Update"
+    }
+  },
+  "setup": {
+    "title": "HomeBook Setup",
+    "cardActions": {
+      "server": "Server",
+      "version": "Version"
+    },
+    "licenses": {
+      "title": "Projekt Lizenzen",
+      "alreadyAccepted": {
+        "text": "Die Lizenzen wurden bereits akzeptiert (die Lizenzen können später erneut eingesehen werden)."
+      },
+      "retry": {
+        "button": {
+          "text": "Erneut versuchen"
+        }
+      },
+      "showLicenses": {
+        "button": {
+          "text": "Zeige Lizenzen"
+        }
+      },
+      "acceptContinue": {
+        "button": {
+          "text": "Akzeptieren und fortfahren"
+        }
+      },
+      "loadingError": {
+        "messageTemplate": "Unbekannter Serverfehler beim Laden der Lizenzen: {0}"
+      }
+    },
+    "backendConnection": {
+      "title": "Serververbindung prüfen",
+      "serverFound": {
+        "text": "Der Server wurde gefunden und ist bereit."
+      },
+      "retry": {
+        "button": {
+          "text": "Erneut versuchen"
+        }
+      },
+      "checkError": {
+        "messageTemplate": "Fehler beim Überprüfen der Serververbindung: {0}"
+      },
+      "check": {
+        "versionError": {
+          "message": "Der Server hat keine gültige Version zurückgegeben."
+        },
+        "versionMatchError": {
+          "message": "Die Serverversion stimmt nicht mit der App-Version überein. Bitte aktualisieren Sie HomeBook."
+        },
+        "setupInProgressError": {
+          "message": "Die Einrichtung von HomeBook läuft bereits. Bitte warten Sie, bis die Einrichtung abgeschlossen ist, oder starten Sie die Einrichtung neu."
+        },
+        "unknownError": {
+          "message": "Unbekannter Serverfehler bei der Überprüfung der Serveranforderungen. Bitte überprüfen Sie die Serverprotokolle.",
+          "messageTemplate": "Unbekannter Serverfehler bei der Überprüfung der Serveranforderungen: {0}"
+        }
+      }
+    },
+    "backendConnectionFailed": {
+      "message": "Es kann keine Verbindung zum Server hergestellt werden. Vergewissern Sie sich, dass der Server läuft und korrekt konfiguriert ist, und versuchen Sie es dann erneut."
+    },
+    "database": {
+      "title": "Datenbankkonfiguration",
+      "provider": {
+        "messageTemplate": "Die Datenbank wurde als {0} erkannt und ist erreichbar."
+      },
+      "form": {
+        "host": {
+          "label": "Host",
+          "helperText": "Geben Sie den Hostnamen oder die IP-Adresse des Datenbankservers sowie dessen Port ein"
+        },
+        "port": {
+          "label": "Port"
+        },
+        "databaseName": {
+          "label": "Datenbank Name",
+          "helperText": "Geben Sie den Namen der Datenbank ein"
+        },
+        "databaseUsername": {
+          "label": "Benutzername",
+          "helperText": "Geben Sie den Benutzernamen ein, um auf die Datenbank zuzugreifen"
+        },
+        "databasePassword": {
+          "label": "Passwort",
+          "helperText": "Geben Sie das Passwort ein, um auf die Datenbank zuzugreifen"
+        }
+      },
+      "testConnection": {
+        "button": "Speichern und Verbindung testen"
+      },
+      "unknownError": {
+        "messageTemplate": "Fehler beim Herstellen der Verbindung zur Datenbank: {0}"
+      },
+      "check": {
+        "notAvailableOrSupportedError": {
+          "message": "Es kann keine Verbindung zur Datenbank hergestellt werden. Stellen Sie sicher, dass der Server läuft und korrekt konfiguriert ist, und versuchen Sie es dann erneut."
+        },
+        "unknownError": {
+          "message": "Unbekannter Fehler bei der Überprüfung der Datenbankverbindung."
+        },
+        "notAvailableError": {
+          "message": "Die Datenbank ist nicht verfügbar."
+        }
+      }
+    },
+    "adminUser": {
+      "title": "HomeBook Administrator",
+      "configurationFound": {
+        "text": "Es wurde eine Benutzerkonfiguration gefunden."
+      },
+      "configurationSaved": {
+        "text": "Die Benutzerkonfiguration wurde erfolgreich gespeichert."
+      },
+      "form": {
+        "username": {
+          "label": "Benutzername",
+          "helperText": "Geben Sie einen Benutzernamen für Ihr Homebook-Administratorkonto ein"
+        },
+        "password": {
+          "label": "Passwort",
+          "helperText": "Geben Sie ein sicheres Passwort für das Konto ein"
+        }
+      },
+      "save": {
+        "button": {
+          "text": "Benutzer speichern"
+        }
+      }
+    },
+    "configuration": {
+      "title": "HomeBook Konfiguration",
+      "configurationFound": {
+        "title": "HomeBook wurde vorkonfiguriert."
+      },
+      "configurationSaved": {
+        "title": "Die HomeBook-Konfiguration wurde erfolgreich gespeichert."
+      },
+      "form": {
+        "instanceName": {
+          "label": "HomeBook Instanz Name",
+          "helperText": "Geben Sie Ihrer HomeBook-Instanz einen eigenen Namen"
+        },
+        "instanceDefaultLocale": {
+          "label": "HomeBook Standard Sprache",
+          "helperText": "Wählen Sie die Standardsprache für die Darstellung von Homebook aus"
+        }
+      },
+      "save": {
+        "button": {
+          "text": "Konfiguration speichern"
+        }
+      }
+    },
+    "process": {
+      "title": "HomeBook Setup",
+      "setupIsPrepared": {
+        "message": "Die Vorbereitungen für das Setup sind abgeschlossen, das Setup startet jetzt."
+      },
+      "retry": {
+        "button": {
+          "text": "Setup wiederholen"
+        }
+      },
+      "finished": {
+        "success": {
+          "message": "Die Installation war erfolgreich."
+        },
+        "startHomeBook": {
+          "message": "HomeBook öffnen"
+        },
+        "removeEnvironmentVariables": {
+          "message": "Bitte entfernen Sie die Setup-Umgebungsvariablen aus Ihrer Docker-Konfiguration."
+        }
+      },
+      "processingError": {
+        "messageTemplate": "Bei der Installation ist ein Fehler aufgetreten: {0}"
+      },
+      "processingServerRestartError": {
+        "message": "Der Server wurde nach der Installation nicht korrekt neu gestartet. Bitte überprüfen Sie die Serverprotokolle."
+      },
+      "processingValidationError": {
+        "message": "Bei der Überprüfung der Konfiguration während der Installation ist ein Fehler aufgetreten. Bitte überprüfen Sie die Serverprotokolle."
+      },
+      "processingLicenseError": {
+        "message": "Die Projektlizenzen wurden nicht akzeptiert."
+      },
+      "processingUnknownError": {
+        "message": "Während des Installationsvorgangs ist ein unbekannter Fehler aufgetreten. Bitte überprüfen Sie die Serverprotokolle.",
+        "messageTemplate": "Während der Installation ist ein unbekannter Fehler aufgetreten: {0}"
+      }
+    },
+    "processFinished": {
+      "title": "HomeBook Setup ist abgeschlossen"
+    }
+  },
+  "account": {
+    "login": {
+      "title": "HomeBook Login",
+      "signingInButton": {
+        "text": "Anmelden..."
+      },
+      "signInButton": {
+        "text": "Anmelden"
+      }
+    }
+  },
+  "appSlogan": "Dein selbst gehosteter Haushalts- und Finanzplaner",
+  "authorName": "lk-code",
+  "authorLink": "https://www.lk-code.dev/",
+  "authorMadeWithText": "made with ❤️ by",
+  "accountMenu": {
+    "logout": "Abmelden",
+    "settings": "Einstellungen"
+  },
+  "logout": {
+    "successMessage": "Du wurdest erfolgreich abgemeldet!",
+    "errorMessage": "Fehler beim Abmelden!"
+  },
+  "update": {
+    "processFinished": {
+      "title": "Das Update für HomeBook ist abgeschlossen"
+    },
+    "process": {
+      "title": "HomeBook Update",
+      "updateIsPrepared": {
+        "message": "Das Update ist vorbereitet und wird jetzt gestartet."
+      },
+      "finished": {
+        "success": {
+          "message": "Die Aktualisierung war erfolgreich."
+        },
+        "startHomeBook": {
+          "message": "HomeBook öffnen"
+        }
+      },
+      "retry": {
+        "button": {
+          "text": "Update erneut versuchen"
+        }
+      },
+      "processingError": {
+        "messageTemplate": "Beim Update ist ein Fehler aufgetreten: {0}"
+      },
+      "processingServerRestartError": {
+        "message": "Der Server wurde nach dem Update nicht ordnungsgemäß neu gestartet. Bitte überprüfen Sie die Serverprotokolle."
+      },
+      "processingUnknownError": {
+        "message": "Während des Update-Vorgangs ist ein unbekannter Fehler aufgetreten. Bitte überprüfen Sie die Serverprotokolle.",
+        "messageTemplate": "Während des Update-Vorgangs ist ein unbekannter Fehler aufgetreten: {0}"
+      },
+      "processingSetupMissingError": {
+        "message": "Führen Sie zunächst das HomeBook-Setup aus."
+      }
+    }
+  },
+  "module": {
+    "finances": {
+      "startMenuItem": {
+        "title": "Finanzen",
+        "caption": "Verwalte deinen Einnahmen, Ausgaben und Budgets"
+      }
+    },
+    "kitchenManager": {
+      "startMenuItem": {
+        "recipes": {
+          "title": "Rezepte",
+          "caption": "Dein persönliches Kochbuch"
+        },
+        "pantry": {
+          "title": "Vorräte",
+          "caption": "Behalten Sie den Überblick über Ihre Küchenvorräte"
+        }
+      }
+    }
+  },
+  "home": {
+    "pageTitle": "Home"
+  },
+  "mainLayout": {
+    "searchTextField": {
+      "placeholder": "Suche nach..."
+    }
+  },
+  "homebook": {
+    "core": {
+      "wallpaper": {
+        "userwallpaper": "Hintergrundbilder"
+      }
+    },
+    "kitchen": {
+      "recipeimages": "Rezeptbilder"
+    }
+  }
+}

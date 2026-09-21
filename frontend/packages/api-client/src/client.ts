@@ -20,7 +20,8 @@ import {
   type RecipesListResponse,
   type SearchResponse,
 } from './generated/models/index.js';
-import { mediaUrl, prefixMediaPath } from './media.js';
+import { mediaUrl, prefixMediaPath, staticWallpaperUrl } from './media.js';
+import { fetchSetupAvailability, type SetupAvailability } from './setup.js';
 import { toBase64Content } from './upload.js';
 
 /** Base URL used when none is configured. Production is same-origin behind nginx. */
@@ -57,6 +58,10 @@ export interface HomeBookClient {
   deleteSavingGoal(id: Guid): Promise<void>;
   /** Resolves `GET /media/{mediaId}/url` and prefixes the missing base URL. */
   resolveMediaUrl(mediaId: Guid): Promise<string>;
+  /** `GET /setup/availability`: 200 setup required, 201 update required, 204 operational, 409 setup running. */
+  getSetupAvailability(): Promise<SetupAvailability>;
+  /** URL of an anonymous system wallpaper, with the file name encoded the way the backend expects. */
+  staticWallpaperUrl(fileName: string): string;
   /** URL of the anonymous raw media endpoint, suitable for `<img src>`. No request is sent. */
   mediaUrl(mediaId: Guid): string;
   /** `GET /storage/scopes?name=`: returns the scope id for a scope name. */
@@ -115,6 +120,10 @@ export function createBackendClient(options: BackendClientOptions): HomeBookClie
     },
 
     mediaUrl: (mediaId) => mediaUrl(baseUrl, mediaId),
+
+    getSetupAvailability: () => fetchSetupAvailability(adapter, baseUrl),
+
+    staticWallpaperUrl: (fileName) => staticWallpaperUrl(baseUrl, fileName),
 
     // The generated operation is excluded: Kiota emits a "Guid" primitive that its runtime cannot
     // deserialize. The endpoint returns a JSON string, so it is read as a plain string here.

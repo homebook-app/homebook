@@ -1,0 +1,1752 @@
+[
+  {
+    "component": "app",
+    "oldKey": "AppTitle",
+    "newKey": "appTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_BackendConnectionSetupStep_Title",
+    "newKey": "uiSetupStepper.backendConnectionSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_LicenseAgreementSetupStep_Title",
+    "newKey": "uiSetupStepper.licenseAgreementSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_DatabaseConfigurationSetupStep_Title",
+    "newKey": "uiSetupStepper.databaseConfigurationSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_DatabaseMigrationSetupStep_Title",
+    "newKey": "uiSetupStepper.databaseMigrationSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_AdminUserSetupStep_Title",
+    "newKey": "uiSetupStepper.adminUserSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_ConfigurationSetupStep_Title",
+    "newKey": "uiSetupStepper.configurationSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Title",
+    "newKey": "setup.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_CardActions_Server",
+    "newKey": "setup.cardActions.server"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_CardActions_Version",
+    "newKey": "setup.cardActions.version"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_SetupProcessSetupStep_Title",
+    "newKey": "uiSetupStepper.setupProcessSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "UISetupStepper_UpdateProcessSetupStep_Title",
+    "newKey": "uiSetupStepper.updateProcessSetupStep.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Account_Login_Title",
+    "newKey": "account.login.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "AppSlogan",
+    "newKey": "appSlogan"
+  },
+  {
+    "component": "app",
+    "oldKey": "AuthorName",
+    "newKey": "authorName"
+  },
+  {
+    "component": "app",
+    "oldKey": "AuthorLink",
+    "newKey": "authorLink"
+  },
+  {
+    "component": "app",
+    "oldKey": "AuthorMadeWithText",
+    "newKey": "authorMadeWithText"
+  },
+  {
+    "component": "app",
+    "oldKey": "AccountMenu_Logout",
+    "newKey": "accountMenu.logout"
+  },
+  {
+    "component": "app",
+    "oldKey": "AccountMenu_Settings",
+    "newKey": "accountMenu.settings"
+  },
+  {
+    "component": "app",
+    "oldKey": "Logout_SuccessMessage",
+    "newKey": "logout.successMessage"
+  },
+  {
+    "component": "app",
+    "oldKey": "Logout_ErrorMessage",
+    "newKey": "logout.errorMessage"
+  },
+  {
+    "component": "app",
+    "oldKey": "UiLicenseDialog_Close",
+    "newKey": "ui.licenseDialog.close"
+  },
+  {
+    "component": "app",
+    "oldKey": "UiLicenseDialog_AcceptContinue",
+    "newKey": "ui.licenseDialog.acceptContinue"
+  },
+  {
+    "component": "app",
+    "oldKey": "UiLicenseDialog_Title",
+    "newKey": "ui.licenseDialog.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_Version_Text_Template",
+    "newKey": "settings.about.version.text.template"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ApplicationArea_Title",
+    "newKey": "settings.about.applicationArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ApplicationArea_Backend_Text",
+    "newKey": "settings.about.applicationArea.backend.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ApplicationArea_Database_Text",
+    "newKey": "settings.about.applicationArea.database.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ApplicationArea_UI_Text",
+    "newKey": "settings.about.applicationArea.ui.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ApplicationArea_Deployment_Text",
+    "newKey": "settings.about.applicationArea.deployment.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_LicensesArea_Title",
+    "newKey": "settings.about.licensesArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_LicensesArea_ShowLicenses_Button_Text",
+    "newKey": "settings.about.licensesArea.showLicenses.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_LicensesArea_Copyright_TextTemplate",
+    "newKey": "settings.about.licensesArea.copyright.textTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ExternalLink_GitHubProject_Href",
+    "newKey": "settings.about.externalLink.gitHubProject.href"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_Error_MessageTemplate",
+    "newKey": "settings.about.error.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_LanguageRegion_Text",
+    "newKey": "settings.navMenu.languageRegion.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_About_Text",
+    "newKey": "settings.navMenu.about.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_Users_Text",
+    "newKey": "settings.navMenu.users.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_HomebookConfiguration_Text",
+    "newKey": "settings.navMenu.homebookConfiguration.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_HomebookModules_Text",
+    "newKey": "settings.navMenu.homebookModules.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_DeveloperComponents_Text",
+    "newKey": "settings.navMenu.developerComponents.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_DeveloperIcons_Text",
+    "newKey": "settings.navMenu.developerIcons.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_Feedback_Text",
+    "newKey": "settings.navMenu.feedback.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_Developer_Text",
+    "newKey": "settings.navMenu.developer.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_PageTitle",
+    "newKey": "settings.localization.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_PageCaption",
+    "newKey": "settings.localization.pageCaption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_PageTitle",
+    "newKey": "settings.about.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_DisplayLanguage_Title",
+    "newKey": "settings.localization.displayLanguage.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_DisplayLanguage_Caption",
+    "newKey": "settings.localization.displayLanguage.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_SaveChanges_Button",
+    "newKey": "settings.localization.saveChanges.button"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_PreferencesUpdated_Success_Message",
+    "newKey": "settings.localization.preferencesUpdated.success.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_PreferencesUpdated_Error_MessageTemplate",
+    "newKey": "settings.localization.preferencesUpdated.error.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Localization_LoadPreferences_Error_MessageTemplate",
+    "newKey": "settings.localization.loadPreferences.error.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Licenses_Title",
+    "newKey": "setup.licenses.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Licenses_AlreadyAccepted_Text",
+    "newKey": "setup.licenses.alreadyAccepted.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Licenses_Retry_Button_Text",
+    "newKey": "setup.licenses.retry.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Licenses_ShowLicenses_Button_Text",
+    "newKey": "setup.licenses.showLicenses.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Licenses_AcceptContinue_Button_Text",
+    "newKey": "setup.licenses.acceptContinue.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Licenses_LoadingError_MessageTemplate",
+    "newKey": "setup.licenses.loadingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Title",
+    "newKey": "setup.backendConnection.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_ServerFound_Text",
+    "newKey": "setup.backendConnection.serverFound.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Retry_Button_Text",
+    "newKey": "setup.backendConnection.retry.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnectionFailed_Message",
+    "newKey": "setup.backendConnectionFailed.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_CheckError_MessageTemplate",
+    "newKey": "setup.backendConnection.checkError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Check_VersionError_Message",
+    "newKey": "setup.backendConnection.check.versionError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Check_VersionMatchError_Message",
+    "newKey": "setup.backendConnection.check.versionMatchError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Check_SetupInProgressError_Message",
+    "newKey": "setup.backendConnection.check.setupInProgressError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Check_UnknownError_Message",
+    "newKey": "setup.backendConnection.check.unknownError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_BackendConnection_Check_UnknownError_MessageTemplate",
+    "newKey": "setup.backendConnection.check.unknownError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Title",
+    "newKey": "setup.database.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Provider_MessageTemplate",
+    "newKey": "setup.database.provider.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_Host_Label",
+    "newKey": "setup.database.form.host.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_Port_Label",
+    "newKey": "setup.database.form.port.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_DatabaseName_Label",
+    "newKey": "setup.database.form.databaseName.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_DatabaseUsername_Label",
+    "newKey": "setup.database.form.databaseUsername.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_DatabasePassword_Label",
+    "newKey": "setup.database.form.databasePassword.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_TestConnection_Button",
+    "newKey": "setup.database.testConnection.button"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_Host_HelperText",
+    "newKey": "setup.database.form.host.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_DatabaseName_HelperText",
+    "newKey": "setup.database.form.databaseName.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_DatabaseUsername_HelperText",
+    "newKey": "setup.database.form.databaseUsername.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Form_DatabasePassword_HelperText",
+    "newKey": "setup.database.form.databasePassword.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_UnknownError_MessageTemplate",
+    "newKey": "setup.database.unknownError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Check_NotAvailableOrSupportedError_Message",
+    "newKey": "setup.database.check.notAvailableOrSupportedError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Check_UnknownError_Message",
+    "newKey": "setup.database.check.unknownError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Database_Check_NotAvailableError_Message",
+    "newKey": "setup.database.check.notAvailableError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_Title",
+    "newKey": "setup.adminUser.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_ConfigurationFound_Text",
+    "newKey": "setup.adminUser.configurationFound.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_ConfigurationSaved_Text",
+    "newKey": "setup.adminUser.configurationSaved.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_Form_Username_Label",
+    "newKey": "setup.adminUser.form.username.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_Form_Username_HelperText",
+    "newKey": "setup.adminUser.form.username.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_Form_Password_Label",
+    "newKey": "setup.adminUser.form.password.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_Form_Password_HelperText",
+    "newKey": "setup.adminUser.form.password.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_AdminUser_Save_Button_Text",
+    "newKey": "setup.adminUser.save.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_Title",
+    "newKey": "setup.configuration.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_ConfigurationFound_Title",
+    "newKey": "setup.configuration.configurationFound.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_ConfigurationSaved_Title",
+    "newKey": "setup.configuration.configurationSaved.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_Form_InstanceName_Label",
+    "newKey": "setup.configuration.form.instanceName.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_Form_InstanceName_HelperText",
+    "newKey": "setup.configuration.form.instanceName.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_Form_InstanceDefaultLocale_Label",
+    "newKey": "setup.configuration.form.instanceDefaultLocale.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_Form_InstanceDefaultLocale_HelperText",
+    "newKey": "setup.configuration.form.instanceDefaultLocale.helperText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Configuration_Save_Button_Text",
+    "newKey": "setup.configuration.save.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_Title",
+    "newKey": "setup.process.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_ProcessFinished_Title",
+    "newKey": "setup.processFinished.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_SetupIsPrepared_Message",
+    "newKey": "setup.process.setupIsPrepared.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_Retry_Button_Text",
+    "newKey": "setup.process.retry.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_Finished_Success_Message",
+    "newKey": "setup.process.finished.success.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_Finished_StartHomeBook_Message",
+    "newKey": "setup.process.finished.startHomeBook.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_Finished_RemoveEnvironmentVariables_Message",
+    "newKey": "setup.process.finished.removeEnvironmentVariables.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_ProcessingError_MessageTemplate",
+    "newKey": "setup.process.processingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_ProcessingServerRestartError_Message",
+    "newKey": "setup.process.processingServerRestartError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_ProcessingValidationError_Message",
+    "newKey": "setup.process.processingValidationError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_ProcessingLicenseError_Message",
+    "newKey": "setup.process.processingLicenseError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_ProcessingUnknownError_Message",
+    "newKey": "setup.process.processingUnknownError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Setup_Process_ProcessingUnknownError_MessageTemplate",
+    "newKey": "setup.process.processingUnknownError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_ProcessFinished_Title",
+    "newKey": "update.processFinished.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_Title",
+    "newKey": "update.process.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_UpdateIsPrepared_Message",
+    "newKey": "update.process.updateIsPrepared.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_Finished_Success_Message",
+    "newKey": "update.process.finished.success.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_Finished_StartHomeBook_Message",
+    "newKey": "update.process.finished.startHomeBook.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_Retry_Button_Text",
+    "newKey": "update.process.retry.button.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_ProcessingError_MessageTemplate",
+    "newKey": "update.process.processingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_ProcessingServerRestartError_Message",
+    "newKey": "update.process.processingServerRestartError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_ProcessingUnknownError_Message",
+    "newKey": "update.process.processingUnknownError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_ProcessingSetupMissingError_Message",
+    "newKey": "update.process.processingSetupMissingError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Update_Process_ProcessingUnknownError_MessageTemplate",
+    "newKey": "update.process.processingUnknownError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_PageTitle",
+    "newKey": "settings.instance.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_PageCaption",
+    "newKey": "settings.instance.pageCaption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_InstanceName_Title",
+    "newKey": "settings.instance.instanceName.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_InstanceName_Caption",
+    "newKey": "settings.instance.instanceName.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_InstanceDefaultLocale_Title",
+    "newKey": "settings.instance.instanceDefaultLocale.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_InstanceDefaultLocale_Caption",
+    "newKey": "settings.instance.instanceDefaultLocale.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_SaveChanges_Button",
+    "newKey": "settings.instance.saveChanges.button"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_LoadPreferences_Error_MessageTemplate",
+    "newKey": "settings.instance.loadPreferences.error.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_PreferencesUpdated_Success_Message",
+    "newKey": "settings.instance.preferencesUpdated.success.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Instance_PreferencesUpdated_Error_MessageTemplate",
+    "newKey": "settings.instance.preferencesUpdated.error.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_PageTitle",
+    "newKey": "settings.user.overview.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_AddUserButton_Text",
+    "newKey": "settings.user.overview.addUserButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_Loading_Message",
+    "newKey": "settings.user.overview.loading.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_CurrentCount_MessageTemplate",
+    "newKey": "settings.user.overview.currentCount.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ItemsPerPageSelect_Label",
+    "newKey": "settings.user.overview.itemsPerPageSelect.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_Username_TableHeader",
+    "newKey": "settings.user.overview.resultsTable.username.tableHeader"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_Status_TableHeader",
+    "newKey": "settings.user.overview.resultsTable.status.tableHeader"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_Role_TableHeader",
+    "newKey": "settings.user.overview.resultsTable.role.tableHeader"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_Created_TableHeader",
+    "newKey": "settings.user.overview.resultsTable.created.tableHeader"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_Actions_TableHeader",
+    "newKey": "settings.user.overview.resultsTable.actions.tableHeader"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_Actions_EditUser_ToolTipText",
+    "newKey": "settings.user.overview.resultsTable.actions.editUser.toolTipText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ResultsTable_NoResult_Message",
+    "newKey": "settings.user.overview.resultsTable.noResult.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ToggleStatusTooltip_Enable_Text",
+    "newKey": "settings.user.overview.toggleStatusTooltip.enable.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_ToggleStatusTooltip_Disable_Text",
+    "newKey": "settings.user.overview.toggleStatusTooltip.disable.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserStatus_Disabled_Text",
+    "newKey": "settings.user.overview.userStatus.disabled.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserStatus_Active_Text",
+    "newKey": "settings.user.overview.userStatus.active.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserRole_Admin_Text",
+    "newKey": "settings.user.overview.userRole.admin.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserRole_User_Text",
+    "newKey": "settings.user.overview.userRole.user.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_LoadCurrentUserError_MessageTemplate",
+    "newKey": "settings.user.overview.loadCurrentUserError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_LoadAllUsersError_MessageTemplate",
+    "newKey": "settings.user.overview.loadAllUsersError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_OwnUserError_Message",
+    "newKey": "settings.user.overview.ownUserError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserEnabled_MessageTemplate",
+    "newKey": "settings.user.overview.userEnabled.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserDisabled_MessageTemplate",
+    "newKey": "settings.user.overview.userDisabled.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Overview_UserUpdatingError_MessageTemplate",
+    "newKey": "settings.user.overview.userUpdatingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_PageTitle",
+    "newKey": "settings.user.add.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_PageTitle",
+    "newKey": "settings.user.edit.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Creating_Message",
+    "newKey": "settings.user.add.creating.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_CreateButton_Text",
+    "newKey": "settings.user.add.createButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_CancelButton_Text",
+    "newKey": "settings.user.add.cancelButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_AdministratorFlag_Label",
+    "newKey": "settings.user.add.administratorFlag.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_AdministratorFlag_Caption",
+    "newKey": "settings.user.add.administratorFlag.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Form_Username_Label",
+    "newKey": "settings.user.add.form.username.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Form_Username_Caption",
+    "newKey": "settings.user.add.form.username.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Form_Password_Label",
+    "newKey": "settings.user.add.form.password.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Form_Password_Caption",
+    "newKey": "settings.user.add.form.password.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Form_ConfirmPassword_Label",
+    "newKey": "settings.user.add.form.confirmPassword.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_Form_ConfirmPassword_Caption",
+    "newKey": "settings.user.add.form.confirmPassword.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_PageTitle",
+    "newKey": "settings.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_LoadingUser_Message",
+    "newKey": "settings.user.edit.loadingUser.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UserNotFound_Message",
+    "newKey": "settings.user.edit.userNotFound.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Form_Username_Label",
+    "newKey": "settings.user.edit.form.username.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Form_Username_Caption",
+    "newKey": "settings.user.edit.form.username.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Form_Password_Label",
+    "newKey": "settings.user.edit.form.password.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Form_Password_Caption",
+    "newKey": "settings.user.edit.form.password.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Form_ConfirmPassword_Label",
+    "newKey": "settings.user.edit.form.confirmPassword.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Form_ConfirmPassword_Caption",
+    "newKey": "settings.user.edit.form.confirmPassword.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_AdministratorFlag_Label",
+    "newKey": "settings.user.edit.administratorFlag.label"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_AdministratorFlag_Caption",
+    "newKey": "settings.user.edit.administratorFlag.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_CantChangeOwnAdministratorFlag_Caption",
+    "newKey": "settings.user.edit.cantChangeOwnAdministratorFlag.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_CancelButton_Text",
+    "newKey": "settings.user.edit.cancelButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Saving_Message",
+    "newKey": "settings.user.edit.saving.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_SaveButton_Text",
+    "newKey": "settings.user.edit.saveButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_ActionsHeader_Text",
+    "newKey": "settings.user.edit.actionsHeader.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_EnableDisable_Title",
+    "newKey": "settings.user.edit.actions.enableDisable.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_Delete_Title",
+    "newKey": "settings.user.edit.actions.delete.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_EnableDisable_Caption",
+    "newKey": "settings.user.edit.actions.enableDisable.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_Delete_Caption",
+    "newKey": "settings.user.edit.actions.delete.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_DeleteButton_Text",
+    "newKey": "settings.user.edit.actions.deleteButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_Delete_CantDeleteOwnUser_Message",
+    "newKey": "settings.user.edit.actions.delete.cantDeleteOwnUser.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_Actions_Delete_CantDisableOwnUser_Message",
+    "newKey": "settings.user.edit.actions.delete.cantDisableOwnUser.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_LoadingUserError_MessageTemplate",
+    "newKey": "settings.user.edit.loadingUserError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_GetUserIdError_MessageTemplate",
+    "newKey": "settings.user.edit.getUserIdError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_PasswordsDoNotMatchError_Message",
+    "newKey": "settings.user.edit.passwordsDoNotMatchError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_PasswordTooShortError_MessageTemplate",
+    "newKey": "settings.user.edit.passwordTooShortError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UsernameRequiredError_Message",
+    "newKey": "settings.user.edit.usernameRequiredError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UsernameLengthError_MessageTemplate",
+    "newKey": "settings.user.edit.usernameLengthError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UpdateSuccess_Message",
+    "newKey": "settings.user.edit.updateSuccess.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_NoChanges_Message",
+    "newKey": "settings.user.edit.noChanges.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UpdatingError_MessageTemplate",
+    "newKey": "settings.user.edit.updatingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UserEnabledSuccess_Message",
+    "newKey": "settings.user.edit.userEnabledSuccess.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UserDisabledSuccess_Message",
+    "newKey": "settings.user.edit.userDisabledSuccess.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_User_StatusUpdatingError_MessageTemplate",
+    "newKey": "settings.user.edit.user.statusUpdatingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_User_DeletingError_MessageTemplate",
+    "newKey": "settings.user.edit.user.deletingError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_UserDeleteSuccess_Message",
+    "newKey": "settings.user.edit.userDeleteSuccess.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_DeleteUserDialog_Title",
+    "newKey": "settings.user.edit.deleteUserDialog.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_DeleteUserDialog_MessageTemplate",
+    "newKey": "settings.user.edit.deleteUserDialog.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_DeleteUserDialog_YesText",
+    "newKey": "settings.user.edit.deleteUserDialog.yesText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Edit_DeleteUserDialog_CancelText",
+    "newKey": "settings.user.edit.deleteUserDialog.cancelText"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_PasswordsDoNotMatchError_Message",
+    "newKey": "settings.user.add.passwordsDoNotMatchError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_PasswordRequiredError_MessageTemplate",
+    "newKey": "settings.user.add.passwordRequiredError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_UsernameRequiredError_Message",
+    "newKey": "settings.user.add.usernameRequiredError.message"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_UsernameLengthError_MessageTemplate",
+    "newKey": "settings.user.add.usernameLengthError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_PasswordTooShortError_MessageTemplate",
+    "newKey": "settings.user.add.passwordTooShortError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_UserCouldNotCreatedError_MessageTemplate",
+    "newKey": "settings.user.add.userCouldNotCreatedError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_UserCreatedSuccess_MessageTemplate",
+    "newKey": "settings.user.add.userCreatedSuccess.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_User_Add_CreationUnknownError_MessageTemplate",
+    "newKey": "settings.user.add.creationUnknownError.messageTemplate"
+  },
+  {
+    "component": "app",
+    "oldKey": "Account_Login_SigningInButton_Text",
+    "newKey": "account.login.signingInButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Account_Login_SignInButton_Text",
+    "newKey": "account.login.signInButton.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Module_Finances_StartMenuItem_Title",
+    "newKey": "module.finances.startMenuItem.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Module_Finances_StartMenuItem_Caption",
+    "newKey": "module.finances.startMenuItem.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "StartMenuItems_Open_Text",
+    "newKey": "ui.startMenuItem.open"
+  },
+  {
+    "component": "app",
+    "oldKey": "Home_PageTitle",
+    "newKey": "home.pageTitle"
+  },
+  {
+    "component": "app",
+    "oldKey": "Module_KitchenManager_StartMenuItem_Recipes_Title",
+    "newKey": "module.kitchenManager.startMenuItem.recipes.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Module_KitchenManager_StartMenuItem_Pantry_Title",
+    "newKey": "module.kitchenManager.startMenuItem.pantry.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Module_KitchenManager_StartMenuItem_Recipes_Caption",
+    "newKey": "module.kitchenManager.startMenuItem.recipes.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Module_KitchenManager_StartMenuItem_Pantry_Caption",
+    "newKey": "module.kitchenManager.startMenuItem.pantry.caption"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_DeveloperColors_Text",
+    "newKey": "settings.navMenu.developerColors.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "MainLayout_SearchTextField_Placeholder",
+    "newKey": "mainLayout.searchTextField.placeholder"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_About_ExternalLink_ProjectWebsite_Href",
+    "newKey": "settings.about.externalLink.projectWebsite.href"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_HomebookStorage_Text",
+    "newKey": "settings.navMenu.homebookStorage.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_StorageInformationsArea_Title",
+    "newKey": "settings.storage.storageInformationsArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsedSpace_Title",
+    "newKey": "settings.storage.usedSpace.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsedSpace_Text",
+    "newKey": "settings.storage.usedSpace.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsageChart_Usage_Title",
+    "newKey": "settings.storage.usageChart.usage.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsageType_Media_Title",
+    "newKey": "settings.storage.usageType.media.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsageType_Cache_Title",
+    "newKey": "settings.storage.usageType.cache.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsageType_Temp_Title",
+    "newKey": "settings.storage.usageType.temp.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Storage_UsageType_Logs_Title",
+    "newKey": "settings.storage.usageType.logs.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Developer_ConfigurationArea_Title",
+    "newKey": "settings.developer.configurationArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Developer_ConfigurationItemsFrontend_Title",
+    "newKey": "settings.developer.configurationItemsFrontend.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Developer_ConfigurationItemsBackend_Title",
+    "newKey": "settings.developer.configurationItemsBackend.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_NavMenu_Appearance_Text",
+    "newKey": "settings.navMenu.appearance.text"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Appearance_WallpaperArea_Title",
+    "newKey": "settings.appearance.wallpaperArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "homebook.core.wallpaper.userwallpaper",
+    "newKey": "homebook.core.wallpaper.userwallpaper"
+  },
+  {
+    "component": "app",
+    "oldKey": "homebook.kitchen.recipeimages",
+    "newKey": "homebook.kitchen.recipeimages"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Appearance_StaticWallpaperArea_Title",
+    "newKey": "settings.appearance.staticWallpaperArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Appearance_UploadedWallpaperArea_Title",
+    "newKey": "settings.appearance.uploadedWallpaperArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Appearance_DynamicWallpaperArea_Title",
+    "newKey": "settings.appearance.dynamicWallpaperArea.title"
+  },
+  {
+    "component": "app",
+    "oldKey": "Settings_Appearance_WallpaperArea_Description",
+    "newKey": "settings.appearance.wallpaperArea.description"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "ModuleName",
+    "newKey": "kitchen.moduleName"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "ModuleDescription",
+    "newKey": "kitchen.moduleDescription"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "StartMenuItem_Recipes_Title",
+    "newKey": "kitchen.startMenuItem.recipes.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "StartMenuItem_Pantry_Title",
+    "newKey": "kitchen.startMenuItem.pantry.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "StartMenuItem_Recipes_Caption",
+    "newKey": "kitchen.startMenuItem.recipes.caption"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "StartMenuItem_Pantry_Caption",
+    "newKey": "kitchen.startMenuItem.pantry.caption"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "StartMenuItem_MealPlan_Title",
+    "newKey": "kitchen.startMenuItem.mealPlan.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "StartMenuItem_MealPlan_Caption",
+    "newKey": "kitchen.startMenuItem.mealPlan.caption"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "DateTimeFormat_ShortDateOnlyFormat",
+    "newKey": "kitchen.dateTimeFormat.shortDateOnlyFormat"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "PlanOverview_Header_CalendarWeek_TextTemplate",
+    "newKey": "kitchen.planOverview.header.calendarWeek.textTemplate"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "PlanOverview_MealType_Breakfast_Text",
+    "newKey": "kitchen.planOverview.mealType.breakfast.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "PlanOverview_MealType_Lunch_Text",
+    "newKey": "kitchen.planOverview.mealType.lunch.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "PlanOverview_MealType_Dinner_Text",
+    "newKey": "kitchen.planOverview.mealType.dinner.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeOverview_AnnotationServings_TextTemplate",
+    "newKey": "kitchen.recipeOverview.annotationServings.textTemplate"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeNameEditToolTip_Text",
+    "newKey": "kitchen.recipeEdit.recipeNameEditToolTip.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeNameEditTextField_Placeholder",
+    "newKey": "kitchen.recipeEdit.recipeNameEditTextField.placeholder"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ViewRecipeButton_Text",
+    "newKey": "kitchen.recipeEdit.viewRecipeButton.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeNameSaveTooltip_Text",
+    "newKey": "kitchen.recipeEdit.recipeNameSaveTooltip.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeDeleteTooltip_Text",
+    "newKey": "kitchen.recipeEdit.recipeDeleteTooltip.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeDescriptionTextField_Label",
+    "newKey": "kitchen.recipeEdit.recipeDescriptionTextField.label"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ServingsLabel_Singular",
+    "newKey": "kitchen.recipeEdit.servingsLabel.singular"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ServingsLabel_Plural",
+    "newKey": "kitchen.recipeEdit.servingsLabel.plural"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_DurationAdditionalArea_Title",
+    "newKey": "kitchen.recipeEdit.durationAdditionalArea.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_SaveRecipeButton_Content",
+    "newKey": "kitchen.recipeEdit.saveRecipeButton.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeSource_Content",
+    "newKey": "kitchen.recipeEdit.recipeSource.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RecipeComment_Content",
+    "newKey": "kitchen.recipeEdit.recipeComment.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_CaloriesPerServing_Content",
+    "newKey": "kitchen.recipeEdit.caloriesPerServing.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RestingTime_Content",
+    "newKey": "kitchen.recipeEdit.restingTime.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_CookingBakingTime_Content",
+    "newKey": "kitchen.recipeEdit.cookingBakingTime.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_WorkingTime_Content",
+    "newKey": "kitchen.recipeEdit.workingTime.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_WorkingTimeHour_AdornmentText",
+    "newKey": "kitchen.recipeEdit.workingTimeHour.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_WorkingTimeMinute_AdornmentText",
+    "newKey": "kitchen.recipeEdit.workingTimeMinute.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_CookingBakingTimeHour_AdornmentText",
+    "newKey": "kitchen.recipeEdit.cookingBakingTimeHour.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_CookingBakingTimeMinute_AdornmentText",
+    "newKey": "kitchen.recipeEdit.cookingBakingTimeMinute.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RestingTimeHour_AdornmentText",
+    "newKey": "kitchen.recipeEdit.restingTimeHour.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_RestingTimeMinute_AdornmentText",
+    "newKey": "kitchen.recipeEdit.restingTimeMinute.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_CaloriesPerServing_AdornmentText",
+    "newKey": "kitchen.recipeEdit.caloriesPerServing.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ImageGallery_Title",
+    "newKey": "kitchen.recipeEdit.imageGallery.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ImageGallery_EmptyState_Text",
+    "newKey": "kitchen.recipeEdit.imageGallery.emptyState.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ImageGallery_ReorderHint_Text",
+    "newKey": "kitchen.recipeEdit.imageGallery.reorderHint.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEdit_ImageGallery_RemoveButton_Text",
+    "newKey": "kitchen.recipeEdit.imageGallery.removeButton.text"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditIngredients_Ingredients_Title",
+    "newKey": "kitchen.recipeEditIngredients.ingredients.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditIngredients_Quantity_Placeholder",
+    "newKey": "kitchen.recipeEditIngredients.quantity.placeholder"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditIngredients_Unit_Placeholder",
+    "newKey": "kitchen.recipeEditIngredients.unit.placeholder"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditIngredients_IngredientName_Placeholder",
+    "newKey": "kitchen.recipeEditIngredients.ingredientName.placeholder"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditIngredients_AdditionalNote_Placeholder",
+    "newKey": "kitchen.recipeEditIngredients.additionalNote.placeholder"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_Steps_Title",
+    "newKey": "kitchen.recipeEditSteps.steps.title"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_StepIndexText_Content",
+    "newKey": "kitchen.recipeEditSteps.stepIndexText.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_StepTimerText_Content",
+    "newKey": "kitchen.recipeEditSteps.stepTimerText.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_StepTimerTitle_Content",
+    "newKey": "kitchen.recipeEditSteps.stepTimerTitle.content"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_StepTimerHour_AdornmentText",
+    "newKey": "kitchen.recipeEditSteps.stepTimerHour.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_StepTimerMinute_AdornmentText",
+    "newKey": "kitchen.recipeEditSteps.stepTimerMinute.adornmentText"
+  },
+  {
+    "component": "module-kitchen",
+    "oldKey": "RecipeEditSteps_StepDescription_Placeholder",
+    "newKey": "kitchen.recipeEditSteps.stepDescription.placeholder"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "ModuleName",
+    "newKey": "finances.moduleName"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "ModuleDescription",
+    "newKey": "finances.moduleDescription"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "StartMenuItem_Overview_Title",
+    "newKey": "finances.startMenuItem.overview.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "StartMenuItem_Overview_Caption",
+    "newKey": "finances.startMenuItem.overview.caption"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "Savings_Title",
+    "newKey": "finances.savings.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "Savings_Add_Title",
+    "newKey": "finances.savings.add.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "Savings_Overview_NoSavingGoals",
+    "newKey": "finances.savings.overview.noSavingGoals"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "Savings_Edit_Title",
+    "newKey": "finances.savings.edit.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "Savings_Edit_NotFound",
+    "newKey": "finances.savings.edit.notFound"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_Intro_Title",
+    "newKey": "finances.addSavingGoal.intro.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Intro_Title",
+    "newKey": "finances.addSavingGoal.mudStep.intro.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_Intro_Description",
+    "newKey": "finances.addSavingGoal.intro.description"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_Intro_QuickAddButton_Text",
+    "newKey": "finances.addSavingGoal.intro.quickAddButton.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Name_Title",
+    "newKey": "finances.addSavingGoal.mudStep.name.title.label"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_Title",
+    "newKey": "finances.addSavingGoal.mudStep.goal.title.label"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Plan_Title",
+    "newKey": "finances.addSavingGoal.mudStep.plan.title"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_Title",
+    "newKey": "finances.addSavingGoal.mudStep.summary.title.label"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Name_Title_Text",
+    "newKey": "finances.addSavingGoal.mudStep.name.title.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Name_Title_Caption",
+    "newKey": "finances.addSavingGoal.mudStep.name.title.caption"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Name_Input_Placeholder",
+    "newKey": "finances.addSavingGoal.mudStep.name.input.placeholder"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_Title_Text",
+    "newKey": "finances.addSavingGoal.mudStep.goal.title.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_Title_Caption",
+    "newKey": "finances.addSavingGoal.mudStep.goal.title.caption"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_Input_Placeholder",
+    "newKey": "finances.addSavingGoal.mudStep.goal.input.placeholder"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_Input_ValidationError",
+    "newKey": "finances.addSavingGoal.mudStep.goal.input.validationError"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_TargetDate_Caption",
+    "newKey": "finances.addSavingGoal.mudStep.goal.targetDate.caption"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_TargetDateInput_Placeholder",
+    "newKey": "finances.addSavingGoal.mudStep.goal.targetDateInput.placeholder"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Goal_TargetDateInput_Label",
+    "newKey": "finances.addSavingGoal.mudStep.goal.targetDateInput.label"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Options_Title_Text",
+    "newKey": "finances.addSavingGoal.mudStep.options.title.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Options_Title_Caption",
+    "newKey": "finances.addSavingGoal.mudStep.options.title.caption"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_InterestRateOption_None_Option_Text",
+    "newKey": "finances.addSavingGoal.mudStep.interestRateOption.none.option.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_InterestRateOption_Monthly_Option_Text",
+    "newKey": "finances.addSavingGoal.mudStep.interestRateOption.monthly.option.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_InterestRateOption_Yearly_Option_Text",
+    "newKey": "finances.addSavingGoal.mudStep.interestRateOption.yearly.option.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_InterestRate_Input_Label",
+    "newKey": "finances.addSavingGoal.mudStep.interestRate.input.label"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_Title_Text",
+    "newKey": "finances.addSavingGoal.mudStep.summary.title.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_Name_Text",
+    "newKey": "finances.addSavingGoal.mudStep.summary.name.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_TargetDate_Text",
+    "newKey": "finances.addSavingGoal.mudStep.summary.targetDate.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_NumberOfMonths_Text",
+    "newKey": "finances.addSavingGoal.mudStep.summary.numberOfMonths.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_AmountPerMonth_Text",
+    "newKey": "finances.addSavingGoal.mudStep.summary.amountPerMonth.text"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoal_MudStep_Summary_Result_TextTemplate",
+    "newKey": "finances.addSavingGoal.mudStep.summary.result.textTemplate"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoalSummary_Total_Name",
+    "newKey": "finances.addSavingGoalSummary.total.name"
+  },
+  {
+    "component": "module-finances",
+    "oldKey": "AddSavingGoalSummary_Payments_Name",
+    "newKey": "finances.addSavingGoalSummary.payments.name"
+  },
+  {
+    "component": "module-platform-info",
+    "oldKey": "ModuleName",
+    "newKey": "platformInfo.moduleName"
+  },
+  {
+    "component": "module-platform-info",
+    "oldKey": "ModuleDescription",
+    "newKey": "platformInfo.moduleDescription"
+  }
+]

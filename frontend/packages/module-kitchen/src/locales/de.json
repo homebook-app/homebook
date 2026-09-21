@@ -1,0 +1,165 @@
+{
+  "kitchen": {
+    "moduleName": "Küchen Helfer",
+    "moduleDescription": "",
+    "startMenuItem": {
+      "recipes": {
+        "title": "Rezepte",
+        "caption": "Dein persönliches Kochbuch"
+      },
+      "pantry": {
+        "title": "Vorräte",
+        "caption": "Behalten Sie den Überblick über Ihre Küchenvorräte"
+      },
+      "mealPlan": {
+        "title": "Speiseplan",
+        "caption": "Ihre Mahlzeiten auf einen Blick"
+      }
+    },
+    "dateTimeFormat": {
+      "shortDateOnlyFormat": "dd.MM."
+    },
+    "planOverview": {
+      "header": {
+        "calendarWeek": {
+          "textTemplate": "Kalenderwoche {0}"
+        }
+      },
+      "mealType": {
+        "breakfast": {
+          "text": "Frühstück"
+        },
+        "lunch": {
+          "text": "Mittagessen"
+        },
+        "dinner": {
+          "text": "Abendessen"
+        }
+      }
+    },
+    "recipeOverview": {
+      "annotationServings": {
+        "textTemplate": "{0} Portionen"
+      }
+    },
+    "recipeEdit": {
+      "recipeNameEditToolTip": {
+        "text": "Rezeptname bearbeiten"
+      },
+      "recipeNameEditTextField": {
+        "placeholder": "Rezeptname"
+      },
+      "viewRecipeButton": {
+        "text": "Rezept ansehen"
+      },
+      "recipeNameSaveTooltip": {
+        "text": "Rezeptname speichern"
+      },
+      "recipeDeleteTooltip": {
+        "text": "Rezept löschen"
+      },
+      "recipeDescriptionTextField": {
+        "label": "Beschreibung"
+      },
+      "servingsLabel": {
+        "singular": "Für 1 Portion",
+        "plural": "Für {0} Portionen"
+      },
+      "durationAdditionalArea": {
+        "title": "Dauer und weitere Informationen"
+      },
+      "saveRecipeButton": {
+        "content": "Rezept speichern"
+      },
+      "recipeSource": {
+        "content": "Quelle"
+      },
+      "recipeComment": {
+        "content": "Kommentar"
+      },
+      "caloriesPerServing": {
+        "content": "Kalorien/Portion",
+        "adornmentText": "Kcal"
+      },
+      "restingTime": {
+        "content": "Ruhezeit"
+      },
+      "cookingBakingTime": {
+        "content": "Koch/Backzeit"
+      },
+      "workingTime": {
+        "content": "Arbeitszeit"
+      },
+      "workingTimeHour": {
+        "adornmentText": "h"
+      },
+      "workingTimeMinute": {
+        "adornmentText": "m"
+      },
+      "cookingBakingTimeHour": {
+        "adornmentText": "h"
+      },
+      "cookingBakingTimeMinute": {
+        "adornmentText": "m"
+      },
+      "restingTimeHour": {
+        "adornmentText": "h"
+      },
+      "restingTimeMinute": {
+        "adornmentText": "m"
+      },
+      "imageGallery": {
+        "title": "Grafiken",
+        "emptyState": {
+          "text": "Noch keine Grafiken hochgeladen."
+        },
+        "reorderHint": {
+          "text": "Ziehe die Grafiken per Drag and Drop, um ihre Reihenfolge festzulegen."
+        },
+        "removeButton": {
+          "text": "Entfernen"
+        }
+      }
+    },
+    "recipeEditIngredients": {
+      "ingredients": {
+        "title": "Zutaten"
+      },
+      "quantity": {
+        "placeholder": "Menge"
+      },
+      "unit": {
+        "placeholder": "Einheit"
+      },
+      "ingredientName": {
+        "placeholder": "Zutat"
+      },
+      "additionalNote": {
+        "placeholder": "Zusatz (optional)"
+      }
+    },
+    "recipeEditSteps": {
+      "steps": {
+        "title": "Zubereitung"
+      },
+      "stepIndexText": {
+        "content": "Schritt {0}"
+      },
+      "stepTimerText": {
+        "content": "Timer: {0}"
+      },
+      "stepTimerTitle": {
+        "content": "Timer für diesen Schritt"
+      },
+      "stepTimerHour": {
+        "adornmentText": "h"
+      },
+      "stepTimerMinute": {
+        "adornmentText": "m"
+      },
+      "stepDescription": {
+        "placeholder": "Was passiert in diesem Schritt?"
+      }
+    }
+  }
+}

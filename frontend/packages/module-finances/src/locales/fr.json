@@ -1,0 +1,127 @@
+{
+  "finances": {
+    "moduleName": "",
+    "moduleDescription": "",
+    "startMenuItem": {
+      "overview": {
+        "title": "",
+        "caption": ""
+      }
+    },
+    "savings": {
+      "title": "",
+      "add": {
+        "title": ""
+      },
+      "overview": {
+        "noSavingGoals": ""
+      },
+      "edit": {
+        "title": "",
+        "notFound": ""
+      }
+    },
+    "addSavingGoal": {
+      "intro": {
+        "title": "",
+        "description": "",
+        "quickAddButton": {
+          "text": ""
+        }
+      },
+      "mudStep": {
+        "intro": {
+          "title": ""
+        },
+        "name": {
+          "title": {
+            "label": "",
+            "text": "",
+            "caption": ""
+          },
+          "input": {
+            "placeholder": ""
+          }
+        },
+        "goal": {
+          "title": {
+            "label": "",
+            "text": "",
+            "caption": ""
+          },
+          "input": {
+            "placeholder": "",
+            "validationError": ""
+          },
+          "targetDate": {
+            "caption": ""
+          },
+          "targetDateInput": {
+            "placeholder": "",
+            "label": ""
+          }
+        },
+        "plan": {
+          "title": ""
+        },
+        "summary": {
+          "title": {
+            "label": "",
+            "text": ""
+          },
+          "name": {
+            "text": ""
+          },
+          "targetDate": {
+            "text": ""
+          },
+          "numberOfMonths": {
+            "text": ""
+          },
+          "amountPerMonth": {
+            "text": ""
+          },
+          "result": {
+            "textTemplate": ""
+          }
+        },
+        "options": {
+          "title": {
+            "text": "",
+            "caption": ""
+          }
+        },
+        "interestRateOption": {
+          "none": {
+            "option": {
+              "text": ""
+            }
+          },
+          "monthly": {
+            "option": {
+              "text": ""
+            }
+          },
+          "yearly": {
+            "option": {
+              "text": ""
+            }
+          }
+        },
+        "interestRate": {
+          "input": {
+            "label": ""
+          }
+        }
+      }
+    },
+    "addSavingGoalSummary": {
+      "total": {
+        "name": ""
+      },
+      "payments": {
+        "name": ""
+      }
+    }
+  }
+}

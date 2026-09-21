@@ -1,0 +1,127 @@
+{
+  "finances": {
+    "moduleName": "Finances",
+    "moduleDescription": "Module for managing finances, including expenses and budgets.",
+    "startMenuItem": {
+      "overview": {
+        "title": "Finances",
+        "caption": "Manage your income, expenses, and budgets"
+      }
+    },
+    "savings": {
+      "title": "Saving Goals",
+      "add": {
+        "title": "New Saving Goal"
+      },
+      "overview": {
+        "noSavingGoals": "You don't have any savings goals yet"
+      },
+      "edit": {
+        "title": "Saving Title",
+        "notFound": "Saving Goal not found!"
+      }
+    },
+    "addSavingGoal": {
+      "intro": {
+        "title": "Create new Saving Goal",
+        "description": "Create a savings goal to keep track of your finances. Decide what you want to save for and how much you want to reach.",
+        "quickAddButton": {
+          "text": "Quick Add"
+        }
+      },
+      "mudStep": {
+        "intro": {
+          "title": "New Saving Goal"
+        },
+        "name": {
+          "title": {
+            "label": "Name",
+            "text": "What do you want to achieve?",
+            "caption": "Choose a name that describes what you are saving for."
+          },
+          "input": {
+            "placeholder": "Enter a name"
+          }
+        },
+        "goal": {
+          "title": {
+            "label": "Goal",
+            "text": "How much do you want to save?",
+            "caption": "Enter the total amount you want to reach step by step."
+          },
+          "input": {
+            "placeholder": "Enter an amount",
+            "validationError": "The amount is too small"
+          },
+          "targetDate": {
+            "caption": "Tell us when you would like to reach your goal – it helps you stay motivated."
+          },
+          "targetDateInput": {
+            "placeholder": "Select a date",
+            "label": "Target date (optional)"
+          }
+        },
+        "plan": {
+          "title": "Savings Plan"
+        },
+        "summary": {
+          "title": {
+            "label": "Summary",
+            "text": "Your saving goal at a glance"
+          },
+          "name": {
+            "text": "Your saving goal:"
+          },
+          "targetDate": {
+            "text": "By:"
+          },
+          "numberOfMonths": {
+            "text": "Months:"
+          },
+          "amountPerMonth": {
+            "text": "Per month:"
+          },
+          "result": {
+            "textTemplate": "In the end you will have {0}, including {1} in interest :)"
+          }
+        },
+        "options": {
+          "title": {
+            "text": "More options",
+            "caption": "Does your savings account earn interest?"
+          }
+        },
+        "interestRateOption": {
+          "none": {
+            "option": {
+              "text": "No interest"
+            }
+          },
+          "monthly": {
+            "option": {
+              "text": "Monthly"
+            }
+          },
+          "yearly": {
+            "option": {
+              "text": "Yearly"
+            }
+          }
+        },
+        "interestRate": {
+          "input": {
+            "label": "Interest rate (%)"
+          }
+        }
+      }
+    },
+    "addSavingGoalSummary": {
+      "total": {
+        "name": "Total"
+      },
+      "payments": {
+        "name": "Payments"
+      }
+    }
+  }
+}

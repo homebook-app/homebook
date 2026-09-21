@@ -24,3 +24,14 @@ export function prefixMediaPath(baseUrl: string, mediaPath: string): string {
 export function mediaUrl(baseUrl: string, mediaId: string): string {
   return prefixMediaPath(baseUrl, `/storage/media/${encodeURIComponent(mediaId)}`);
 }
+
+/**
+ * Builds the URL of an anonymous system wallpaper file.
+ *
+ * The file name is URL-encoded and its dots additionally become `%2E`, otherwise the backend
+ * treats the name as a static file request.
+ */
+export function staticWallpaperUrl(baseUrl: string, fileName: string): string {
+  const escaped = encodeURIComponent(fileName).replaceAll('.', '%2E');
+  return `${baseUrl.replace(/\/+$/, '')}/system/wallpaper/${escaped}`;
+}

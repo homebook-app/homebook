@@ -1,0 +1,791 @@
+{
+  "appTitle": "HomeBook",
+  "uiSetupStepper": {
+    "backendConnectionSetupStep": {
+      "title": "Проверить сервер"
+    },
+    "licenseAgreementSetupStep": {
+      "title": "Лицензии"
+    },
+    "databaseConfigurationSetupStep": {
+      "title": "База данных"
+    },
+    "databaseMigrationSetupStep": {
+      "title": "Установка"
+    },
+    "adminUserSetupStep": {
+      "title": "Администратор"
+    },
+    "configurationSetupStep": {
+      "title": "Конфигурация"
+    },
+    "setupProcessSetupStep": {
+      "title": "Настройка HomeBook"
+    },
+    "updateProcessSetupStep": {
+      "title": "Обновление HomeBook"
+    }
+  },
+  "setup": {
+    "title": "Настройка HomeBook",
+    "cardActions": {
+      "server": "Сервер",
+      "version": "Версия"
+    },
+    "licenses": {
+      "title": "Лицензии проекта",
+      "alreadyAccepted": {
+        "text": "Лицензии уже приняты (их можно просмотреть позже)."
+      },
+      "retry": {
+        "button": {
+          "text": "Повторить"
+        }
+      },
+      "showLicenses": {
+        "button": {
+          "text": "Показать лицензии"
+        }
+      },
+      "acceptContinue": {
+        "button": {
+          "text": "Принять и продолжить"
+        }
+      },
+      "loadingError": {
+        "messageTemplate": "Неизвестная ошибка сервера при загрузке лицензий: {0}"
+      }
+    },
+    "backendConnection": {
+      "title": "Проверить соединение с сервером",
+      "serverFound": {
+        "text": "Сервер найден и готов."
+      },
+      "retry": {
+        "button": {
+          "text": "Повторить"
+        }
+      },
+      "checkError": {
+        "messageTemplate": "Ошибка проверки соединения с сервером: {0}"
+      },
+      "check": {
+        "versionError": {
+          "message": "Сервер вернул неверную версию."
+        },
+        "versionMatchError": {
+          "message": "Версия сервера не соответствует версии приложения. Обновите HomeBook."
+        },
+        "setupInProgressError": {
+          "message": "Установка HomeBook уже выполняется. Дождитесь завершения или сбросьте установку."
+        },
+        "unknownError": {
+          "message": "Неизвестная ошибка сервера при проверке требований. Проверьте логи сервера.",
+          "messageTemplate": "Неизвестная ошибка сервера при проверке требований: {0}"
+        }
+      }
+    },
+    "backendConnectionFailed": {
+      "message": "Не удаётся подключиться к серверу. Убедитесь, что сервер запущен и настроен правильно, затем попробуйте снова."
+    },
+    "database": {
+      "title": "Конфигурация базы данных",
+      "provider": {
+        "messageTemplate": "База данных распознана как {0} и доступна."
+      },
+      "form": {
+        "host": {
+          "label": "Хост",
+          "helperText": "Введите имя хоста или IP-адрес сервера базы данных и порт"
+        },
+        "port": {
+          "label": "Порт"
+        },
+        "databaseName": {
+          "label": "Имя базы данных",
+          "helperText": "Введите имя базы данных"
+        },
+        "databaseUsername": {
+          "label": "Имя пользователя",
+          "helperText": "Введите имя пользователя для доступа к базе данных"
+        },
+        "databasePassword": {
+          "label": "Пароль",
+          "helperText": "Введите пароль для доступа к базе данных"
+        }
+      },
+      "testConnection": {
+        "button": "Сохранить и проверить соединение"
+      },
+      "unknownError": {
+        "messageTemplate": "Ошибка подключения к базе данных: {0}"
+      },
+      "check": {
+        "notAvailableOrSupportedError": {
+          "message": "Не удаётся подключиться к базе данных. Убедитесь, что сервер запущен и настроен правильно, затем попробуйте снова."
+        },
+        "unknownError": {
+          "message": "Неизвестная ошибка проверки подключения к базе данных."
+        },
+        "notAvailableError": {
+          "message": "База данных недоступна."
+        }
+      }
+    },
+    "adminUser": {
+      "title": "Администратор HomeBook",
+      "configurationFound": {
+        "text": "Конфигурация пользователя найдена."
+      },
+      "configurationSaved": {
+        "text": "Конфигурация пользователя сохранена успешно."
+      },
+      "form": {
+        "username": {
+          "label": "Имя пользователя",
+          "helperText": "Введите имя пользователя для учётной записи администратора HomeBook"
+        },
+        "password": {
+          "label": "Пароль",
+          "helperText": "Введите надёжный пароль для учётной записи"
+        }
+      },
+      "save": {
+        "button": {
+          "text": "Сохранить пользователя"
+        }
+      }
+    },
+    "configuration": {
+      "title": "Конфигурация HomeBook",
+      "configurationFound": {
+        "title": "HomeBook предварительно настроен."
+      },
+      "configurationSaved": {
+        "title": "Конфигурация HomeBook сохранена успешно."
+      },
+      "form": {
+        "instanceName": {
+          "label": "Имя экземпляра HomeBook",
+          "helperText": "Дайте вашему экземпляру HomeBook уникальное имя"
+        },
+        "instanceDefaultLocale": {
+          "label": "Язык HomeBook по умолчанию",
+          "helperText": "Выберите язык отображения HomeBook по умолчанию"
+        }
+      },
+      "save": {
+        "button": {
+          "text": "Сохранить конфигурацию"
+        }
+      }
+    },
+    "process": {
+      "title": "Установка HomeBook",
+      "setupIsPrepared": {
+        "message": "Установка подготовлена и запускается."
+      },
+      "retry": {
+        "button": {
+          "text": "Повторить установку"
+        }
+      },
+      "finished": {
+        "success": {
+          "message": "Установка выполнена успешно."
+        },
+        "startHomeBook": {
+          "message": "Открыть HomeBook"
+        },
+        "removeEnvironmentVariables": {
+          "message": "Удалите переменные окружения установки из конфигурации Docker."
+        }
+      },
+      "processingError": {
+        "messageTemplate": "Ошибка при установке: {0}"
+      },
+      "processingServerRestartError": {
+        "message": "Сервер не перезапустился корректно после установки. Проверьте логи сервера."
+      },
+      "processingValidationError": {
+        "message": "Ошибка проверки конфигурации при установке. Проверьте логи сервера."
+      },
+      "processingLicenseError": {
+        "message": "Лицензии проекта не приняты."
+      },
+      "processingUnknownError": {
+        "message": "Неизвестная ошибка при установке. Проверьте логи сервера.",
+        "messageTemplate": "Неизвестная ошибка при установке: {0}"
+      }
+    },
+    "processFinished": {
+      "title": "Установка HomeBook завершена"
+    }
+  },
+  "account": {
+    "login": {
+      "title": "Вход в HomeBook",
+      "signingInButton": {
+        "text": "Вход..."
+      },
+      "signInButton": {
+        "text": "Войти"
+      }
+    }
+  },
+  "appSlogan": "Ваша самостоятельная система управления домом и финансами",
+  "authorName": "lk-code",
+  "authorLink": "https://www.lk-code.dev/",
+  "authorMadeWithText": "сделано с ❤️ от",
+  "accountMenu": {
+    "logout": "Выход",
+    "settings": "Настройки"
+  },
+  "logout": {
+    "successMessage": "Выход выполнен успешно!",
+    "errorMessage": "Ошибка при выходе!"
+  },
+  "ui": {
+    "licenseDialog": {
+      "close": "Закрыть",
+      "acceptContinue": "Принять и продолжить",
+      "title": "Лицензии проекта HomeBook"
+    },
+    "startMenuItem": {
+      "open": "Открыть"
+    }
+  },
+  "settings": {
+    "about": {
+      "version": {
+        "text": {
+          "template": "Версия HomeBook: {0}"
+        }
+      },
+      "applicationArea": {
+        "title": "Приложение",
+        "backend": {
+          "text": "Бэкенд:"
+        },
+        "database": {
+          "text": "База данных:"
+        },
+        "ui": {
+          "text": "UI:"
+        },
+        "deployment": {
+          "text": "Тип развертывания:"
+        }
+      },
+      "licensesArea": {
+        "title": "Лицензии",
+        "showLicenses": {
+          "button": {
+            "text": "Показать лицензии проекта"
+          }
+        },
+        "copyright": {
+          "textTemplate": "©{0} HomeBook. Все права защищены."
+        }
+      },
+      "externalLink": {
+        "gitHubProject": {
+          "href": "https://github.com/homebook-app"
+        },
+        "projectWebsite": {
+          "href": "https://homebook-app.github.io/"
+        }
+      },
+      "error": {
+        "messageTemplate": "Ошибка загрузки системной информации: {0}"
+      },
+      "pageTitle": "О HomeBook"
+    },
+    "navMenu": {
+      "languageRegion": {
+        "text": "Язык и регион"
+      },
+      "about": {
+        "text": "О HomeBook"
+      },
+      "users": {
+        "text": "Пользователи"
+      },
+      "homebookConfiguration": {
+        "text": "Конфигурация HomeBook"
+      },
+      "homebookModules": {
+        "text": "Модули HomeBook"
+      },
+      "developerComponents": {
+        "text": "Dev UI"
+      },
+      "developerIcons": {
+        "text": "Dev Icons"
+      },
+      "feedback": {
+        "text": "Обратная связь"
+      },
+      "developer": {
+        "text": "Разработчик"
+      },
+      "developerColors": {
+        "text": "Dev Colors"
+      },
+      "homebookStorage": {
+        "text": "Хранилище HomeBook"
+      },
+      "appearance": {
+        "text": "Облик"
+      }
+    },
+    "localization": {
+      "pageTitle": "Язык и регион",
+      "pageCaption": "Установите язык и региональные стандарты отображения HomeBook.",
+      "displayLanguage": {
+        "title": "Язык интерфейса",
+        "caption": "Выберите язык пользовательского интерфейса."
+      },
+      "saveChanges": {
+        "button": "Сохранить изменения"
+      },
+      "preferencesUpdated": {
+        "success": {
+          "message": "Настройки пользователя обновлены"
+        },
+        "error": {
+          "messageTemplate": "Ошибка обновления настроек пользователя: {0}"
+        }
+      },
+      "loadPreferences": {
+        "error": {
+          "messageTemplate": "Ошибка загрузки настроек пользователя: {0}"
+        }
+      }
+    },
+    "instance": {
+      "pageTitle": "Конфигурация HomeBook",
+      "pageCaption": "Управляйте глобальными настройками и функциями вашего экземпляра HomeBook.",
+      "instanceName": {
+        "title": "Имя экземпляра HomeBook",
+        "caption": "Дайте вашему экземпляру HomeBook уникальное имя"
+      },
+      "instanceDefaultLocale": {
+        "title": "Язык HomeBook по умолчанию",
+        "caption": "Выберите язык отображения HomeBook по умолчанию"
+      },
+      "saveChanges": {
+        "button": "Сохранить изменения"
+      },
+      "loadPreferences": {
+        "error": {
+          "messageTemplate": "Ошибка загрузки настроек HomeBook: {0}"
+        }
+      },
+      "preferencesUpdated": {
+        "success": {
+          "message": "Конфигурация HomeBook обновлена успешно!"
+        },
+        "error": {
+          "messageTemplate": "Ошибка обновления конфигурации HomeBook: {0}"
+        }
+      }
+    },
+    "user": {
+      "overview": {
+        "pageTitle": "Управление пользователями",
+        "addUserButton": {
+          "text": "Новый пользователь"
+        },
+        "loading": {
+          "message": "Загрузка пользователей..."
+        },
+        "currentCount": {
+          "messageTemplate": "Показаны {0} из {1}"
+        },
+        "itemsPerPageSelect": {
+          "label": "Пользователей на странице"
+        },
+        "resultsTable": {
+          "username": {
+            "tableHeader": "Имя пользователя"
+          },
+          "status": {
+            "tableHeader": "Статус"
+          },
+          "role": {
+            "tableHeader": "Роль"
+          },
+          "created": {
+            "tableHeader": "Создан"
+          },
+          "actions": {
+            "tableHeader": "Действия",
+            "editUser": {
+              "toolTipText": "Редактировать пользователя"
+            }
+          },
+          "noResult": {
+            "message": "Пользователи не найдены."
+          }
+        },
+        "toggleStatusTooltip": {
+          "enable": {
+            "text": "Включить пользователя"
+          },
+          "disable": {
+            "text": "Отключить пользователя"
+          }
+        },
+        "userStatus": {
+          "disabled": {
+            "text": "Отключён"
+          },
+          "active": {
+            "text": "Активен"
+          }
+        },
+        "userRole": {
+          "admin": {
+            "text": "Администратор"
+          },
+          "user": {
+            "text": "Пользователь"
+          }
+        },
+        "loadCurrentUserError": {
+          "messageTemplate": "Ошибка получения текущего пользователя: {0}"
+        },
+        "loadAllUsersError": {
+          "messageTemplate": "Ошибка загрузки всех пользователей: {0}"
+        },
+        "ownUserError": {
+          "message": "Вы не можете изменить статус своей учётной записи."
+        },
+        "userEnabled": {
+          "messageTemplate": "Пользователь «{0}» включён."
+        },
+        "userDisabled": {
+          "messageTemplate": "Пользователь «{0}» отключён."
+        },
+        "userUpdatingError": {
+          "messageTemplate": "Ошибка обновления пользователя: {0}"
+        }
+      },
+      "add": {
+        "pageTitle": "Добавить нового пользователя",
+        "creating": {
+          "message": "Создание..."
+        },
+        "createButton": {
+          "text": "Создать пользователя"
+        },
+        "cancelButton": {
+          "text": "Отмена"
+        },
+        "administratorFlag": {
+          "label": "Администратор",
+          "caption": "Администраторы имеют полный доступ ко всем функциям"
+        },
+        "form": {
+          "username": {
+            "label": "Имя пользователя",
+            "caption": "Введите уникальное имя пользователя"
+          },
+          "password": {
+            "label": "Пароль",
+            "caption": "Введите надёжный пароль"
+          },
+          "confirmPassword": {
+            "label": "Подтвердить пароль",
+            "caption": "Подтвердите пароль"
+          }
+        },
+        "passwordsDoNotMatchError": {
+          "message": "Пароли не совпадают"
+        },
+        "passwordRequiredError": {
+          "messageTemplate": "Пароль обязателен"
+        },
+        "usernameRequiredError": {
+          "message": "Имя пользователя обязательно"
+        },
+        "usernameLengthError": {
+          "messageTemplate": "Имя пользователя должно содержать от {0} до {1} символов"
+        },
+        "passwordTooShortError": {
+          "messageTemplate": "Пароль должен содержать не менее {0} символов"
+        },
+        "userCouldNotCreatedError": {
+          "messageTemplate": "Пользователь «{0}» не может быть создан"
+        },
+        "userCreatedSuccess": {
+          "messageTemplate": "Пользователь «{0}» создан успешно"
+        },
+        "creationUnknownError": {
+          "messageTemplate": "Ошибка создания пользователя: {0}"
+        }
+      },
+      "edit": {
+        "pageTitle": "Редактировать пользователя",
+        "loadingUser": {
+          "message": "Загрузка пользователя..."
+        },
+        "userNotFound": {
+          "message": "Пользователь не найден!"
+        },
+        "form": {
+          "username": {
+            "label": "Имя пользователя",
+            "caption": "Введите уникальное имя пользователя"
+          },
+          "password": {
+            "label": "Пароль",
+            "caption": "Введите надёжный пароль"
+          },
+          "confirmPassword": {
+            "label": "Подтвердить пароль",
+            "caption": "Подтвердите пароль"
+          }
+        },
+        "administratorFlag": {
+          "label": "Администратор",
+          "caption": "Администраторы имеют полный доступ ко всем функциям"
+        },
+        "cantChangeOwnAdministratorFlag": {
+          "caption": "Вы не можете изменить свой статус администратора"
+        },
+        "cancelButton": {
+          "text": "Отмена"
+        },
+        "saving": {
+          "message": "Сохранение..."
+        },
+        "saveButton": {
+          "text": "Сохранить пользователя"
+        },
+        "actionsHeader": {
+          "text": "Действия"
+        },
+        "actions": {
+          "enableDisable": {
+            "title": "Включить/отключить пользователя",
+            "caption": "Включает или отключает доступ пользователя."
+          },
+          "delete": {
+            "title": "Удалить пользователя",
+            "caption": "Удаляет пользователя навсегда из HomeBook.",
+            "cantDeleteOwnUser": {
+              "message": "Вы не можете удалить свою учётную запись"
+            },
+            "cantDisableOwnUser": {
+              "message": "Вы не можете отключить свою учётную запись"
+            }
+          },
+          "deleteButton": {
+            "text": "Удалить пользователя"
+          }
+        },
+        "loadingUserError": {
+          "messageTemplate": "Ошибка загрузки текущего пользователя: {0}"
+        },
+        "getUserIdError": {
+          "messageTemplate": "Ошибка получения данных текущего пользователя: {0}"
+        },
+        "passwordsDoNotMatchError": {
+          "message": "Пароли не совпадают"
+        },
+        "passwordTooShortError": {
+          "messageTemplate": "Пароль должен содержать не менее {0} символов"
+        },
+        "usernameRequiredError": {
+          "message": "Имя пользователя обязательно"
+        },
+        "usernameLengthError": {
+          "messageTemplate": "Имя пользователя должно содержать от {0} до {1} символов"
+        },
+        "updateSuccess": {
+          "message": "Пользователь обновлён успешно"
+        },
+        "noChanges": {
+          "message": "Нет изменений для сохранения"
+        },
+        "updatingError": {
+          "messageTemplate": "Ошибка обновления пользователя: {0}"
+        },
+        "userEnabledSuccess": {
+          "message": "Пользователь включён"
+        },
+        "userDisabledSuccess": {
+          "message": "Пользователь отключён"
+        },
+        "user": {
+          "statusUpdatingError": {
+            "messageTemplate": "Ошибка обновления статуса пользователя: {0}"
+          },
+          "deletingError": {
+            "messageTemplate": "Ошибка удаления пользователя: {0}"
+          }
+        },
+        "userDeleteSuccess": {
+          "message": "Пользователь удалён"
+        },
+        "deleteUserDialog": {
+          "title": "Удалить пользователя",
+          "messageTemplate": "Вы уверены, что хотите удалить пользователя «{0}»? Действие нельзя отменить.",
+          "yesText": "Удалить",
+          "cancelText": "Отмена"
+        }
+      }
+    },
+    "pageTitle": "Настройки",
+    "storage": {
+      "storageInformationsArea": {
+        "title": "Информация о хранилище"
+      },
+      "usedSpace": {
+        "title": "Использовано места",
+        "text": "{0} из {1} доступно"
+      },
+      "usageChart": {
+        "usage": {
+          "title": "Использование"
+        }
+      },
+      "usageType": {
+        "media": {
+          "title": "Хранилище"
+        },
+        "cache": {
+          "title": "Кэш"
+        },
+        "temp": {
+          "title": "Временные файлы"
+        },
+        "logs": {
+          "title": "Логи"
+        }
+      }
+    },
+    "developer": {
+      "configurationArea": {
+        "title": "Конфигурация приложения"
+      },
+      "configurationItemsFrontend": {
+        "title": "Frontend"
+      },
+      "configurationItemsBackend": {
+        "title": "Backend"
+      },
+      "colors": {
+        "title": "",
+        "brandTitle": "",
+        "paletteTitle": "",
+        "gradientTitle": ""
+      },
+      "frosted": {
+        "title": ""
+      },
+      "icons": {
+        "title": "",
+        "copyName": ""
+      },
+      "components": {
+        "title": "",
+        "showLicenses": "",
+        "restartCountdown": "",
+        "countdownBody": ""
+      }
+    },
+    "appearance": {
+      "wallpaperArea": {
+        "title": "Облик",
+        "description": "Настройте внешний вид HomeBook под свои предпочтения"
+      },
+      "staticWallpaperArea": {
+        "title": "Обои"
+      },
+      "uploadedWallpaperArea": {
+        "title": "Загруженные обои"
+      },
+      "dynamicWallpaperArea": {
+        "title": "Динамические обои"
+      }
+    }
+  },
+  "update": {
+    "processFinished": {
+      "title": "Обновление HomeBook завершено"
+    },
+    "process": {
+      "title": "Обновление HomeBook",
+      "updateIsPrepared": {
+        "message": "Обновление подготовлено и запускается."
+      },
+      "finished": {
+        "success": {
+          "message": "Обновление выполнено успешно."
+        },
+        "startHomeBook": {
+          "message": "Открыть HomeBook"
+        }
+      },
+      "retry": {
+        "button": {
+          "text": "Повторить обновление"
+        }
+      },
+      "processingError": {
+        "messageTemplate": "Ошибка при обновлении: {0}"
+      },
+      "processingServerRestartError": {
+        "message": "Сервер не перезапустился корректно после обновления. Проверьте логи сервера."
+      },
+      "processingUnknownError": {
+        "message": "Неизвестная ошибка при обновлении. Проверьте логи сервера.",
+        "messageTemplate": "Неизвестная ошибка при обновлении: {0}"
+      },
+      "processingSetupMissingError": {
+        "message": "Сначала запустите установку HomeBook."
+      }
+    }
+  },
+  "module": {
+    "finances": {
+      "startMenuItem": {
+        "title": "Финансы",
+        "caption": "Управляйте доходами, расходами и бюджетами"
+      }
+    },
+    "kitchenManager": {
+      "startMenuItem": {
+        "recipes": {
+          "title": "Рецепты",
+          "caption": "Ваша личная кулинарная книга"
+        },
+        "pantry": {
+          "title": "Склад",
+          "caption": "Отслеживайте запасы на кухне"
+        }
+      }
+    }
+  },
+  "home": {
+    "pageTitle": "Домой"
+  },
+  "mainLayout": {
+    "searchTextField": {
+      "placeholder": "Поиск..."
+    }
+  },
+  "homebook": {
+    "core": {
+      "wallpaper": {
+        "userwallpaper": "Обои"
+      }
+    },
+    "kitchen": {
+      "recipeimages": "Изображения рецептов"
+    }
+  }
+}

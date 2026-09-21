@@ -1,0 +1,165 @@
+{
+  "kitchen": {
+    "moduleName": "Kitchen Manager",
+    "moduleDescription": "Module for managing recipes, meal planning and pantry.",
+    "startMenuItem": {
+      "recipes": {
+        "title": "Recipes",
+        "caption": "Your personal cookbook"
+      },
+      "pantry": {
+        "title": "Pantry",
+        "caption": "Keep track of your kitchen supplies"
+      },
+      "mealPlan": {
+        "title": "Meal Plan",
+        "caption": "Your meals at a glance"
+      }
+    },
+    "dateTimeFormat": {
+      "shortDateOnlyFormat": "MM/dd"
+    },
+    "planOverview": {
+      "header": {
+        "calendarWeek": {
+          "textTemplate": "Calendar week {0}"
+        }
+      },
+      "mealType": {
+        "breakfast": {
+          "text": "Breakfast"
+        },
+        "lunch": {
+          "text": "Lunch"
+        },
+        "dinner": {
+          "text": "Dinner"
+        }
+      }
+    },
+    "recipeOverview": {
+      "annotationServings": {
+        "textTemplate": "{0} Servings"
+      }
+    },
+    "recipeEdit": {
+      "recipeNameEditToolTip": {
+        "text": "Edit Recipename"
+      },
+      "recipeNameEditTextField": {
+        "placeholder": "Recipename"
+      },
+      "viewRecipeButton": {
+        "text": "View Recipe"
+      },
+      "recipeNameSaveTooltip": {
+        "text": "Save Recipename"
+      },
+      "recipeDeleteTooltip": {
+        "text": "Delete Recipe"
+      },
+      "recipeDescriptionTextField": {
+        "label": "Description"
+      },
+      "servingsLabel": {
+        "singular": "For 1 serving",
+        "plural": "For {0} servings"
+      },
+      "durationAdditionalArea": {
+        "title": "Duration & Additional Information"
+      },
+      "saveRecipeButton": {
+        "content": "Save Recipe"
+      },
+      "recipeSource": {
+        "content": "Recipe Source"
+      },
+      "recipeComment": {
+        "content": "Comment"
+      },
+      "caloriesPerServing": {
+        "content": "Calories per serving",
+        "adornmentText": "kcal"
+      },
+      "restingTime": {
+        "content": "Rest period"
+      },
+      "cookingBakingTime": {
+        "content": "Cooking/Baking time"
+      },
+      "workingTime": {
+        "content": "Working Time"
+      },
+      "workingTimeHour": {
+        "adornmentText": "h"
+      },
+      "workingTimeMinute": {
+        "adornmentText": "m"
+      },
+      "cookingBakingTimeHour": {
+        "adornmentText": "h"
+      },
+      "cookingBakingTimeMinute": {
+        "adornmentText": "m"
+      },
+      "restingTimeHour": {
+        "adornmentText": "h"
+      },
+      "restingTimeMinute": {
+        "adornmentText": "m"
+      },
+      "imageGallery": {
+        "title": "Images",
+        "emptyState": {
+          "text": "No images uploaded yet."
+        },
+        "reorderHint": {
+          "text": "Drag and drop the images to set their order."
+        },
+        "removeButton": {
+          "text": "Remove"
+        }
+      }
+    },
+    "recipeEditIngredients": {
+      "ingredients": {
+        "title": "Ingredients"
+      },
+      "quantity": {
+        "placeholder": "Quantity"
+      },
+      "unit": {
+        "placeholder": "Unit"
+      },
+      "ingredientName": {
+        "placeholder": "Ingredient"
+      },
+      "additionalNote": {
+        "placeholder": "Note (optional)"
+      }
+    },
+    "recipeEditSteps": {
+      "steps": {
+        "title": "Instructions"
+      },
+      "stepIndexText": {
+        "content": "Step {0}"
+      },
+      "stepTimerText": {
+        "content": "Timer: {0}"
+      },
+      "stepTimerTitle": {
+        "content": "Timer for this step"
+      },
+      "stepTimerHour": {
+        "adornmentText": "h"
+      },
+      "stepTimerMinute": {
+        "adornmentText": "m"
+      },
+      "stepDescription": {
+        "placeholder": "What happens in this step?"
+      }
+    }
+  }
+}

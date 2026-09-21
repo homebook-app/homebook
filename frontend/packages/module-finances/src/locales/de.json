@@ -1,0 +1,127 @@
+{
+  "finances": {
+    "moduleName": "Finanzen",
+    "moduleDescription": "",
+    "startMenuItem": {
+      "overview": {
+        "title": "Finanzen",
+        "caption": "Verwalte deinen Einnahmen, Ausgaben und Budgets"
+      }
+    },
+    "savings": {
+      "title": "Sparziele",
+      "add": {
+        "title": "Neues Sparziel"
+      },
+      "overview": {
+        "noSavingGoals": "Du hast noch keine Sparziele"
+      },
+      "edit": {
+        "title": "Titel speichern",
+        "notFound": "Sparziel konnte nicht gefunden werden!"
+      }
+    },
+    "addSavingGoal": {
+      "intro": {
+        "title": "Neues Sparziel erstellen",
+        "description": "Lege ein persönliches Sparziel an, um deine Finanzen im Blick zu behalten. Bestimme, wofür du sparen möchtest und wie viel du erreichen willst.",
+        "quickAddButton": {
+          "text": "Schnellerfassung"
+        }
+      },
+      "mudStep": {
+        "intro": {
+          "title": "Neues Sparziel"
+        },
+        "name": {
+          "title": {
+            "label": "Name",
+            "text": "Was möchtest du erreichen?",
+            "caption": "Wähle einen Namen, der beschreibt, wofür du sparen möchtest."
+          },
+          "input": {
+            "placeholder": "Name eingeben"
+          }
+        },
+        "goal": {
+          "title": {
+            "label": "Ziel",
+            "text": "Wie hoch soll dein Sparbetrag sein?",
+            "caption": "Trage den Gesamtbetrag ein, den du Schritt für Schritt erreichen willst."
+          },
+          "input": {
+            "placeholder": "Betrag eingeben",
+            "validationError": "Betrag ist zu klein"
+          },
+          "targetDate": {
+            "caption": "Gib an, bis wann du dein Ziel gerne erreichen würdest – das hilft, motiviert zu bleiben."
+          },
+          "targetDateInput": {
+            "placeholder": "Datum auswählen",
+            "label": "Ziel-Datum (optional)"
+          }
+        },
+        "plan": {
+          "title": "Sparplan"
+        },
+        "summary": {
+          "title": {
+            "label": "Zusammenfassung",
+            "text": "Dein Sparziel zusammengefasst"
+          },
+          "name": {
+            "text": "Dein Sparziel:"
+          },
+          "targetDate": {
+            "text": "Bis:"
+          },
+          "numberOfMonths": {
+            "text": "Monate:"
+          },
+          "amountPerMonth": {
+            "text": "Pro Monat:"
+          },
+          "result": {
+            "textTemplate": "Am Ende hast du {0} und dabei Zinsen in Höhe von {1} erhalten :)"
+          }
+        },
+        "options": {
+          "title": {
+            "text": "Weitere Optionen",
+            "caption": "Bekommst du auf deinem Sparkonto Zinsen?"
+          }
+        },
+        "interestRateOption": {
+          "none": {
+            "option": {
+              "text": "Keine Zinsen"
+            }
+          },
+          "monthly": {
+            "option": {
+              "text": "Monatlich"
+            }
+          },
+          "yearly": {
+            "option": {
+              "text": "Jährlich"
+            }
+          }
+        },
+        "interestRate": {
+          "input": {
+            "label": "Zinssatz (%)"
+          }
+        }
+      }
+    },
+    "addSavingGoalSummary": {
+      "total": {
+        "name": "Gesamt"
+      },
+      "payments": {
+        "name": "Einzahlungen"
+      }
+    }
+  }
+}
